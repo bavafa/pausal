@@ -47,7 +47,7 @@ Catalog: Amazon Berkeley Objects, CC BY 4.0, slice of about 20,000 products. Ads
 Unsafe ad in a sensitive scene; weak matches from the ABO gap in fashion, cars and branded goods; rights issues; cost overrun; simulated numbers mistaken for real data.
 
 ## Open questions
-0. Which model should produce the scene profile? Sam named "Jev", which needs to be confirmed. [ASSUMPTION] this means a hosted vision-language model such as Gemini.
+0. Jev (TypeSafe, early access, source: https://typesafe.ai/blog/introducing-system-one-models-and-jev, accessed 2026-11-22) takes text and returns typed decisions with confidence scores. The page says it does not take images or video yet, and its figures are company claims. [ASSUMPTION] a vision-language model first turns frames and speech into a text scene description, and Jev then produces the typed profile (scene type, sentiment bucket, brand-safety verdict) and judges the candidate products. This is to be compared against a plain LLM judge in the evaluation. Open: access, terms, data handling and whether sentiment can be a numeric score.
 0a. How is pause revenue split between platform and publisher? [ASSUMPTION] simulated 70/30 for the demo, labeled as simulated.
 1. IAB Content Taxonomy 3.1 file licence is not stated. Ask IAB Tech Lab before committing the file.
 2. Which AI video tools make the sample clips, and do their terms allow public use?
