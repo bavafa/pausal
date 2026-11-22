@@ -1,0 +1,154 @@
+---
+name: Pausall
+description: Calm, minimal web demo that shows a sponsored product on pause only when the scene fits. Soft Calm direction, light and dark, laptop and phone.
+status: final
+sources:
+  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/addendum.md
+  - docs/policy/ad-suppression-policy.md
+  - docs/discovery/personas-jtbd.md
+  - docs/discovery/product-brief.md
+updated: 2026-11-22
+colors:
+  background: '#F4F7F7'
+  foreground: '#164E63'
+  card: '#FFFFFF'
+  muted: '#E6EFF1'
+  muted-foreground: '#475569'
+  border: '#D3E3E6'
+  accent: '#0E7490'
+  accent-foreground: '#FFFFFF'
+  background-dark: '#0F1C1F'
+  foreground-dark: '#E3EEF0'
+  card-dark: '#16272B'
+  muted-dark: '#1D3237'
+  muted-foreground-dark: '#9FB4B9'
+  border-dark: '#2A4247'
+  accent-dark: '#5FB8C8'
+  accent-foreground-dark: '#0F1C1F'
+  frozen-scrim: 'rgba(0,0,0,0.30)'
+typography:
+  # Sizes taken from the approved mock (directions-2.html). [ASSUMPTION] exact ramp to confirm in build.
+  title:
+    fontFamily: 'Lora'
+    fontSize: 20px
+    fontWeight: '500'
+    lineHeight: '1.3'
+  title-sm:
+    fontFamily: 'Lora'
+    fontSize: 15px
+    fontWeight: '500'
+    lineHeight: '1.3'
+  body:
+    fontFamily: 'Raleway'
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: '1.5'
+  label:
+    fontFamily: 'Raleway'
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: '1.4'
+  eyebrow:
+    fontFamily: 'Raleway'
+    fontSize: 11px
+    fontWeight: '500'
+    letterSpacing: 0.08em
+rounded:
+  sm: 8px
+  md: 14px
+  full: 9999px
+spacing:
+  '1': 4px
+  '2': 8px
+  '3': 12px
+  '4': 16px
+  '5': 20px
+  '6': 24px
+  gutter-phone: 12px
+  gutter-laptop: 18px
+components:
+  ad-card:
+    background: '{colors.card}'
+    foreground: '{colors.foreground}'
+    border: '{colors.border}'
+    radius: '{rounded.md}'
+  button-primary:
+    background: '{colors.accent}'
+    foreground: '{colors.accent-foreground}'
+    radius: '{rounded.md}'
+  brand-safe-tag:
+    border: '{colors.accent}'
+    foreground: '{colors.accent}'
+    radius: '{rounded.full}'
+  product-thumb:
+    background: '{colors.muted}'
+    border: '{colors.border}'
+    radius: '{rounded.md}'
+  pause-note:
+    background: '{colors.card}'
+    foreground: '{colors.foreground}'
+    radius: '{rounded.md}'
+---
+
+## Brand & Style
+
+Pausall is an experiment about a single moment: the viewer presses pause. The design posture is calm and assuring, minimal and elegant. A pause should feel like an exhale, not a sales pitch. The video is always the brightest, most saturated thing on screen; everything around it is soft, tinted and quiet. The serif headings give the ad an editorial, considered voice; the sans body keeps the rest plain.
+
+Direction chosen from three rendered options (Cinema Dark, Gallery Light, Soft Calm). Palette and pairing originate from ui-ux-pro-max matches (Wellness Calm pairing, healthcare palette teal), adjusted for contrast.
+
+→ Visual reference: [mockups/soft-calm.html](mockups/soft-calm.html). Rejected directions: [mockups/directions-1.html](mockups/directions-1.html). This spine wins on conflict with any mock.
+
+## Colors
+
+- **Background (`#F4F7F7` / `#0F1C1F`)**: a tinted neutral, never pure white or pure black. Dark mode is a deep teal-black so the video stays the brightest element.
+- **Foreground (`#164E63` / `#E3EEF0`)**: deep teal text, 8.5:1 on light background, 14.7:1 on dark.
+- **Card (`#FFFFFF` / `#16272B`)**: the ad card, the pause note and the product page surface.
+- **Muted and muted foreground**: thumbnail wells and secondary text (reasons, labels, "Based on this scene and the previous 3"). Muted foreground is 7.0:1 light, 8.0:1 dark.
+- **Accent (`#0E7490` / `#5FB8C8`)**: the one action color. Used for the View product button, the brand-safe tag outline and the playback progress. Not used decoratively. 5.0:1 on light background; 7.6:1 on dark.
+- **Border**: decorative only (1.2:1). Nothing important may depend on a border alone being seen.
+
+Avoid: red or alarm colors on the pause view (a held-back ad is not an error), gradients on UI surfaces, a second accent.
+
+## Typography
+
+- **Lora** for product names and the ad title (`title`, `title-sm` on phone). The serif is used only where a product is being presented.
+- **Raleway** for everything else: body, scene panel, reasons, labels.
+- `eyebrow` (uppercase, tracked) only for "Sponsored", "Simulated ad" and scene panel keys (Scene, Sentiment).
+- Fonts load from Google Fonts with system fallbacks (Georgia for Lora, system-ui for Raleway).
+
+## Layout & Spacing
+
+4-based spacing scale. Two layouts:
+
+- **Laptop:** video full width of the content column at 16:9; below it the scene panel as a slim strip, then the top product (150 px thumb plus text) and a row of 9 small products.
+- **Phone (375 px reference):** same order. Top product thumb 96 px. The 9 small products become a sideways scroll strip (84 px items).
+
+The video keeps its aspect ratio in every state; nothing resizes the player.
+
+## Elevation & Depth
+
+One elevation level: the ad card and pause note float over the frozen frame with a soft shadow. The frozen frame itself is desaturated and dimmed (`saturate(.35) brightness(.7)`) so the card reads as foreground. No other shadows.
+
+## Shapes
+
+Soft corners throughout: `{rounded.md}` (14 px) for the video, cards, thumbnails and buttons; `{rounded.full}` for the brand-safe tag only.
+
+## Components
+
+- **Ad card (laptop):** centered on the frozen frame, about 78 percent of its width. Image left (38 percent), then eyebrow "Sponsored", title, tagline, View product button, the non-functional QR (shown at 35 percent opacity) and the "Shown because" line in `label` muted.
+- **Ad card (phone):** covers most of the frozen frame with an 8 px inset, leaving the playback bar visible. Image takes the left 40 percent. Tagline, QR and "Shown because" line are hidden.
+- **Pause note:** small centered card: "Paused" plus one reason line in muted foreground.
+- **Scene panel:** inline strip, eyebrow keys, brand-safe tag as an accent outline pill.
+- **Top product:** larger thumb, eyebrow "Sponsored", Lora title, one-line reason, relevance score in `label` muted.
+- **Small product:** square thumb plus name in `label`.
+
+## Do's and Don'ts
+
+| Do | Don't |
+|---|---|
+| Keep the video the brightest thing on screen | Use pure black or pure white surfaces |
+| Use the accent only for the one action and the safe tag | Color a held-back ad in red or warning tones |
+| Keep the player 16:9 in every state | Resize or reflow the player on pause |
+| Label every ad, number and campaign as simulated | Show a price or earnings figure without "Simulated" |
+| Let the ad cover most of the frame on phone | Let the ad cover the playback bar |
