@@ -1,7 +1,7 @@
 # Data sources
 
 Purpose: record each data source, its licence and the attribution Pausall must show.
-Audience: PM, developers, reviewers.
+Audience: the author and contributors.
 Status: draft. Last updated: 2026-11-22. General information, not legal advice. Accessed 2026-11-22.
 
 | Source | Use in Pausall | Licence (verified) | Attribution or condition | Status |

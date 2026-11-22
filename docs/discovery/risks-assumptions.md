@@ -1,7 +1,7 @@
 # Risks and assumptions log
 
 Purpose: list what could make Pausall fail, riskiest first.
-Audience: PM, reviewers.
+Audience: the author.
 Status: draft. Last updated: 2026-11-22.
 
 Ratings are judgements by the author, not measurements. Likelihood and impact are 1 (low) to 5 (high).

@@ -8,21 +8,30 @@ updated: 2026-11-22
 # Pausall project brief
 
 Purpose: define the problem, product, users, scope and open questions before the PRD.
-Audience: PM (Sam), reviewers.
+Audience: Sam.
 Status: draft. Last updated: 2026-11-22. Items tagged [ASSUMPTION] were inferred and need Sam's review. Evidence: `research.md`, `personas-jtbd.md`, `risks-assumptions.md`, `../data-sources.md`.
 
 ## Problem
-Streaming services now sell pause ads. Amazon announced interactive pause ads for Prime Video on 2025-09-30, and Netflix said it would sell pause ads programmatically from October 2026 (see `research.md` [1][2]). A pause is a natural moment, but an ad that ignores the scene can feel intrusive or, in a sad or violent scene, harmful to the brand. Public sources describe scene-level targeting vendors but publish no accuracy or suppression data, and no independent pause-ad performance benchmark was found. This is an opportunity to show how a pause ad can be relevant, safe and explainable.
+Streaming services now sell pause ads. Amazon announced interactive pause ads for Prime Video on 2025-09-30, and Netflix said it would sell pause ads programmatically from October 2026 (see `research.md` [1][2]). A pause is a natural moment, but an ad that ignores the scene can feel intrusive or, in a sad or violent scene, harmful to the brand. Public sources describe scene-level targeting vendors but publish no accuracy or suppression data, and no independent pause-ad performance benchmark was found. The question is whether a pause ad can be relevant, safe and explainable.
 
 ## Product
 Pausall turns a clip (up to 2 minutes) into a live, ranked list of catalog products that match the current scene. Each item has a relevance score (0 to 100), a one-line reason and an ad flag. On pause, Pausall shows an ad for the top product, or shows no ad and says why ("No ad: this scene is sensitive" or "No ad: nothing fits well"). A slider trades relevance against simulated revenue. Analysis runs once after load, so playback and pause only read stored results.
 
-## Users (all hypotheses, see `personas-jtbd.md`)
-Ad product owner at a streaming or retail media company; brand advertiser; viewer; product leader reviewing the portfolio (primary audience for the demo).
+### Scene profile (new requirement)
+For every scene, the analysis stores a profile that the list, the pause overlay and the suppression rule all read:
+- **Description:** a short paragraph of what is happening, who is present, and the setting (more than one line).
+- **Scene type:** one primary label and optional secondary labels, for example kitchen, office, fight, action, dialogue, outdoors, sci-fi. [ASSUMPTION] a fixed label list that is reviewed against IAB categories.
+- **Sentiment score:** a number from -1 (very negative) to +1 (very positive), plus a mood label (calm, tense, sad, joyful, and so on). It combines picture, dialogue and sound.
+- **Brand safety:** an overall verdict (safe, caution, unsafe) with the reasons (for example violence, grief, child-focused, sexual content) and a confidence value. Unknown or low confidence defaults to no ad.
+- The scene profile is the basis for the "No ad because" explanation.
+- Which model produces the profile is open (see questions). Every model sits behind an interface so it can be swapped and compared.
+
+## Users and revenue roles (all hypotheses, see `personas-jtbd.md`)
+Streaming platform and its ad product owner; publisher or content owner; advertiser; viewer. Each has a revenue job (see `personas-jtbd.md`).
 
 ## Goals
-1. A public demo at under 10 USD per month that works in a 15-second LinkedIn recording.
-2. A complete PM paper trail: discovery, strategy, design, execution.
+1. A small public demo that stays under 10 USD per month.
+2. Find out how well existing models read a scene and match products to it, and where they fail.
 3. An honest evaluation with human labels, including failures.
 
 ## Non-goals
@@ -38,6 +47,8 @@ Catalog: Amazon Berkeley Objects, CC BY 4.0, slice of about 20,000 products. Ads
 Unsafe ad in a sensitive scene; weak matches from the ABO gap in fashion, cars and branded goods; rights issues; cost overrun; simulated numbers mistaken for real data.
 
 ## Open questions
+0. Which model should produce the scene profile? Sam named "Jev", which needs to be confirmed. [ASSUMPTION] this means a hosted vision-language model such as Gemini.
+0a. How is pause revenue split between platform and publisher? [ASSUMPTION] simulated 70/30 for the demo, labeled as simulated.
 1. IAB Content Taxonomy 3.1 file licence is not stated. Ask IAB Tech Lab before committing the file.
 2. Which AI video tools make the sample clips, and do their terms allow public use?
 3. What does the demo show when the best match is weak? [ASSUMPTION] no ad, with the reason.
