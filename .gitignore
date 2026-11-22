@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+.venv/
+# Sample and placeholder clips are never committed by default
+data/samples/*.mp4
+data/samples/*.mov
+data/samples/*.webm
+data/placeholder/

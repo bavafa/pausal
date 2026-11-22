@@ -1,0 +1,9 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Placeholder
+        run: echo "Lint, type check and tests are added in Phase 6."
