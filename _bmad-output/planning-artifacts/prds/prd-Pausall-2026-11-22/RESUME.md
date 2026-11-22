@@ -18,8 +18,7 @@ Say "resume Pausall" (or "start phase 4"). Read this file, then the documents li
 - Next: Phase 4 architecture (`bmad-architecture`, ADRs in `docs/adr/`). UI library choice was deferred to Phase 4.
 
 ## Git
-- `main` contains phases 1 to 3 (fast-forwarded to commit `1a0e8e3`, plus this resume update). Not pushed to github.com/bavafa/pausall.
-- Branches `phase-2-prd` and `phase-3-ux` are merged into main and can be deleted.
+- `main` contains phases 1 to 3 and is pushed to github.com/bavafa/pausall. Phase branches were merged and deleted; only `main` exists.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
 ## Key decisions (summary)
