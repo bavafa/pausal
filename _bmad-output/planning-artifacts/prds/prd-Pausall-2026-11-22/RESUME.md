@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 planning done, build not started.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Story 1.1 done and deployed.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -18,7 +18,8 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 - Phase 3 UX: done, spines final. Reviewer gate and bmad-review polish pass skipped by the user.
 - Phase 4 architecture: done and approved. Spine final, reviewer gate run (rubric, adversarial, currency, reconcile) and fixes applied, policy, PRD FR-11 and EXPERIENCE reason order updated to match.
 - Phase 5 build: planning done. `_bmad-output/planning-artifacts/epics.md` is final (5 epics, 28 stories, fixture-first: web and policy on a hand-authored fixture, then the real pipeline in Epic 4, eval harness in Epic 5). Readiness gate PASS. Tracking in `_bmad-output/implementation-artifacts/sprint-status.yaml`, all backlog.
-- Next: `bmad-build` on Story 1.1 (workspace scaffold deployed to GitHub Pages), in a fresh session. Then Phase 6 evaluation.
+- Story 1.1 done (2026-11-23): pnpm workspace (`@pausall/bundle-schema`, `policy`, `pipeline`, `apps/web`), oxlint import boundaries (AD-23), secretlint pre-commit hook and CI scan, GitHub Actions CI that deploys `apps/web` to https://bavafa.github.io/pausall/. Spec, decisions and review log: `_bmad-output/implementation-artifacts/spec-1-1-workspace-scaffold-deployed-to-github-pages.md`. Epic context for build sessions: `_bmad-output/implementation-artifacts/epic-1-context.md` (its stack table predates the Node 26 and pnpm 12.23.0 change; the spine Stack table is current).
+- Next: `bmad-build` on Story 1.2 (artifact and config schemas that fail closed), in a fresh session. Then the rest of Epic 1, then Phase 6 evaluation.
 - Small values to set as tunable config during build: the price formula (Story 1.3) and the fixed scene-type list (Story 1.2).
 
 ## Do first in Phase 5 (small, ordered)
@@ -27,11 +28,17 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 3. Done 2026-11-23: Jev publishes no rate limits; one request per scene, SDK retries 429 with backoff (see jev-fit.md).
 4. Open the ABO licence file when building the catalog slice, before copying any image; note the older CC BY-NC wording some Amazon pages show.
 5. Read Alibaba Model Studio data terms before the first run on real clips (required for uploads, low risk for AI-generated samples).
-6. Pin dependency versions at scaffold with `npm view`; the spine Stack table lists values confirmed on 2026-11-22 (Node 24 LTS, pnpm 12.21.0, TypeScript 7.0.2, Vite 8.3.8, React 19.3.1, Tailwind 4.3.5, Jev `jev-1.14.0`).
+6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4 and is pushed to github.com/bavafa/pausall (head `414d1d7` at the end of Phase 4). Only `main` exists.
+- `main` contains phases 1 to 4, Phase 5 planning and Story 1.1, pushed to github.com/bavafa/pausall (head `1dab4a7`). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. The local branch `story/1-1-workspace-scaffold` can be deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
+
+## Build environment
+- pnpm is not installed globally on the author's machine; run it as `npx -y pnpm@12.23.0 <command>`. Local Node is 26.9; CI uses 26.13.1 from `.nvmrc`.
+- Checks: `pnpm -r build`, `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm secrets`. The pre-commit hook (`.githooks/`) needs `node_modules` installed.
+- TypeScript 7 is not supported by typescript-eslint, so lint is oxlint. Packages export `.ts` source; there is no library build step.
 
 ## Key decisions (summary)
 - Hobby demo, responsive web, laptop and phone, light and dark mode. Uploads off in the first release; nothing for uploads is built except a library seam.
