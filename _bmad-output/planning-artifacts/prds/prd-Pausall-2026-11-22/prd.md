@@ -2,7 +2,7 @@
 title: Pausall PRD
 status: final
 created: 2026-11-22
-updated: 2026-11-22
+updated: 2026-11-23
 ---
 
 # Pausall PRD
@@ -46,7 +46,7 @@ All ads, campaigns, bids and conversions are simulated and labeled as such in th
 
 ### F4. Pause view
 - FR-10 On pause, if the top product is at or above the relevance threshold (60 of 100 at launch, set in the policy and tuned in the evaluation), has an active campaign and the scene is safe, show the sponsored ad (all rules in the ad suppression policy must pass, including the safety confidence, the second agreeing signal and the sensitive categories): product image, generated tagline and an action button.
-- FR-11 Otherwise show the frozen frame with one reason, chosen in the order set in the policy: "sensitive scene", "nothing fits well", "no active campaign" or "analysis unavailable".
+- FR-11 Otherwise show the frozen frame with one reason, chosen in the order set in the policy: "analysis unavailable" (checked first), "sensitive scene", "nothing fits well" or "no active campaign".
 - FR-12 The pause view appears in under 500 ms (stored lookup only).
 - FR-13 The tagline is generated only for scenes that pass the policy safety rules, and the generated tagline is tied to the scene, makes no claim the product data does not support, and is never shown in a scene that is not safe.
 

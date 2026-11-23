@@ -12,8 +12,10 @@ Status: draft. Last updated: 2026-11-22.
 | adr/ | Architecture decision records | 4+ |
 | eval/ | Evaluation harness and results | 6 |
 
-Phase 2 and 3 outputs:
+Phase 2 to 4 outputs:
 - PRD: `_bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md`
 - UX design spine: `_bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/DESIGN.md`
 - UX experience spine: `_bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/EXPERIENCE.md`
 - UX mockups: `_bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/mockups/`
+- Architecture spine: `_bmad-output/planning-artifacts/architecture/architecture-Pausall-2026-11-22/ARCHITECTURE-SPINE.md`
+- ADRs: `docs/adr/` (0001 to 0008)

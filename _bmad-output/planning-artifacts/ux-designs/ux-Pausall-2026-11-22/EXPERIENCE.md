@@ -7,7 +7,7 @@ sources:
   - docs/policy/ad-suppression-policy.md
   - docs/discovery/personas-jtbd.md
   - docs/discovery/product-brief.md
-updated: 2026-11-22
+updated: 2026-11-23
 ---
 
 # Pausall Experience Spine
@@ -42,7 +42,7 @@ Calm, short, plain. The system explains itself in one line and never apologizes 
 | "Simulated click recorded." | "Thanks for your purchase!" |
 | "Simulated earnings: 2 ads shown, 1 held back (0)" | Any figure without the word "Simulated" |
 
-No-ad reasons use the policy wording and order exactly: Sensitive scene, Nothing fits well, No active campaign, Analysis unavailable (`docs/policy/ad-suppression-policy.md`). A reason never names the sensitive details of a scene.
+No-ad reasons use the policy wording and order exactly: Analysis unavailable (checked first), Sensitive scene, Nothing fits well, No active campaign (`docs/policy/ad-suppression-policy.md`). A reason never names the sensitive details of a scene.
 
 ## Component Patterns
 
