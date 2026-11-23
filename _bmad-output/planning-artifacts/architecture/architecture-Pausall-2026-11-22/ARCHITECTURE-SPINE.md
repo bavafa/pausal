@@ -5,9 +5,9 @@ purpose: build-substrate
 altitude: initiative
 paradigm: 'Precomputed read model with a functional core: an offline pipes-and-filters pipeline writes committed artifacts, a pure policy package decides, a static web app only resolves and renders'
 scope: 'Whole Pausall system: offline analysis pipeline, policy decisions, static responsive web app, evaluation harness, hosting and operations. Uploads are out of the first release.'
-status: draft
+status: final
 created: '2026-11-22'
-updated: '2026-11-22'
+updated: '2026-11-23'
 binds: [F1, F2, F3, F4, F5, F6, F7, F9, F10, NFR]
 sources:
   - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md

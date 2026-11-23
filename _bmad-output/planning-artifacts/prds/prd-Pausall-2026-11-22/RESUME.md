@@ -16,8 +16,8 @@ Say "resume Pausall" (or "start phase 4"). Read this file, then the documents li
 - Phase 1 discovery: done, tag `v0.1-brief` locked (changes to locked docs go through a PR plus CHANGELOG, not created yet).
 - Phase 2 PRD and ad suppression policy: done.
 - Phase 3 UX: done, spines final. Reviewer gate and bmad-review polish pass skipped by the user.
-- Phase 4 architecture: spine (23 ADs) and 8 ADRs drafted, lint clean. Reviewer gate run (rubric, adversarial, currency, reconcile; reviews in the architecture workspace `reviews/`) and fixes applied. Status draft until the user approves. Policy doc amended 2026-11-23 (rule 5 safety, new R3b, analysis unavailable first). PRD FR-11 and EXPERIENCE reason order updated 2026-11-23. Pending notes (FR-22 and analyzing states are upload-only, F8 has no flag), Qwen model choice (qwen3-vl-flash is retired). Nothing committed.
-- Next after approval: Phase 5 (sample clips, catalog slice, scaffold), then Phase 6 evaluation.
+- Phase 4 architecture: spine (23 ADs) and 8 ADRs drafted, lint clean. Reviewer gate run (rubric, adversarial, currency, reconcile; reviews in the architecture workspace `reviews/`) and fixes applied. Approved by the user and committed 2026-11-23, spine status final. Policy doc amended 2026-11-23 (rule 5 safety, new R3b, analysis unavailable first). PRD FR-11 and EXPERIENCE reason order updated 2026-11-23. Pending notes (FR-22 and analyzing states are upload-only, F8 has no flag), Qwen model choice (qwen3-vl-flash is retired). Nothing committed.
+- Next: Phase 5 (sample clips, catalog slice, scaffold), then Phase 6 evaluation.
 
 ## Git
 - `main` contains phases 1 to 3 (phase 4 files are uncommitted) and is pushed to github.com/bavafa/pausall. Phase branches were merged and deleted; only `main` exists.
