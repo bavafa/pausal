@@ -60,14 +60,14 @@ All ads, campaigns, bids and conversions are simulated and labeled as such in th
 ### F7. Catalog
 - FR-17 Products come from the Amazon Berkeley Objects slice with attribution. The catalog is weak in fashion, cars and branded goods, so clips are chosen to fit it and failures are shown. Sample clips are labeled "AI-generated" in the UI.
 
-### F8. Uploads (behind a feature flag; off in the first release, samples only)
+### F8. Uploads (off in the first release, samples only; no feature flag is built, only a library seam, see AD-13 in the architecture spine)
 - FR-18 The browser samples about 1 frame per second at about 512 px wide and extracts the audio, then sends only those to the server.
 - FR-19 The server analyzes, returns results and deletes its inputs. Nothing from uploads is stored or logged; only numeric results are cached by content hash with a short expiry.
 - FR-20 Limits: 2 minutes, about 100 MB, MP4, MOV or WebM, 3 analyses per visitor per day.
 - FR-21 Before upload, a notice states that the viewer must own the video, that it is not kept, that DRM-protected files are unsupported, and that a text description of the clip is processed by third-party services, naming Jev and the Qwen provider.
 
 ### F9. Chunked analysis
-- FR-22 Sample clips are analyzed in chunks, the first 20 seconds first, so the list and scene panel start working before the whole clip is done.
+- FR-22 Clips are analyzed in chunks, the first 20 seconds first, so the list and scene panel start working before the whole clip is done. Sample clips are precomputed in full, so this only changes what viewers see for uploads; for samples the chunk is recorded on each scene.
 
 ### F10. Simulated revenue
 - FR-23 Each shown ad has a simulated price that rises with the campaign bid and the relevance score. The platform and publisher split it 70/30. [ASSUMPTION]

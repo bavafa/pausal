@@ -61,8 +61,8 @@ Behavioral. Visual specs live in `DESIGN.md` Components.
 
 | State | Surface | Treatment |
 |---|---|---|
-| First chunk not analyzed | Watch screen | Scene panel shows "Analyzing the first scenes…"; product list is empty placeholders. Video plays. |
-| Pause before analysis reaches the scene | Pause view | Pause note: "No ad here: analysis unavailable." |
+| First chunk not analyzed (uploads only; sample clips are precomputed) | Watch screen | Scene panel shows "Analyzing the first scenes…"; product list is empty placeholders. Video plays. |
+| Pause before analysis reaches the scene (uploads only) | Pause view | Pause note: "No ad here: analysis unavailable." |
 | Ad allowed | Pause view | Ad card over the frozen frame. |
 | Ad held back | Pause view | Frozen frame with pause note and the first failing reason in policy order. |
 | Fewer than 10 products fit | Product list | Show only what ranks; no filler. |
@@ -106,7 +106,7 @@ Behavioral. Visual specs live in `DESIGN.md` Components.
 ### Flow 1: Lunch-break pause (Lena, on her phone during a lunch break, opens a link a friend sent)
 
 1. The link opens the clip picker: 4 sample clips, each labeled "AI-generated", and one line explaining the experiment.
-2. She taps "Morning kitchen". The clip plays; the scene panel reads "Analyzing the first scenes…" then fills: Kitchen, morning, making coffee · Relaxed · Brand safe.
+2. She taps "Morning kitchen". The clip plays; the scene panel shows: Kitchen, morning, making coffee · Relaxed · Brand safe.
 3. The product list settles: the espresso pot on top, the rest in the sideways strip.
 4. **Climax:** she pauses as coffee is poured. Within half a second the ad card covers most of the frozen frame: the pot, "Sponsored", "Simulated ad", View product.
 5. She taps View product. The product page opens with image, description, features and "Simulated click recorded." She goes back to the paused clip.
@@ -115,7 +115,7 @@ Behavioral. Visual specs live in `DESIGN.md` Components.
 8. Below the player the tally reads "Simulated earnings: 2 ads shown, 1 held back (0)". She taps it and sees each pause with its reason, price and 70/30 split.
 9. Back to clips returns her to the picker.
 
-Failure: she pauses before the first scenes are analyzed → "No ad here: analysis unavailable." Play resumes normally.
+Failure (uploads only): she pauses before the first scenes are analyzed → "No ad here: analysis unavailable." Play resumes normally.
 
 ## Open Items
 

@@ -14,7 +14,7 @@ Status: draft. Last updated: 2026-11-22. Facts come from the public TypeSafe doc
 - It does not write text, lists or nested objects. Confidence measures how concentrated the probabilities are, not how likely the answer is right.
 - Input is text. Still images (PNG, JPEG) are possible only with an opt-in header, and the docs call that feature not production-ready. Video and audio are not supported.
 - Context: 64k tokens per request (262k with a long-context header, slower and less accurate).
-- Price (vendor figure): $0.042 per million input tokens, output free. Rate limits are visible only in the console. No latency SLA. Latency claim of 70 to 500 ms is self-measured.
+- Price (vendor figure): $0.042 per million input tokens, output free. Rate limits are not published: checked 2026-11-23, the console (Usage, Billing, API keys, Settings) shows none, and the errors page only says a `429` means back off and retry (the SDKs retry with exponential backoff by default). Questions in one request run in parallel, so one scene is one request. Request body limit 32 MiB. No latency SLA. Latency claim of 70 to 500 ms is self-measured.
 - Documented weak spots: Choice leans to the first option; accuracy falls with large irrelevant state; adversarial text in the input can move answers; weak at counting and math.
 
 ## Fit with the Pausall pipeline

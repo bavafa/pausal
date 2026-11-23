@@ -1,0 +1,79 @@
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created, ready for development
+#   - in-progress: Developer actively working on implementation
+#   - review: Implementation complete, ready for review
+#   - done: Story completed
+
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+
+# Action Item Status:
+#   - open: Committed during a retrospective, not yet addressed
+#   - in-progress: Actively being worked on
+#   - done: Completed
+
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when its first story starts (via build's sprint sync)
+# - Stories can be worked in parallel if team capacity allows
+# - Developer typically creates the next story after the previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+# - Retrospective appends its action items to action_items; the status view surfaces open ones
+generated: 11-23-2026 17:43
+last_updated: 11-23-2026 17:43
+project: Pausall
+project_key: NOKEY
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+development_status:
+  epic-1: backlog
+  1-1-workspace-scaffold-deployed-to-github-pages: backlog
+  1-2-artifact-and-config-schemas-that-fail-closed: backlog
+  1-3-policy-rules-reason-order-and-simulated-money: backlog
+  1-4-scene-lookup-and-pause-resolution: backlog
+  1-5-decide-command-on-a-hand-authored-fixture: backlog
+  1-6-clip-picker-in-the-soft-calm-style: backlog
+  1-7-watch-screen-with-the-player: backlog
+  1-8-pause-view-ad-card-or-pause-note: backlog
+  epic-1-retrospective: optional
+
+  epic-2: backlog
+  2-1-ranked-list-reason-lines-and-the-ranking-window: backlog
+  2-2-live-scene-panel: backlog
+  2-3-product-list-with-a-highlighted-top-product: backlog
+  epic-2-retrospective: optional
+
+  epic-3: backlog
+  3-1-product-page-simulated-click-and-demo-qr: backlog
+  3-2-session-earnings-tally-and-breakdown: backlog
+  3-3-attribution-page: backlog
+  epic-3-retrospective: optional
+
+  epic-4: backlog
+  4-1-pre-checks-and-model-pin: backlog
+  4-2-catalog-slice-embedding-index-and-product-files: backlog
+  4-3-sample-clips-and-manifests: backlog
+  4-4-pipeline-runner-ingest-and-segment: backlog
+  4-5-describe-each-scene: backlog
+  4-6-judge-scenes-with-jev-and-qwen: backlog
+  4-7-retrieve-candidates-and-score-fit: backlog
+  4-8-taglines-for-safe-scenes: backlog
+  4-9-real-analysis-replaces-the-fixture: backlog
+  epic-4-retrospective: optional
+
+  epic-5: backlog
+  5-1-labels-and-the-eval-sweep: backlog
+  5-2-guardrail-that-cannot-pass-vacuously: backlog
+  5-3-metrics-and-failures-report: backlog
+  5-4-jev-versus-qwen-comparison: backlog
+  5-5-browser-check-for-speed-and-no-network: backlog
+  epic-5-retrospective: optional

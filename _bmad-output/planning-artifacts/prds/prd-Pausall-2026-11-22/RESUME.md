@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, end of Phase 4.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 planning done, build not started.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -17,12 +17,14 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 - Phase 2 PRD and ad suppression policy: done.
 - Phase 3 UX: done, spines final. Reviewer gate and bmad-review polish pass skipped by the user.
 - Phase 4 architecture: done and approved. Spine final, reviewer gate run (rubric, adversarial, currency, reconcile) and fixes applied, policy, PRD FR-11 and EXPERIENCE reason order updated to match.
-- Next: Phase 5 (sample clips, catalog slice, monorepo scaffold, pipeline and web build). Plan the build with `bmad-create-epics-and-stories` or `bmad-spec` (adopt the spine as companion), then `bmad-build`. Then Phase 6 evaluation.
+- Phase 5 build: planning done. `_bmad-output/planning-artifacts/epics.md` is final (5 epics, 28 stories, fixture-first: web and policy on a hand-authored fixture, then the real pipeline in Epic 4, eval harness in Epic 5). Readiness gate PASS. Tracking in `_bmad-output/implementation-artifacts/sprint-status.yaml`, all backlog.
+- Next: `bmad-build` on Story 1.1 (workspace scaffold deployed to GitHub Pages), in a fresh session. Then Phase 6 evaluation.
+- Small values to set as tunable config during build: the price formula (Story 1.3) and the fixed scene-type list (Story 1.2).
 
 ## Do first in Phase 5 (small, ordered)
-1. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
+1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
 2. Qwen test call: one multi-image request to `qwen3.7-flash` and `qwen3.7-plus` on real frames. Settles video support, model choice and price. `qwen3-vl-flash` is retired (2026-10-10). Pin the winner in the spine Stack table.
-3. Check Jev rate limits in the TypeSafe console (fit stage sends 50 to 100 questions per scene).
+3. Done 2026-11-23: Jev publishes no rate limits; one request per scene, SDK retries 429 with backoff (see jev-fit.md).
 4. Open the ABO licence file when building the catalog slice, before copying any image; note the older CC BY-NC wording some Amazon pages show.
 5. Read Alibaba Model Studio data terms before the first run on real clips (required for uploads, low risk for AI-generated samples).
 6. Pin dependency versions at scaffold with `npm view`; the spine Stack table lists values confirmed on 2026-11-22 (Node 24 LTS, pnpm 12.21.0, TypeScript 7.0.2, Vite 8.3.8, React 19.3.1, Tailwind 4.3.5, Jev `jev-1.14.0`).
