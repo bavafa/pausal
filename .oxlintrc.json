@@ -1,0 +1,150 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    "**/dist/**",
+    "_bmad/**",
+    "_bmad-output/**",
+    ".claude/**",
+    "services/**",
+    "scripts/**"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "apps/web/**",
+        "packages/pipeline/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@pausall/*",
+                  "@pausall/*/**",
+                  "!@pausall/policy",
+                  "!@pausall/policy/**",
+                  "!@pausall/bundle-schema",
+                  "!@pausall/bundle-schema/**",
+                  "**/packages/**",
+                  "**/apps/**"
+                ],
+                "message": "AD-23: only @pausall/policy and @pausall/bundle-schema may be imported here."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "packages/policy/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "fs",
+                "message": "AD-23: policy is pure, no file system."
+              },
+              {
+                "name": "http",
+                "message": "AD-23: policy is pure, no network."
+              },
+              {
+                "name": "net",
+                "message": "AD-23: policy is pure, no network."
+              }
+            ],
+            "patterns": [
+              {
+                "group": [
+                  "node:*"
+                ],
+                "message": "AD-23: policy is pure, no Node modules."
+              },
+              {
+                "group": [
+                  "*",
+                  "!@pausall/bundle-schema",
+                  "!@pausall/bundle-schema/**",
+                  "!./**",
+                  "!../**",
+                  "**/packages/**",
+                  "**/apps/**"
+                ],
+                "message": "AD-23: policy may import only @pausall/bundle-schema."
+              }
+            ]
+          }
+        ],
+        "no-restricted-globals": [
+          "error",
+          {
+            "name": "fetch",
+            "message": "AD-23: policy is pure, no network."
+          },
+          {
+            "name": "window",
+            "message": "AD-23: policy is pure, no browser API."
+          },
+          {
+            "name": "document",
+            "message": "AD-23: policy is pure, no browser API."
+          },
+          {
+            "name": "XMLHttpRequest",
+            "message": "AD-23: policy is pure, no network."
+          },
+          {
+            "name": "localStorage",
+            "message": "AD-23: policy is pure, no browser API."
+          },
+          {
+            "name": "navigator",
+            "message": "AD-23: policy is pure, no browser API."
+          },
+          {
+            "name": "globalThis",
+            "message": "AD-23: policy is pure, no global object access."
+          },
+          {
+            "name": "self",
+            "message": "AD-23: policy is pure, no global object access."
+          },
+          {
+            "name": "process",
+            "message": "AD-23: policy is pure, no process access."
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "packages/bundle-schema/**"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "*",
+                  "!./**",
+                  "!../**",
+                  "**/packages/**",
+                  "**/apps/**"
+                ],
+                "message": "AD-23: bundle-schema imports nothing outside itself."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+#!/bin/sh
+# Scan the staged blobs (not the working tree) for secrets before every commit.
+root=$(git rev-parse --show-toplevel)
+bin="$root/node_modules/.bin/secretlint"
+if [ ! -x "$bin" ]; then
+  echo "pre-commit: secretlint not found, run pnpm install" >&2
+  exit 1
+fi
+[ -z "$(git diff --cached --name-only --diff-filter=ACMR)" ] && exit 0
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+git diff --cached --name-only -z --diff-filter=ACMR | xargs -0 git checkout-index --prefix="$tmp/" -- || exit 1
+cd "$tmp" || exit 1
+git -C "$root" diff --cached --name-only -z --diff-filter=ACMR | xargs -0 "$bin" --secretlintrc "$root/.secretlintrc.json" --

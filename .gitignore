@@ -11,3 +11,4 @@ data/samples/*.mp4
 data/samples/*.mov
 data/samples/*.webm
 data/placeholder/
+dist/
