@@ -163,4 +163,13 @@ describe("familyKey", () => {
     expect(pump("7")).toBe(pump("12"));
     expect(familyKey('Amazon Brand - Solimo 12" Wall Clock - Ethereal Roman (Silent Movement)')).not.toBe(familyKey('Amazon Brand - Solimo 12" Wall Clock - Classic Roulette (Silent Movement)'));
   });
+
+  it("drops a hit whose catalog vector is a near copy of one already kept", async () => {
+    const { distinctHits } = await import("./catalog.ts");
+    const items = [{ name: "Forest print, grey frame" }, { name: "Forest wall art print, black frame" }, { name: "Kettle" }, { name: "Forest print, white frame" }];
+    const vectors = new Float32Array([1, 0, 0.99, 0.1, 0, 1, 1, 0.01]);
+    const hits = [0, 1, 2, 3].map((index) => ({ index }));
+    expect(distinctHits(hits, items, vectors, 2, 5).map((h) => h.index)).toEqual([0, 2]);
+    expect(distinctHits(hits, items, vectors, 2, 1).map((h) => h.index)).toEqual([0]);
+  });
 });

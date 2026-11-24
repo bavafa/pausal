@@ -1,7 +1,7 @@
 import { CATEGORIES, sceneId, type Analysis, type Int, type AnalysisScene, type Fit, type Thresholds } from "@pausall/bundle-schema";
 import { checkTagline, evaluateScene } from "@pausall/policy";
 import { CostCapError } from "./call.ts";
-import { familyKey, toProduct, topK, type CatalogItem } from "./catalog.ts";
+import { distinctHits, toProduct, topK, type CatalogItem } from "./catalog.ts";
 import type { SceneJudge, SceneJudgment } from "./judge.ts";
 import { chunkOf, segment, type Span } from "./segment.ts";
 
@@ -125,13 +125,7 @@ export async function analyzeClip(input: ClipInput, models: Models, catalog: Cat
     try {
       const query = await models.embed(description);
       // Over-fetch, then keep the closest member of each product family so the list never shows one product twice.
-      const seen = new Set<string>();
-      const hits = topK(query, catalog.vectors, catalog.dims, opts.candidates * 3)
-        .filter((h) => {
-          const k = familyKey((catalog.items[h.index] as CatalogItem).name);
-          return !seen.has(k) && !!seen.add(k);
-        })
-        .slice(0, opts.candidates);
+      const hits = distinctHits(topK(query, catalog.vectors, catalog.dims, opts.candidates * 5), catalog.items, catalog.vectors, catalog.dims, opts.candidates);
       const candidates = hits.map((h) => catalog.items[h.index] as CatalogItem);
       const fitP = await models.jev.judgeFit(description, candidates);
       const current = new Map(candidates.map((c, i) => [c.id, fitP[i] as number]));

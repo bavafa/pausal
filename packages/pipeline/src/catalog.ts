@@ -87,3 +87,24 @@ export function simulatedCampaign(productId: string): Campaign {
  */
 export const familyKey = (name: string): string =>
   (name.split(",")[0] ?? name).replace(/\([^)]*\)|\d+/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+
+/** Catalog vectors this close are the same product in another size, colour or near-identical design. */
+export const VARIANT_SIM = 0.95;
+
+/**
+ * The first `k` hits that are not a variant of an earlier hit: same family key, or a catalog vector within VARIANT_SIM.
+ * Retrieval is the one place variants are dropped, so analysis, decisions and product files all agree.
+ */
+export function distinctHits<H extends { index: number }>(hits: readonly H[], items: readonly { name: string }[], vectors: Float32Array, dims: number, k: number): H[] {
+  const kept: H[] = [];
+  const keys = new Set<string>();
+  const vec = (i: number) => vectors.subarray(i * dims, (i + 1) * dims);
+  for (const h of hits) {
+    if (kept.length === k) break;
+    const key = familyKey((items[h.index] as { name: string }).name);
+    if (keys.has(key) || kept.some((o) => cosine(vec(o.index), vec(h.index)) >= VARIANT_SIM)) continue;
+    keys.add(key);
+    kept.push(h);
+  }
+  return kept;
+}
