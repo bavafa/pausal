@@ -7,3 +7,4 @@ export * from "./rules.ts";
 export * from "./money.ts";
 export * from "./sentiment.ts";
 export * from "./tagline.ts";
+export * from "./pause.ts";
