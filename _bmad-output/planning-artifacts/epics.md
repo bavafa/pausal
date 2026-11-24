@@ -257,7 +257,7 @@ So that an ad never comes from a neighbouring scene.
 **Then** it returns the scene whose `[startMs, endMs)` contains `tMs`, and none outside the clip
 
 **Given** a pause time
-**When** `resolvePause(decisions, tMs, session)` is called
+**When** `resolvePause(decisions, tMs)` is called
 **Then** it returns an ad only if the scene at `tMs` and every scene ending within 1000 ms before it resolve to an ad for the same product; otherwise it returns the first reason in policy order
 **And** a time outside every scene or in a `pending` or invalid scene returns Analysis unavailable
 **And** tests cover each boundary at minus 1 ms, 0 ms and plus 1000 ms

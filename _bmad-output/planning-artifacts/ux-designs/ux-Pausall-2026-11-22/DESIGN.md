@@ -115,7 +115,7 @@ Avoid: red or alarm colors on the pause view (a held-back ad is not an error), g
 - **Lora** for product names and the ad title (`title`, `title-sm` on phone). The serif is used only where a product is being presented.
 - **Raleway** for everything else: body, scene panel, reasons, labels.
 - `eyebrow` (uppercase, tracked) only for "Sponsored", "Simulated ad" and scene panel keys (Scene, Sentiment).
-- Fonts load from Google Fonts with system fallbacks (Georgia for Lora, system-ui for Raleway).
+- Fonts are self-hosted through `@fontsource` (no request to Google Fonts) with system fallbacks (Georgia for Lora, system-ui for Raleway).
 
 ## Layout & Spacing
 

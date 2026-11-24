@@ -131,7 +131,7 @@ Rule ids are `R1` to `R6` and `R3b` (see AD-6) and are the only rule ids used in
 
 - **Binds:** F2, F3, F4, F10, AD-1, AD-2, AD-3
 - **Prevents:** the browser re-evaluating rules with config and signals it does not have; a second source of truth
-- **Rule:** `decisions/<clip>.json` stores per scene the outcome (`ad` or a reason), the top product, price and split, the ranked list, and `panel`. The web calls only `resolvePause(decisions, tMs, session)`, `rankAt(decisions, tMs, held)` and the formatters exported by `policy`. These read no thresholds, campaigns or analysis. The web never evaluates R1 to R6.
+- **Rule:** `decisions/<clip>.json` stores per scene the outcome (`ad` or a reason), the top product, price and split, the ranked list, and `panel`. The web calls only `resolvePause(decisions, tMs)`, `rankAt(decisions, tMs, held)` and the formatters exported by `policy`. These read no thresholds, campaigns or analysis. The web never evaluates R1 to R6.
 
 ### AD-15: Judgment is a total record
 
@@ -222,6 +222,7 @@ Values confirmed by a web check on 2026-11-22 and re-confirmed with `npm view` a
 | Jev, TypeSafe `systemone` endpoint | `jev-1.14.0` pinned, SDK `@typesafe-ai/sdk` 0.7.0 |
 | Qwen VLM, Model Studio (Singapore) | `qwen3-vl-flash` is retired (2026-10-10); candidates `qwen3.7-flash`, `qwen3.6-flash`, `qwen3.7-plus`; video input unconfirmed, test before pinning |
 | Qwen text and embeddings | `text-embedding-v4` or `qwen3.7-text-embedding`; text model chosen at first run |
+| Fonts, self-hosted | `@fontsource/lora` and `@fontsource/raleway` 5.3.0 |
 | GitHub Pages, GitHub Actions | hosted; 1 GB site, 100 GB per month soft limit |
 
 ## Structural Seed

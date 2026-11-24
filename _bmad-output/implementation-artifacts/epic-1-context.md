@@ -89,7 +89,7 @@ No UI component library. Pipeline-only items (ffmpeg 9.1, Jev SDK `@typesafe-ai/
 ## UX & Interaction Patterns
 
 - Soft Calm tokens as CSS variables consumed by Tailwind v4: background, foreground, card, muted, muted-foreground, border, accent, accent-foreground, frozen-scrim, in light and dark; radii 8, 14 and full; 4-based spacing; gutters 12 and 18 px.
-- Typography: Lora for product names and ad titles (20 px, 15 px small), Raleway for body 14, label 12, eyebrow 11 uppercase at 0.08em. Self-hosted with Georgia and system-ui fallbacks.
+- Typography: Lora for product names and ad titles (20 px, 15 px small), Raleway for body 14, label 12, eyebrow 11 uppercase at 0.08em. Self-hosted through `@fontsource/lora` and `@fontsource/raleway` 5.3.0, with Georgia and system-ui fallbacks.
 - Clip picker: each clip with title and an "AI-generated" label, one line explaining the experiment, nothing competing for attention.
 - Watch screen: video at 16:9 full content width that never resizes; native controls; tap, click or Space toggles play; no autoplay of a next clip; Back to clips link. Invalid `decisions` shows "Analysis unavailable for this scene." and every pause shows no ad.
 - Frozen frame: `saturate(.35) brightness(.7)` with scrim; one soft shadow on the overlay card; overlay closes at once on play, Space or Escape; never an overlay during playback.

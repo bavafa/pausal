@@ -83,14 +83,14 @@ action_items:
     action: "Reconcile the resolvePause signature in the spine and epics to (decisions,
       tMs)"
     owner: "Sam approves, Claude edits"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
   - id: "epic-1-retro-item-2-update-design-typography-the-spine-stack"
     epic: 1
     action: "Update DESIGN typography, the spine Stack table and epic-1-context for
       self-hosted @fontsource fonts"
     owner: "Sam approves, Claude edits"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
   - id: "epic-1-retro-item-3-make-decide-check-fail-when-a-manifest-v"
     epic: 1
@@ -102,9 +102,9 @@ action_items:
   - id: "epic-1-retro-item-4-decide-whether-to-pull-a-minimal-browser"
     epic: 1
     action: "Decide whether to pull a minimal browser test of the pause view forward
-      into Epic 2"
+      into Epic 2 (decided 2026-11-23: not pulled forward, Story 5.5 covers it)"
     owner: "Sam"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
   - id: "epic-1-retro-item-5-run-one-fresh-context-review-of-stories"
     epic: 1
