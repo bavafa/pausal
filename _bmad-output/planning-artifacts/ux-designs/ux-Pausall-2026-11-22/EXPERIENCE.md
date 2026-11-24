@@ -20,7 +20,7 @@ Responsive web app, laptop and phone, dark mode by default with a light theme to
 
 | Surface | Reached from | Purpose |
 |---|---|---|
-| Clip picker | Site link, Back to clips | Landing page. Logo, a headline and two sentences on what Pausall is, three "How to try it" steps, then the 4 sample clips, each with a still frame, its duration and the "AI-generated" label (FR-17). Ends with "everything here is simulated". |
+| Clip picker | Site link, header logo, Back to clips | Landing page that tells the idea before asking for anything: a hero with a looping sketch of a pause, why a pause is a fair moment, the four steps behind every pause, then the sample clips, each with a still frame, its duration and the "AI-generated" label (FR-17). Ends with "everything here is simulated". |
 | Watch screen | Clip picker | Video, live scene panel, ranked list of up to 10 products, session earnings tally (F2, F3, F10). |
 | Pause view | Pause on the watch screen | Overlay state of the watch screen: ad card, or frozen frame with one reason (F4). Not a separate page. |
 | Product page | View product on the ad card | Image, description, key features, simulated click note (F5). Back returns to the paused clip. |
@@ -105,7 +105,7 @@ Behavioral. Visual specs live in `DESIGN.md` Components.
 
 ### Flow 1: Lunch-break pause (Lena, on her phone during a lunch break, opens a link a friend sent)
 
-1. The link opens the clip picker. The logo and a short headline tell her what this is, and three numbered steps tell her what to do: pick a clip, play it and pause anywhere, see what the pause decides. Below are 4 sample clips, each with a still frame and labeled "AI-generated".
+1. The link opens the clip picker. The headline and a short looping sketch show the idea in a few seconds; scrolling explains why the scene comes first and what happens after a pause. "Try a clip" takes her to the clips. On the watch screen a small "Pause anywhere" hint sits on the video until her first pause on that clip. Below are 4 sample clips, each with a still frame and labeled "AI-generated".
 2. She taps "Morning kitchen". The clip plays; the scene panel shows: Kitchen, morning, making coffee · Relaxed · Brand safe.
 3. The product list settles: the espresso pot on top, the rest in the sideways strip.
 4. **Climax:** she pauses as coffee is poured. Within half a second the ad card covers most of the frozen frame: the pot, "Sponsored", "Simulated ad", View product.
