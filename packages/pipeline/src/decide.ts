@@ -26,7 +26,7 @@ function panelFor(scene: AnalysisScene, outcome: Outcome): Panel {
 export const familyKey = (name: string): string =>
   (name.split(",")[0] ?? name).replace(/\([^)]*\)|\d+/g, "").replace(/\s+/g, " ").trim().toLowerCase();
 
-function distinctFamilies<T extends { productId: string }>(ranked: readonly T[], products: ReadonlyMap<string, Product>): T[] {
+export function distinctFamilies<T extends { productId: string }>(ranked: readonly T[], products: ReadonlyMap<string, { name: string }>): T[] {
   const seen = new Set<string>();
   return ranked.filter((r) => {
     const name = products.get(r.productId)?.name;
