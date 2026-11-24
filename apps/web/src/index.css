@@ -6,7 +6,7 @@
 
 /* Soft Calm tokens (DESIGN.md). contrast.test.ts reads these hex values. */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --background: #F4F7F7;
   --foreground: #164E63;
   --card: #FFFFFF;
@@ -18,17 +18,17 @@
   --frozen-scrim: rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F1C1F;
-    --foreground: #E3EEF0;
-    --card: #16272B;
-    --muted: #1D3237;
-    --muted-foreground: #9FB4B9;
-    --border: #2A4247;
-    --accent: #5FB8C8;
-    --accent-foreground: #0F1C1F;
-  }
+/* Dark is the default; index.html sets the class before paint, ThemeToggle flips it. */
+:root.dark {
+  color-scheme: dark;
+  --background: #0F1C1F;
+  --foreground: #E3EEF0;
+  --card: #16272B;
+  --muted: #1D3237;
+  --muted-foreground: #9FB4B9;
+  --border: #2A4247;
+  --accent: #5FB8C8;
+  --accent-foreground: #0F1C1F;
 }
 
 @theme inline {

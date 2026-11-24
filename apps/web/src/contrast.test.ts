@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 const css = readFileSync(new URL("./index.css", import.meta.url), "utf8");
-const [light, dark] = css.split("@media (prefers-color-scheme: dark)");
+const [light, dark] = css.split(":root.dark {");
 
 const tokens = (block: string) => Object.fromEntries([...block.matchAll(/--([a-z-]+):\s*(#[0-9A-Fa-f]{6});/g)].map((m) => [m[1]!, m[2]!]));
 
