@@ -29,7 +29,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 # - Retrospective appends its action items to action_items; the status view surfaces open ones
 generated: 11-23-2026 17:43
-last_updated: 11-23-2026 20:45
+last_updated: 11-23-2026 20:55
 project: Pausall
 project_key: NOKEY
 tracking_system: file-system
@@ -38,7 +38,7 @@ development_status:
   epic-1: in-progress
   1-1-workspace-scaffold-deployed-to-github-pages: done
   1-2-artifact-and-config-schemas-that-fail-closed: done
-  1-3-policy-rules-reason-order-and-simulated-money: review
+  1-3-policy-rules-reason-order-and-simulated-money: done
   1-4-scene-lookup-and-pause-resolution: backlog
   1-5-decide-command-on-a-hand-authored-fixture: backlog
   1-6-clip-picker-in-the-soft-calm-style: backlog
