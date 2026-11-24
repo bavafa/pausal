@@ -1,8 +1,9 @@
 {
-  "analysisHash": "e3a7c4420e21b3a663ef4f8447d24b9cd43991857473cc6563f919d9827dfbd4",
+  "analysisHash": "fb7e3c75844f6f54b8a4d608892947e8868e462fa53541cd47499a7146b92aaa",
   "campaignsHash": "ff3f5cb7d095607dc6a234e6ade80cea8ebf37b38acb81880c730b9d752e3a67",
   "clipId": "000000000001",
   "durationMs": 35000,
+  "holdMs": 5000,
   "scenes": [
     {
       "endMs": 5000,
@@ -24,10 +25,12 @@
       "ranked": [
         {
           "productId": "fixture-pan",
+          "reason": "Fits a kitchen scene: 28 cm, Flat base.",
           "relevance": 80
         },
         {
           "productId": "fixture-kettle",
+          "reason": "Fits a kitchen scene: Gooseneck spout.",
           "relevance": 45
         }
       ],
@@ -57,6 +60,7 @@
       "ranked": [
         {
           "productId": "fixture-pan",
+          "reason": "Fits a kitchen scene: Flat base.",
           "relevance": 72
         }
       ],
@@ -80,6 +84,7 @@
       "ranked": [
         {
           "productId": "fixture-kettle",
+          "reason": "Fits a beach scene.",
           "relevance": 42
         }
       ],
@@ -104,10 +109,12 @@
       "ranked": [
         {
           "productId": "fixture-lamp",
+          "reason": "Fits a living room scene: Warm light, Adjustable arm.",
           "relevance": 86
         },
         {
           "productId": "fixture-kettle",
+          "reason": "Fits a living room scene.",
           "relevance": 38
         }
       ],
@@ -150,6 +157,7 @@
       "ranked": [
         {
           "productId": "fixture-pan",
+          "reason": "Fits a kitchen scene: Oven use up to 220 C.",
           "relevance": 88
         }
       ],
@@ -176,6 +184,7 @@
       "ranked": [
         {
           "productId": "fixture-pan",
+          "reason": "Fits a cooking scene: Flat base.",
           "relevance": 76
         }
       ],

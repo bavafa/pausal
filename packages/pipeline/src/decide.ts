@@ -1,5 +1,5 @@
 import { VERDICTS, type Analysis, type AnalysisScene, type Campaign, type Decisions, type DecisionScene, type Issue, type Outcome, type Panel, type Product, type Thresholds } from "@pausall/bundle-schema";
-import { evaluateScene, SENTIMENT_TABLE, taglineOrName } from "@pausall/policy";
+import { evaluateScene, reasonLine, SENTIMENT_TABLE, taglineOrName } from "@pausall/policy";
 
 export type InputHashes = Pick<Decisions, "analysisHash" | "thresholdsHash" | "campaignsHash">;
 
@@ -37,7 +37,12 @@ export function deriveDecisions(
       topProductId: e.topProductId,
       price: e.price,
       split: e.split,
-      ranked: e.ranked,
+      ranked: e.ranked.map((r) => {
+        // Only text from the product file reaches the reason line; unknown matched names are dropped (AD-7).
+        const matched = new Set(scene.fits?.find((f) => f.productId === r.productId)?.matched);
+        const features = products.get(r.productId)?.keyFeatures.filter((k) => matched.has(k)) ?? [];
+        return { ...r, reason: reasonLine(scene.sceneType?.primary, features) };
+      }),
       panel: panelFor(scene, e.outcome),
     };
     // A missing product file is reported by productIssues, which stops the run before anything is written.
@@ -45,7 +50,7 @@ export function deriveDecisions(
     if (product) out.tagline = taglineOrName(scene.tagline, product);
     return out;
   });
-  return { clipId: analysis.clipId, durationMs: analysis.durationMs, ...hashes, scenes };
+  return { clipId: analysis.clipId, durationMs: analysis.durationMs, holdMs: thresholds.holdMs, ...hashes, scenes };
 }
 
 const sortKeys = (v: unknown): unknown =>

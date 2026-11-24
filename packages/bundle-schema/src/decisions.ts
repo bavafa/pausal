@@ -13,6 +13,10 @@ export type Sentiment = (typeof SENTIMENTS)[number];
 export type SimulatedPrice = { cents: Int; simulated: true };
 export type SimulatedSplit = { platformCents: Int; publisherCents: Int; simulated: true };
 export type Ranked = { productId: string; relevance: Int };
+/** A ranked item as stored in `decisions`, with its template reason line (AD-7). */
+export type RankedItem = Ranked & { reason: string };
+/** Products per scene list (FR-5). */
+export const RANKED_MAX = 10;
 export type Panel = {
   contextLabel: { primary: string; secondary?: string };
   moodLabel: string;
@@ -29,7 +33,7 @@ export type DecisionScene = {
   topProductId: string | null;
   price: SimulatedPrice | null;
   split: SimulatedSplit | null;
-  ranked: Ranked[];
+  ranked: RankedItem[];
   panel: Panel;
   tagline?: string;
 };
@@ -40,10 +44,12 @@ export type Decisions = {
   analysisHash: string;
   thresholdsHash: string;
   campaignsHash: string;
+  /** Ranking window from `config/thresholds.json`, copied so `rankAt` reads no config (AD-14, AD-17). */
+  holdMs: Int;
   scenes: DecisionScene[];
 };
 
-const TOP_KEYS = ["clipId", "durationMs", "analysisHash", "thresholdsHash", "campaignsHash", "scenes"];
+const TOP_KEYS = ["clipId", "durationMs", "analysisHash", "thresholdsHash", "campaignsHash", "holdMs", "scenes"];
 const SCENE_KEYS = ["id", "startMs", "endMs", "outcome", "topProductId", "price", "split", "ranked", "panel", "tagline"];
 
 function checkScene(s: Rec, p: string, issues: Issue[]): boolean {
@@ -77,11 +83,13 @@ function checkScene(s: Rec, p: string, issues: Issue[]): boolean {
     if ((split.platformCents as number) + (split.publisherCents as number) !== price.cents) fail(issues, at(p, "split"), "must add up to price.cents");
   }
   if (array(s.ranked, at(p, "ranked"), issues)) {
+    if (s.ranked.length > RANKED_MAX) fail(issues, at(p, "ranked"), `must hold at most ${RANKED_MAX} products`);
     s.ranked.forEach((r, i) => {
       const rp = at(at(p, "ranked"), i);
       if (!object(r, rp, issues)) return;
-      onlyKeys(r, ["productId", "relevance"], rp, issues);
+      onlyKeys(r, ["productId", "relevance", "reason"], rp, issues);
       nonEmptyString(r.productId, at(rp, "productId"), issues);
+      nonEmptyString(r.reason, at(rp, "reason"), issues);
       integer(r.relevance, at(rp, "relevance"), issues, 0, 100);
     });
   }
@@ -116,6 +124,7 @@ export function validateDecisions(json: unknown): Result<Decisions> {
   onlyKeys(json, TOP_KEYS, "", issues);
   clipId(json.clipId, "clipId", issues);
   let timesOk = integer(json.durationMs, "durationMs", issues, 1);
+  integer(json.holdMs, "holdMs", issues, 5000); // same floor as config (AD-17)
   for (const k of ["analysisHash", "thresholdsHash", "campaignsHash"]) nonEmptyString(json[k], k, issues);
   if (array(json.scenes, "scenes", issues)) {
     json.scenes.forEach((s, i) => {

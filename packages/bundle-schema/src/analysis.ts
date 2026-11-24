@@ -20,7 +20,8 @@ export type Judgment = {
 };
 export type Judgments = { jev: Judgment; qwen: Judgment };
 export type SceneType = { primary: string; secondary?: string; freeLabel?: string };
-export type Fit = { productId: string; jevFitP: number; embeddingSim: number; relevance: number };
+/** `matched` names the product `keyFeatures` the fit stage matched; reason lines use only those found in the product file (AD-7). */
+export type Fit = { productId: string; jevFitP: number; embeddingSim: number; relevance: number; matched: string[] };
 /** Typed per-scene stage failure (AD-22). */
 export type SceneError = { stage: string; message: string };
 
@@ -101,6 +102,7 @@ function checkContent(s: Rec, p: string, sceneTypes: readonly string[], issues: 
       prob(f.jevFitP, at(fp, "jevFitP"), issues);
       cosine(f.embeddingSim, at(fp, "embeddingSim"), issues);
       num(f.relevance, at(fp, "relevance"), issues, 0, 100); // raw score; policy rounds half up
+      if (array(f.matched, at(fp, "matched"), issues)) f.matched.forEach((m, k) => nonEmptyString(m, at(at(fp, "matched"), k), issues));
     });
   }
   if (s.tagline !== undefined || s.taglineCheck !== undefined) {

@@ -1,4 +1,4 @@
-import { CATEGORIES, REASONS, type AnalysisScene, type Campaign, type Fit, type Outcome, type Ranked, type Reason, type SimulatedPrice, type SimulatedSplit, type Thresholds } from "@pausall/bundle-schema";
+import { CATEGORIES, RANKED_MAX, REASONS, type AnalysisScene, type Campaign, type Fit, type Outcome, type Ranked, type Reason, type SimulatedPrice, type SimulatedSplit, type Thresholds } from "@pausall/bundle-schema";
 import { priceFor, roundHalfUp, splitPrice } from "./money.ts";
 
 /** The only rule ids used anywhere; `failed` lists ids in this order, and `REASONS` order decides the outcome. */
@@ -57,7 +57,7 @@ export function evaluateScene(scene: AnalysisScene, thresholds: Thresholds, camp
   return {
     outcome,
     failed,
-    ranked: ranking.map(({ productId, relevance }) => ({ productId, relevance })),
+    ranked: ranking.slice(0, RANKED_MAX).map(({ productId, relevance }) => ({ productId, relevance })),
     topProductId: top?.productId ?? null,
     price,
     split: price && splitPrice(price),

@@ -14,7 +14,7 @@ const scene = ([startMs, endMs, outcome, productId = "p1"]: Spec): DecisionScene
     topProductId: productId,
     price: ad ? { cents: 100 as Int, simulated: true } : null,
     split: ad ? { platformCents: 70 as Int, publisherCents: 30 as Int, simulated: true } : null,
-    ranked: [{ productId, relevance: 70 as Int }],
+    ranked: [{ productId, relevance: 70 as Int, reason: "Fits a kitchen scene." }],
     panel: { contextLabel: { primary: "kitchen" }, moodLabel: "Neutral", sentiment: 0, safeTag: "safe" },
   };
 };
@@ -26,6 +26,7 @@ const clip = (...specs: Spec[]): Decisions => {
     analysisHash: "a",
     thresholdsHash: "t",
     campaignsHash: "c",
+    holdMs: 5000 as Int,
     scenes: specs.map(scene),
   };
   const result = validateDecisions(d);

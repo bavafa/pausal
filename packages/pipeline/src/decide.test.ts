@@ -45,6 +45,16 @@ describe("deriveDecisions on the fixture", () => {
     expect(s.tagline).toBe("A steady pan for weeknight cooking.");
   });
 
+  it("reason lines use the scene type and only features in the product file, in product order", () => {
+    expect(scene(d, "s0000000").ranked.map((r) => r.reason)).toEqual(["Fits a kitchen scene: 28 cm, Flat base.", "Fits a kitchen scene: Gooseneck spout."]);
+    expect(scene(d, "s0030000").ranked[0]?.reason).toBe("Fits a cooking scene: Flat base.");
+    expect(JSON.stringify(d)).not.toContain("evil.example");
+  });
+
+  it("copies holdMs from the thresholds", () => expect(d.holdMs).toBe(thresholdsJson.holdMs));
+
+  it("the output validates", () => ok(validateDecisions(d)));
+
   it("a failing tagline falls back to the product name", () => expect(scene(d, "s0030000").tagline).toBe("Everyday Skillet"));
 
   it("no-ad scenes carry no price, split or tagline", () => {

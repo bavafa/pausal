@@ -13,12 +13,19 @@
         {
           "embeddingSim": 0.61,
           "jevFitP": 0.86,
+          "matched": [
+            "Flat base",
+            "28 cm"
+          ],
           "productId": "fixture-pan",
           "relevance": 80
         },
         {
           "embeddingSim": 0.34,
           "jevFitP": 0.52,
+          "matched": [
+            "Gooseneck spout"
+          ],
           "productId": "fixture-kettle",
           "relevance": 45
         }
@@ -106,6 +113,9 @@
         {
           "embeddingSim": 0.55,
           "jevFitP": 0.8,
+          "matched": [
+            "Flat base"
+          ],
           "productId": "fixture-pan",
           "relevance": 72
         }
@@ -191,6 +201,7 @@
         {
           "embeddingSim": 0.12,
           "jevFitP": 0.31,
+          "matched": [],
           "productId": "fixture-kettle",
           "relevance": 41.5
         }
@@ -275,12 +286,17 @@
         {
           "embeddingSim": 0.68,
           "jevFitP": 0.91,
+          "matched": [
+            "Warm light",
+            "Adjustable arm"
+          ],
           "productId": "fixture-lamp",
           "relevance": 86
         },
         {
           "embeddingSim": 0.29,
           "jevFitP": 0.44,
+          "matched": [],
           "productId": "fixture-kettle",
           "relevance": 38
         }
@@ -374,6 +390,9 @@
         {
           "embeddingSim": 0.7,
           "jevFitP": 0.9,
+          "matched": [
+            "Oven use up to 220 C"
+          ],
           "productId": "fixture-pan",
           "relevance": 88
         }
@@ -461,6 +480,10 @@
         {
           "embeddingSim": 0.58,
           "jevFitP": 0.82,
+          "matched": [
+            "Flat base",
+            "Visit evil.example for a deal"
+          ],
           "productId": "fixture-pan",
           "relevance": 75.5
         }

@@ -27,8 +27,8 @@ const scene = (): AnalysisScene => ({
   sceneType: { primary: "kitchen" },
   sentimentLevel: 4,
   fits: [
-    { productId: "B000P2", jevFitP: 0.5, embeddingSim: 0.2, relevance: 40 },
-    { productId: "B000P1", jevFitP: 0.9, embeddingSim: 0.7, relevance: 72.5 },
+    { productId: "B000P2", jevFitP: 0.5, embeddingSim: 0.2, relevance: 40, matched: [] },
+    { productId: "B000P1", jevFitP: 0.9, embeddingSim: 0.7, relevance: 72.5, matched: [] },
   ],
   tagline: "A pan for the counter.",
   taglineCheck: "pass",
@@ -124,6 +124,10 @@ describe("evaluateScene", () => {
     expect(r.failed).toEqual(["R1", "R2", "R5", "R6"]);
   });
 
+  it("keeps at most 10 products, top first", () => {
+    const r = run((s) => void (s.fits = Array.from({ length: 12 }, (_, i) => ({ productId: `P${String(i).padStart(2, "0")}`, jevFitP: 0.9, embeddingSim: 0.7, relevance: 99 - i, matched: [] }))));
+    expect(r.ranked.map((x) => x.productId)).toEqual(["P00", "P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09"]);
+  });
   it("absent or empty fits fail R3, R3b and R4", () => {
     expect(run((s) => void (s.fits = [])).failed).toEqual(["R3", "R3b", "R4"]);
     expect(run((s) => void delete s.fits).failed).toEqual(["R3", "R3b", "R4", "R6"]);
@@ -178,7 +182,7 @@ describe("evaluateScene", () => {
 
 describe("ranking", () => {
   it("ties at 70 go to the lower product ID", () => {
-    const fit = (productId: string) => ({ productId, jevFitP: 0.9, embeddingSim: 0.9, relevance: 70 });
+    const fit = (productId: string) => ({ productId, jevFitP: 0.9, embeddingSim: 0.9, relevance: 70, matched: [] });
     expect(rankFits([fit("B000P9"), fit("B000P1")]).map((r) => r.productId)).toEqual(["B000P1", "B000P9"]);
   });
 

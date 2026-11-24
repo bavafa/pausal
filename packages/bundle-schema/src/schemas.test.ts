@@ -33,7 +33,7 @@ const analysisScene = (startMs: number, endMs: number): J => ({
   sceneType: { primary: "kitchen", freeLabel: "home kitchen" },
   sentimentLevel: 4,
   judgments: { jev: judgment(), qwen: judgment() },
-  fits: [{ productId: "B000P1", jevFitP: 0.8, embeddingSim: 0.4, relevance: 72.5 }],
+  fits: [{ productId: "B000P1", jevFitP: 0.8, embeddingSim: 0.4, relevance: 72.5, matched: ["Flat base"] }],
   tagline: "Cook more.",
   taglineCheck: "pass",
 });
@@ -51,7 +51,7 @@ const decisionScene = (startMs: number, endMs: number): J => ({
   topProductId: "B000P1",
   price: { cents: 120, simulated: true },
   split: { platformCents: 84, publisherCents: 36, simulated: true },
-  ranked: [{ productId: "B000P1", relevance: 72 }],
+  ranked: [{ productId: "B000P1", relevance: 72, reason: "Fits a kitchen scene." }],
   panel: { contextLabel: { primary: "kitchen" }, moodLabel: "Warm", sentiment: 0.5, safeTag: "safe" },
   tagline: "Cook more.",
 });
@@ -61,6 +61,7 @@ const decisions = (): J => ({
   analysisHash: "h1",
   thresholdsHash: "h2",
   campaignsHash: "h3",
+  holdMs: 5000,
   scenes: [decisionScene(0, 1500), { ...decisionScene(1500, 3000), outcome: "nothingFits", topProductId: null, price: null, split: null, tagline: undefined }],
 });
 const thresholds = (): J => ({
@@ -163,6 +164,8 @@ describe("failing files", () => {
     ["scenes[0].fits[0].relevance", (a: J) => void (a.scenes[0].fits[0].relevance = 101)],
     ["scenes[0].fits[0].embeddingSim", (a: J) => void (a.scenes[0].fits[0].embeddingSim = 1.5)],
     ["scenes[0].fits[0].jevFitP", (a: J) => void (a.scenes[0].fits[0].jevFitP = -0.1)],
+    ["scenes[0].fits[0].matched", (a: J) => void delete a.scenes[0].fits[0].matched],
+    ["scenes[0].fits[0].matched[0]", (a: J) => void (a.scenes[0].fits[0].matched = [""])],
     ["scenes[0].sentimentLevel", (a: J) => void (a.scenes[0].sentimentLevel = 6)],
     ["scenes[0].sceneType.secondary", (a: J) => void (a.scenes[0].sceneType.secondary = "spaceship")],
     ["scenes[0].chunk", (a: J) => void (a.scenes[0].chunk = 0)],
@@ -313,6 +316,13 @@ describe("leaky decisions (AD-2, AD-7, AD-8)", () => {
     d.scenes[0].topProductId = "B000P2";
     d.scenes[1].topProductId = "B000P2";
     expect(paths(validateDecisions(d))).toEqual(["scenes[0].topProductId", "scenes[1].topProductId"]);
+  });
+  it("missing holdMs, empty reason line and more than 10 ranked products", () => {
+    const d = roundtrip(decisions());
+    delete d.holdMs;
+    d.scenes[0].ranked[0].reason = "";
+    d.scenes[1].ranked = Array.from({ length: 11 }, (_, i) => ({ productId: i ? `P${i}` : d.scenes[1].ranked[0].productId, relevance: 50, reason: "r" }));
+    expect(paths(validateDecisions(d))).toEqual(["holdMs", "scenes[0].ranked[0].reason", "scenes[1].ranked"]);
   });
   it("unknown reason and sentiment off the table", () => {
     const d = roundtrip(decisions());

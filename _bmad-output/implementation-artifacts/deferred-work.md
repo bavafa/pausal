@@ -19,3 +19,6 @@
 - source_spec: `_bmad-output/implementation-artifacts/spec-1-8-pause-view-ad-card-or-pause-note.md`
   summary: The phone ad card leaves 72 px for the native playback bar, measured in Chrome only; Safari on iPhone may need a different gap.
   evidence: Unverified; Safari draws its own control bar. Settle with an iPhone Safari pause on the fixture clip.
+- source_spec: `_bmad-output/implementation-artifacts/spec-2-1-ranked-list-reason-lines-and-the-ranking-window.md`
+  summary: Reject duplicate productId entries within one scene's fits in the analysis validator.
+  evidence: rankFits keeps duplicates, so a scene could list the same product twice; no current fixture does, real pipeline output in Epic 4 could.
