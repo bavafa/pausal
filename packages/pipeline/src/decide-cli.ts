@@ -21,6 +21,11 @@ const root = rootArg === -1 ? resolve(import.meta.dirname, "../../..") : resolve
 const check = process.argv.includes("--check");
 const errors: string[] = [];
 
+// Web asset paths in manifests and product files are relative to the web app's public folder.
+const missingAsset = (file: string, field: string, path: string): void => {
+  if (!existsSync(join(root, "apps/web/public", path))) errors.push(`${file}: ${field}: no file at apps/web/public/${path}`);
+};
+
 const listJson = (dir: string): string[] =>
   (existsSync(join(root, dir)) ? readdirSync(join(root, dir)) : [])
     .filter((f) => f.endsWith(".json"))
@@ -61,6 +66,7 @@ for (const file of listJson("data/products")) {
   const p = load(file, validateProduct);
   if (!p) continue;
   if (`${p.value.id}.json` !== basename(file)) errors.push(`${file}: id: must match the file name, is "${p.value.id}"`);
+  missingAsset(file, "imagePath", p.value.imagePath);
   products.set(p.value.id, p.value);
 }
 
@@ -71,6 +77,7 @@ for (const { file, a } of analyses) {
   if (a.value.clipId !== id) errors.push(`${file}: clipId: must match the file name, is "${a.value.clipId}"`);
   const manifestFile = `data/manifest/${id}.json`;
   const m = load(manifestFile, validateManifest);
+  if (m) missingAsset(manifestFile, "videoUrl", m.value.videoUrl);
   if (m && m.value.clipId !== id) errors.push(`${manifestFile}: clipId: must match the file name, is "${m.value.clipId}"`);
   if (m && m.value.durationMs !== a.value.durationMs) {
     errors.push(`${manifestFile}: durationMs: must equal analysis durationMs ${a.value.durationMs}, is ${m.value.durationMs}`);

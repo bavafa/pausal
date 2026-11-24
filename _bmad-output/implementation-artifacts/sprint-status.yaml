@@ -95,9 +95,9 @@ action_items:
   - id: "epic-1-retro-item-3-make-decide-check-fail-when-a-manifest-v"
     epic: 1
     action: "Make decide --check fail when a manifest videoUrl or product imagePath
-      has no file"
+      has no file (done 2026-11-23: decide checks apps/web/public)"
     owner: "Claude"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
   - id: "epic-1-retro-item-4-decide-whether-to-pull-a-minimal-browser"
     epic: 1

@@ -111,10 +111,10 @@ describe("decide CLI", () => {
   const repo = fileURLToPath(new URL("../../../", import.meta.url));
   const dec = "data/decisions/000000000001.json";
   const run = (root: string, ...args: string[]) => spawnSync(process.execPath, [cli, "--root", root, ...args], { encoding: "utf8" });
-  /** A temp copy of config/ and data/, so failure paths never touch committed files. */
+  /** A temp copy of config/, data/ and the web public folder, so failure paths never touch committed files. */
   const tempRoot = (): string => {
     const root = mkdtempSync(join(tmpdir(), "decide-"));
-    for (const d of ["config", "data"]) cpSync(join(repo, d), join(root, d), { recursive: true });
+    for (const d of ["config", "data", "apps/web/public"]) cpSync(join(repo, d), join(root, d), { recursive: true });
     return root;
   };
 
@@ -128,6 +128,8 @@ describe("decide CLI", () => {
     ["one changed byte", "differs", (root: string) => writeFileSync(join(root, dec), readFileSync(join(root, dec), "utf8").replace('"cents": 108', '"cents": 109'))],
     ["a deleted decisions file", "is missing", (root: string) => rmSync(join(root, dec))],
     ["an extra decisions file", "has no analysis file", (root: string) => writeFileSync(join(root, "data/decisions/000000000002.json"), "{}\n")],
+    ["a missing clip video", "videoUrl: no file", (root: string) => rmSync(join(root, "apps/web/public/media/000000000001.mp4"))],
+    ["a missing product image", "imagePath: no file", (root: string) => rmSync(join(root, "apps/web/public/products/fixture-pan.svg"))],
   ])("--check fails on %s", (_, message, mutate) => {
     const root = tempRoot();
     mutate(root);
