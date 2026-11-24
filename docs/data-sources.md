@@ -2,7 +2,7 @@
 
 Purpose: record each data source, its licence and the attribution Pausall must show.
 Audience: the author and contributors.
-Status: draft. Last updated: 2026-11-22. General information, not legal advice. Accessed 2026-11-22.
+Status: draft. Last updated: 2026-11-23. General information, not legal advice. Accessed 2026-11-22.
 
 | Source | Use in Pausall | Licence (verified) | Attribution or condition | Status |
 |---|---|---|---|---|
@@ -11,10 +11,11 @@ Status: draft. Last updated: 2026-11-22. General information, not legal advice. 
 | Wikidata [3] | Optional genre and entity enrichment | CC0 for main, Property, Lexeme and EntitySchema namespaces; CC BY-SA 4.0 for other text | None required for CC0 data | Confirmed |
 | Criteo public datasets [4] | Study only, to choose realistic distributions | CC BY-NC-SA 4.0 (uplift, attribution); 1TB click logs licence from Hugging Face page only | Non-commercial, share-alike | Not used in the product. Never copy or republish |
 | Open Food Facts [5] | Possible later adapter | ODbL 1.0, DbCL, images CC BY-SA 3.0 | Attribution and share-alike | Not in MVP |
+| Alibaba Model Studio terms [6] | Qwen calls on clip frames, transcripts and descriptions | Service terms, not a data licence | Read 2026-11-23: API inputs and outputs are not used for model training; uploaded files are kept until deleted or for 48 hours; the retention period for plain API calls and zero data retention access were not stated clearly, so only AI-generated sample clips are sent until that is checked | Summary done. Retention for plain calls to confirm before any upload |
 | Etsy Open API v3 | Possible later adapter | Terms page returned 403, not read | Unknown | Not in MVP, unverified |
 
 Known gap: ABO is weak in fashion, costumes, branded merchandise and cars (recorded as a limitation for the PRD).
 
 Related work only, not used: MovieNet, Condensed Movies, MAD, MovieGraphs.
 
-Sources: [1] https://amazon-berkeley-objects.s3.amazonaws.com/index.html [2] https://iabtechlab.com/standards/content-taxonomy/ [3] https://www.wikidata.org/wiki/Wikidata:Licensing [4] https://ailab.criteo.com/criteo-uplift-prediction-dataset/ [5] https://world.openfoodfacts.org/terms-of-use
+Sources: [1] https://amazon-berkeley-objects.s3.amazonaws.com/index.html [2] https://iabtechlab.com/standards/content-taxonomy/ [3] https://www.wikidata.org/wiki/Wikidata:Licensing [4] https://ailab.criteo.com/criteo-uplift-prediction-dataset/ [5] https://world.openfoodfacts.org/terms-of-use [6] https://www.alibabacloud.com/help/en/model-studio/data-retention-policy and https://help.aliyun.com/en/model-studio/privacy-notice (accessed 2026-11-23)
