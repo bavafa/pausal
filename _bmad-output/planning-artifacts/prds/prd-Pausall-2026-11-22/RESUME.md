@@ -33,7 +33,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning and Stories 1.1 to 1.3, pushed to github.com/bavafa/pausall. Story 1.4 is committed on `main` locally and not yet pushed. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning and Stories 1.1 to 1.4, pushed to github.com/bavafa/pausall. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
