@@ -1,4 +1,4 @@
-import type { Int, SimulatedPrice, SimulatedSplit, Thresholds } from "@pausall/bundle-schema";
+import type { Int, SimulatedClick, SimulatedPrice, SimulatedSplit, Thresholds } from "@pausall/bundle-schema";
 
 const PUBLISHER_PERCENT = 30;
 
@@ -19,3 +19,6 @@ export function splitPrice(price: SimulatedPrice): SimulatedSplit {
 
 /** What a pause without an ad earns. */
 export const ZERO_EARNING: Readonly<SimulatedPrice> = Object.freeze({ cents: 0 as Int, simulated: true });
+
+/** A simulated click on a product's View product button (AD-8). */
+export const clickFor = (productId: string): SimulatedClick => ({ productId, simulated: true });

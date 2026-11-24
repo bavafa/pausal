@@ -7,6 +7,7 @@ import { ScenePanel } from "./ScenePanel.tsx";
 import { ProductList } from "./ProductList.tsx";
 import { productList } from "./product-list.ts";
 import { announce, pauseView, type PauseView } from "./pause-view.ts";
+import type { PauseEntry } from "./session.ts";
 
 const toggle = (v: HTMLVideoElement) => void (v.paused ? v.play().catch(() => {}) : v.pause());
 
@@ -16,7 +17,15 @@ const OWNS_SPACE = "a, button, input, textarea, select, video, [contenteditable]
 /** With requestVideoFrameCallback the frame time drives the panel; timeupdate is only the fallback, so the two never disagree at a boundary. */
 const HAS_RVFC = typeof HTMLVideoElement !== "undefined" && "requestVideoFrameCallback" in HTMLVideoElement.prototype;
 
-export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: Decisions | null }) {
+type Props = {
+  clip: Manifest;
+  decisions: Decisions | null;
+  /** A real pause opened the pause view; a seek while paused is not a new pause. */
+  onPause: (entry: PauseEntry) => void;
+  onViewProduct: (productId: string) => void;
+};
+
+export function WatchScreen({ clip, decisions, onPause, onViewProduct }: Props) {
   const video = useRef<HTMLVideoElement>(null);
   /** Media time (ms) of the last presented frame from requestVideoFrameCallback; null when unknown. */
   const frameMs = useRef<number | null>(null);
@@ -40,11 +49,14 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
   const list = productList(rank.scene, rank.ranked, PRODUCTS);
 
   // Only a pause opens the view (not a fresh load). Never an overlay while playing or after the clip ended.
-  const showPause = useCallback(() => {
+  const showPause = useCallback((): PauseEntry | null => {
     const v = video.current;
-    if (!v || !v.paused || v.ended) return setView(null);
-    setView(pauseView(decisions, PRODUCTS, Math.floor(frameMs.current ?? v.currentTime * 1000)));
-  }, [decisions]);
+    if (!v || !v.paused || v.ended) return (setView(null), null);
+    const tMs = Math.floor(frameMs.current ?? v.currentTime * 1000);
+    const next = pauseView(decisions, PRODUCTS, tMs);
+    setView(next);
+    return { clipId: clip.clipId, tMs, view: next, click: null };
+  }, [decisions, clip.clipId]);
 
   useEffect(() => {
     const v = video.current;
@@ -63,7 +75,7 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const v = video.current;
-      if (!v || e.repeat) return;
+      if (!v || e.repeat || !v.checkVisibility()) return; // hidden behind the product page
       if (e.key === "Escape" && open.current) return void v.play().catch(() => {});
       if (e.key !== " ") return;
       if (e.target instanceof Element && e.target.closest(OWNS_SPACE)) return;
@@ -102,7 +114,10 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
             toggle(e.currentTarget);
           }}
           onPlay={() => setView(null)}
-          onPause={showPause}
+          onPause={() => {
+            const entry = showPause();
+            if (entry) onPause(entry);
+          }}
           onSeeking={() => (frameMs.current = null)}
           onSeeked={(e) => {
             track(e.currentTarget.currentTime * 1000); // after a seek currentTime is the target frame; rVFC may come late while paused
@@ -111,7 +126,7 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
           onTimeUpdate={(e) => !HAS_RVFC && track(e.currentTarget.currentTime * 1000)}
           onEnded={() => setView(null)}
         />
-        {view && <PauseOverlay view={view} />}
+        {view && <PauseOverlay view={view} onViewProduct={onViewProduct} />}
       </div>
       <p aria-live="polite" className="sr-only">
         {view ? announce(view) : ""}

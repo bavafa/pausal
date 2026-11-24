@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { loadClips, loadDecisions, assetUrl } from "./clips.ts";
-import { parseRoute } from "./route.ts";
+import { parseRoute, productHref } from "./route.ts";
 
 const manifest = (clipId: string, title: string) => ({ aiGenerated: true, attributionKey: "x", clipId, durationMs: 1000, hasDialogue: false, title, videoUrl: "v.mp4" });
 
@@ -26,6 +26,9 @@ describe("parseRoute", () => {
     expect(parseRoute("#/")).toEqual({ page: "picker" });
     expect(parseRoute("#/clip/000000000001")).toEqual({ page: "clip", clipId: "000000000001" });
     expect(parseRoute("#/clip/zzz")).toEqual({ page: "clip", clipId: "zzz" });
+    expect(parseRoute("#/clip/a/product/p")).toEqual({ page: "product", clipId: "a", productId: "p" });
+    expect(parseRoute(productHref("a b", "p/q"))).toEqual({ page: "product", clipId: "a b", productId: "p/q" });
+    expect(parseRoute("#/clip/a/x")).toEqual({ page: "picker" });
   });
 });
 

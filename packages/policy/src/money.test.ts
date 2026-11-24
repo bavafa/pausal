@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Int, Thresholds } from "@pausall/bundle-schema";
-import { priceFor, splitPrice, ZERO_EARNING } from "./index.ts";
+import { clickFor, priceFor, splitPrice, ZERO_EARNING } from "./index.ts";
 
 const at = (w: number) => ({ pricing: { relevanceWeight: w } }) as Thresholds;
 const t = at(0.5);
@@ -44,5 +44,9 @@ describe("money", () => {
   it("zero earning is simulated and frozen", () => {
     expect(ZERO_EARNING).toEqual({ cents: 0, simulated: true });
     expect(Object.isFrozen(ZERO_EARNING)).toBe(true);
+  });
+
+  it("marks a click as simulated", () => {
+    expect(clickFor("p1")).toEqual({ productId: "p1", simulated: true });
   });
 });

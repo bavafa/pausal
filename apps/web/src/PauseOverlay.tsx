@@ -5,7 +5,7 @@ const CARD = "pointer-events-auto rounded-md border border-border bg-card text-f
 const EYEBROW = "text-eyebrow uppercase tracking-[0.08em] text-muted-foreground";
 
 /** Overlay over the frozen frame. Only the card takes pointer events, so a click on the frame still resumes. */
-export function PauseOverlay({ view }: { view: PauseView }) {
+export function PauseOverlay({ view, onViewProduct }: { view: PauseView; onViewProduct: (productId: string) => void }) {
   return (
     <div className="pointer-events-none absolute inset-0 bg-frozen-scrim">
       {view.kind === "note" ? (
@@ -29,13 +29,12 @@ export function PauseOverlay({ view }: { view: PauseView }) {
             <h2 className="mt-1 mb-1.5 font-serif text-title-sm lg:text-title">{view.product.name}</h2>
             <p className="mb-2.5 hidden lg:block">{view.tagline}</p>
             <div className="flex items-center gap-3">
-              {/* No-op until Epic 3 adds the product page. */}
-              <button type="button" className="min-h-11 rounded-md bg-accent px-4 font-semibold text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+              <button type="button" onClick={() => onViewProduct(view.product.id)} className="min-h-11 rounded-md bg-accent px-4 font-semibold text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
                 View product
               </button>
-              <span className="hidden items-center gap-2 lg:flex" title="Demo QR code, not functional">
+              <span className="hidden items-center gap-2 lg:flex">
                 <span aria-hidden="true" className="size-[34px] bg-[repeating-conic-gradient(var(--foreground)_0_25%,transparent_0_50%)] bg-size-[8px_8px] opacity-35" />
-                <span className="text-label text-muted-foreground">Demo QR</span>
+                <span className="text-label text-muted-foreground">Demo QR, not a real link</span>
               </span>
             </div>
             <p className="mt-2 hidden text-label text-muted-foreground lg:block">{view.because}</p>

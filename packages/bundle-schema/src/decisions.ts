@@ -12,6 +12,8 @@ export type Sentiment = (typeof SENTIMENTS)[number];
 
 export type SimulatedPrice = { cents: Int; simulated: true };
 export type SimulatedSplit = { platformCents: Int; publisherCents: Int; simulated: true };
+/** A View product click; it lives only in the session (AD-23). */
+export type SimulatedClick = { productId: string; simulated: true };
 export type Ranked = { productId: string; relevance: Int };
 /** A ranked item as stored in `decisions`, with its template reason line (AD-7). */
 export type RankedItem = Ranked & { reason: string };
