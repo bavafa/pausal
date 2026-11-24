@@ -4,6 +4,9 @@ Project-wide resume point. Update after every phase. Last updated: 2026-11-24, P
 
 
 ## Latest (2026-11-24, read first)
+- State at the end of the session: all 5 epics done. Working copy on `main`, clean, 35 commits ahead of GitHub, not pushed. `local/test-clips` has `main` merged in plus the test-clip data. No stashes. Nothing is waiting except Sam (AI clips, label corrections).
+- Next session: if the AI clips are in `data/samples/`, follow "When the clips arrive" below (now including labels, `pnpm eval` and the first CI browser run). Otherwise wait; do not push.
+- Open ideas, not started: tighten the variant filter for the remaining near-twins; drop catalog products whose name is only a code (needs `abo build`, which re-embeds the slice and costs money, so ask first).
 - Epic 5 is built on `main` and run on the fixture (commit 70768ad, retro `_bmad-output/implementation-artifacts/epic-5-retro-2026-11-24.md`): `pnpm eval` writes `docs/eval/report.md` (`--check` in CI), `pnpm eval --compare-judges` runs on the author machine only and writes `docs/eval/judges.md`, `pnpm browser` (Playwright in Chrome, after `pnpm -r build`) runs in CI. Label format: `packages/bundle-schema/src/labels.ts`.
 - Claude drafted labels for the 4 test clips on `local/test-clips` (`data/labels/*.json`, unsure calls in `data/labels/DRAFT-NOTES.md`). Eval on them: 0 ads on 2,270 unsafe pause times, 86.8 percent fit agreement; Jev fit 96.2 percent against Qwen 67.7 percent. Draft the AI clip labels the same way when the clips arrive, for Sam to correct.
 - UI pass after Sam's feedback (no story, no craft, no delight, logo only on page one and disliked): logo in a sticky header on every page, icon theme toggle, story-led landing page with a looping drawn demo, a pause hint on the watch screen, card pop-in, every page opens at the top. DESIGN.md and EXPERIENCE.md updated.
@@ -12,7 +15,7 @@ Project-wide resume point. Update after every phase. Last updated: 2026-11-24, P
 - Still blocked on Sam: the 4 AI clips (then rerun 4.3 and 4.9, label, eval, push `main`, watch the first CI browser run). `main` is not pushed.
 - Seen in automation only: when frame callbacks lag, the earnings log can record the frame just before the one the card shows. Related to open Epic 3 item 13.
 ## Start here (fresh chat, state on 2026-11-24 evening)
-- Progress: Epics 1 to 4 done with retrospectives. Epic 4 was closed on the YouTube test clips, local only, by the user's choice ("use them, never push"). Epic 5 (5 stories) not started. About 18% of the build is left by story count (23 of 28 done), plus rerunning Stories 4.3 and 4.9 with AI-generated clips before any push (about an hour).
+- Progress: Epics 1 to 5 done with retrospectives (28 of 28 stories). Epic 4 was closed on the YouTube test clips, local only, by the user's choice ("use them, never push"). Left: rerun Stories 4.3 and 4.9 with AI-generated clips before any push (about an hour), label them, run the eval.
 - After Epic 4, outside any epic, at the user's request (all on `main`, copied to `local/test-clips`):
   - Dark theme by default plus a "Light theme" / "Dark theme" button fixed top right, remembered in `localStorage` (`apps/web/src/ThemeToggle.tsx`; the class is set before paint by a script in `apps/web/index.html`; dark tokens are `:root.dark` in `index.css`).
   - Logo: "Pausa" in Lora plus the "ll" drawn as two accent pause bars (`apps/web/src/Logo.tsx`, no image file); favicon `apps/web/public/favicon.svg`.
@@ -28,8 +31,8 @@ Project-wide resume point. Update after every phase. Last updated: 2026-11-24, P
   2. Note the tool and its terms in `docs/data-sources.md`.
   3. `npx -y pnpm@12.23.0 analyze <id>` for each clip (about 2 to 5 minutes each, run in the background); then `abo products`, then `decide`.
   4. Run `test`, `typecheck`, `lint`, `decide --check`, `secrets`; check the app with the `web` preview.
-  5. Commit, push `main`, check https://bavafa.github.io/pausall/. Close action items 18 and 19 in `sprint-status.yaml` and add a short note to the Epic 4 retro.
-- Next: Epic 5 (labels, eval sweep, guardrail, metrics report, Jev versus Qwen, browser check). Labels are human judgments per time range; ask the user how they want to label before starting 5.1. Write each epic retro with the humanizer skill, in plain language.
+  5. Draft labels for Sam, run `pnpm eval`, then commit, push `main`, watch the first CI run (it includes `pnpm browser`), check https://bavafa.github.io/pausall/. Close action items 18 and 19 in `sprint-status.yaml` and add a short note to the Epic 4 retro.
+- Labels for new clips: Claude drafts them (format `packages/bundle-schema/src/labels.ts`, see `data/labels/DRAFT-NOTES.md` on `local/test-clips` for the approach) and Sam corrects them. Then `pnpm eval` and `pnpm eval --compare-judges`.
 - Read for Epic 4 details: `_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md` and the `spec-4-*` files.
 
 ## How to resume
