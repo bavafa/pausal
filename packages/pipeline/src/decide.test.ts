@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterAll, describe, expect, it } from "vitest";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -112,9 +112,15 @@ describe("decide CLI", () => {
   const dec = "data/decisions/000000000001.json";
   const run = (root: string, ...args: string[]) => spawnSync(process.execPath, [cli, "--root", root, ...args], { encoding: "utf8" });
   /** A temp copy of config/, data/ and the web public folder, so failure paths never touch committed files. */
+  // The catalog and raw sample clips are gigabytes and decide never reads them; copying them filled the disk.
+  const skip = [join(repo, "data/catalog"), join(repo, "data/samples")];
+  const roots: string[] = [];
+  afterAll(() => roots.forEach((r) => rmSync(r, { recursive: true, force: true })));
   const tempRoot = (): string => {
     const root = mkdtempSync(join(tmpdir(), "decide-"));
-    for (const d of ["config", "data", "apps/web/public"]) cpSync(join(repo, d), join(root, d), { recursive: true });
+    roots.push(root);
+    for (const d of ["config", "data", "apps/web/public"])
+      cpSync(join(repo, d), join(root, d), { recursive: true, filter: (src) => !skip.some((s) => src === s || src.startsWith(s + "/")) });
     return root;
   };
 
