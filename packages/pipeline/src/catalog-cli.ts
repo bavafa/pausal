@@ -139,7 +139,9 @@ async function shortNames(list: { id: string; name: string }[]): Promise<Map<str
   const qwen = new Qwen(keys.qwenBaseUrl, keys.qwenKey, { retry: { timeoutMs: cfg.timeoutMs, retries: cfg.retries }, prices: cfg.pricesUsdPerMillionTokens, ledger });
   const system = [
     "You shorten product listing titles for a small product tile. For each item give 2 to 4 plain words a shopper would say, in sentence case.",
-    'Name the kind of product with one telling detail, never the brand, size, colour code, pack count or model number. Example: "206 Collective Women\'s Battelle Closed-Toe Covered Wedge Pump, Neutral, 7 C/D US" becomes "Wedge pumps".',
+    "Name the kind of product with the detail that tells it apart from similar products: its subject, pattern, design or material. Never the brand, size, colour code, pack count or model number.",
+    "Two different products must not share a name, so \"Canvas wall art\" or \"Framed print\" alone is never enough.",
+    'Examples: "206 Collective Women\'s Battelle Closed-Toe Covered Wedge Pump, Neutral, 7 C/D US" becomes "Wedge pumps". "Rivet Abstract Modern Gold Halo Painting on White Canvas Wall Art Decor, 24 x 24" becomes "Gold halo canvas". "Stainless Steel Cross Pendant with Textured Black IP on 24 inch Round Box Chain" becomes "Textured cross pendant".',
     'Answer with JSON only: {"names": {"<id>": "<short name>"}}.',
   ].join("\n");
   const batches = Array.from({ length: Math.ceil(list.length / 40) }, (_, i) => list.slice(i * 40, i * 40 + 40));
