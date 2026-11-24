@@ -145,6 +145,29 @@
           }
         ]
       }
+    },
+    {
+      "files": [
+        "packages/bundle-schema/src/**/*.test.ts"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "*",
+                  "!vitest",
+                  "!./**",
+                  "!../../../config/**"
+                ],
+                "message": "AD-23: bundle-schema tests import only vitest, files inside the package and config/."
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }

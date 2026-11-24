@@ -31,16 +31,21 @@ A viewer opens the site, picks a sample clip, pauses, and sees either a simulate
 
 ## Technical Decisions
 
-**Stack (pinned in the spine; re-confirm with `npm view` on scaffold day and record results back in the spine Stack table):**
+**Stack (confirmed with `npm view` at scaffold on 2026-11-23; use these exact versions):**
 
 | Name | Version |
 |---|---|
-| Node | 24 LTS |
-| pnpm | 12.21.0 |
+| Node | 26 LTS, 26.13.1 |
+| pnpm | 12.23.0 |
 | TypeScript | 7.0.2 |
 | Vite with `@vitejs/plugin-react` | 8.3.8 with 6.3.0 |
 | React | 19.3.1 |
 | Tailwind CSS with `@tailwindcss/vite` | 4.3.5 |
+| `@types/react` and `@types/react-dom` | 19.3.0 |
+| `@types/node` | 26.6.6 |
+| Vitest | 5.1.1 |
+| oxlint (import lint) | 1.95.0 |
+| secretlint with `@secretlint/secretlint-rule-preset-recommend` | 14.1.0 with 13.1.0 |
 
 No UI component library. Pipeline-only items (ffmpeg 9.1, Jev SDK `@typesafe-ai/sdk` 0.7.0, Qwen models) are not needed in this epic.
 

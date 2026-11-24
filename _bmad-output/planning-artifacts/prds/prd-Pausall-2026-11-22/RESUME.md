@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Story 1.1 done and deployed.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Stories 1.1 and 1.2 done.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -19,8 +19,9 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 - Phase 4 architecture: done and approved. Spine final, reviewer gate run (rubric, adversarial, currency, reconcile) and fixes applied, policy, PRD FR-11 and EXPERIENCE reason order updated to match.
 - Phase 5 build: planning done. `_bmad-output/planning-artifacts/epics.md` is final (5 epics, 28 stories, fixture-first: web and policy on a hand-authored fixture, then the real pipeline in Epic 4, eval harness in Epic 5). Readiness gate PASS. Tracking in `_bmad-output/implementation-artifacts/sprint-status.yaml` (Epic 1 in progress, Story 1.1 at review, the rest backlog).
 - Story 1.1 done (2026-11-23): pnpm workspace (`@pausall/bundle-schema`, `policy`, `pipeline`, `apps/web`), oxlint import boundaries (AD-23), secretlint pre-commit hook and CI scan, GitHub Actions CI that deploys `apps/web` to https://bavafa.github.io/pausall/. Spec, decisions and review log: `_bmad-output/implementation-artifacts/spec-1-1-workspace-scaffold-deployed-to-github-pages.md`. Epic context for build sessions: `_bmad-output/implementation-artifacts/epic-1-context.md` (its stack table predates the Node 26 and pnpm 12.23.0 change; the spine Stack table is current).
-- Next: `bmad-build` on Story 1.2 (artifact and config schemas that fail closed), in a fresh session. Then the rest of Epic 1, then Phase 6 evaluation.
-- Small values to set as tunable config during build: the price formula (Story 1.3) and the fixed scene-type list (Story 1.2).
+- Story 1.2 done (2026-11-23) on branch `story/1-2-artifact-and-config-schemas`, not yet merged: hand-written validators in `bundle-schema` for manifest, analysis, decisions, product, thresholds, campaigns and scene types; `config/scene-types.json` holds 67 labels (user decision: fixed list plus an optional free-text `sceneType.freeLabel` in analysis). Analysis relevance is the raw score (fraction), decisions relevance is the rounded integer. Spec: `_bmad-output/implementation-artifacts/spec-1-2-artifact-and-config-schemas-that-fail-closed.md`. Deferred: `deferred-work.md`.
+- Next: fast-forward `main` to the Story 1.2 branch after review, then `bmad-build` on Story 1.3 (policy rules, reason order and simulated money). Then the rest of Epic 1, then Phase 6 evaluation.
+- Small values to set as tunable config during build: the price formula (Story 1.3).
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.

@@ -5,8 +5,8 @@ import { describe, expect, it } from "vitest";
 
 const root = join(import.meta.dirname, "..");
 
-function lint(dir: string, source: string) {
-  const file = join(root, dir, "src", "__import_rule_probe__.ts");
+function lint(dir: string, source: string, name = "__import_rule_probe__.ts") {
+  const file = join(root, dir, "src", name);
   writeFileSync(file, source);
   try {
     const res = spawnSync(join(root, "node_modules", ".bin", "oxlint"), [file], { cwd: root, encoding: "utf8" });
@@ -48,6 +48,23 @@ describe("AD-23 import boundaries", () => {
     ["apps/web", 'import "@pausall/policy";\nimport "@pausall/bundle-schema";\n'],
   ])("%s allows %s", (dir, source) => {
     const { status, output } = lint(dir, source);
+    expect(output).not.toContain("no-restricted");
+    expect(status).toBe(0);
+  });
+
+  const testProbe = "__import_rule_probe__.test.ts";
+  it.each([
+    ['import "node:fs";\n', "node:fs"],
+    ['import "@pausall/pipeline";\n', "@pausall/pipeline"],
+    ['import "../../pipeline/src/index.ts";\n', "../../pipeline/src/index.ts"],
+  ])("bundle-schema test files reject %s", (source, name) => {
+    const { status, output } = lint("packages/bundle-schema", source, testProbe);
+    expect(status).not.toBe(0);
+    expect(output).toContain(`'${name}'`);
+  });
+
+  it("bundle-schema test files allow vitest", () => {
+    const { status, output } = lint("packages/bundle-schema", 'import "vitest";\n', testProbe);
     expect(output).not.toContain("no-restricted");
     expect(status).toBe(0);
   });
