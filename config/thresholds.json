@@ -1,0 +1,21 @@
+{
+  "categoryCutoffs": {
+    "childFocused": 0.5,
+    "deathOrGrief": 0.5,
+    "intenseDialogue": 0.5,
+    "medicalTrauma": 0.5,
+    "sexual": 0.5,
+    "violence": 0.5
+  },
+  "holdMs": 5000,
+  "pricing": {
+    "relevanceWeight": 0.5
+  },
+  "r3b": {
+    "embeddingSim": 0.3,
+    "jevFitP": 0.6
+  },
+  "relevance": 60,
+  "safetyConfidence": 0.8,
+  "taglineGateMargin": 0.05
+}

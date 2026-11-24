@@ -1,0 +1,12 @@
+{
+  "attribution": "Fixture product, not a real listing",
+  "description": "A 28 cm skillet with a steady, flat base for weeknight cooking.",
+  "id": "fixture-pan",
+  "imagePath": "products/fixture-pan.png",
+  "keyFeatures": [
+    "28 cm",
+    "Flat base",
+    "Oven use up to 220 C"
+  ],
+  "name": "Everyday Skillet"
+}

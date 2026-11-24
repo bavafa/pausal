@@ -1,0 +1,20 @@
+[
+  {
+    "active": true,
+    "bidCents": 80,
+    "budgetCents": 20000,
+    "productId": "fixture-kettle"
+  },
+  {
+    "active": false,
+    "bidCents": 100,
+    "budgetCents": 20000,
+    "productId": "fixture-lamp"
+  },
+  {
+    "active": true,
+    "bidCents": 120,
+    "budgetCents": 50000,
+    "productId": "fixture-pan"
+  }
+]

@@ -25,6 +25,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm test
+      - run: pnpm decide --check
       - run: pnpm secrets
       - run: pnpm -r build
       - if: github.event_name == 'push' && github.ref == 'refs/heads/main'

@@ -1,0 +1,193 @@
+{
+  "analysisHash": "e3a7c4420e21b3a663ef4f8447d24b9cd43991857473cc6563f919d9827dfbd4",
+  "campaignsHash": "ff3f5cb7d095607dc6a234e6ade80cea8ebf37b38acb81880c730b9d752e3a67",
+  "clipId": "000000000001",
+  "durationMs": 35000,
+  "scenes": [
+    {
+      "endMs": 5000,
+      "id": "s0000000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "kitchen",
+          "secondary": "cooking"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": {
+        "cents": 108,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "productId": "fixture-pan",
+          "relevance": 80
+        },
+        {
+          "productId": "fixture-kettle",
+          "relevance": 45
+        }
+      ],
+      "split": {
+        "platformCents": 76,
+        "publisherCents": 32,
+        "simulated": true
+      },
+      "startMs": 0,
+      "tagline": "A steady pan for weeknight cooking.",
+      "topProductId": "fixture-pan"
+    },
+    {
+      "endMs": 10000,
+      "id": "s0005000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "kitchen",
+          "secondary": "fight or conflict"
+        },
+        "moodLabel": "Tense",
+        "safeTag": "unsafe",
+        "sentiment": -1
+      },
+      "price": null,
+      "ranked": [
+        {
+          "productId": "fixture-pan",
+          "relevance": 72
+        }
+      ],
+      "split": null,
+      "startMs": 5000,
+      "topProductId": "fixture-pan"
+    },
+    {
+      "endMs": 15000,
+      "id": "s0010000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "beach"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "productId": "fixture-kettle",
+          "relevance": 42
+        }
+      ],
+      "split": null,
+      "startMs": 10000,
+      "topProductId": "fixture-kettle"
+    },
+    {
+      "endMs": 20000,
+      "id": "s0015000",
+      "outcome": "noActiveCampaign",
+      "panel": {
+        "contextLabel": {
+          "primary": "living room",
+          "secondary": "reading"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "productId": "fixture-lamp",
+          "relevance": 86
+        },
+        {
+          "productId": "fixture-kettle",
+          "relevance": 38
+        }
+      ],
+      "split": null,
+      "startMs": 15000,
+      "topProductId": "fixture-lamp"
+    },
+    {
+      "endMs": 25000,
+      "id": "s0020000",
+      "outcome": "analysisUnavailable",
+      "panel": {
+        "contextLabel": {
+          "primary": "Unavailable"
+        },
+        "moodLabel": "Unavailable",
+        "safeTag": "caution",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [],
+      "split": null,
+      "startMs": 20000,
+      "topProductId": null
+    },
+    {
+      "endMs": 30000,
+      "id": "s0025000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "kitchen",
+          "secondary": "fight or conflict"
+        },
+        "moodLabel": "Tense",
+        "safeTag": "unsafe",
+        "sentiment": -1
+      },
+      "price": null,
+      "ranked": [
+        {
+          "productId": "fixture-pan",
+          "relevance": 88
+        }
+      ],
+      "split": null,
+      "startMs": 25000,
+      "topProductId": "fixture-pan"
+    },
+    {
+      "endMs": 35000,
+      "id": "s0030000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "cooking"
+        },
+        "moodLabel": "Joyful",
+        "safeTag": "safe",
+        "sentiment": 1
+      },
+      "price": {
+        "cents": 106,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "productId": "fixture-pan",
+          "relevance": 76
+        }
+      ],
+      "split": {
+        "platformCents": 75,
+        "publisherCents": 31,
+        "simulated": true
+      },
+      "startMs": 30000,
+      "tagline": "Everyday Skillet",
+      "topProductId": "fixture-pan"
+    }
+  ],
+  "thresholdsHash": "a6463cb091d6306f7e0791ed9f27db29317bd8a11d8bc0b67826c7ec1593e16d"
+}

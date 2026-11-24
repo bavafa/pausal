@@ -239,6 +239,9 @@ importers:
       '@pausall/bundle-schema':
         specifier: workspace:*
         version: link:../bundle-schema
+      '@pausall/policy':
+        specifier: workspace:*
+        version: link:../policy
 
   packages/policy:
     dependencies:
