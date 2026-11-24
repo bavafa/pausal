@@ -29,6 +29,7 @@ describe("parseRoute", () => {
     expect(parseRoute("#/clip/a/product/p")).toEqual({ page: "product", clipId: "a", productId: "p" });
     expect(parseRoute(productHref("a b", "p/q"))).toEqual({ page: "product", clipId: "a b", productId: "p/q" });
     expect(parseRoute("#/clip/a/x")).toEqual({ page: "picker" });
+    expect(parseRoute("#/attribution")).toEqual({ page: "attribution" });
   });
 });
 

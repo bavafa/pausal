@@ -23,6 +23,11 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           ))}
         </ul>
       )}
+      <p className="mt-8 text-label text-muted-foreground">
+        <a href="#/attribution" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
+          Attribution
+        </a>
+      </p>
     </main>
   );
 }

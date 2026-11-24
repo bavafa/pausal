@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { clickFor } from "@pausall/policy";
 import { CLIPS, loadDecisions, PRODUCTS } from "./clips.ts";
+import { AttributionPage } from "./AttributionPage.tsx";
 import { ClipPicker } from "./ClipPicker.tsx";
 import { ProductPage } from "./ProductPage.tsx";
 import { productHref, useRoute } from "./route.ts";
@@ -13,11 +14,12 @@ export function App() {
   const [pauses, setPauses] = useState<PauseEntry[]>([]);
   // True once the product page was opened from the clip in this page load, so its Back can step back in history.
   const fromClip = useRef(false);
-  const clipId = route.page === "picker" ? null : route.clipId;
+  const clipId = route.page === "clip" || route.page === "product" ? route.clipId : null;
   const clip = CLIPS.find((c) => c.clipId === clipId);
   // Validated once per clip, so a re-render on each pause does not hand the watch screen a new object.
   const decisions = useMemo(() => (clip ? loadDecisions(clip) : null), [clip]);
   if (route.page === "picker") return <ClipPicker clips={CLIPS} />;
+  if (route.page === "attribution") return <AttributionPage />;
   if (clip) {
     const onProduct = route.page === "product";
     return (
