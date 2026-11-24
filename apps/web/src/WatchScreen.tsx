@@ -137,6 +137,16 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }:
           onEnded={() => setView(null)}
         />
         {view && <PauseOverlay view={view} onViewProduct={onViewProduct} />}
+        {!view && !pauses.some((p) => p.clipId === clip.clipId) && (
+          // A first-visit nudge; it goes away for good after the first pause on this clip.
+          <span aria-hidden="true" className="pointer-events-none absolute top-3 left-3 flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 text-label text-white backdrop-blur-sm motion-safe:animate-nudge">
+            <svg viewBox="0 0 24 24" className="size-3.5 fill-current">
+              <rect x="6" y="5" width="4" height="14" rx="1.5" />
+              <rect x="14" y="5" width="4" height="14" rx="1.5" />
+            </svg>
+            Pause anywhere to see what it decides
+          </span>
+        )}
       </div>
       <p aria-live="polite" className="sr-only">
         {view ? announce(view) : ""}

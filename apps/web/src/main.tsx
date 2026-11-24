@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App.tsx";
-import { ThemeToggle } from "./ThemeToggle.tsx";
+import { SiteHeader } from "./SiteHeader.tsx";
 import "./index.css";
 
 const root = document.getElementById("root");
@@ -12,7 +12,7 @@ for (const face of ["400 1em Raleway", "500 1em Raleway", "600 1em Raleway", "50
 
 createRoot(root).render(
   <StrictMode>
-    <ThemeToggle />
+    <SiteHeader />
     <App />
   </StrictMode>,
 );

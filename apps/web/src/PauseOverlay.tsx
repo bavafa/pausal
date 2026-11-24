@@ -1,7 +1,7 @@
 import { assetUrl } from "./clips.ts";
 import type { PauseView } from "./pause-view.ts";
 
-const CARD = "pointer-events-auto rounded-md border border-border bg-card text-foreground shadow-[0_10px_40px_rgba(0,0,0,0.35)] motion-safe:animate-fade-in";
+const CARD = "pointer-events-auto rounded-md border border-border bg-card text-foreground shadow-[0_10px_40px_rgba(0,0,0,0.35)] motion-safe:animate-pop-in";
 const EYEBROW = "text-eyebrow uppercase tracking-[0.08em] text-muted-foreground";
 
 /** Overlay over the frozen frame. Only the card takes pointer events, so a click on the frame still resumes. */
