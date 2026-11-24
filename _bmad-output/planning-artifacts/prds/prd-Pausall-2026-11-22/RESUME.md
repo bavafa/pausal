@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epics 1 and 2 done (Stories 1.1 to 1.8 and 2.1 to 2.3), Epic 1 retrospective done.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epics 1 and 2 done (Stories 1.1 to 1.8 and 2.1 to 2.3), both retrospectives done.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -33,8 +33,14 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
   - Story 2.2: scene panel under the video (`ScenePanel.tsx`, `scene-panel.ts`), safe tag wording "Brand safe", "Caution", "Not brand safe". `seeked` always updates from `currentTime` because `requestVideoFrameCallback` fires late while paused.
   - Story 2.3: product list (`ProductList.tsx`, `product-list.ts`) driven by `rankAt` each frame with `held` in a ref. No list where analysis is unavailable.
   - Specs: `spec-2-1-*`, `spec-2-2-*`, `spec-2-3-*`. New deferred item: reject duplicate product IDs within one scene's fits.
-  - Not pushed: `main` is ahead of `origin/main` by the Epic 2 commits (a push deploys to GitHub Pages).
-- Next: optional Epic 2 retrospective, then `bmad-build` on Story 3.1 (product page, simulated click and demo QR).
+  - Pushed and deployed (CI run 45318211972 passed). The Epic 2 retrospective commit is local until the next push.
+- Epic 2 retrospective done (2026-11-23): `_bmad-output/implementation-artifacts/epic-2-retro-2026-11-23.md`, verdict accepted with open items. Four new to-do items in `sprint-status.yaml`, all open:
+  1. Update the spine hold rule (AD-17, line 152) to match `rankAt`, and note `holdMs` and `reason` in `decisions` (needs user approval).
+  2. User approves or changes the safe tag wording, the reason line pattern and the hidden list on unavailable scenes.
+  3. User decides whether to add a small watch screen browser test before Epic 3.
+  4. In Epic 4, check the ranking hold during real playback.
+- Plan for open items: before Story 3.1, ask the user about Epic 2 items 1 to 3, then apply the doc edit and any wording change; if the browser test is approved, add it before Story 3.1. Epic 1 item 3 (`decide --check` on missing files) and Epic 2 item 4 go into Epic 4 (Story 4.3 or 4.9). Epic 1 item 5 waits for the user.
+- Next: settle the items above, then `bmad-build` on Story 3.1 (product page, simulated click and demo QR).
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
@@ -45,7 +51,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning, Epic 1 and Epic 2; Epic 1 is pushed to github.com/bavafa/pausall, Epic 2 is local until pushed. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning, Epic 1 and Epic 2; Epic 1 is pushed to github.com/bavafa/pausall, Epic 2 is pushed. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
