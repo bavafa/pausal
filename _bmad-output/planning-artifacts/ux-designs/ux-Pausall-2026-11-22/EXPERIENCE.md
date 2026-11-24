@@ -52,7 +52,7 @@ Behavioral. Visual specs live in `DESIGN.md` Components.
 |---|---|---|
 | Video player | Watch screen | Native play and pause. Keeps 16:9 in every state. Playback never waits on analysis (FR-2). |
 | Scene panel | Watch screen | Updates with the current scene: context, sentiment, brand-safe tag, "Based on this scene and the previous 3". |
-| Product list | Watch screen | Up to 10 items, top one larger with reason and relevance score. The top product changes at most once every 5 s unless the scene verdict changes (FR-8). Phone: items 2 to 10 scroll sideways. |
+| Product list | Watch screen | Up to 10 items, each a different product (sizes and colours of one product count once), each with a short name, relevance score and simulated bid or "no bid". The top one is larger with its reason. While playing, the top product changes at most once every 5 s unless the scene verdict changes (FR-8). While the pause card is open, the list leads with the product the card shows. Phone: items 2 to 10 scroll sideways. |
 | Ad card | Pause view | Appears within 500 ms of pause (FR-12). Shows "Sponsored" and "Simulated ad", tagline (laptop only), View product, non-functional QR (laptop only, marked as demo), "Shown because" line (laptop only). Closes instantly on play. |
 | Pause note | Pause view | "Paused" plus one reason line. Closes on play. |
 | Session tally | Watch screen, below the player | One line counting ads shown and held back with simulated earnings. Tap to expand the breakdown. |

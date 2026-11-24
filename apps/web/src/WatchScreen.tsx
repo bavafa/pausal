@@ -52,7 +52,8 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }:
     const key = (r: RankView) => `${r.scene?.id}|${r.ranked.map((i) => i.productId).join()}`;
     setRank((prev) => (key(prev) === key(next) ? prev : next));
   }, [rankFor]);
-  const list = productList(rank.scene, rank.ranked, PRODUCTS);
+  // The hold steadies the list while playing; once paused, the list leads with the product the pause card shows.
+  const list = productList(rank.scene, view ? (rank.scene?.ranked ?? []) : rank.ranked, PRODUCTS);
 
   // Only a pause opens the view (not a fresh load). Never an overlay while playing or after the clip ended.
   const showPause = useCallback((): PauseEntry | null => {

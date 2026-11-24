@@ -101,7 +101,7 @@ Direction chosen from three rendered options (Cinema Dark, Gallery Light, Soft C
 
 ## Logo
 
-The mark is a pause sign: two white rounded bars on a rounded accent tile with a light diagonal gradient. The wordmark "pausall" follows it in lowercase Raleway semibold, tracked slightly tight. Screen readers hear "Pausal". The favicon is the mark alone. A sticky header carries the logo (a link home) and an icon-only theme toggle on every page. The tile is the one place the accent is used decoratively.
+The logo is the wordmark "PA||SAL": Pausal in uppercase Raleway semibold with wide tracking, where the U is a pause sign made of two accent bars as tall as the capitals. There is no separate symbol beside the word. Screen readers hear "Pausal". The favicon is the two accent bars on a dark rounded tile. A sticky header carries the logo (a link home) and an icon-only theme toggle on every page. The two bars are the one place the accent is used decoratively.
 
 ## Theme
 
@@ -148,8 +148,8 @@ Soft corners throughout: `{rounded.md}` (14 px) for the video, cards, thumbnails
 - **Ad card (phone):** covers most of the frozen frame with an 8 px inset, leaving the playback bar visible. Image takes the left 40 percent. Tagline, QR and "Shown because" line are hidden.
 - **Pause note:** small centered card: "Paused" plus one reason line in muted foreground.
 - **Scene panel:** inline strip, eyebrow keys, brand-safe tag as an accent outline pill.
-- **Top product:** larger thumb, eyebrow "Sponsored", Lora title, one-line reason, relevance score in `label` muted.
-- **Small product:** square thumb plus name in `label`.
+- **Top product:** larger thumb, eyebrow "Sponsored · simulated bids", the short name as a Lora title, the full listing name on one truncated muted line, a one-line reason, then two chips: "Relevance N" and either "Bid $x" or a dashed "No bid".
+- **Other products:** thumb, short name, then "N · $x bid" or "N · no bid". Short names are two to four words from the text model; the full name stays on the product page.
 - **Product images:** always shown whole (`object-contain`) on a white well with a small inset, because catalog photos have white backgrounds; never cropped. Images are shown no larger than 256 px, the size of the catalog files, so they are not blown up and blurred.
 - **Clip picker:** a story in four parts. Hero: eyebrow, the headline "Ads that wait until you pause.", two sentences, a "Try a clip" button that scrolls to the clips, and a drawn, looping sketch of a kitchen scene that pauses and shows one product card (static in reduced motion). "The idea": why a pause is a fair moment and why the scene comes first, with two example pauses (an ad, and a sensitive-scene note). "Under the hood": four numbered steps of what happens in the half second after a pause. "Try it": the clip cards (still frame, a play badge on hover, title, "AI-generated" and duration). A footer line that everything is simulated, with the Attribution link.
 
@@ -158,7 +158,7 @@ Soft corners throughout: `{rounded.md}` (14 px) for the video, cards, thumbnails
 | Do | Don't |
 |---|---|
 | Keep the video the brightest thing on screen | Use pure black or pure white surfaces |
-| Use the accent only for the one action, the safe tag and the logo tile | Color a held-back ad in red or warning tones |
+| Use the accent only for the one action, the safe tag and the two bars of the logo | Color a held-back ad in red or warning tones |
 | Keep the player 16:9 in every state | Resize or reflow the player on pause |
 | Label every ad, number and campaign as simulated | Show a price or earnings figure without "Simulated" |
 | Let the ad cover most of the frame on phone | Let the ad cover the playback bar |
