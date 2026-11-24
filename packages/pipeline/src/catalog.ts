@@ -81,29 +81,38 @@ export function simulatedCampaign(productId: string): Campaign {
   return { productId, bidCents: bidCents as Int, budgetCents: (bidCents * 200) as Int, active: (h[1] as number) % 10 !== 0 };
 }
 
-/**
- * The same product in another size or colour ("..., 7 C/D US" and "..., 10 C/D US") is one family: the name before its
- * first comma, with digits and bracketed text removed. Retrieval keeps one member per family, so lists never repeat a product.
- */
-export const familyKey = (name: string): string =>
-  (name.split(",")[0] ?? name).replace(/\([^)]*\)|\d+/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+// Words that tell variants apart (colour, size, unit) or carry no meaning; the rest name the product.
+const NOT_IDENTITY = new Set(
+  "black white grey gray gold silver brown blue green red pink purple yellow orange navy beige ivory cream neutral tan dark light matte copper bronze rose multi multicolor clear inch inches cm mm ft in of and with the for to on by x uk us eu india size small medium large xl xs".split(" "),
+);
+
+/** Words of a title before its first comma, without brackets, digits, colours, sizes, units and filler. */
+export const familyWords = (name: string): Set<string> =>
+  new Set((name.split(",")[0] ?? name).toLowerCase().replace(/\([^)]*\)/g, " ").split(/[^a-z]+/).filter((w) => w.length > 1 && !NOT_IDENTITY.has(w)));
+
+/** Two titles name one product in another size or colour when at least 80% of their identity words are shared. */
+export function sameFamily(a: string, b: string): boolean {
+  const x = familyWords(a);
+  const y = familyWords(b);
+  const shared = [...x].filter((w) => y.has(w)).length;
+  const all = x.size + y.size - shared;
+  return all > 0 && shared / all >= 0.8;
+}
 
 /** Catalog vectors this close are the same product in another size, colour or near-identical design. */
 export const VARIANT_SIM = 0.95;
 
 /**
- * The first `k` hits that are not a variant of an earlier hit: same family key, or a catalog vector within VARIANT_SIM.
+ * The first `k` hits that are not a variant of an earlier hit: same family by title, or a catalog vector within VARIANT_SIM.
  * Retrieval is the one place variants are dropped, so analysis, decisions and product files all agree.
  */
 export function distinctHits<H extends { index: number }>(hits: readonly H[], items: readonly { name: string }[], vectors: Float32Array, dims: number, k: number): H[] {
   const kept: H[] = [];
-  const keys = new Set<string>();
   const vec = (i: number) => vectors.subarray(i * dims, (i + 1) * dims);
+  const name = (i: number) => (items[i] as { name: string }).name;
   for (const h of hits) {
     if (kept.length === k) break;
-    const key = familyKey((items[h.index] as { name: string }).name);
-    if (keys.has(key) || kept.some((o) => cosine(vec(o.index), vec(h.index)) >= VARIANT_SIM)) continue;
-    keys.add(key);
+    if (kept.some((o) => sameFamily(name(o.index), name(h.index)) || cosine(vec(o.index), vec(h.index)) >= VARIANT_SIM)) continue;
     kept.push(h);
   }
   return kept;

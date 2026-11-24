@@ -156,18 +156,22 @@ describe("decide CLI", () => {
   });
 });
 
-describe("familyKey", () => {
-  it("groups sizes of one product and keeps different designs apart", async () => {
-    const { familyKey } = await import("./catalog.ts");
-    const pump = (size: string) => familyKey(`206 Collective Women's Battelle Closed-Toe Covered Wedge Pump, Neutral patent leather, ${size} C/D US`);
-    expect(pump("7")).toBe(pump("12"));
-    expect(familyKey('Amazon Brand - Solimo 12" Wall Clock - Ethereal Roman (Silent Movement)')).not.toBe(familyKey('Amazon Brand - Solimo 12" Wall Clock - Classic Roulette (Silent Movement)'));
+describe("sameFamily", () => {
+  it("groups sizes and colours of one product and keeps different designs apart", async () => {
+    const { sameFamily } = await import("./catalog.ts");
+    const pump = (size: string) => `206 Collective Women's Battelle Closed-Toe Covered Wedge Pump, Neutral patent leather, ${size} C/D US`;
+    expect(sameFamily(pump("7"), pump("12"))).toBe(true);
+    expect(sameFamily('Amazon Brand – Rivet American Forest Map Wall Art Print in White Wood Frame, 20" x 20"', 'Amazon Brand – Rivet American Forest Map Wall Art Print in Gold Wood Frame, 12" x 12"')).toBe(true);
+    expect(sameFamily("AmazonBasics 1/4-Inch Yoga and Exercise Mat with Carrying Strap, Black", 'AmazonBasics Yoga & Exercise Mat with Carrying Strap, 1/4", Green')).toBe(true);
+    expect(sameFamily("Amazon Brand - Symbol Men's Grey Sneakers - 8 UK/India (42 EU)(AZ-SH-39A)", "Amazon Brand - Symbol Men's Grey Sneakers-6 UK/India (40 EU)(AZ-OM-53B)")).toBe(true);
+    expect(sameFamily('Amazon Brand - Solimo 12" Wall Clock - Ethereal Roman (Silent Movement)', 'Amazon Brand - Solimo 12" Wall Clock - Classic Roulette (Silent Movement)')).toBe(false);
+    expect(sameFamily("Kettle", "Skillet")).toBe(false);
   });
 
   it("drops a hit whose catalog vector is a near copy of one already kept", async () => {
     const { distinctHits } = await import("./catalog.ts");
-    const items = [{ name: "Forest print, grey frame" }, { name: "Forest wall art print, black frame" }, { name: "Kettle" }, { name: "Forest print, white frame" }];
-    const vectors = new Float32Array([1, 0, 0.99, 0.1, 0, 1, 1, 0.01]);
+    const items = [{ name: "Forest print" }, { name: "Lake photo" }, { name: "Kettle" }, { name: "Forest print, white frame" }];
+    const vectors = new Float32Array([1, 0, 0.99, 0.1, 0, 1, 0.6, 0.8]);
     const hits = [0, 1, 2, 3].map((index) => ({ index }));
     expect(distinctHits(hits, items, vectors, 2, 5).map((h) => h.index)).toEqual([0, 2]);
     expect(distinctHits(hits, items, vectors, 2, 1).map((h) => h.index)).toEqual([0]);
