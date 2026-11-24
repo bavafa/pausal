@@ -59,23 +59,23 @@ Shot 12: Wide shot. Maya and Leo eat breakfast by the sunny window, laughing; Pi
 
 **Style line:** Warm naturalistic comedy, 16:9, golden evening lamp light, static and slow-push camera, realistic people, a cozy living room with a large window, wooden floor and a few cardboard boxes.
 
-**Cast:** SAM, a man in his early 40s with a short beard, wearing a navy flannel shirt. NINA, a woman in her late 30s with a straight black bob, wearing a mustard cardigan.
+**Cast:** DANIEL, a man in his early 40s with a short beard, wearing a navy flannel shirt. NINA, a woman in her late 30s with a straight black bob, wearing a mustard cardigan.
 
-Shot 1: Wide shot. Sam and Nina open the door to their new, almost empty living room and look around, delighted. Nina: "It is ours!"
+Shot 1: Wide shot. Daniel and Nina open the door to their new, almost empty living room and look around, delighted. Nina: "It is ours!"
 
-Shot 2: Medium shot. Sam and Nina stand holding mugs. Nina: "I think the sofa goes under the window." Sam: "Then the lamp has nowhere to go."
+Shot 2: Medium shot. Daniel and Nina stand holding mugs. Nina: "I think the sofa goes under the window." Daniel: "Then the lamp has nowhere to go."
 
-Shot 3: Medium shot. Nina unrolls a large woven wool rug across the floor. Nina: "See? It already feels warmer in here." Sam: "It does. I take it back."
+Shot 3: Medium shot. Nina unrolls a large woven wool rug across the floor. Nina: "See? It already feels warmer in here." Daniel: "It does. I take it back."
 
-Shot 4: Medium shot. Sam assembles a tall brass floor lamp and switches it on; warm light fills the corner. Sam: "Better?" Nina: "Much better."
+Shot 4: Medium shot. Daniel assembles a tall brass floor lamp and switches it on; warm light fills the corner. Daniel: "Better?" Nina: "Much better."
 
-Shot 5: Two shot. They sit on a grey linen three-seat sofa with throw pillows, scrolling a laptop. Nina: "This side table is nice, and it is on sale." Sam: "Add it to the list."
+Shot 5: Two shot. They sit on a grey linen three-seat sofa with throw pillows, scrolling a laptop. Nina: "This side table is nice, and it is on sale." Daniel: "Add it to the list."
 
-Shot 6: Medium shot. Sam hangs a large framed print on the wall; Nina tilts her head. Nina: "Left. No, your other left."
+Shot 6: Medium shot. Daniel hangs a large framed print on the wall; Nina tilts her head. Nina: "Left. No, your other left."
 
-Shot 7: Close-up of Sam reading a delivery note, eyebrows rising. Sam: "Wait, we ordered two sofas?" Nina: "No, you ordered two sofas!" Voices rising.
+Shot 7: Close-up of Daniel reading a delivery note, eyebrows rising. Daniel: "Wait, we ordered two sofas?" Nina: "No, you ordered two sofas!" Voices rising.
 
-Shot 8: Two shot, standing. Both talking over each other, loud and animated. Sam: "You clicked buy!" Nina: "You said click buy!"
+Shot 8: Two shot, standing. Both talking over each other, loud and animated. Daniel: "You clicked buy!" Nina: "You said click buy!"
 
 Shot 9: Close-up on Nina, arms crossed, very loud. Nina: "Then you can sleep on the second one!"
 
@@ -83,7 +83,7 @@ Shot 10: Two shot. A pause; they look at each other, then both burst out laughin
 
 Shot 11: Wide shot. The doorbell rings; two delivery workers carry in a second, identical sofa and set it down facing the first.
 
-Shot 12: Wide shot. Sam and Nina sit on facing sofas with their feet up on a coffee table between them, clinking mugs. Sam: "Honestly? I love it."
+Shot 12: Wide shot. Daniel and Nina sit on facing sofas with their feet up on a coffee table between them, clinking mugs. Daniel: "Honestly? I love it."
 
 ## Clip 3: Night Shift, 2200 (sci-fi, split clip, 12 x 8 s)
 
