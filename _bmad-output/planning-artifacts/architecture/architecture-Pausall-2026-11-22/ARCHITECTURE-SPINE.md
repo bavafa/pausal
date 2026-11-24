@@ -131,7 +131,7 @@ Rule ids are `R1` to `R6` and `R3b` (see AD-6) and are the only rule ids used in
 
 - **Binds:** F2, F3, F4, F10, AD-1, AD-2, AD-3
 - **Prevents:** the browser re-evaluating rules with config and signals it does not have; a second source of truth
-- **Rule:** `decisions/<clip>.json` stores per scene the outcome (`ad` or a reason), the top product, price and split, the ranked list, and `panel`. The web calls only `resolvePause(decisions, tMs)`, `rankAt(decisions, tMs, held)` and the formatters exported by `policy`. These read no thresholds, campaigns or analysis. The web never evaluates R1 to R6.
+- **Rule:** `decisions/<clip>.json` stores per scene the outcome (`ad` or a reason), the top product, price and split, the ranked list (at most 10 items, each with a template `reason`, AD-7), and `panel`. The file also carries `holdMs` for `rankAt`. The web calls only `resolvePause(decisions, tMs)`, `rankAt(decisions, tMs, held)` and the formatters exported by `policy`. These read no thresholds, campaigns or analysis. The web never evaluates R1 to R6.
 
 ### AD-15: Judgment is a total record
 
@@ -149,7 +149,7 @@ Rule ids are `R1` to `R6` and `R3b` (see AD-6) and are the only rule ids used in
 
 - **Binds:** FR-7, FR-8
 - **Prevents:** a held top product carrying an ad into a sensitive scene; a third hidden state
-- **Rule:** The pause outcome is always from `resolvePause` and never reads a held product. `rankAt` returns the scene's precomputed stable top product, and the web may hold the previous top only while the scene ID is unchanged and for at most `holdMs` (5000, in config). A change of `outcome` between scenes, or any category flag turning on, releases the hold at once. FR-7 context (current plus previous 3 scenes) is applied in the fit stage by aggregating the previous 3 scenes' fit scores for ranking only. Safety judgments see the current scene description alone.
+- **Rule:** The pause outcome is always from `resolvePause` and never reads a held product. `rankAt(decisions, tMs, held)` returns the scene's precomputed stable top product, and the web keeps the held top (`held = { sceneId, productId, sinceMs }`) for at most `holdMs` (5000, in config, copied into `decisions` so `rankAt` reads no config). Within that time the hold survives a scene change only when the new scene has the same `outcome`, a `safeTag` no worse than the held scene, and the held product still in its ranked list; otherwise it releases at once. FR-7 context (current plus previous 3 scenes) is applied in the fit stage by aggregating the previous 3 scenes' fit scores for ranking only. Safety judgments see the current scene description alone.
 
 ### AD-18: Top product and campaign
 
