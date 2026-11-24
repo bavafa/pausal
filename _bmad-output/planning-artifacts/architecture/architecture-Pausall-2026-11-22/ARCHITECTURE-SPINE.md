@@ -220,8 +220,8 @@ Values confirmed by a web check on 2026-11-22 and re-confirmed with `npm view` a
 | secretlint with `@secretlint/secretlint-rule-preset-recommend` | 14.1.0 with 13.1.0 |
 | ffmpeg (local) | 9.1 |
 | Jev, TypeSafe `systemone` endpoint | `jev-1.14.0` pinned, SDK `@typesafe-ai/sdk` 0.7.0 |
-| Qwen VLM, Model Studio (Singapore) | `qwen3.7-flash` provisional pin (2026-11-24, `config/pipeline.json`), frames sent as images; confirm against `qwen3.7-plus` on the real clips (Story 4.1). `qwen3-vl-flash` is retired (2026-10-10). Calls go to the workspace OpenAI-compatible endpoint in `DASHSCOPE_BASE_URL` (workspace `sk-ws-` keys only work there) with `enable_thinking: false` |
-| Qwen text, speech and embeddings | Text and Qwen judge `qwen3.7-flash` (provisional), speech `qwen3-asr-flash`, embeddings `text-embedding-v4` at 512 dimensions (index built 2026-11-24) |
+| Qwen VLM, Model Studio (Singapore) | `qwen3.7-flash` pinned 2026-11-24 in `config/pipeline.json` after the Story 4.1 check on real frames (same quality as `qwen3.7-plus` at about one thirteenth of the cost; a frame list is also accepted as a video part, but frames are sent as images). `qwen3-vl-flash` is retired (2026-10-10). Calls go to the workspace OpenAI-compatible endpoint in `DASHSCOPE_BASE_URL` (workspace `sk-ws-` keys only work there) with `enable_thinking: false` |
+| Qwen text, speech and embeddings | Text and Qwen judge `qwen3.7-flash`, speech `qwen3-asr-flash`, embeddings `text-embedding-v4` at 512 dimensions (index built 2026-11-24) |
 | Fonts, self-hosted | `@fontsource/lora` and `@fontsource/raleway` 5.3.0 |
 | GitHub Pages, GitHub Actions | hosted; 1 GB site, 100 GB per month soft limit |
 
