@@ -148,6 +148,33 @@
     },
     {
       "files": [
+        "packages/policy/src/**/*.test.ts"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "*",
+                  "!vitest",
+                  "!@pausall/bundle-schema",
+                  "!@pausall/bundle-schema/**",
+                  "!./**",
+                  "./../**",
+                  "**/packages/**",
+                  "**/apps/**"
+                ],
+                "message": "AD-23: policy tests import only vitest, @pausall/bundle-schema and files inside the package."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
         "packages/bundle-schema/src/**/*.test.ts"
       ],
       "rules": {

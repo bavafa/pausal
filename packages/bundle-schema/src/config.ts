@@ -11,6 +11,8 @@ export type Thresholds = {
   categoryCutoffs: Record<Category, number>;
   holdMs: Int;
   taglineGateMargin: number;
+  /** Share of the simulated price that scales with relevance (0 to 1). */
+  pricing: { relevanceWeight: number };
 };
 
 export function validateThresholds(json: unknown): Result<Thresholds> {
@@ -27,6 +29,7 @@ export function validateThresholds(json: unknown): Result<Thresholds> {
   }
   integer(json.holdMs, "holdMs", issues, 5000);
   prob(json.taglineGateMargin, "taglineGateMargin", issues);
+  if (object(json.pricing, "pricing", issues)) prob(json.pricing.relevanceWeight, "pricing.relevanceWeight", issues);
   return done(issues, () => json as Thresholds);
 }
 

@@ -70,6 +70,7 @@ const thresholds = (): J => ({
   categoryCutoffs: Object.fromEntries(CATEGORIES.map((c) => [c, 0.5])),
   holdMs: 5000,
   taglineGateMargin: 0.05,
+  pricing: { relevanceWeight: 0.5 },
 });
 const manifest = (): J => ({
   clipId: "a1b2c3d4",
@@ -238,6 +239,8 @@ describe("lax thresholds (AD-20)", () => {
     ["categoryCutoffs.violence", (t: J) => void (t.categoryCutoffs.violence = 0.51)],
     ["holdMs", (t: J) => void (t.holdMs = 4999)],
     ["taglineGateMargin", (t: J) => void (t.taglineGateMargin = null)],
+    ["pricing.relevanceWeight", (t: J) => void (t.pricing.relevanceWeight = 1.01)],
+    ["pricing", (t: J) => void delete t.pricing],
   ])("%s", (field, mutate) => {
     const t = thresholds();
     mutate(t);

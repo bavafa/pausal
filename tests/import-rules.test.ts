@@ -68,4 +68,21 @@ describe("AD-23 import boundaries", () => {
     expect(output).not.toContain("no-restricted");
     expect(status).toBe(0);
   });
+
+  it.each([
+    ['import "node:fs";\n', "node:fs"],
+    ['import "@pausall/pipeline";\n', "@pausall/pipeline"],
+    ['import "../../pipeline/src/index.ts";\n', "../../pipeline/src/index.ts"],
+    ['import "./../../pipeline/src/index.ts";\n', "./../../pipeline/src/index.ts"],
+  ])("policy test files reject %s", (source, name) => {
+    const { status, output } = lint("packages/policy", source, testProbe);
+    expect(status).not.toBe(0);
+    expect(output).toContain(`'${name}'`);
+  });
+
+  it.each(['import "vitest";\n', 'import "@pausall/bundle-schema";\n'])("policy test files allow %s", (source) => {
+    const { status, output } = lint("packages/policy", source, testProbe);
+    expect(output).not.toContain("no-restricted");
+    expect(status).toBe(0);
+  });
 });
