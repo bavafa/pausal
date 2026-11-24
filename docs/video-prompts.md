@@ -10,7 +10,7 @@ Video tools make fixed-length shots (Veo 3: 8 s, Kling: 5 or 10 s, Sora 2: up to
 |---|---|---|---|
 | 1 Breakfast Rush | 3D animation | Kitchen goods | Child at the table, small cut on a finger |
 | 2 The New Sofa | Live action, dialogue | Living room furniture | A loud argument that ends in a laugh |
-| 3 Night Shift, Neo Lagos | Sci-fi, live action | First half: office, headphones, jacket, bag, bar | Second half: a laser gunfight in which no one is hurt |
+| 3 Night Shift, 2200 | Sci-fi, live action | First half: office, headphones, jacket, bag, bar | Second half: a laser gunfight in which no one is hurt |
 | 4 Garden Party | 2D hand-drawn animation | Garden furniture, tableware, decor | None: every pause should show an ad |
 
 Clip 3 is the split clip: ads show on a pause in its first half and are held back in its second half. Clip 4 is the control: a clip where nothing should be held back.
@@ -85,39 +85,39 @@ Shot 11: Wide shot. The doorbell rings; two delivery workers carry in a second, 
 
 Shot 12: Wide shot. Sam and Nina sit on facing sofas with their feet up on a coffee table between them, clinking mugs. Sam: "Honestly? I love it."
 
-## Clip 3: Night Shift, Neo Lagos (sci-fi, split clip, 12 x 8 s)
+## Clip 3: Night Shift, 2200 (sci-fi, split clip, 12 x 8 s)
 
-**Style line:** Cinematic sci-fi action comedy, 16:9, bright and hopeful near-future megacity at night, clean neon reflections on wet streets, holographic signs with abstract shapes only, anamorphic lens look, teal and amber color grade, realistic people, playful upbeat synth music.
+**Style line:** Cinematic cyberpunk action comedy set in the year 2200, 16:9, a vast vertical megacity at night with layered sky bridges, flying vehicles in light traffic lanes and towering holographic projections of abstract shapes, rain-slick streets reflecting magenta, cyan and violet neon, haze and volumetric light, anamorphic lens look, sleek and polished rather than dirty, realistic people, driving synthwave music. Fashion is far-future and refined: tailored high-collar coats, iridescent and light-emitting fabrics, glowing seams, asymmetric cuts. No mohawks, no face tattoos.
 
-**Cast:** KOFI, a man in his early 30s with short locs and a trimmed beard, wearing a charcoal techwear jacket and white sneakers. ZARA, his friend and colleague, a woman in her late 20s with a shaved head and silver earrings, wearing a long burgundy coat. A friendly service ROBOT bartender with a round screen face.
+**Cast:** KOFI, a Black man in his early 30s with short locs and a trimmed beard, wearing a long graphite coat with a high collar and thin cyan light lines along the seams, slim matte trousers and glowing white high-top sneakers. MEI, his friend and colleague, an East Asian woman in her late 20s with a short crew cut, wearing a cropped iridescent jacket that shifts from violet to teal, a high-neck black bodysuit, wide structured trousers and small light-emitting earrings. SERVO, the bar's humanoid robot bartender, chrome and white ceramic plating, a smooth faceless head with a soft glowing visor strip, polite and graceful. VANTA, the intruder, a tall, menacing man in heavy black segmented armor with red light seams, a full mirrored helmet with a narrow red visor slit, a long torn dark cloak, and a bulky chrome laser pistol.
 
 First half, brand safe (shots 1 to 6, about 48 seconds):
 
-Shot 1: Wide shot. A glass-walled office high above the city at dusk, delivery drones gliding past. Kofi works at a white standing desk with a curved monitor and an ergonomic mesh chair.
+Shot 1: Wide shot. A floating glass office on the 300th floor, curved walls of light, holographic charts drifting in the air, flying vehicles streaming past outside. Kofi stands at a sleek white levitating desk, sorting holograms with his hands; an ergonomic chair hovers beside him.
 
-Shot 2: Close-up. Kofi puts on sleek over-ear wireless headphones, nods to the music and closes his laptop with a satisfied smile.
+Shot 2: Close-up. Kofi puts on sleek over-ear wireless headphones with soft cyan light rings, nods to the music and swipes the holograms closed with a satisfied smile.
 
-Shot 3: Medium shot. Kofi zips up his techwear jacket and slings a black leather backpack over his shoulder; Zara grabs her coat and a crossbody bag. Zara: "Finally. First round is on me."
+Shot 3: Medium shot. Kofi pulls on his graphite coat and slings a black leather backpack with glowing straps over his shoulder; Mei throws on her iridescent jacket and picks up a structured crossbody bag. Mei: "Market closed green. First round is on me."
 
-Shot 4: Wide shot. Kofi and Zara walk down a lively neon street past food stalls and parked electric scooters, laughing; Kofi wears his headphones around his neck.
+Shot 4: Wide shot. Kofi and Mei walk across a glowing sky bridge between towers, flying vehicles passing below, a delivery robot rolling past them; Kofi wears his headphones around his neck.
 
-Shot 5: Medium shot. Inside a warm, busy bar with brass lamps and leather stools, the robot bartender slides two glass tumblers to them.
+Shot 5: Medium shot. Inside a sleek lounge bar with a backlit crystal counter, floating light orbs and chrome stools, Servo slides two glowing glass tumblers to them.
 
-Shot 6: Two shot. Kofi and Zara clink glasses and start an excited conversation. Kofi: "Okay, hear me out: a jetpack for pigeons." Zara laughs.
+Shot 6: Two shot. Kofi and Mei clink glasses. Kofi: "So I put my bonus into that orbital solar startup." Mei: "The one beaming power down from space? Bold." Kofi: "They just hit their first full charge. We are early."
 
 Second half, ad held back (shots 7 to 12, about 48 seconds). Played as an action comedy: no one is hurt, no blood, no injuries shown.
 
-Shot 7: Hard cut, text-free time jump: the same two friends at the same counter much later, a row of empty glasses in front of them, both tipsy and giggling. Kofi: "Pigeons... with tiny helmets."
+Shot 7: Hard cut, text-free time jump: the same two friends at the same counter much later, a long row of empty glasses in front of them, both tipsy and giggling. Kofi: "Power... from space... in every home." Mei: "To the moon. Literally."
 
-Shot 8: Medium shot. The door slides open; a sullen man in a black armored jacket and a mirrored visor walks up to Kofi and raises a chunky futuristic laser pistol. Music cuts out.
+Shot 8: Medium shot. The bar doors slide open in a burst of red light; Vanta strides in, cloak trailing, walks up to Kofi and raises his chrome laser pistol. The music cuts out.
 
-Shot 9: Fast handheld shot. The man fires bright red laser beams around the bar; every shot misses, bottles and neon signs spark, patrons duck behind tables, Kofi wobbles out of the way by pure luck.
+Shot 9: Fast handheld shot. Vanta fires bright red laser beams around the bar; every shot misses, bottles and light orbs spark, patrons duck behind tables, Kofi wobbles out of the way by pure luck.
 
-Shot 10: Medium shot. Zara sneaks up behind the man, swings a bar stool and bonks him on the helmet with a cartoonish clang; he spins, drops the pistol and slumps to the floor, knocked out, stars of light around his visor. No blood.
+Shot 10: Medium shot. Mei sneaks up behind Vanta, swings a chrome bar stool and bonks him on the helmet with a cartoonish clang; he spins, drops the pistol and slumps to the floor, knocked out, his red visor flickering off. No blood.
 
-Shot 11: Medium shot. The robot bartender rolls over, picks the man up and carries him out of the door; patrons stand up and applaud Zara, who takes a bow.
+Shot 11: Medium shot. Servo glides over, lifts Vanta with ease and carries him out of the door; patrons stand up and applaud Mei, who takes a bow.
 
-Shot 12: Wide shot. Kofi and Zara climb back onto their stools; the robot bartender slides them two fresh drinks on the house, and they clink glasses, laughing.
+Shot 12: Wide shot. Kofi and Mei climb back onto their stools; Servo slides them two fresh glowing drinks on the house, and they clink glasses, laughing, the neon city shining through the window behind them.
 
 ## Clip 4: Garden Party (2D hand-drawn animation, control clip, 12 x 8 s)
 
