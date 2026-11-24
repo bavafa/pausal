@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Stories 1.1 to 1.4 done.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Stories 1.1 to 1.5 done.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -22,7 +22,8 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 - Story 1.2 done (2026-11-23), merged to `main`: hand-written validators in `bundle-schema` for manifest, analysis, decisions, product, thresholds, campaigns and scene types; `config/scene-types.json` holds 67 labels (user decision: fixed list plus an optional free-text `sceneType.freeLabel` in analysis). Analysis relevance is the raw score (fraction), decisions relevance is the rounded integer. Spec: `_bmad-output/implementation-artifacts/spec-1-2-artifact-and-config-schemas-that-fail-closed.md`. Deferred: `deferred-work.md`.
 - Story 1.3 done (2026-11-23), merged to `main`: `policy` exports `evaluateScene` (R1 to R6 and R3b, reason order, failed rule ids), `rankFits`, `roundHalfUp`, `priceFor`, `splitPrice`, `ZERO_EARNING`, `SENTIMENT_TABLE`, `checkTagline`, `taglineOrName`. User decisions: price is `round_half_up(bid * ((1 - w) + w * relevance / 100))` with `pricing.relevanceWeight` (start 0.5) in `config/thresholds.json`; mood labels Tense, Somber, Neutral, Relaxed, Joyful. Story 1.5 must write `pricing` into `config/thresholds.json`. Spec: `_bmad-output/implementation-artifacts/spec-1-3-policy-rules-reason-order-and-simulated-money.md`.
 - Story 1.4 done (2026-11-23), committed on `main`: `policy` exports `sceneAt(decisions, tMs)` and `resolvePause(decisions, tMs)` returning `{ outcome, scene }`. The look-back set is the scene at `tMs` plus every earlier scene with `endMs > tMs - 1000`. User decisions: all ads but different products give `nothingFits`; the `session` argument is omitted until a story needs it. Deferred to Story 1.7: a pause at `durationMs` (clip ended) gives Analysis unavailable, so the watch screen should not open a pause view on `ended`. Spec: `_bmad-output/implementation-artifacts/spec-1-4-scene-lookup-and-pause-resolution.md`.
-- Next: `bmad-build` on Story 1.5 (decide command on a hand-authored fixture). Then the rest of Epic 1, then Phase 6 evaluation.
+- Story 1.5 done (2026-11-23), committed on `main` (not pushed): `pnpm decide` (`packages/pipeline/src/decide-cli.ts`, pure logic in `decide.ts`) validates analysis, config, manifest and product files and writes canonical `data/decisions/<clip>.json` (sorted keys, SHA-256 input hashes). `pnpm decide --check` fails on drift, a missing or orphan decisions file and AD-19 product mismatches; CI runs it. `--root <dir>` lets tests run on a temp copy. Fixture clip `000000000001` (7 scenes: ad, each reason, prompt injection, failing tagline) with `config/thresholds.json`, `config/campaigns.json` and three `fixture-*` products. Agent decisions: panel for `analysisUnavailable` or missing inputs is "Unavailable" with `safeTag` caution; `safeTag` is the worse judge verdict. Deferred to 1.7 and 1.8: product image paths and the manifest video URL are placeholders. Spec: `_bmad-output/implementation-artifacts/spec-1-5-decide-command-on-a-hand-authored-fixture.md`.
+- Next: `bmad-build` on Story 1.6 (clip picker in the Soft Calm style). Then the rest of Epic 1, then Phase 6 evaluation.
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
@@ -33,7 +34,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning and Stories 1.1 to 1.4, pushed to github.com/bavafa/pausall. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning and Stories 1.1 to 1.4, pushed (Story 1.5 local until the next push) to github.com/bavafa/pausall. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
