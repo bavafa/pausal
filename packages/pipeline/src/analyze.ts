@@ -116,7 +116,7 @@ export async function analyzeClip(input: ClipInput, models: Models, catalog: Cat
     // Scene type and sentiment come from Jev; Qwen covers them only when Jev errors, and never stands in for Jev's safety verdict (AD-6).
     const labels = jev ?? qwen;
     if (labels) {
-      scene.sceneType = labels.sceneType;
+      if (labels.sceneType) scene.sceneType = labels.sceneType;
       scene.sentimentLevel = labels.sentimentLevel;
     }
     if (jev && qwen) scene.judgments = { jev: jev.judgment, qwen: qwen.judgment };

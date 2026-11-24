@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import { clickFor } from "@pausall/policy";
-import { CLIPS, loadDecisions, PRODUCTS } from "./clips.ts";
+import { CLIPS, loadDecisions, pickerClips, PRODUCTS } from "./clips.ts";
 import { AttributionPage } from "./AttributionPage.tsx";
 import { ClipPicker } from "./ClipPicker.tsx";
 import { ProductPage } from "./ProductPage.tsx";
@@ -18,7 +18,7 @@ export function App() {
   const clip = CLIPS.find((c) => c.clipId === clipId);
   // Validated once per clip, so a re-render on each pause does not hand the watch screen a new object.
   const decisions = useMemo(() => (clip ? loadDecisions(clip) : null), [clip]);
-  if (route.page === "picker") return <ClipPicker clips={CLIPS} />;
+  if (route.page === "picker") return <ClipPicker clips={pickerClips(CLIPS)} />;
   if (route.page === "attribution") return <AttributionPage />;
   if (clip) {
     const onProduct = route.page === "product";

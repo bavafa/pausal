@@ -1,4 +1,5 @@
-import type { Product } from "@pausall/bundle-schema";
+import { createHash } from "node:crypto";
+import type { Campaign, Int, Product } from "@pausall/bundle-schema";
 
 /** One product in the local ABO slice (AD-12). Never committed; product files are written from it (AD-19). */
 export type CatalogItem = { id: string; name: string; productType: string; description: string; keyFeatures: string[]; imageId: string };
@@ -71,4 +72,11 @@ export function topK(query: readonly number[], vectors: Float32Array, dims: numb
   const scored: { index: number; sim: number }[] = [];
   for (let i = 0; i < n; i++) scored.push({ index: i, sim: cosine(query, vectors.subarray(i * dims, (i + 1) * dims)) });
   return scored.sort((a, b) => b.sim - a.sim || a.index - b.index).slice(0, k);
+}
+
+/** Deterministic simulated campaign: bid 50 to 150 cents, budget 200 times the bid, 1 in 10 inactive so "no active campaign" still occurs. */
+export function simulatedCampaign(productId: string): Campaign {
+  const h = createHash("sha256").update(productId).digest();
+  const bidCents = 50 + ((h[0] as number) % 101);
+  return { productId, bidCents: bidCents as Int, budgetCents: (bidCents * 200) as Int, active: (h[1] as number) % 10 !== 0 };
 }

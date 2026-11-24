@@ -123,6 +123,13 @@ describe("analyzeClip", () => {
     expect(evaluateScene(ok(validateAnalysis(JSON.parse(JSON.stringify(a)), sceneTypes)).scenes[0]!, thresholds, []).outcome).toBe("analysisUnavailable");
   });
 
+  it("keeps Qwen's safety answer when Qwen names a scene type outside the list", async () => {
+    const models = baseModels({ qwen: judge(async () => ({ ...sj("safe"), sceneType: null })) });
+    const a = await analyzeClip({ clipId: "abcdef012345", durationMs: 6000, frames: frames.slice(0, 6), dialogueCutsMs: [] }, models, catalog, opts);
+    expect(a.scenes[0]).toMatchObject({ status: "ok", sceneType: { primary: "kitchen" } });
+    expect(a.scenes[0]?.judgments?.qwen.verdict).toBe("safe");
+  });
+
   it("writes no tagline for a scene that fails the gate, and passes transcripts to describe only", async () => {
     const seen: string[] = [];
     const models = baseModels({

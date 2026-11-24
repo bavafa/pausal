@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { loadClips, loadDecisions, assetUrl } from "./clips.ts";
+import { loadClips, loadDecisions, assetUrl, pickerClips } from "./clips.ts";
 import { parseRoute, productHref } from "./route.ts";
 
 const manifest = (clipId: string, title: string) => ({ aiGenerated: true, attributionKey: "x", clipId, durationMs: 1000, hasDialogue: false, title, videoUrl: "v.mp4" });
@@ -12,8 +12,9 @@ describe("loadClips", () => {
     expect(warn).toHaveBeenCalledWith(expect.stringContaining("c"), expect.anything());
     warn.mockRestore();
   });
-  it("loads the committed fixture manifest", () => {
+  it("loads the committed fixture manifest but keeps it out of the picker", () => {
     expect(loadClips().map((c) => c.clipId)).toContain("000000000001");
+    expect(pickerClips(loadClips()).map((c) => c.clipId)).not.toContain("000000000001");
   });
   it("gives an empty list when no manifest is valid", () => {
     expect(loadClips({})).toEqual([]);

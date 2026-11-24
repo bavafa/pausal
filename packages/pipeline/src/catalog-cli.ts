@@ -4,10 +4,10 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { gunzipSync } from "node:zlib";
-import { RANKED_MAX, validateAnalysis, validateSceneTypes } from "@pausall/bundle-schema";
+import { RANKED_MAX, validateAnalysis, validateSceneTypes, type Campaign } from "@pausall/bundle-schema";
 import { rankFits } from "@pausall/policy";
 import { Ledger, mapLimit } from "./call.ts";
-import { embedText, sliceCatalog, toCatalogItem, toProduct, type CatalogItem } from "./catalog.ts";
+import { embedText, simulatedCampaign, sliceCatalog, toCatalogItem, toProduct, type CatalogItem } from "./catalog.ts";
 import { Qwen, readKeys } from "./clients.ts";
 import { loadPipelineConfig } from "./config.ts";
 import { canonicalJson } from "./decide.ts";
@@ -109,9 +109,14 @@ function products(): void {
     rmSync(join(pubDir, `${id}.jpg`), { force: true });
     removed++;
   }
+  // Simulated campaigns (AD-18): keep entries for referenced products, add a deterministic one for each new product.
+  const campaignsFile = join(root, "config/campaigns.json");
+  const campaigns = (JSON.parse(readFileSync(campaignsFile, "utf8")) as Campaign[]).filter((c) => ids.has(c.productId));
+  for (const id of wanted) if (!campaigns.some((c) => c.productId === id)) campaigns.push(simulatedCampaign(id));
+  writeFileSync(campaignsFile, canonicalJson(campaigns.sort((a, b) => (a.productId < b.productId ? -1 : 1))));
   const unknown = [...ids].filter((id) => !items.has(id) && !existsSync(join(root, "data/products", `${id}.json`)));
   if (unknown.length) throw new Error(`referenced products not in the slice: ${unknown.join(", ")}`);
-  console.log(`products: wrote ${wanted.length}, removed ${removed}.`);
+  console.log(`products: wrote ${wanted.length}, removed ${removed}, ${campaigns.length} campaigns.`);
 }
 
 const cmd = process.argv[2];

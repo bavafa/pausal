@@ -15,6 +15,9 @@ export function loadClips(entries: Record<string, unknown> = files): Manifest[] 
 
 export const CLIPS = loadClips();
 
+/** The Epic 1 fixture stays loadable by URL for tests but is not offered in the picker (Story 4.9). */
+export const pickerClips = (clips: readonly Manifest[]): Manifest[] => clips.filter((c) => c.attributionKey !== "fixture");
+
 const decisionFiles = import.meta.glob<unknown>("../../../data/decisions/*.json", { eager: true, import: "default" });
 
 /**
