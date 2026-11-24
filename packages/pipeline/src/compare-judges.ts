@@ -42,7 +42,9 @@ export async function compareJudges(root: string, clips: EvalClip[]): Promise<vo
       if (s.status !== "ok" || !s.judgments || !s.description) continue;
       let q: SceneJudgment;
       let qFit: number | null = null;
-      const top = s.fits?.[0];
+      // The product the app shows (and that labels judge) is the decisions top, which can differ from the first fit.
+      const shown = c.decisions?.scenes.find((d) => d.id === s.id)?.topProductId;
+      const top = s.fits?.find((f) => f.productId === shown);
       try {
         q = await judge.judgeScene(s.description);
         if (top) {
