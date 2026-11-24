@@ -24,11 +24,19 @@
       },
       "ranked": [
         {
+          "bid": {
+            "cents": 120,
+            "simulated": true
+          },
           "productId": "fixture-pan",
           "reason": "Fits a kitchen scene: 28 cm, Flat base.",
           "relevance": 80
         },
         {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
           "productId": "fixture-kettle",
           "reason": "Fits a kitchen scene: Gooseneck spout.",
           "relevance": 45
@@ -59,6 +67,10 @@
       "price": null,
       "ranked": [
         {
+          "bid": {
+            "cents": 120,
+            "simulated": true
+          },
           "productId": "fixture-pan",
           "reason": "Fits a kitchen scene: Flat base.",
           "relevance": 72
@@ -83,6 +95,10 @@
       "price": null,
       "ranked": [
         {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
           "productId": "fixture-kettle",
           "reason": "Fits a beach scene.",
           "relevance": 42
@@ -108,11 +124,16 @@
       "price": null,
       "ranked": [
         {
+          "bid": null,
           "productId": "fixture-lamp",
           "reason": "Fits a living room scene: Warm light, Adjustable arm.",
           "relevance": 86
         },
         {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
           "productId": "fixture-kettle",
           "reason": "Fits a living room scene.",
           "relevance": 38
@@ -156,6 +177,10 @@
       "price": null,
       "ranked": [
         {
+          "bid": {
+            "cents": 120,
+            "simulated": true
+          },
           "productId": "fixture-pan",
           "reason": "Fits a kitchen scene: Oven use up to 220 C.",
           "relevance": 88
@@ -183,6 +208,10 @@
       },
       "ranked": [
         {
+          "bid": {
+            "cents": 120,
+            "simulated": true
+          },
           "productId": "fixture-pan",
           "reason": "Fits a cooking scene: Flat base.",
           "relevance": 76

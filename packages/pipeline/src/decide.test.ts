@@ -155,3 +155,12 @@ describe("decide CLI", () => {
     expect(existsSync(join(root, dec))).toBe(false);
   });
 });
+
+describe("familyKey", () => {
+  it("groups sizes of one product and keeps different designs apart", async () => {
+    const { familyKey } = await import("./decide.ts");
+    const pump = (size: string) => familyKey(`206 Collective Women's Battelle Closed-Toe Covered Wedge Pump, Neutral patent leather, ${size} C/D US`);
+    expect(pump("7")).toBe(pump("12"));
+    expect(familyKey('Amazon Brand - Solimo 12" Wall Clock - Ethereal Roman (Silent Movement)')).not.toBe(familyKey('Amazon Brand - Solimo 12" Wall Clock - Classic Roulette (Silent Movement)'));
+  });
+});

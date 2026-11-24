@@ -1,6 +1,6 @@
 # Jev: what it can do and where it fits
 
-Purpose: decide where TypeSafe's Jev model belongs in the Pausall pipeline.
+Purpose: decide where TypeSafe's Jev model belongs in the Pausal pipeline.
 Audience: the author.
 Status: draft. Last updated: 2026-11-22. Facts come from the public TypeSafe docs and legal pages read on 2026-11-22 (listed at the end). Vendor claims are marked. Not legal advice.
 
@@ -17,7 +17,7 @@ Status: draft. Last updated: 2026-11-22. Facts come from the public TypeSafe doc
 - Price (vendor figure): $0.042 per million input tokens, output free. Rate limits are not published: checked 2026-11-23, the console (Usage, Billing, API keys, Settings) shows none, and the errors page only says a `429` means back off and retry (the SDKs retry with exponential backoff by default). Questions in one request run in parallel, so one scene is one request. Request body limit 32 MiB. No latency SLA. Latency claim of 70 to 500 ms is self-measured.
 - Documented weak spots: Choice leans to the first option; accuracy falls with large irrelevant state; adversarial text in the input can move answers; weak at counting and math.
 
-## Fit with the Pausall pipeline
+## Fit with the Pausal pipeline
 Pipeline: frames and speech, then a vision-language model (VLM) and speech to text, then retrieval of about 200 products, then judging, then the list and the pause decision.
 
 | Job | Fit | How |
@@ -37,7 +37,7 @@ An upper bound for a 2-minute clip: 24 scenes, 50 product questions each, about 
 
 ## Risks and conflicts to handle
 1. **Prompt injection.** Dialogue or on-screen text in an upload is text that Jev reads when it classifies safety. The docs say adversarial text can move answers. Mitigation: classify from the VLM description, not the raw transcript, and keep a second signal. Never let one probability alone unlock an ad.
-2. **Upload notice.** Pausall will not keep video, frames or audio, but Jev receives text derived from them. The terms say TypeSafe has no obligation to store customer data, give no retention period, and let it keep derived "summary statistics and classifications" for telemetry. Zero data retention is offered only to enterprise customers. The upload notice must say that a text description is processed by a third-party service, and the rights checklist needs this line.
+2. **Upload notice.** Pausal will not keep video, frames or audio, but Jev receives text derived from them. The terms say TypeSafe has no obligation to store customer data, give no retention period, and let it keep derived "summary statistics and classifications" for telemetry. Zero data retention is offered only to enterprise customers. The upload notice must say that a text description is processed by a third-party service, and the rights checklist needs this line.
 3. **Customer responsibility.** The terms make the customer responsible for having the rights to the input. This is another reason to keep uploads behind the feature flag.
 4. **Early access.** No SLA, rate limits not visible without login, a pricing that the vendor says it cannot prove is not subsidised. Keep the LLM judge as a working fallback.
 5. **Marketing versus docs.** The blog says Jev "can't hallucinate", while the docs list failure modes. We trust the docs and our own evaluation.

@@ -1,14 +1,14 @@
 ---
-title: Pausall PRD
+title: Pausal PRD
 status: final
 created: 2026-11-22
 updated: 2026-11-23
 ---
 
-# Pausall PRD
+# Pausal PRD
 
 ## Problem and vision
-Pause moments on streaming video are mostly blank. An ad shown there can be relevant, or it can be harmful when it lands on a grief or violence scene. Pausall is an experiment that tests whether a system can read the scene, rank sponsored products that fit it and the video so far, and know when to show nothing.
+Pause moments on streaming video are mostly blank. An ad shown there can be relevant, or it can be harmful when it lands on a grief or violence scene. Pausal is an experiment that tests whether a system can read the scene, rank sponsored products that fit it and the video so far, and know when to show nothing.
 
 The viewer watches a clip with a live scene panel and a ranked product list below it. On pause, either a relevant sponsored product appears with a short tagline and an action button, or the frame stays frozen with a one-line reason.
 

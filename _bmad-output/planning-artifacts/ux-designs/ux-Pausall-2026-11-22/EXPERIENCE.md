@@ -1,5 +1,5 @@
 ---
-name: Pausall
+name: Pausal
 status: final
 sources:
   - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
@@ -10,7 +10,7 @@ sources:
 updated: 2026-11-23
 ---
 
-# Pausall Experience Spine
+# Pausal Experience Spine
 
 ## Foundation
 

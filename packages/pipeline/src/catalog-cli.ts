@@ -76,7 +76,7 @@ function referencedIds(): Set<string> {
   return ids;
 }
 
-function products(): void {
+async function products(): Promise<void> {
   const items = new Map((JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[]).map((i) => [i.id, i]));
   const ids = referencedIds();
   const imageCsv = join(cat, "raw/images/metadata/images.csv.gz");
@@ -100,10 +100,15 @@ function products(): void {
     writeFileSync(join(tmp, "members.txt"), `${[...new Set(members)].join("\n")}\n`);
     execFileSync("tar", ["xf", join(cat, "abo-images-small.tar"), "-C", tmp, "-T", join(tmp, "members.txt")]);
   }
+  // A short name already written is kept, so a rerun asks the model only about new products.
+  const file = (id: string) => join(root, "data/products", `${id}.json`);
+  const known = new Map(wanted.filter((id) => existsSync(file(id))).map((id) => [id, (JSON.parse(readFileSync(file(id), "utf8")) as { shortName?: string }).shortName]));
+  const fresh = await shortNames(wanted.filter((id) => !known.get(id)).map((id) => ({ id, name: (items.get(id) as CatalogItem).name })));
   wanted.forEach((id, i) => {
     const p = toProduct(items.get(id) as CatalogItem);
+    const shortName = known.get(id) ?? fresh.get(id);
     writeFileSync(join(pubDir, `${id}.jpg`), readFileSync(join(tmp, members[i] as string)));
-    writeFileSync(join(root, "data/products", `${id}.json`), canonicalJson(p));
+    writeFileSync(file(id), canonicalJson(shortName ? { ...p, shortName } : p));
   });
   // AD-19: a product file nothing references is removed with its image; fixture products stay while the fixture references them.
   let removed = 0;
@@ -124,9 +129,35 @@ function products(): void {
   console.log(`products: wrote ${wanted.length}, removed ${removed}, ${campaigns.length} campaigns.`);
 }
 
+/** Two to four plain words per product ("Wedge pumps", "Teak garden bench") from the text model; a bad answer leaves the full name. */
+async function shortNames(list: { id: string; name: string }[]): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  if (!list.length) return out;
+  const cfg = loadPipelineConfig(root);
+  const keys = readKeys(join(root, ".env"));
+  const ledger = new Ledger(cfg.costCapUsd);
+  const qwen = new Qwen(keys.qwenBaseUrl, keys.qwenKey, { retry: { timeoutMs: cfg.timeoutMs, retries: cfg.retries }, prices: cfg.pricesUsdPerMillionTokens, ledger });
+  const system = [
+    "You shorten product listing titles for a small product tile. For each item give 2 to 4 plain words a shopper would say, in sentence case.",
+    'Name the kind of product with one telling detail, never the brand, size, colour code, pack count or model number. Example: "206 Collective Women\'s Battelle Closed-Toe Covered Wedge Pump, Neutral, 7 C/D US" becomes "Wedge pumps".',
+    'Answer with JSON only: {"names": {"<id>": "<short name>"}}.',
+  ].join("\n");
+  const batches = Array.from({ length: Math.ceil(list.length / 40) }, (_, i) => list.slice(i * 40, i * 40 + 40));
+  await mapLimit(batches, 4, async (batch) => {
+    const user = JSON.stringify(Object.fromEntries(batch.map((b) => [b.id, b.name])));
+    const raw = JSON.parse(await qwen.chat(cfg.models.text, [{ role: "system", content: system }, { role: "user", content: user }], "shortName", true)) as { names?: Record<string, unknown> };
+    for (const { id } of batch) {
+      const n = raw.names?.[id];
+      if (typeof n === "string" && n.trim() && n.trim().length <= 40) out.set(id, n.trim());
+    }
+  });
+  console.log(`short names: ${out.size} of ${list.length}, cost $${ledger.totalUsd.toFixed(4)}.`);
+  return out;
+}
+
 const cmd = process.argv[2];
 if (import.meta.main && cmd === "build") await build();
-else if (import.meta.main && cmd === "products") products();
+else if (import.meta.main && cmd === "products") await products();
 else if (import.meta.main) {
   console.error("usage: pnpm abo build | products");
   process.exit(1);

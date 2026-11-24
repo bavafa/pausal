@@ -4,19 +4,19 @@
 
 # Contextual pause ads: desk research
 
-Purpose: evidence base for Pausall Phase 1. Audience: the author. Status: draft. Last updated: 2026-11-22. All sources accessed 2026-11-22. Raw digests are in `digests/`. General information, not legal advice.
+Purpose: evidence base for Pausal Phase 1. Audience: the author. Status: draft. Last updated: 2026-11-22. All sources accessed 2026-11-22. Raw digests are in `digests/`. General information, not legal advice.
 
-**Decision served:** is contextual pause advertising a credible, safe and legally workable idea for a small public demo, and which data and standards can Pausall use.
+**Decision served:** is contextual pause advertising a credible, safe and legally workable idea for a small public demo, and which data and standards can Pausal use.
 
 ## Summary
 
 1. Pause ads are a live, growing format. Amazon announced interactive pause ads for Prime Video on 2025-09-30 \[1\]. Netflix said pause ads would be sold programmatically through partner DSPs from October 2026 \[2\]. Hulu described a contextual pause ad in 2019 \[3\].
 
-2. All performance figures found are seller-run or industry-sponsored (for example Amazon with Omnicom, MAGNA with DIRECTV). No independent benchmark and no price figure was found \[4\]\[5\]. Pausall therefore treats all pause-ad numbers as simulated assumptions.
+2. All performance figures found are seller-run or industry-sponsored (for example Amazon with Omnicom, MAGNA with DIRECTV). No independent benchmark and no price figure was found \[4\]\[5\]. Pausal therefore treats all pause-ad numbers as simulated assumptions.
 
 3. No independent survey of annoyance with pause ads specifically was found. IAB Tech Lab's own commentator said he had seen no consumer data that users prefer them \[6\].
 
-4. No current industry standard for avoiding sensitive scenes in video ads was confirmed. GARM was discontinued on 2024-08-09 \[7\]. Pausall writes its own suppression policy.
+4. No current industry standard for avoiding sensitive scenes in video ads was confirmed. GARM was discontinued on 2024-08-09 \[7\]. Pausal writes its own suppression policy.
 
 5. Several vendors sell scene-level contextual tagging. All claims are vendor claims without benchmarks \[8\]\[9\]\[10\]\[11\].
 
@@ -59,7 +59,7 @@ Finding: no pricing, CPM or independent performance data was found for any platf
 
 - FTC COPPA rule finalized 2025-01-16 requires separate opt-in parental consent for disclosing children's data to third parties for targeted advertising \[18\]. Compliance dates conflict between secondary sources. Confirm in the Federal Register.
 
-- Not confirmed: that contextual ads need no consent in the EU or UK. The CNIL and ICO pages read do not say so explicitly. Pausall stores no personal data and uses no tracking, which is a design choice, not a legal conclusion.
+- Not confirmed: that contextual ads need no consent in the EU or UK. The CNIL and ICO pages read do not say so explicitly. Pausal stores no personal data and uses no tracking, which is a design choice, not a legal conclusion.
 
 ## 5. Competitors and alternatives
 
@@ -72,7 +72,7 @@ Finding: no pricing, CPM or independent performance data was found for any platf
 | Product placement (Mirriad, Rembrand) | Low confidence, search summaries only | Vendor claim |
 
 
-Gap Pausall can speak to: none of these sources publish accuracy, suppression error rates or an explanation shown to the viewer. This is an observation about what was found in public sources, not a claim about what the vendors do.
+Gap Pausal can speak to: none of these sources publish accuracy, suppression error rates or an explanation shown to the viewer. This is an observation about what was found in public sources, not a claim about what the vendors do.
 
 ## 6. Licences
 

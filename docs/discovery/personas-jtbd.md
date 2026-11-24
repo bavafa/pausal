@@ -1,6 +1,6 @@
 # Personas and jobs to be done
 
-Purpose: describe who Pausall is for and what each person is trying to get done.
+Purpose: describe who Pausal is for and what each person is trying to get done.
 Audience: the author.
 Status: draft. Last updated: 2026-11-22.
 

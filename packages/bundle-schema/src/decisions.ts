@@ -15,8 +15,8 @@ export type SimulatedSplit = { platformCents: Int; publisherCents: Int; simulate
 /** A View product click; it lives only in the session (AD-23). */
 export type SimulatedClick = { productId: string; simulated: true };
 export type Ranked = { productId: string; relevance: Int };
-/** A ranked item as stored in `decisions`, with its template reason line (AD-7). */
-export type RankedItem = Ranked & { reason: string };
+/** A ranked item as stored in `decisions`, with its template reason line (AD-7) and its active campaign bid, null when there is none (AD-18). */
+export type RankedItem = Ranked & { reason: string; bid: SimulatedPrice | null };
 /** Products per scene list (FR-5). */
 export const RANKED_MAX = 10;
 export type Panel = {
@@ -89,7 +89,12 @@ function checkScene(s: Rec, p: string, issues: Issue[]): boolean {
     s.ranked.forEach((r, i) => {
       const rp = at(at(p, "ranked"), i);
       if (!object(r, rp, issues)) return;
-      onlyKeys(r, ["productId", "relevance", "reason"], rp, issues);
+      onlyKeys(r, ["productId", "relevance", "reason", "bid"], rp, issues);
+      if (r.bid !== null && object(r.bid, at(rp, "bid"), issues)) {
+        onlyKeys(r.bid, ["cents", "simulated"], at(rp, "bid"), issues);
+        nonNegInt(r.bid.cents, at(rp, "bid.cents"), issues);
+        literal(r.bid.simulated, true, at(rp, "bid.simulated"), issues);
+      }
       nonEmptyString(r.productId, at(rp, "productId"), issues);
       nonEmptyString(r.reason, at(rp, "reason"), issues);
       integer(r.relevance, at(rp, "relevance"), issues, 0, 100);

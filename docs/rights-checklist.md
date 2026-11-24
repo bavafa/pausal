@@ -16,7 +16,7 @@ Status: draft. Last updated: 2026-11-22.
 - [ ] IAB taxonomy: file licence not confirmed. Ask IAB Tech Lab before committing the file.
 
 ## Uploads
-- [ ] Show the notice before analysis: "Use only videos you own or are allowed to use. Pausall does not keep your video, frames, or audio after analysis. DRM-protected streaming services are not supported."
+- [ ] Show the notice before analysis: "Use only videos you own or are allowed to use. Pausal does not keep your video, frames, or audio after analysis. DRM-protected streaming services are not supported."
 - [ ] Never store or log frames, audio or transcripts. Cache numeric results only, by content hash, short expiry.
 - [ ] Feature flag allows launching with samples only.
 
@@ -26,4 +26,4 @@ Status: draft. Last updated: 2026-11-22.
 ## Open questions for later
 - Privacy position for EU and UK visitors (no personal data planned; not a legal conclusion).
 - Terms of the model APIs used with uploaded frames.
-- Whether a trademark check is needed for the name Pausall.
+- Whether a trademark check is needed for the name Pausal.

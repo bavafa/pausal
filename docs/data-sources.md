@@ -1,10 +1,10 @@
 # Data sources
 
-Purpose: record each data source, its licence and the attribution Pausall must show.
+Purpose: record each data source, its licence and the attribution Pausal must show.
 Audience: the author and contributors.
 Status: draft. Last updated: 2026-11-23. General information, not legal advice. Accessed 2026-11-22.
 
-| Source | Use in Pausall | Licence (verified) | Attribution or condition | Status |
+| Source | Use in Pausal | Licence (verified) | Attribution or condition | Status |
 |---|---|---|---|---|
 | Amazon Berkeley Objects (ABO) [1] | Primary catalog, slice of about 20,000 products | CC BY 4.0 on the official index page. 147,702 listings, 398,212 images. abo-listings.tar 83 MB, abo-images-small.tar 3 GB, images up to 256 px | Credit "Amazon.com" for data; cite Collins et al., CVPR 2022 (arXiv:2110.06199); link the licence; state changes; do not imply endorsement | Confirmed. Licence file opened 2026-11-23: both tars ship the same LICENSE-CC-BY-4.0.txt (full CC BY 4.0 text, no NonCommercial wording), and both READMEs say CC BY 4.0. The older CC BY-NC wording some Amazon pages show does not appear in the download |
 | IAB Content Taxonomy 3.1 [2] | Contextual categories and vocabulary for when not to advertise | No licence stated for the taxonomy files on the IAB page or in the repo README | Unknown | NOT confirmed. Do not copy the file into the repo until IAB confirms terms. Contact support@iabtechlab.com |

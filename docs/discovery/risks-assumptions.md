@@ -1,6 +1,6 @@
 # Risks and assumptions log
 
-Purpose: list what could make Pausall fail, riskiest first.
+Purpose: list what could make Pausal fail, riskiest first.
 Audience: the author.
 Status: draft. Last updated: 2026-11-22.
 

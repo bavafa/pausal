@@ -1,4 +1,4 @@
-# Pausall docs index
+# Pausal docs index
 
 Purpose: entry point to all project documents.
 Audience: the author and contributors.

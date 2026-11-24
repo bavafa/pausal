@@ -20,7 +20,7 @@ export function AttributionPage() {
           Collins et al. ABO: Dataset and Benchmarks for Real-World 3D Object Understanding. CVPR 2022.{" "}
           <a className={LINK} target="_blank" rel="noreferrer" href={PAPER}>arXiv:2110.06199</a>.
         </p>
-        <p>Changes: Pausall uses a slice of the catalog, resizes the product images and adds generated text (taglines and reason lines).</p>
+        <p>Changes: Pausal uses a slice of the catalog, resizes the product images and adds generated text (taglines and reason lines).</p>
         <p>Amazon does not endorse this project.</p>
         <p>The sample clips are AI-generated.</p>
       </div>

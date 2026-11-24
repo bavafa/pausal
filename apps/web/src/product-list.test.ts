@@ -14,7 +14,8 @@ describe("productList on the fixture", () => {
   it("shows the top product with reason and relevance, and the rest small", () => {
     const v = at(2500)!;
     expect([v.top.product.name, v.top.reason, v.top.relevance]).toEqual(["Everyday Skillet", "Fits a kitchen scene: 28 cm, Flat base.", 80]);
-    expect(v.rest.map((p) => p.name)).toEqual(["Pour Kettle"]);
+    expect(v.rest.map((i) => [i.label, i.bid?.cents ?? null])).toEqual([["Kettle", 80]]);
+    expect(v.top.label).toBe("Skillet");
   });
   it("still shows the list in a sensitive scene", () => expect(at(7500)?.top.product.name).toBe("Everyday Skillet"));
   it("shows no list where analysis is unavailable or outside the clip", () => {
@@ -23,7 +24,7 @@ describe("productList on the fixture", () => {
   });
   it("skips an unknown product ID", () => {
     const scene = sceneAt(decisions, 2500)!;
-    const v = productList(scene, [{ productId: "nope", relevance: 99 as Int, reason: "x" }, ...scene.ranked], PRODUCTS)!;
+    const v = productList(scene, [{ productId: "nope", relevance: 99 as Int, reason: "x", bid: null }, ...scene.ranked], PRODUCTS)!;
     expect(v.top.product.id).toBe("fixture-pan");
   });
   it("puts a held product first", () => {

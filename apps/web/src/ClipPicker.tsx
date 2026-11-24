@@ -29,7 +29,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           <p className={EYEBROW}>An experiment in calmer video ads</p>
           <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">Ads that wait until you pause.</h1>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-            Hit pause and Pausall looks at the scene you stopped on. An everyday moment gets one product that fits. Anything sad, violent or tense gets nothing at
+            Hit pause and Pausal looks at the scene you stopped on. An everyday moment gets one product that fits. Anything sad, violent or tense gets nothing at
             all.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -56,7 +56,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
             It also makes a bad suggestion feel worse. A frying pan next to a cooking scene is fine. The same pan next to a funeral is not. So the scene always
-            comes first, and when in doubt, Pausall shows nothing.
+            comes first, and when in doubt, Pausal shows nothing.
           </p>
         </div>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">

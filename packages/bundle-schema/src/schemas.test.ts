@@ -51,7 +51,7 @@ const decisionScene = (startMs: number, endMs: number): J => ({
   topProductId: "B000P1",
   price: { cents: 120, simulated: true },
   split: { platformCents: 84, publisherCents: 36, simulated: true },
-  ranked: [{ productId: "B000P1", relevance: 72, reason: "Fits a kitchen scene." }],
+  ranked: [{ productId: "B000P1", relevance: 72, reason: "Fits a kitchen scene.", bid: null }],
   panel: { contextLabel: { primary: "kitchen" }, moodLabel: "Warm", sentiment: 0.5, safeTag: "safe" },
   tagline: "Cook more.",
 });
@@ -321,8 +321,9 @@ describe("leaky decisions (AD-2, AD-7, AD-8)", () => {
     const d = roundtrip(decisions());
     delete d.holdMs;
     d.scenes[0].ranked[0].reason = "";
-    d.scenes[1].ranked = Array.from({ length: 11 }, (_, i) => ({ productId: i ? `P${i}` : d.scenes[1].ranked[0].productId, relevance: 50, reason: "r" }));
-    expect(paths(validateDecisions(d))).toEqual(["holdMs", "scenes[0].ranked[0].reason", "scenes[1].ranked"]);
+    d.scenes[1].ranked = Array.from({ length: 11 }, (_, i) => ({ productId: i ? `P${i}` : d.scenes[1].ranked[0].productId, relevance: 50, reason: "r", bid: null }));
+    d.scenes[0].ranked[0].bid = { cents: 5 };
+    expect(paths(validateDecisions(d))).toEqual(["holdMs", "scenes[0].ranked[0].bid.simulated", "scenes[0].ranked[0].reason", "scenes[1].ranked"]);
   });
   it("unknown reason and sentiment off the table", () => {
     const d = roundtrip(decisions());

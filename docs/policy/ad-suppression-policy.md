@@ -1,6 +1,6 @@
 # Ad suppression policy
 
-Purpose: rules that decide when Pausall shows a pause ad and when it shows none.
+Purpose: rules that decide when Pausal shows a pause ad and when it shows none.
 Audience: the author and anyone building or evaluating the system.
 Status: draft. Last updated: 2026-11-23. Amended to match the architecture spine: rule 5 is the safety second signal, rule 3b is new, and analysis unavailable is checked first.
 

@@ -1,5 +1,5 @@
 ---
-name: Pausall
+name: Pausal
 description: Calm, minimal web demo that shows a sponsored product on pause only when the scene fits. Soft Calm direction, dark by default with a light theme toggle, laptop and phone.
 status: final
 sources:
@@ -93,7 +93,7 @@ components:
 
 ## Brand & Style
 
-Pausall is an experiment about a single moment: the viewer presses pause. The design posture is calm and assuring, minimal and elegant. A pause should feel like an exhale, not a sales pitch. The video is always the brightest, most saturated thing on screen; everything around it is soft, tinted and quiet. The serif headings give the ad an editorial, considered voice; the sans body keeps the rest plain.
+Pausal is an experiment about a single moment: the viewer presses pause. The design posture is calm and assuring, minimal and elegant. A pause should feel like an exhale, not a sales pitch. The video is always the brightest, most saturated thing on screen; everything around it is soft, tinted and quiet. The serif headings give the ad an editorial, considered voice; the sans body keeps the rest plain.
 
 Direction chosen from three rendered options (Cinema Dark, Gallery Light, Soft Calm). Palette and pairing originate from ui-ux-pro-max matches (Wellness Calm pairing, healthcare palette teal), adjusted for contrast.
 
@@ -101,7 +101,7 @@ Direction chosen from three rendered options (Cinema Dark, Gallery Light, Soft C
 
 ## Logo
 
-The mark is a pause sign: two white rounded bars on a rounded accent tile with a light diagonal gradient. The wordmark "pausall" follows it in lowercase Raleway semibold, tracked slightly tight. Screen readers hear "Pausall". The favicon is the mark alone. A sticky header carries the logo (a link home) and an icon-only theme toggle on every page. The tile is the one place the accent is used decoratively.
+The mark is a pause sign: two white rounded bars on a rounded accent tile with a light diagonal gradient. The wordmark "pausall" follows it in lowercase Raleway semibold, tracked slightly tight. Screen readers hear "Pausal". The favicon is the mark alone. A sticky header carries the logo (a link home) and an icon-only theme toggle on every page. The tile is the one place the accent is used decoratively.
 
 ## Theme
 

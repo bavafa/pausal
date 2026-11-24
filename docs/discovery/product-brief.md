@@ -1,11 +1,11 @@
 ---
-title: Pausall project brief
+title: Pausal project brief
 status: draft
 created: 2026-11-22
 updated: 2026-11-22
 ---
 
-# Pausall project brief
+# Pausal project brief
 
 Purpose: define the problem, product, users, scope and open questions before the PRD.
 Audience: Sam.
@@ -15,7 +15,7 @@ Status: draft. Last updated: 2026-11-22. Items tagged [ASSUMPTION] were inferred
 Streaming services now sell pause ads. Amazon announced interactive pause ads for Prime Video on 2025-09-30, and Netflix said it would sell pause ads programmatically from October 2026 (see `research.md` [1][2]). A pause is a natural moment, but an ad that ignores the scene can feel intrusive or, in a sad or violent scene, harmful to the brand. Public sources describe scene-level targeting vendors but publish no accuracy or suppression data, and no independent pause-ad performance benchmark was found. The question is whether a pause ad can be relevant, safe and explainable.
 
 ## Product
-Pausall turns a clip (up to 2 minutes) into a live, ranked list of catalog products that match the current scene. Each item has a relevance score (0 to 100), a one-line reason and an ad flag. On pause, Pausall shows an ad for the top product, or shows no ad and says why ("No ad: this scene is sensitive" or "No ad: nothing fits well"). A slider trades relevance against simulated revenue. Analysis runs once after load, so playback and pause only read stored results.
+Pausal turns a clip (up to 2 minutes) into a live, ranked list of catalog products that match the current scene. Each item has a relevance score (0 to 100), a one-line reason and an ad flag. On pause, Pausal shows an ad for the top product, or shows no ad and says why ("No ad: this scene is sensitive" or "No ad: nothing fits well"). A slider trades relevance against simulated revenue. Analysis runs once after load, so playback and pause only read stored results.
 
 ### Scene profile (new requirement)
 For every scene, the analysis stores a profile that the list, the pause overlay and the suppression rule all read:

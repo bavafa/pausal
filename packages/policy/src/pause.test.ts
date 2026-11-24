@@ -14,7 +14,7 @@ const scene = ([startMs, endMs, outcome, productId = "p1"]: Spec): DecisionScene
     topProductId: productId,
     price: ad ? { cents: 100 as Int, simulated: true } : null,
     split: ad ? { platformCents: 70 as Int, publisherCents: 30 as Int, simulated: true } : null,
-    ranked: [{ productId, relevance: 70 as Int, reason: "Fits a kitchen scene." }],
+    ranked: [{ productId, relevance: 70 as Int, reason: "Fits a kitchen scene.", bid: null }],
     panel: { contextLabel: { primary: "kitchen" }, moodLabel: "Neutral", sentiment: 0, safeTag: "safe" },
   };
 };

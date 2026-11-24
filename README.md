@@ -1,4 +1,4 @@
-# Pausall
+# Pausal
 
 Purpose: an experiment that turns a video into a live, ranked list of products matching the current scene, and shows a contextual pause ad (or an explained "no ad") when the viewer pauses.
 Audience: the author and anyone curious.

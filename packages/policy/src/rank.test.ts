@@ -17,7 +17,7 @@ const clip = (...specs: Spec[]): Decisions => {
       topProductId: ids[0] ?? null,
       price: ad ? { cents: 100 as Int, simulated: true } : null,
       split: ad ? { platformCents: 70 as Int, publisherCents: 30 as Int, simulated: true } : null,
-      ranked: ids.map((productId, i) => ({ productId, relevance: (90 - i) as Int, reason: `r-${productId}-${start}` })),
+      ranked: ids.map((productId, i) => ({ productId, relevance: (90 - i) as Int, reason: `r-${productId}-${start}`, bid: null })),
       panel: { contextLabel: { primary: "kitchen" }, moodLabel: "Neutral", sentiment: 0, safeTag },
     };
     start = end;
