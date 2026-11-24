@@ -1,6 +1,6 @@
 ---
 name: Pausall
-description: Calm, minimal web demo that shows a sponsored product on pause only when the scene fits. Soft Calm direction, light and dark, laptop and phone.
+description: Calm, minimal web demo that shows a sponsored product on pause only when the scene fits. Soft Calm direction, dark by default with a light theme toggle, laptop and phone.
 status: final
 sources:
   - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
@@ -8,7 +8,7 @@ sources:
   - docs/policy/ad-suppression-policy.md
   - docs/discovery/personas-jtbd.md
   - docs/discovery/product-brief.md
-updated: 2026-11-22
+updated: 2026-11-24
 colors:
   background: '#F4F7F7'
   foreground: '#164E63'
@@ -99,9 +99,17 @@ Direction chosen from three rendered options (Cinema Dark, Gallery Light, Soft C
 
 → Visual reference: [mockups/soft-calm.html](mockups/soft-calm.html). Rejected directions: [mockups/directions-1.html](mockups/directions-1.html). This spine wins on conflict with any mock.
 
+## Logo
+
+The wordmark is "Pausall" in Lora, with the closing "ll" drawn as a pause sign: two rounded vertical bars in the accent color, about the height of the lowercase "l". Screen readers hear "Pausall". The favicon is the same two bars on the dark background. The logo sits at the top left of the clip picker. It is the one place the accent is used decoratively.
+
+## Theme
+
+Dark is the default. A "Light theme" / "Dark theme" button sits fixed in the top right of every screen and remembers the choice in the browser (`localStorage`, nothing sent). The choice is applied before the page draws, so it never flashes light.
+
 ## Colors
 
-- **Background (`#F4F7F7` / `#0F1C1F`)**: a tinted neutral, never pure white or pure black. Dark mode is a deep teal-black so the video stays the brightest element.
+- **Background (`#F4F7F7` light / `#0F1C1F` dark)**: a tinted neutral, never pure white or pure black. Dark mode is a deep teal-black so the video stays the brightest element.
 - **Foreground (`#164E63` / `#E3EEF0`)**: deep teal text, 8.5:1 on light background, 14.7:1 on dark.
 - **Card (`#FFFFFF` / `#16272B`)**: the ad card, the pause note and the product page surface.
 - **Muted and muted foreground**: thumbnail wells and secondary text (reasons, labels, "Based on this scene and the previous 3"). Muted foreground is 7.0:1 light, 8.0:1 dark.
@@ -142,13 +150,15 @@ Soft corners throughout: `{rounded.md}` (14 px) for the video, cards, thumbnails
 - **Scene panel:** inline strip, eyebrow keys, brand-safe tag as an accent outline pill.
 - **Top product:** larger thumb, eyebrow "Sponsored", Lora title, one-line reason, relevance score in `label` muted.
 - **Small product:** square thumb plus name in `label`.
+- **Product images:** always shown whole (`object-contain`) on a white well with a small inset, because catalog photos have white backgrounds; never cropped. Images are shown no larger than 256 px, the size of the catalog files, so they are not blown up and blurred.
+- **Clip picker:** logo, a one-line headline, two sentences on what Pausall does, a "How to try it" row of three numbered steps (pick a clip; play it, then pause anywhere; see what the pause decides), then clip cards (first frame as a still, title, "AI-generated" and duration), and a closing line that everything is simulated, with the Attribution link.
 
 ## Do's and Don'ts
 
 | Do | Don't |
 |---|---|
 | Keep the video the brightest thing on screen | Use pure black or pure white surfaces |
-| Use the accent only for the one action and the safe tag | Color a held-back ad in red or warning tones |
+| Use the accent only for the one action, the safe tag and the logo's pause bars | Color a held-back ad in red or warning tones |
 | Keep the player 16:9 in every state | Resize or reflow the player on pause |
 | Label every ad, number and campaign as simulated | Show a price or earnings figure without "Simulated" |
 | Let the ad cover most of the frame on phone | Let the ad cover the playback bar |
