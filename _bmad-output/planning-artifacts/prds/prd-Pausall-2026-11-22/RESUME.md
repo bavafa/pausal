@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Stories 1.1 to 1.5 done.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epic 1 done (Stories 1.1 to 1.8).
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -23,7 +23,11 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 - Story 1.3 done (2026-11-23), merged to `main`: `policy` exports `evaluateScene` (R1 to R6 and R3b, reason order, failed rule ids), `rankFits`, `roundHalfUp`, `priceFor`, `splitPrice`, `ZERO_EARNING`, `SENTIMENT_TABLE`, `checkTagline`, `taglineOrName`. User decisions: price is `round_half_up(bid * ((1 - w) + w * relevance / 100))` with `pricing.relevanceWeight` (start 0.5) in `config/thresholds.json`; mood labels Tense, Somber, Neutral, Relaxed, Joyful. Story 1.5 must write `pricing` into `config/thresholds.json`. Spec: `_bmad-output/implementation-artifacts/spec-1-3-policy-rules-reason-order-and-simulated-money.md`.
 - Story 1.4 done (2026-11-23), committed on `main`: `policy` exports `sceneAt(decisions, tMs)` and `resolvePause(decisions, tMs)` returning `{ outcome, scene }`. The look-back set is the scene at `tMs` plus every earlier scene with `endMs > tMs - 1000`. User decisions: all ads but different products give `nothingFits`; the `session` argument is omitted until a story needs it. Deferred to Story 1.7: a pause at `durationMs` (clip ended) gives Analysis unavailable, so the watch screen should not open a pause view on `ended`. Spec: `_bmad-output/implementation-artifacts/spec-1-4-scene-lookup-and-pause-resolution.md`.
 - Story 1.5 done (2026-11-23), committed and pushed on `main`: `pnpm decide` (`packages/pipeline/src/decide-cli.ts`, pure logic in `decide.ts`) validates analysis, config, manifest and product files and writes canonical `data/decisions/<clip>.json` (sorted keys, SHA-256 input hashes). `pnpm decide --check` fails on drift, a missing or orphan decisions file and AD-19 product mismatches; CI runs it. `--root <dir>` lets tests run on a temp copy. Fixture clip `000000000001` (7 scenes: ad, each reason, prompt injection, failing tagline) with `config/thresholds.json`, `config/campaigns.json` and three `fixture-*` products. Agent decisions: panel for `analysisUnavailable` or missing inputs is "Unavailable" with `safeTag` caution; `safeTag` is the worse judge verdict. Deferred to 1.7 and 1.8: product image paths and the manifest video URL are placeholders. Spec: `_bmad-output/implementation-artifacts/spec-1-5-decide-command-on-a-hand-authored-fixture.md`.
-- Next: `bmad-build` on Story 1.6 (clip picker in the Soft Calm style). Then the rest of Epic 1, then Phase 6 evaluation.
+- Story 1.6 done (2026-11-23): Tailwind v4 with the Soft Calm tokens in `apps/web/src/index.css` (dark by system setting; `contrast.test.ts` checks 4.5:1 from the hex values), Lora and Raleway self-hosted through `@fontsource` 5.3.0, hash routes `#/` and `#/clip/<id>`, clip picker from validated manifests bundled with `import.meta.glob`. Spec: `spec-1-6-clip-picker-in-the-soft-calm-style.md`.
+- Story 1.7 done (2026-11-23): watch screen with the native player at 16:9, click, tap and Space toggle, Back to clips, validated `decisions` (null when missing, invalid or not matching the manifest, which shows "Analysis unavailable for this scene."). The fixture clip has a generated 35 s `testsrc2` video at `apps/web/public/media/000000000001.mp4` (command in the spec). Spec: `spec-1-7-watch-screen-with-the-player.md`.
+- Story 1.8 done (2026-11-23): pause view. `apps/web/src/pause-view.ts` maps `resolvePause` to the ad card or the pause note (policy wording), failing closed on null decisions or a missing product; `PauseOverlay.tsx` renders it; frame time from `requestVideoFrameCallback`. Only a real pause opens the view; seeks update an open view. Fixture product images are SVGs in `apps/web/public/products/`. Spec: `spec-1-8-pause-view-ad-card-or-pause-note.md`.
+- Epic 1 ran without check-ins at the user's request: specs were self-approved and the review layers ran inline (no subagents). Open deferred items in `deferred-work.md` include a Firefox double toggle check and a Safari phone control bar check.
+- Next: optional Epic 1 retrospective, then `bmad-build` on Story 2.1 (ranked list, reason lines and the ranking window).
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
@@ -34,12 +38,13 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning and Stories 1.1 to 1.5, pushed to github.com/bavafa/pausall. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning and Epic 1 (Stories 1.1 to 1.8), pushed to github.com/bavafa/pausall. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
 ## Build environment
 - pnpm is not installed globally on the author's machine; run it as `npx -y pnpm@12.23.0 <command>`. Local Node is 26.9; CI uses 26.13.1 from `.nvmrc`.
+- Dev server: `npx -y pnpm@12.23.0 --filter @pausall/web dev`, then open `http://localhost:5173/pausall/` (`.claude/launch.json` holds the same command, not committed).
 - Checks: `pnpm -r build`, `pnpm typecheck`, `pnpm lint`, `pnpm test`, `pnpm secrets`. The pre-commit hook (`.githooks/`) needs `node_modules` installed.
 - TypeScript 7 is not supported by typescript-eslint, so lint is oxlint. Packages export `.ts` source; there is no library build step.
 
