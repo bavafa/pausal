@@ -37,11 +37,12 @@ export class Qwen {
   }
 
   /** One chat completion with thinking off (it is on by default and costs hidden tokens). */
-  async chat(model: string, messages: ChatMessage[], stage: string, json = false): Promise<string> {
+  async chat(model: string, messages: ChatMessage[], stage: string, json = false, allowEmpty = false): Promise<string> {
     const body: Record<string, unknown> = { model, messages, enable_thinking: false, temperature: 0 };
     if (json) body.response_format = { type: "json_object" };
     const res = await this.post("/chat/completions", body, stage);
     const text = (res.choices as { message?: { content?: unknown } }[] | undefined)?.[0]?.message?.content;
+    if (allowEmpty && (text === "" || text === null)) return "";
     if (typeof text !== "string" || text.trim() === "") throw new Error(`${model} returned no text`);
     return text;
   }

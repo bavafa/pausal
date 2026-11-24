@@ -85,8 +85,8 @@ try {
       if (silences.some(([a, b]) => a <= span.startMs && b >= span.endMs)) return "";
       const wav = run("ffmpeg", ["-v", "error", "-ss", String(span.startMs / 1000), "-to", String(span.endMs / 1000), "-i", video, "-ac", "1", "-ar", "16000", "-f", "wav", "-"]);
       const content = [{ type: "input_audio" as const, input_audio: { data: `data:audio/wav;base64,${wav.toString("base64")}` } }];
-      // A failed transcription fails the describe stage, so a scene is never judged without its speech.
-      return qwen.chat(cfg.models.speech, [{ role: "user", content }], "transcribe");
+      // A failed call fails the describe stage, so a scene is never judged without its speech; an empty answer means no speech (music, noise).
+      return qwen.chat(cfg.models.speech, [{ role: "user", content }], "transcribe", false, true);
     };
   }
 
