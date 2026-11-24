@@ -58,8 +58,8 @@ development_status:
   3-3-attribution-page: done
   epic-3-retrospective: done
 
-  epic-4: backlog
-  4-1-pre-checks-and-model-pin: backlog
+  epic-4: in-progress
+  4-1-pre-checks-and-model-pin: in-progress
   4-2-catalog-slice-embedding-index-and-product-files: backlog
   4-3-sample-clips-and-manifests: backlog
   4-4-pipeline-runner-ingest-and-segment: backlog
