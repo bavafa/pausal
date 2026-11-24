@@ -29,7 +29,7 @@ This document breaks the requirements from the PRD, the UX design contract and t
 
 ### Functional Requirements
 
-FR1 (FR-1): The pipeline splits a clip of up to 2 minutes into scenes and stores a scene profile for each: description, scene type, sentiment (-1 to +1 with a mood label), brand-safety verdict (safe, caution, unsafe) with reasons and confidence.
+FR1 (FR-1): The pipeline splits a clip of up to 5 minutes into scenes and stores a scene profile for each: description, scene type, sentiment (-1 to +1 with a mood label), brand-safety verdict (safe, caution, unsafe) with reasons and confidence.
 FR2 (FR-2): Playback and pause only read results already loaded; no analysis blocks playback.
 FR3 (FR-3): Brand safety is classified from the scene description, never from raw dialogue or on-screen text.
 FR4 (FR-4): A missing or low-confidence verdict counts as not safe. A scene not analyzed counts as analysis unavailable.
@@ -509,7 +509,7 @@ So that the demo has real material to analyze.
 **Acceptance Criteria:**
 
 **Given** 4 clips made with an AI tool whose terms allow public use (tool and terms noted in `docs/data-sources.md`)
-**Then** each is at most 2 minutes and small enough for GitHub Pages (about 10 MB)
+**Then** each is at most 5 minutes and small enough for GitHub Pages (at most 25 MB, re-encoded if larger)
 **And** together they include safe scenes that fit ABO products and scenes for each sensitive category, including one dialogue-heavy clip
 
 **When** I add a clip

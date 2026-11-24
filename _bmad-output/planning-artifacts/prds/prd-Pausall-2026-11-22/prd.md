@@ -29,7 +29,7 @@ These are hypotheses from Phase 1; no interviews have been run.
 All ads, campaigns, bids and conversions are simulated and labeled as such in the UI.
 
 ### F1. Scene analysis (once per clip)
-- FR-1 The system splits a clip of up to 2 minutes into scenes and stores a scene profile for each: description, scene type, sentiment (-1 to +1 with a mood label), brand-safety verdict (safe, caution, unsafe) with reasons and confidence.
+- FR-1 The system splits a clip of up to 5 minutes (raised from 2 minutes on 2026-11-24 by the author; the upload limit in FR-20 is unchanged) into scenes and stores a scene profile for each: description, scene type, sentiment (-1 to +1 with a mood label), brand-safety verdict (safe, caution, unsafe) with reasons and confidence.
 - FR-2 Playback and pause only read results held for the session; no analysis blocks playback. For uploads, results are held only as FR-19 allows.
 - FR-3 Brand safety is classified from the scene description, not from raw dialogue or on-screen text.
 - FR-4 A missing or low-confidence verdict counts as not safe. A scene whose chunk is not yet analyzed counts as analysis unavailable.
