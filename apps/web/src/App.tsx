@@ -11,7 +11,9 @@ import { WatchScreen } from "./WatchScreen.tsx";
 export function App() {
   const route = useRoute();
   // Hash routes keep the old scroll position; every new page starts at the top.
-  useEffect(() => window.scrollTo(0, 0), [location.hash]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.hash]);
   // The session pause log: page-load state only, never sent or stored (AD-23).
   const [pauses, setPauses] = useState<PauseEntry[]>([]);
   // True once the product page was opened from the clip in this page load, so its Back can step back in history.
