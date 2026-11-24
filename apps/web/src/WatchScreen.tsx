@@ -1,13 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Decisions, Manifest } from "@pausall/bundle-schema";
+import { sceneAt } from "@pausall/policy";
 import { assetUrl, PRODUCTS } from "./clips.ts";
 import { PauseOverlay } from "./PauseOverlay.tsx";
+import { ScenePanel } from "./ScenePanel.tsx";
 import { announce, pauseView, type PauseView } from "./pause-view.ts";
 
 const toggle = (v: HTMLVideoElement) => void (v.paused ? v.play().catch(() => {}) : v.pause());
 
 /** Elements that handle Space themselves; the page shortcut stays out of their way. */
 const OWNS_SPACE = "a, button, input, textarea, select, video, [contenteditable]";
+
+/** With requestVideoFrameCallback the frame time drives the panel; timeupdate is only the fallback, so the two never disagree at a boundary. */
+const HAS_RVFC = typeof HTMLVideoElement !== "undefined" && "requestVideoFrameCallback" in HTMLVideoElement.prototype;
 
 export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: Decisions | null }) {
   const video = useRef<HTMLVideoElement>(null);
@@ -16,6 +21,10 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
   const [view, setView] = useState<PauseView | null>(null);
   const open = useRef(false);
   open.current = view !== null;
+  // Scene ID only, so the screen re-renders on a scene change and not on every frame.
+  const [sceneId, setSceneId] = useState(() => (decisions && sceneAt(decisions, 0)?.id) ?? null);
+  const scene = decisions?.scenes.find((s) => s.id === sceneId) ?? null;
+  const track = useCallback((ms: number) => setSceneId((decisions && sceneAt(decisions, Math.floor(ms))?.id) ?? null), [decisions]);
 
   // Only a pause opens the view (not a fresh load). Never an overlay while playing or after the clip ended.
   const showPause = useCallback(() => {
@@ -30,12 +39,13 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
     let id = 0;
     const onFrame: VideoFrameRequestCallback = (_now, meta) => {
       frameMs.current = meta.mediaTime * 1000;
+      track(frameMs.current);
       if (v.paused && open.current) showPause(); // a seek during the pause view presents a new frame
       id = v.requestVideoFrameCallback(onFrame);
     };
     id = v.requestVideoFrameCallback(onFrame);
     return () => v.cancelVideoFrameCallback(id);
-  }, [showPause]);
+  }, [showPause, track]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -81,7 +91,11 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
           onPlay={() => setView(null)}
           onPause={showPause}
           onSeeking={() => (frameMs.current = null)}
-          onSeeked={() => open.current && showPause()}
+          onSeeked={(e) => {
+            track(e.currentTarget.currentTime * 1000); // after a seek currentTime is the target frame; rVFC may come late while paused
+            if (open.current) showPause();
+          }}
+          onTimeUpdate={(e) => !HAS_RVFC && track(e.currentTarget.currentTime * 1000)}
           onEnded={() => setView(null)}
         />
         {view && <PauseOverlay view={view} />}
@@ -90,7 +104,7 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
         {view ? announce(view) : ""}
       </p>
       <p className="mt-2 text-label text-muted-foreground">AI-generated</p>
-      {!decisions && <p className="mt-3 text-muted-foreground">Analysis unavailable for this scene.</p>}
+      <ScenePanel scene={scene} />
     </main>
   );
 }
