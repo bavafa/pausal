@@ -84,7 +84,7 @@ function products(): void {
   const imagePath = new Map(
     gunzipSync(readFileSync(imageCsv))
       .toString("utf8")
-      .split("\n")
+      .split(/\r?\n/) // images.csv has CRLF line endings
       .slice(1)
       .map((l) => l.split(","))
       .map((c) => [c[0] ?? "", c[3] ?? ""] as const),
@@ -94,7 +94,12 @@ function products(): void {
   const wanted = [...ids].filter((id) => items.has(id));
   const members = wanted.map((id) => `images/small/${imagePath.get(items.get(id)?.imageId ?? "")}`);
   if (members.some((m) => m.endsWith("/undefined"))) throw new Error("a referenced product has no image in images.csv");
-  if (members.length) execFileSync("tar", ["xf", join(cat, "abo-images-small.tar"), "-C", (mkdirSync(tmp, { recursive: true }), tmp), ...members]);
+  if (members.length) {
+    // A member list file keeps the command line short for hundreds of images.
+    mkdirSync(tmp, { recursive: true });
+    writeFileSync(join(tmp, "members.txt"), `${[...new Set(members)].join("\n")}\n`);
+    execFileSync("tar", ["xf", join(cat, "abo-images-small.tar"), "-C", tmp, "-T", join(tmp, "members.txt")]);
+  }
   wanted.forEach((id, i) => {
     const p = toProduct(items.get(id) as CatalogItem);
     writeFileSync(join(pubDir, `${id}.jpg`), readFileSync(join(tmp, members[i] as string)));
