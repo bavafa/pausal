@@ -1,19 +1,27 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 4 done with retrospectives (Epic 4 closed on local test clips, never pushed). Stories 4.3 and 4.9 must be redone with AI-generated clips before any push. Next: Epic 5. See "Start here".
+Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 4 done with retrospectives (Epic 4 closed on local test clips, never pushed). Stories 4.3 and 4.9 must be redone with AI-generated clips before any push. Theme toggle, logo and landing page added after Epic 4. Next: Epic 5. See "Start here".
 
-## Start here (fresh chat, state on 2026-11-24)
-- Progress: Epics 1 to 4 done. Epic 4 was closed on 2026-11-24 on the YouTube test clips, local only, by the user's choice ("use them, never push"): `local/test-clips` was rebased onto `main` and passed test, typecheck, lint, secrets, `decide --check` and a browser check (pause note, ad card, ranking hold). 4.3 and 4.9 still need a rerun with AI-generated clips before any push (about an hour). Epic 5 (5 stories) not started. By story count about 18% of the build is left (23 of 28 done, 5 new, plus the AI-clip rerun).
-- Branches: `main` holds all code and docs, is 10 commits ahead of GitHub (`git rev-list --count origin/main..main`) and is NOT pushed. Do not push `main` until the AI clips are in: the picker hides the fixture, so the live site would show no clips. `local/test-clips` holds analysis, decisions, products and campaigns for 4 YouTube test clips (one is a commercial film scene). Never push or merge it; it is for local testing only. The test videos sit in `apps/web/public/media/` and are excluded through `.git/info/exclude`.
-- Waiting on the user: 4 AI-generated clips in `data/samples/` (at most 5 minutes and 25 MB each, one with lots of dialogue, safe home scenes plus each sensitive category) and the name of the tool that made them. The 4 files there now are the YouTube test clips; the user will replace them.
+## Start here (fresh chat, state on 2026-11-24 evening)
+- Progress: Epics 1 to 4 done with retrospectives. Epic 4 was closed on the YouTube test clips, local only, by the user's choice ("use them, never push"). Epic 5 (5 stories) not started. About 18% of the build is left by story count (23 of 28 done), plus rerunning Stories 4.3 and 4.9 with AI-generated clips before any push (about an hour).
+- After Epic 4, outside any epic, at the user's request (all on `main`, copied to `local/test-clips`):
+  - Dark theme by default plus a "Light theme" / "Dark theme" button fixed top right, remembered in `localStorage` (`apps/web/src/ThemeToggle.tsx`; the class is set before paint by a script in `apps/web/index.html`; dark tokens are `:root.dark` in `index.css`).
+  - Logo: "Pausa" in Lora plus the "ll" drawn as two accent pause bars (`apps/web/src/Logo.tsx`, no image file); favicon `apps/web/public/favicon.svg`.
+  - Landing page rewritten (`ClipPicker.tsx`): logo, headline, two sentences on what Pausall is, three "How to try it" steps, clip cards with a still frame, "AI-generated" label and duration, "everything here is simulated" line.
+  - Product images shown whole (`object-contain` on a white well) and never larger than 256 px, the size of the ABO small images. The user does not want larger images fetched.
+  - `DESIGN.md` and `EXPERIENCE.md` updated for all of the above (Logo and Theme sections, picker, images).
+  - Bug fixed: the `decide` CLI test copied `data/catalog/` (3.3 GB) into the temp folder on every run and never deleted it; 210 copies filled the disk (328 GB). It now skips `data/catalog` and `data/samples` and deletes its copies. The leftovers were deleted with the user's OK.
+- Branches: `main` holds all code and docs, is 15 commits ahead of GitHub and NOT pushed. Do not push `main` until the AI clips are in (the picker hides the fixture, so the live site would show no clips). `local/test-clips` = `main` plus local-only commits: test clip analysis, decisions, products and campaigns, and the "AI-generated" tag and label hidden. Never push or merge it. Web changes are made on `main` and cherry-picked to it (the picker label line conflicts; keep it hidden there). The test videos sit in `apps/web/public/media/` and are excluded through `.git/info/exclude`. Switching to `main` makes the local site show no clips; switch back with `git checkout local/test-clips`.
+- Local site: `.claude/launch.json` config `web` (port 5173), or `npx -y pnpm@12.23.0 --filter @pausall/web dev`, then http://localhost:5173/pausall/.
+- Waiting on the user: 4 AI-generated clips in `data/samples/` (at most 5 minutes and 25 MB each, one with lots of dialogue, safe home scenes plus each sensitive category) and the name of the tool that made them. The 4 files there now are the YouTube test clips.
 - When the clips arrive, on `main` (the user asked not to be pulled in unless required):
   1. For each clip: `shasum -a 256` gives the ID (first 12 hex characters); copy it to `apps/web/public/media/<id>.mp4`; write `data/manifest/<id>.json` (title, `videoUrl` `media/<id>.mp4`, `durationMs` from ffprobe rounded to ms, `aiGenerated: true`, `hasDialogue` true if it has an audio track, `attributionKey`).
   2. Note the tool and its terms in `docs/data-sources.md`.
   3. `npx -y pnpm@12.23.0 analyze <id>` for each clip (about 2 to 5 minutes each, run in the background); then `abo products`, then `decide`.
-  4. Run `test`, `typecheck`, `lint`, `decide --check`, `secrets`; check the app with the `web` preview (`.claude/launch.json`).
-  5. Commit, push `main`, check https://bavafa.github.io/pausall/. Mark 4.3, 4.9 and epic-4 done in `sprint-status.yaml` and add a short note to the Epic 4 retro.
-- Then Epic 5 (labels, eval sweep, guardrail, metrics report, Jev versus Qwen, browser check). Epic 5 labels are human judgments per time range; ask the user how they want to label before starting 5.1.
-- Read for Epic 4 details: `_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md` (plain-language retro) and the `spec-4-*` files.
+  4. Run `test`, `typecheck`, `lint`, `decide --check`, `secrets`; check the app with the `web` preview.
+  5. Commit, push `main`, check https://bavafa.github.io/pausall/. Close action items 18 and 19 in `sprint-status.yaml` and add a short note to the Epic 4 retro.
+- Next: Epic 5 (labels, eval sweep, guardrail, metrics report, Jev versus Qwen, browser check). Labels are human judgments per time range; ask the user how they want to label before starting 5.1. Write each epic retro with the humanizer skill, in plain language.
+- Read for Epic 4 details: `_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md` and the `spec-4-*` files.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
