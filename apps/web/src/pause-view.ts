@@ -36,4 +36,4 @@ export function pauseView(decisions: Decisions | null, products: ReadonlyMap<str
 
 /** One line for the polite live region. */
 export const announce = (v: PauseView) =>
-  v.kind === "ad" ? `Paused. Sponsored, simulated ad: ${v.product.name}. ${v.tagline}` : `Paused. ${v.text}`;
+  v.kind === "ad" ? `Paused. Sponsored, simulated ad: ${v.product.shortName ?? v.product.name}. ${v.tagline}` : `Paused. ${v.text}`;

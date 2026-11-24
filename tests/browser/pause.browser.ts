@@ -14,7 +14,8 @@ const manifest = unwrap(validateManifest(read(`data/manifest/${CLIP}.json`)));
 function expectedText(tMs: number): string {
   const r = resolvePause(decisions, tMs);
   if (r.outcome !== "ad") return REASON_TEXT[r.outcome];
-  return unwrap(validateProduct(read(`data/products/${r.scene.topProductId}.json`))).name;
+  const p = unwrap(validateProduct(read(`data/products/${r.scene.topProductId}.json`)));
+  return p.shortName ?? p.name;
 }
 
 // Mid-scene times for each outcome, plus 50 ms and 300 ms after a boundary, where the 1 s look-back still holds the previous scene.

@@ -26,7 +26,10 @@ export function PauseOverlay({ view, onViewProduct }: { view: PauseView; onViewP
             <p className={EYEBROW}>
               Sponsored <span aria-hidden="true">·</span> Simulated ad
             </p>
-            <h2 className="mt-1 mb-1.5 font-serif text-title-sm lg:text-title">{view.product.name}</h2>
+            <div className="mt-1 mb-1.5">
+              <h2 className="font-serif text-title-sm lg:text-title">{view.product.shortName ?? view.product.name}</h2>
+              {view.product.shortName && <p className="truncate text-label text-muted-foreground" title={view.product.name}>{view.product.name}</p>}
+            </div>
             <p className="mb-2.5 hidden lg:block">{view.tagline}</p>
             <div className="flex items-center gap-3">
               <button type="button" onClick={() => onViewProduct(view.product.id)} className="min-h-11 rounded-md bg-accent px-4 font-semibold text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">

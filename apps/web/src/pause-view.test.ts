@@ -28,7 +28,7 @@ describe("pauseView on the fixture", () => {
   });
   it("announces the overlay text", () => {
     expect(announce(at(7500))).toBe("Paused. No ad here: sensitive scene.");
-    expect(announce(at(2500))).toBe("Paused. Sponsored, simulated ad: Everyday Skillet. A steady pan for weeknight cooking.");
+    expect(announce(at(2500))).toBe("Paused. Sponsored, simulated ad: Skillet. A steady pan for weeknight cooking.");
   });
 });
 
