@@ -1,7 +1,7 @@
 import { assetUrl } from "./clips.ts";
 import type { ProductListView } from "./product-list.ts";
 
-const THUMB = "shrink-0 rounded-md border border-border bg-muted object-cover";
+const THUMB = "shrink-0 rounded-md border border-border bg-white object-contain p-1";
 
 /** Top product larger, the rest in one row (laptop) or a sideways strip (phone and in-between). */
 export function ProductList({ view }: { view: ProductListView }) {

@@ -25,7 +25,7 @@ export function ProductPage({ clipId, product, fromClip }: { clipId: string; pro
       </a>
       {product ? (
         <article className="mt-2 grid gap-4 rounded-md border border-border bg-card p-4 md:grid-cols-[minmax(0,2fr)_3fr] md:gap-6 md:p-6">
-          <img src={assetUrl(product.imagePath)} alt={product.name} className="aspect-square w-full rounded-md border border-border bg-muted object-cover" />
+          <img src={assetUrl(product.imagePath)} alt={product.name} className="aspect-square w-full max-w-64 rounded-md border border-border bg-white object-contain p-1" />
           <div className="min-w-0">
             <p className="text-eyebrow uppercase tracking-[0.08em] text-muted-foreground">
               Sponsored <span aria-hidden="true">·</span> Simulated ad

@@ -20,7 +20,7 @@ export function PauseOverlay({ view, onViewProduct }: { view: PauseView; onViewP
           <img
             src={assetUrl(view.product.imagePath)}
             alt={view.product.name}
-            className="h-full w-full rounded-md border border-border bg-muted object-cover lg:aspect-square lg:h-auto"
+            className="h-full w-full max-w-64 justify-self-center rounded-md border border-border bg-white object-contain p-1 lg:aspect-square lg:h-auto"
           />
           <div className="min-w-0">
             <p className={EYEBROW}>
