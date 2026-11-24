@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epics 1 to 3 done (Stories 1.1 to 1.8, 2.1 to 2.3 and 3.1 to 3.3), all three retrospectives done.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 3 done with retrospectives; Epic 4 pre-checks partly done, waiting on the user's 4 clips.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -46,18 +46,26 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
   - Story 3.3: `#/attribution` (`AttributionPage.tsx`), linked from the picker; outside links open in a new tab so the tally survives.
   - Specs: `spec-3-1-*`, `spec-3-2-*`, `spec-3-3-*`.
 - Epic 3 retrospective done (2026-11-23): `_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md` (rewritten with the humanizer skill), verdict accepted with open items. Three new open to-do items in `sprint-status.yaml`: user approves the Epic 3 wording and then `EXPERIENCE.md` and `epics.md` are updated; Story 5.5 browser tests cover the pause log; decide which pause a click belongs to after a seek while paused.
-- Next: ask the user about the Epic 3 wording item, then Epic 4 (Story 4.1, pre-checks and model pin). Epic 4 needs the user for the Qwen test call, keys and data terms.
+- Epic 1 retro item 3 done (2026-11-24, commit dacc1a7): `decide` fails when a manifest `videoUrl` or product `imagePath` has no file under `apps/web/public`.
+- Epic 4 started (2026-11-24), Story 4.1 partly done, no story code yet:
+  - Alibaba Model Studio data terms summarised in `docs/data-sources.md` (inputs and outputs not used for training; retention for plain calls unclear, so only AI-generated clips are sent).
+  - ABO downloaded to `data/catalog/` (gitignored): `abo-listings.tar` and `abo-images-small.tar`. Licence file opened: plain CC BY 4.0, no NonCommercial wording (recorded in `docs/data-sources.md`).
+  - Keys in `.env` (gitignored; `.env.example` lists the names): `DASHSCOPE_API_KEY`, `DASHSCOPE_BASE_URL`, `TYPESAFE_API_KEY`. Both work (tested 2026-11-24).
+  - Qwen: the key is a workspace key (`sk-ws-`, 115 chars) and only works at the workspace endpoint in `DASHSCOPE_BASE_URL` (OpenAI-compatible `.../compatible-mode/v1`), not at `dashscope-intl.aliyuncs.com`. Token Plan keys (`sk-sp-`) are for coding tools and do not work. `qwen3.7-flash` and `qwen3.7-plus` both answer; thinking is on by default (130+ hidden tokens for "ok"), so pipeline calls must turn it off.
+  - Jev: key accepted at `https://api.typesafe.ai/v1/systemone`. Question format must follow the docs (a Noul needs a `criteria` object, not a string); check the SDK or docs before writing Jev calls.
+  - Browser pane note: its Copy buttons do not reach the Mac clipboard. The user copies secrets from their own browser and writes them with `pbpaste` in the terminal. Never copy or write keys for the user.
+- Next: wait for the user's 4 AI-generated clips in `data/samples/` (walkthrough given: tool whose terms allow public use, at most 2 min and about 10 MB each, one dialogue-heavy, safe home scenes plus each sensitive category). Then Story 4.1 multi-image test on real frames and pin models in the spine Stack table, then Stories 4.2 to 4.9, then the Epic 4 retro written with the humanizer skill. The user asked not to be pulled in unless required. Still open: Epic 3 wording item (user decides).
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
-2. Qwen test call: one multi-image request to `qwen3.7-flash` and `qwen3.7-plus` on real frames. Settles video support, model choice and price. `qwen3-vl-flash` is retired (2026-10-10). Pin the winner in the spine Stack table.
+2. Partly done 2026-11-24 (keys work, text call ok on both models). Still to do: one multi-image request to `qwen3.7-flash` and `qwen3.7-plus` on real frames. Settles video support, model choice and price. `qwen3-vl-flash` is retired (2026-10-10). Pin the winner in the spine Stack table.
 3. Done 2026-11-23: Jev publishes no rate limits; one request per scene, SDK retries 429 with backoff (see jev-fit.md).
-4. Open the ABO licence file when building the catalog slice, before copying any image; note the older CC BY-NC wording some Amazon pages show.
-5. Read Alibaba Model Studio data terms before the first run on real clips (required for uploads, low risk for AI-generated samples).
+4. Done 2026-11-24 (CC BY 4.0, no NC wording). Was: open the ABO licence file when building the catalog slice, before copying any image; note the older CC BY-NC wording some Amazon pages show.
+5. Done 2026-11-24 (summary in data-sources.md). Was: read Alibaba Model Studio data terms before the first run on real clips (required for uploads, low risk for AI-generated samples).
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning and Epics 1 to 3; all pushed to github.com/bavafa/pausall (Epic 3 pushed 2026-11-23). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning, Epics 1 to 3 and the Epic 4 pre-check commits (2026-11-24 commits not pushed yet); Epics 1 to 3 pushed to github.com/bavafa/pausall (Epic 3 pushed 2026-11-23). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
