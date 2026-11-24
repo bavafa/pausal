@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 3 done with retrospectives; Epic 4 Stories 4.4 to 4.8 done and 4.2 built, waiting on the user's 4 clips for 4.1, 4.3 and 4.9.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 3 done with retrospectives; Epic 4 built and run on 4 test clips (final retro written); Stories 4.3 and 4.9 must be redone with AI-generated clips before any push.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -60,7 +60,8 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
   - `pnpm analyze <clip-id> [--out <file>] [--skip-hash]`: ffmpeg ingest, segment (frame change 0.1, speech boundaries from `silencedetect`, 8 s cap, cuts under 1 s merged), describe (`qwen3.7-flash`, JSON with `instructionText`: text addressed to an AI or ad system fails the scene closed), Jev and Qwen judges, retrieve top 20 plus Jev fit, tagline gate. Settings, pinned models, prices and the $2 cap in `config/pipeline.json`.
   - Smoke-tested live on hand-built clips (catalog photos, a rendered injection frame, `say` speech); each run about $0.001. Test clips were removed afterwards.
   - Deviation: no Qwen fit fallback; a Jev fit error fails the scene closed (spec 4.7). Token and cost per stage are printed, not stored in `analysis`.
-- Next: wait for the user's 4 AI-generated clips in `data/samples/` (walkthrough given: tool whose terms allow public use, at most 5 min (raised from 2 min on 2026-11-24) and at most 25 MB each, one dialogue-heavy, safe home scenes plus each sensitive category). Then: Story 4.1 compare `qwen3.7-flash` and `qwen3.7-plus` on real frames and confirm the pin; Story 4.3 copy clips to `apps/web/public/media/<hash12>.mp4`, write manifests from ffprobe, note the tool and terms in `docs/data-sources.md`; Story 4.9 `pnpm analyze` each, `pnpm abo products`, add campaigns for referenced products, `pnpm decide`, hide the fixture from the picker, push; check the ranking hold during real playback (Epic 2 item); then the final Epic 4 retro with the humanizer skill. The user asked not to be pulled in unless required. Still open: Epic 3 wording item (user decides).
+- Epic 4 on test clips (2026-11-24): the user supplied 4 YouTube clips for testing only and will swap in AI-generated clips before sharing the site. Everything made from them (manifests, analysis, decisions, 470 product files, campaigns) is on the local branch `local/test-clips`, never pushed; the videos are in `.git/info/exclude`. Code and doc fixes are cherry-picked to `main`. Story 4.1 pinned `qwen3.7-flash`. Clip limit raised to 5 minutes and 25 MB (FR-1). Final retro: `_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md` (humanizer skill), verdict accepted with open items.
+- Next: when the AI clips arrive in `data/samples/`, on `main`: copy to `apps/web/public/media/<hash12>.mp4`, write manifests from ffprobe, note the tool and terms in `docs/data-sources.md`, `pnpm analyze` each, `pnpm abo products`, `pnpm decide`, commit, push, check the site. Do not push `main` before that: the picker hides the fixture and would be empty. Then Epic 5. Still open: Epic 3 wording item (user decides), Epic 1 item 5.
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
@@ -71,7 +72,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning, Epics 1 to 3 and the Epic 4 pre-check commits all pushed (the Epic 4 pipeline commit 30b8258 is local) to github.com/bavafa/pausall (Epic 3 pushed 2026-11-23). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning, Epics 1 to 3 and the Epic 4 pre-check commits all pushed (Epic 4 commits from 30b8258 on are local, not pushed) to github.com/bavafa/pausall (Epic 3 pushed 2026-11-23). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 

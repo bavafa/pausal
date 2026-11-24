@@ -2,7 +2,7 @@
 title: 'Story 4.2: Catalog slice, embedding index and product files'
 type: 'feature'
 created: '2026-11-24'
-status: 'review'
+status: 'done'
 route: 'oneshot'
 review_loop_iteration: 0
 context: ['{project-root}/_bmad-output/planning-artifacts/epics.md']

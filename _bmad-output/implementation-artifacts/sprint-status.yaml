@@ -59,16 +59,16 @@ development_status:
   epic-3-retrospective: done
 
   epic-4: in-progress
-  4-1-pre-checks-and-model-pin: in-progress
-  4-2-catalog-slice-embedding-index-and-product-files: review
-  4-3-sample-clips-and-manifests: backlog
+  4-1-pre-checks-and-model-pin: done
+  4-2-catalog-slice-embedding-index-and-product-files: done
+  4-3-sample-clips-and-manifests: review
   4-4-pipeline-runner-ingest-and-segment: done
   4-5-describe-each-scene: done
   4-6-judge-scenes-with-jev-and-qwen: done
   4-7-retrieve-candidates-and-score-fit: done
   4-8-taglines-for-safe-scenes: done
-  4-9-real-analysis-replaces-the-fixture: backlog
-  epic-4-retrospective: optional
+  4-9-real-analysis-replaces-the-fixture: review
+  epic-4-retrospective: done
 
   epic-5: backlog
   5-1-labels-and-the-eval-sweep: backlog
@@ -115,9 +115,9 @@ action_items:
   - id: "epic-1-retro-item-6-in-epic-4-land-every-manifest-and-produc"
     epic: 1
     action: "In Epic 4, land every manifest and product file with its real asset in
-      the same story"
+      the same story (done 2026-11-24: abo products writes each file with its image; decide checks both)"
     owner: "Claude"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
   - id: "epic-2-retro-item-7-update-the-spine-hold-rule-ad-17-to-matc"
     epic: 2
@@ -142,9 +142,9 @@ action_items:
     ref: "_bmad-output/implementation-artifacts/epic-2-retro-2026-11-23.md"
   - id: "epic-2-retro-item-10-in-epic-4-check-the-ranking-hold-during"
     epic: 2
-    action: "In Epic 4, check the ranking hold during real playback"
+    action: "In Epic 4, check the ranking hold during real playback (done 2026-11-24 on test clips; exact release timing goes to Story 5.5)"
     owner: "Claude"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-2-retro-2026-11-23.md"
   - id: "epic-3-retro-item-11-approve-or-change-the-epic-3-wording-ear"
     epic: 3
@@ -171,15 +171,15 @@ action_items:
     ref: "_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md"
   - id: "epic-4-retro-item-14-make-the-4-sample-clips"
     epic: 4
-    action: "Make the 4 AI-generated sample clips and put them in data/samples/"
+    action: "Make the 4 AI-generated sample clips and put them in data/samples/ (2026-11-24: test clips supplied; AI clips still to come)"
     owner: "Sam"
-    status: open
+    status: in-progress
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
   - id: "epic-4-retro-item-15-run-the-multi-image-qwen-test"
     epic: 4
-    action: "Run the multi-image Qwen test on real frames and pin models in the spine Stack table"
+    action: "Run the multi-image Qwen test on real frames and pin models in the spine Stack table (done 2026-11-24: qwen3.7-flash)"
     owner: "Claude"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
   - id: "epic-4-retro-item-16-record-the-workspace-endpoint"
     epic: 4
@@ -192,4 +192,22 @@ action_items:
     action: "Build Jev requests from the documented question format and test one first (done 2026-11-24: Story 4.6, worked first time)"
     owner: "Claude"
     status: done
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-4-retro-item-18-rerun-4-3-and-4-9-with-the-ai-clips"
+    epic: 4
+    action: "With the AI clips, rerun Stories 4.3 and 4.9 on main, record the tool and terms, push and check the site"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-4-retro-item-19-do-not-push-main-before-the-ai-clips"
+    epic: 4
+    action: "Do not push main before the AI clips land (the picker hides the fixture and would be empty)"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-4-retro-item-20-epic-5-failure-report-items"
+    epic: 4
+    action: "In Epic 5, list the quoted title and end-screen false alarms in the failure report and confirm embedding and speech prices"
+    owner: "Claude"
+    status: open
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
