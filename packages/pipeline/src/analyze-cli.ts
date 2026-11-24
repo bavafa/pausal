@@ -138,6 +138,9 @@ try {
     { ...cfg, thresholds, modelNames: Object.fromEntries(Object.entries(cfg.models).filter(([role]) => role !== "speech" || transcribe)) },
     (s) => console.log(s),
   );
+  // Cost per stage goes into analysis so eval can report cost per clip minute (AD-22, Story 5.3).
+  const usage = Object.fromEntries(Object.entries(ledger.stages).map(([k, u]) => [k, { ...u, costUsd: Number(u.costUsd.toFixed(6)) }]));
+  Object.assign(analysis, { usage });
   must(validateAnalysis(analysis, sceneTypes), out);
   writeFileSync(out, canonicalJson(analysis));
   console.log(`analyze: wrote ${out}: ${analysis.scenes.length} scenes in ${((Date.now() - t0) / 1000).toFixed(1)} s.`);

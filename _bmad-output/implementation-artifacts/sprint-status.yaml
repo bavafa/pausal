@@ -70,13 +70,13 @@ development_status:
   4-9-real-analysis-replaces-the-fixture: done
   epic-4-retrospective: done
 
-  epic-5: backlog
-  5-1-labels-and-the-eval-sweep: backlog
-  5-2-guardrail-that-cannot-pass-vacuously: backlog
-  5-3-metrics-and-failures-report: backlog
-  5-4-jev-versus-qwen-comparison: backlog
-  5-5-browser-check-for-speed-and-no-network: backlog
-  epic-5-retrospective: optional
+  epic-5: done
+  5-1-labels-and-the-eval-sweep: done
+  5-2-guardrail-that-cannot-pass-vacuously: done
+  5-3-metrics-and-failures-report: done
+  5-4-jev-versus-qwen-comparison: done
+  5-5-browser-check-for-speed-and-no-network: done
+  epic-5-retrospective: done
 action_items:
   - id: "epic-1-retro-item-1-reconcile-the-resolvepause-signature-in"
     epic: 1
@@ -211,3 +211,21 @@ action_items:
     owner: "Claude"
     status: open
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-5-retro-item-19-label-the-ai-clips"
+    epic: 5
+    action: "When the AI clips are in, label each one in data/labels/ (safe or unsafe ranges, categories, top product fit), run pnpm eval and pnpm eval --compare-judges, and commit the reports"
+    owner: "Sam labels, Claude runs"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-5-retro-2026-11-24.md"
+  - id: "epic-5-retro-item-20-decide-about-the-fixture-in-eval"
+    epic: 5
+    action: "Once real labels exist, decide whether the fixture stays in the eval metrics or only guards CI"
+    owner: "Sam decides, Claude edits"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-5-retro-2026-11-24.md"
+  - id: "epic-5-retro-item-21-watch-the-first-ci-browser-run"
+    epic: 5
+    action: "Check the first CI run of pnpm browser on GitHub (Chrome channel on ubuntu-latest) when main is pushed"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-5-retro-2026-11-24.md"

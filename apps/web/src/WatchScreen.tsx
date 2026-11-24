@@ -10,6 +10,9 @@ import { announce, pauseView, type PauseView } from "./pause-view.ts";
 import type { PauseEntry } from "./session.ts";
 import { EarningsTally } from "./EarningsTally.tsx";
 
+/** Preloaded product images stay referenced, so a later <img> is drawn from memory with no request (AD-1). */
+const PRELOADED = new Map<string, HTMLImageElement>();
+
 const toggle = (v: HTMLVideoElement) => void (v.paused ? v.play().catch(() => {}) : v.pause());
 
 /** Elements that handle Space themselves; the page shortcut stays out of their way. */
@@ -94,7 +97,11 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }:
     const ids = new Set(decisions.scenes.flatMap((s) => s.ranked.map((r) => r.productId)));
     for (const id of ids) {
       const p = PRODUCTS.get(id);
-      if (p) new Image().src = assetUrl(p.imagePath);
+      if (p && !PRELOADED.has(p.imagePath)) {
+        const img = new Image();
+        img.src = assetUrl(p.imagePath);
+        PRELOADED.set(p.imagePath, img);
+      }
     }
   }, [decisions]);
 

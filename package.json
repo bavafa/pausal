@@ -16,9 +16,12 @@
     "prepare": "git config core.hooksPath .githooks || true",
     "abo": "node packages/pipeline/src/catalog-cli.ts",
     "analyze": "node packages/pipeline/src/analyze-cli.ts",
-    "vlm-check": "node packages/pipeline/src/vlm-check-cli.ts"
+    "vlm-check": "node packages/pipeline/src/vlm-check-cli.ts",
+    "eval": "node packages/pipeline/src/eval-cli.ts",
+    "browser": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "1.65.1",
     "@secretlint/secretlint-rule-preset-recommend": "13.1.0",
     "@types/node": "26.6.6",
     "oxlint": "1.95.0",

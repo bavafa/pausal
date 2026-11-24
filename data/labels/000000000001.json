@@ -1,0 +1,12 @@
+{
+  "clipId": "000000000001",
+  "ranges": [
+    { "startMs": 0, "endMs": 5000, "safe": true, "categories": [], "topProductFits": true },
+    { "startMs": 5000, "endMs": 10000, "safe": false, "categories": ["violence", "deathOrGrief", "medicalTrauma"], "topProductFits": null },
+    { "startMs": 10000, "endMs": 15000, "safe": true, "categories": [], "topProductFits": false },
+    { "startMs": 15000, "endMs": 20000, "safe": true, "categories": [], "topProductFits": true },
+    { "startMs": 20000, "endMs": 25000, "safe": true, "categories": [], "topProductFits": true },
+    { "startMs": 25000, "endMs": 30000, "safe": false, "categories": ["intenseDialogue", "violence", "sexual", "childFocused"], "topProductFits": null },
+    { "startMs": 30000, "endMs": 35000, "safe": true, "categories": [], "topProductFits": true }
+  ]
+}

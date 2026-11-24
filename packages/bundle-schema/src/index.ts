@@ -7,3 +7,4 @@ export * from "./analysis.ts";
 export * from "./decisions.ts";
 export * from "./product.ts";
 export * from "./config.ts";
+export * from "./labels.ts";

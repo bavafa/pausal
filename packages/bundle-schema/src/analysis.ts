@@ -51,8 +51,11 @@ export type Analysis = {
   durationMs: Int;
   /** Pinned model names by role, never an alias such as `jev-latest` (AD-22). */
   models: Record<string, string>;
+  /** Token and cost per stage from the run that wrote the file (AD-22); absent on hand-authored files. */
+  usage?: Record<string, StageCost>;
   scenes: AnalysisScene[];
 };
+export type StageCost = { calls: Int; inputTokens: Int; outputTokens: Int; costUsd: number };
 
 function checkJudgments(v: unknown): string[] {
   const issues: Issue[] = [];
@@ -121,6 +124,14 @@ export function validateAnalysis(json: unknown, sceneTypes: readonly string[]): 
     if (Object.keys(json.models).length === 0) fail(issues, "models", "must name at least one model");
     for (const [k, v] of Object.entries(json.models)) {
       if (nonEmptyString(v, at("models", k), issues) && /latest$/i.test(v)) fail(issues, at("models", k), "must be a pinned name, not an alias");
+    }
+  }
+  if (json.usage !== undefined && object(json.usage, "usage", issues)) {
+    for (const [stage, u] of Object.entries(json.usage)) {
+      const p = at("usage", stage);
+      if (!object(u, p, issues)) continue;
+      for (const k of ["calls", "inputTokens", "outputTokens"]) integer(u[k], at(p, k), issues, 0);
+      num(u.costUsd, at(p, "costUsd"), issues, 0, 1000);
     }
   }
   const scenes: AnalysisScene[] = [];
