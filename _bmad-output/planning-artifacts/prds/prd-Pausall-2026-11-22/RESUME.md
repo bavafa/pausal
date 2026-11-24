@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epic 1 done (Stories 1.1 to 1.8) and its retrospective done.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epics 1 and 2 done (Stories 1.1 to 1.8 and 2.1 to 2.3), Epic 1 retrospective done.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -27,14 +27,14 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 - Story 1.7 done (2026-11-23): watch screen with the native player at 16:9, click, tap and Space toggle, Back to clips, validated `decisions` (null when missing, invalid or not matching the manifest, which shows "Analysis unavailable for this scene."). The fixture clip has a generated 35 s `testsrc2` video at `apps/web/public/media/000000000001.mp4` (command in the spec). Spec: `spec-1-7-watch-screen-with-the-player.md`.
 - Story 1.8 done (2026-11-23): pause view. `apps/web/src/pause-view.ts` maps `resolvePause` to the ad card or the pause note (policy wording), failing closed on null decisions or a missing product; `PauseOverlay.tsx` renders it; frame time from `requestVideoFrameCallback`. Only a real pause opens the view; seeks update an open view. Fixture product images are SVGs in `apps/web/public/products/`. Spec: `spec-1-8-pause-view-ad-card-or-pause-note.md`.
 - Epic 1 ran without check-ins at the user's request: specs were self-approved and the review layers ran inline (no subagents). Open deferred items in `deferred-work.md` include a Firefox double toggle check and a Safari phone control bar check.
-- Epic 1 retrospective done (2026-11-23): `_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md`, verdict accepted with open items. Six to-do items are in `sprint-status.yaml` under `action_items`, all open:
-  1. Update the spine and `epics.md` so `resolvePause` takes `(decisions, tMs)` (needs user approval).
-  2. Update `DESIGN.md`, the spine Stack table and `epic-1-context.md` for self-hosted `@fontsource` fonts (needs user approval).
-  3. Make `pnpm decide --check` fail when a manifest video or product image file is missing.
-  4. User decides whether to add a small browser test of the pause screen before Epic 2.
-  5. One fresh review of Stories 1.6 to 1.8 (`dd222cd` to `5caa4a6`), started by the user.
-  6. In Epic 4, add each clip and product with its real asset in the same story.
-- Next: ask the user about to-do items 1, 2, 4 and 5, then `bmad-build` on Story 2.1 (ranked list, reason lines and the ranking window).
+- Epic 1 retrospective done (2026-11-23): `_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md`. Action items in `sprint-status.yaml`: 1 and 2 done (spine, `epics.md`, `DESIGN.md` and `epic-1-context.md` updated), 4 done (no browser test before Epic 2; Story 5.5 covers it). Still open: 3 (make `pnpm decide --check` fail on a missing video or product image file), 5 (fresh review of Stories 1.6 to 1.8, started by the user), 6 (Epic 4: land each clip and product with its real asset).
+- Epic 2 done (2026-11-23), again without check-ins and with inline review. Context: `epic-2-context.md`.
+  - Story 2.1: analysis fits carry `matched` (product `keyFeatures` names); `decisions` ranked items carry a template `reason` ("Fits a kitchen scene: 28 cm, Flat base.") built by `policy` `reasonLine` from `sceneType.primary` and only features found in the product file; lists capped at 10 (`RANKED_MAX`); `decisions.holdMs` copied from config so `rankAt` reads no config. `policy` exports `rankAt(decisions, tMs, held)` with `held = { sceneId, productId, sinceMs }`. Agent reading of AD-17: the held top survives a scene change only within `holdMs`, with the same outcome, a safe tag no worse, and the product still ranked in the new scene.
+  - Story 2.2: scene panel under the video (`ScenePanel.tsx`, `scene-panel.ts`), safe tag wording "Brand safe", "Caution", "Not brand safe". `seeked` always updates from `currentTime` because `requestVideoFrameCallback` fires late while paused.
+  - Story 2.3: product list (`ProductList.tsx`, `product-list.ts`) driven by `rankAt` each frame with `held` in a ref. No list where analysis is unavailable.
+  - Specs: `spec-2-1-*`, `spec-2-2-*`, `spec-2-3-*`. New deferred item: reject duplicate product IDs within one scene's fits.
+  - Not pushed: `main` is ahead of `origin/main` by the Epic 2 commits (a push deploys to GitHub Pages).
+- Next: optional Epic 2 retrospective, then `bmad-build` on Story 3.1 (product page, simulated click and demo QR).
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
@@ -45,7 +45,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning and Epic 1 (Stories 1.1 to 1.8), pushed to github.com/bavafa/pausall. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning, Epic 1 and Epic 2; Epic 1 is pushed to github.com/bavafa/pausall, Epic 2 is local until pushed. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
