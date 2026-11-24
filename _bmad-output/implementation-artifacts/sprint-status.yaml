@@ -29,7 +29,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 # - Retrospective appends its action items to action_items; the status view surfaces open ones
 generated: 11-23-2026 17:43
-last_updated: 11-24-2026 02:00
+last_updated: 11-24-2026 09:30
 project: Pausall
 project_key: NOKEY
 tracking_system: file-system
@@ -58,16 +58,16 @@ development_status:
   3-3-attribution-page: done
   epic-3-retrospective: done
 
-  epic-4: in-progress
+  epic-4: done
   4-1-pre-checks-and-model-pin: done
   4-2-catalog-slice-embedding-index-and-product-files: done
-  4-3-sample-clips-and-manifests: review
+  4-3-sample-clips-and-manifests: done
   4-4-pipeline-runner-ingest-and-segment: done
   4-5-describe-each-scene: done
   4-6-judge-scenes-with-jev-and-qwen: done
   4-7-retrieve-candidates-and-score-fit: done
   4-8-taglines-for-safe-scenes: done
-  4-9-real-analysis-replaces-the-fixture: review
+  4-9-real-analysis-replaces-the-fixture: done
   epic-4-retrospective: done
 
   epic-5: backlog
@@ -195,7 +195,7 @@ action_items:
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
   - id: "epic-4-retro-item-18-rerun-4-3-and-4-9-with-the-ai-clips"
     epic: 4
-    action: "With the AI clips, rerun Stories 4.3 and 4.9 on main, record the tool and terms, push and check the site"
+    action: "With the AI clips, rerun Stories 4.3 and 4.9 on main, record the tool and terms, push and check the site (2026-11-24: epic closed on test clips, local only)"
     owner: "Claude"
     status: open
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
