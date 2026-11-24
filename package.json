@@ -13,7 +13,9 @@
     "test": "vitest run",
     "decide": "node packages/pipeline/src/decide-cli.ts",
     "secrets": "secretlint \"**/*\"",
-    "prepare": "git config core.hooksPath .githooks || true"
+    "prepare": "git config core.hooksPath .githooks || true",
+    "abo": "node packages/pipeline/src/catalog-cli.ts",
+    "analyze": "node packages/pipeline/src/analyze-cli.ts"
   },
   "devDependencies": {
     "@secretlint/secretlint-rule-preset-recommend": "13.1.0",

@@ -29,7 +29,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 # - Retrospective appends its action items to action_items; the status view surfaces open ones
 generated: 11-23-2026 17:43
-last_updated: 11-23-2026 22:52
+last_updated: 11-24-2026 02:00
 project: Pausall
 project_key: NOKEY
 tracking_system: file-system
@@ -60,13 +60,13 @@ development_status:
 
   epic-4: in-progress
   4-1-pre-checks-and-model-pin: in-progress
-  4-2-catalog-slice-embedding-index-and-product-files: backlog
+  4-2-catalog-slice-embedding-index-and-product-files: review
   4-3-sample-clips-and-manifests: backlog
-  4-4-pipeline-runner-ingest-and-segment: backlog
-  4-5-describe-each-scene: backlog
-  4-6-judge-scenes-with-jev-and-qwen: backlog
-  4-7-retrieve-candidates-and-score-fit: backlog
-  4-8-taglines-for-safe-scenes: backlog
+  4-4-pipeline-runner-ingest-and-segment: done
+  4-5-describe-each-scene: done
+  4-6-judge-scenes-with-jev-and-qwen: done
+  4-7-retrieve-candidates-and-score-fit: done
+  4-8-taglines-for-safe-scenes: done
   4-9-real-analysis-replaces-the-fixture: backlog
   epic-4-retrospective: optional
 
@@ -183,13 +183,13 @@ action_items:
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
   - id: "epic-4-retro-item-16-record-the-workspace-endpoint"
     epic: 4
-    action: "Record the workspace endpoint and thinking-off setting in the spine"
+    action: "Record the workspace endpoint and thinking-off setting in the spine (done 2026-11-24: Stack table and AD-22)"
     owner: "Claude"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
   - id: "epic-4-retro-item-17-build-jev-requests-from-the-docs"
     epic: 4
-    action: "Build Jev requests from the documented question format and test one first"
+    action: "Build Jev requests from the documented question format and test one first (done 2026-11-24: Story 4.6, worked first time)"
     owner: "Claude"
-    status: open
+    status: done
     ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"

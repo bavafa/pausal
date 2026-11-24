@@ -1,0 +1,28 @@
+{
+  "costCapUsd": 2,
+  "timeoutMs": 90000,
+  "retries": 3,
+  "models": {
+    "vlm": "qwen3.7-flash",
+    "text": "qwen3.7-flash",
+    "qwenJudge": "qwen3.7-flash",
+    "embedding": "text-embedding-v4",
+    "speech": "qwen3-asr-flash",
+    "jev": "jev-1.14.0"
+  },
+  "embeddingDimensions": 512,
+  "pricesUsdPerMillionTokens": {
+    "qwen3.7-flash": { "input": 0.03, "output": 0.13 },
+    "qwen3.7-plus": { "input": 0.4, "output": 1.6 },
+    "qwen3.8-flash": { "input": 0.15, "output": 0.47 },
+    "text-embedding-v4": { "input": 0.07, "output": 0 },
+    "qwen3-asr-flash": { "input": 1.4, "output": 0 },
+    "jev-1.14.0": { "input": 0.042, "output": 0 }
+  },
+  "frameWidth": 512,
+  "sceneCapMs": 8000,
+  "chunkMs": 20000,
+  "frameChangeThreshold": 0.1,
+  "candidates": 20,
+  "taglineTop": 3
+}

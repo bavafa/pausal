@@ -179,7 +179,7 @@ Rule ids are `R1` to `R6` and `R3b` (see AD-6) and are the only rule ids used in
 
 - **Binds:** NFR cost, F1
 - **Prevents:** unrepeatable analysis; runaway cost; silent partial failure
-- **Rule:** Every model is called by a pinned name recorded in `analysis` metadata (never an alias such as `jev-latest`). Each call has a timeout and a bounded retry; a stage failure is stored per scene as a typed error and never thrown past the artifact write. Each run has a cost cap in config and aborts when it is reached; token counts and cost per stage are recorded.
+- **Rule:** Every model is called by a pinned name recorded in `analysis` metadata (never an alias such as `jev-latest`). Each call has a timeout and a bounded retry; a stage failure is stored per scene as a typed error and never thrown past the artifact write. Each run has a cost cap in config and aborts when it is reached; token counts and cost per stage are recorded. Pinned names by role, prices and the cap live in `config/pipeline.json`; Qwen calls turn thinking off (it is on by default and bills hidden tokens).
 
 ### AD-23: Testing and security floor
 
@@ -220,8 +220,8 @@ Values confirmed by a web check on 2026-11-22 and re-confirmed with `npm view` a
 | secretlint with `@secretlint/secretlint-rule-preset-recommend` | 14.1.0 with 13.1.0 |
 | ffmpeg (local) | 9.1 |
 | Jev, TypeSafe `systemone` endpoint | `jev-1.14.0` pinned, SDK `@typesafe-ai/sdk` 0.7.0 |
-| Qwen VLM, Model Studio (Singapore) | `qwen3-vl-flash` is retired (2026-10-10); candidates `qwen3.7-flash`, `qwen3.6-flash`, `qwen3.7-plus`; video input unconfirmed, test before pinning |
-| Qwen text and embeddings | `text-embedding-v4` or `qwen3.7-text-embedding`; text model chosen at first run |
+| Qwen VLM, Model Studio (Singapore) | `qwen3.7-flash` provisional pin (2026-11-24, `config/pipeline.json`), frames sent as images; confirm against `qwen3.7-plus` on the real clips (Story 4.1). `qwen3-vl-flash` is retired (2026-10-10). Calls go to the workspace OpenAI-compatible endpoint in `DASHSCOPE_BASE_URL` (workspace `sk-ws-` keys only work there) with `enable_thinking: false` |
+| Qwen text, speech and embeddings | Text and Qwen judge `qwen3.7-flash` (provisional), speech `qwen3-asr-flash`, embeddings `text-embedding-v4` at 512 dimensions (index built 2026-11-24) |
 | Fonts, self-hosted | `@fontsource/lora` and `@fontsource/raleway` 5.3.0 |
 | GitHub Pages, GitHub Actions | hosted; 1 GB site, 100 GB per month soft limit |
 

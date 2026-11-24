@@ -14,6 +14,8 @@ Status: draft. Last updated: 2026-11-23. General information, not legal advice. 
 | Alibaba Model Studio terms [6] | Qwen calls on clip frames, transcripts and descriptions | Service terms, not a data licence | Read 2026-11-23: API inputs and outputs are not used for model training; uploaded files are kept until deleted or for 48 hours; the retention period for plain API calls and zero data retention access were not stated clearly, so only AI-generated sample clips are sent until that is checked | Summary done. Retention for plain calls to confirm before any upload |
 | Etsy Open API v3 | Possible later adapter | Terms page returned 403, not read | Unknown | Not in MVP, unverified |
 
+Local slice (2026-11-24, `pnpm abo build`, not committed): English listings with a bullet point and a main image, deduped by exact name, first 20,000 by item ID, embedded with `text-embedding-v4` at 512 dimensions. Product files and images are copied only for products the decisions reference, with the attribution "Amazon Berkeley Objects, Amazon.com, CC BY 4.0. Text shortened."
+
 Known gap: ABO is weak in fashion, costumes, branded merchandise and cars (recorded as a limitation for the PRD).
 
 Related work only, not used: MovieNet, Condensed Movies, MAD, MovieGraphs.
