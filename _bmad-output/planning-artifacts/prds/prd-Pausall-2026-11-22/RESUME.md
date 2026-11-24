@@ -2,6 +2,13 @@
 
 Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 4 done with retrospectives (Epic 4 closed on local test clips, never pushed). Stories 4.3 and 4.9 must be redone with AI-generated clips before any push. Theme toggle, logo and landing page added after Epic 4. Next: Epic 5. See "Start here".
 
+
+## Latest (2026-11-24, read first)
+- Epic 5 is built on `main` and run on the fixture (commit 70768ad, retro `_bmad-output/implementation-artifacts/epic-5-retro-2026-11-24.md`): `pnpm eval` writes `docs/eval/report.md` (`--check` in CI), `pnpm eval --compare-judges` runs on the author machine only and writes `docs/eval/judges.md`, `pnpm browser` (Playwright in Chrome, after `pnpm -r build`) runs in CI. Label format: `packages/bundle-schema/src/labels.ts`.
+- Claude drafted labels for the 4 test clips on `local/test-clips` (`data/labels/*.json`, unsure calls in `data/labels/DRAFT-NOTES.md`). Eval on them: 0 ads on 2,270 unsafe pause times, 86.8 percent fit agreement; Jev fit 96.2 percent against Qwen 67.7 percent. Draft the AI clip labels the same way when the clips arrive, for Sam to correct.
+- UI pass after Sam's feedback (no story, no craft, no delight, logo only on page one and disliked): pause-tile logo in a sticky header on every page, icon theme toggle, story-led landing page with a looping drawn demo, a pause hint on the watch screen, card pop-in, every page opens at the top. DESIGN.md and EXPERIENCE.md updated.
+- Still blocked on Sam: the 4 AI clips (then rerun 4.3 and 4.9, label, eval, push `main`, watch the first CI browser run). `main` is not pushed.
+- Seen in automation only: when frame callbacks lag, the earnings log can record the frame just before the one the card shows. Related to open Epic 3 item 13.
 ## Start here (fresh chat, state on 2026-11-24 evening)
 - Progress: Epics 1 to 4 done with retrospectives. Epic 4 was closed on the YouTube test clips, local only, by the user's choice ("use them, never push"). Epic 5 (5 stories) not started. About 18% of the build is left by story count (23 of 28 done), plus rerunning Stories 4.3 and 4.9 with AI-generated clips before any push (about an hour).
 - After Epic 4, outside any epic, at the user's request (all on `main`, copied to `local/test-clips`):
