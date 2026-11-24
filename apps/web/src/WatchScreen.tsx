@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Decisions, Manifest } from "@pausall/bundle-schema";
-import { sceneAt } from "@pausall/policy";
+import { rankAt, type Held, type RankView } from "@pausall/policy";
 import { assetUrl, PRODUCTS } from "./clips.ts";
 import { PauseOverlay } from "./PauseOverlay.tsx";
 import { ScenePanel } from "./ScenePanel.tsx";
+import { ProductList } from "./ProductList.tsx";
+import { productList } from "./product-list.ts";
 import { announce, pauseView, type PauseView } from "./pause-view.ts";
 
 const toggle = (v: HTMLVideoElement) => void (v.paused ? v.play().catch(() => {}) : v.pause());
@@ -21,10 +23,21 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
   const [view, setView] = useState<PauseView | null>(null);
   const open = useRef(false);
   open.current = view !== null;
-  // Scene ID only, so the screen re-renders on a scene change and not on every frame.
-  const [sceneId, setSceneId] = useState(() => (decisions && sceneAt(decisions, 0)?.id) ?? null);
-  const scene = decisions?.scenes.find((s) => s.id === sceneId) ?? null;
-  const track = useCallback((ms: number) => setSceneId((decisions && sceneAt(decisions, Math.floor(ms))?.id) ?? null), [decisions]);
+  // The held top is display only (AD-17); the pause view never reads it.
+  const held = useRef<Held | null>(null);
+  const rankFor = useCallback((ms: number): RankView => {
+    const view: RankView = decisions ? rankAt(decisions, Math.floor(ms), held.current) : { scene: null, ranked: [], held: null };
+    held.current = view.held;
+    return view;
+  }, [decisions]);
+  const [rank, setRank] = useState(() => rankFor(0));
+  // Called every frame; state changes only when the scene or the shown order changes.
+  const track = useCallback((ms: number) => {
+    const next = rankFor(ms);
+    const key = (r: RankView) => `${r.scene?.id}|${r.ranked.map((i) => i.productId).join()}`;
+    setRank((prev) => (key(prev) === key(next) ? prev : next));
+  }, [rankFor]);
+  const list = productList(rank.scene, rank.ranked, PRODUCTS);
 
   // Only a pause opens the view (not a fresh load). Never an overlay while playing or after the clip ended.
   const showPause = useCallback(() => {
@@ -104,7 +117,8 @@ export function WatchScreen({ clip, decisions }: { clip: Manifest; decisions: De
         {view ? announce(view) : ""}
       </p>
       <p className="mt-2 text-label text-muted-foreground">AI-generated</p>
-      <ScenePanel scene={scene} />
+      <ScenePanel scene={rank.scene} />
+      {list && <ProductList view={list} />}
     </main>
   );
 }
