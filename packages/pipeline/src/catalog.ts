@@ -80,3 +80,10 @@ export function simulatedCampaign(productId: string): Campaign {
   const bidCents = 50 + ((h[0] as number) % 101);
   return { productId, bidCents: bidCents as Int, budgetCents: (bidCents * 200) as Int, active: (h[1] as number) % 10 !== 0 };
 }
+
+/**
+ * The same product in another size or colour ("..., 7 C/D US" and "..., 10 C/D US") is one family: the name before its
+ * first comma, with digits and bracketed text removed. Retrieval keeps one member per family, so lists never repeat a product.
+ */
+export const familyKey = (name: string): string =>
+  (name.split(",")[0] ?? name).replace(/\([^)]*\)|\d+/g, "").replace(/\s+/g, " ").trim().toLowerCase();

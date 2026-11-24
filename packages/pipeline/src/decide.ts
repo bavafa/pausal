@@ -19,23 +19,6 @@ function panelFor(scene: AnalysisScene, outcome: Outcome): Panel {
   };
 }
 
-/**
- * The same product in another size or colour ("..., 7 C/D US" and "..., 10 C/D US") is one family: the name before its
- * first comma, with digits and bracketed text removed. Only the highest ranked member stays, so the top never changes.
- */
-export const familyKey = (name: string): string =>
-  (name.split(",")[0] ?? name).replace(/\([^)]*\)|\d+/g, "").replace(/\s+/g, " ").trim().toLowerCase();
-
-export function distinctFamilies<T extends { productId: string }>(ranked: readonly T[], products: ReadonlyMap<string, { name: string }>): T[] {
-  const seen = new Set<string>();
-  return ranked.filter((r) => {
-    const name = products.get(r.productId)?.name;
-    if (!name) return true;
-    const key = familyKey(name);
-    return seen.has(key) ? false : (seen.add(key), true);
-  });
-}
-
 /** Pure: one validated analysis to its decisions. No description or judge reasons are carried over (AD-2). */
 export function deriveDecisions(
   analysis: Analysis,
@@ -54,7 +37,7 @@ export function deriveDecisions(
       topProductId: e.topProductId,
       price: e.price,
       split: e.split,
-      ranked: distinctFamilies(e.ranked, products).map((r) => {
+      ranked: e.ranked.map((r) => {
         // Only text from the product file reaches the reason line; unknown matched names are dropped (AD-7).
         const matched = new Set(scene.fits?.find((f) => f.productId === r.productId)?.matched);
         const features = products.get(r.productId)?.keyFeatures.filter((k) => matched.has(k)) ?? [];

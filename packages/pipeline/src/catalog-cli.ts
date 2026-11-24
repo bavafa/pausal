@@ -10,7 +10,7 @@ import { Ledger, mapLimit } from "./call.ts";
 import { embedText, simulatedCampaign, sliceCatalog, toCatalogItem, toProduct, type CatalogItem } from "./catalog.ts";
 import { Qwen, readKeys } from "./clients.ts";
 import { loadPipelineConfig } from "./config.ts";
-import { canonicalJson, distinctFamilies } from "./decide.ts";
+import { canonicalJson } from "./decide.ts";
 
 const root = resolve(import.meta.dirname, "../../..");
 const cat = join(root, "data/catalog");
@@ -63,22 +63,22 @@ async function build(): Promise<void> {
   console.log(`catalog: index written with ${cfg.models.embedding} at ${dims} dimensions. Cost $${ledger.totalUsd.toFixed(4)}, ${JSON.stringify(ledger.stages)}`);
 }
 
-/** IDs the decide step will reference: the ranked top of every scene's fits with variants collapsed, exactly as decisions keep them. */
-function referencedIds(items: ReadonlyMap<string, { name: string }>): Set<string> {
+/** IDs the decide step will reference: the ranked top of every scene's fits, exactly as decisions keep them. */
+function referencedIds(): Set<string> {
   const types = validateSceneTypes(JSON.parse(readFileSync(join(root, "config/scene-types.json"), "utf8")));
   if (!types.ok) throw new Error("config/scene-types.json is invalid");
   const ids = new Set<string>();
   for (const f of readdirSync(join(root, "data/analysis")).filter((f) => f.endsWith(".json"))) {
     const a = validateAnalysis(JSON.parse(readFileSync(join(root, "data/analysis", f), "utf8")), types.value);
     if (!a.ok) throw new Error(`data/analysis/${f} is invalid: ${a.issues[0]?.path} ${a.issues[0]?.message}`);
-    for (const s of a.value.scenes) for (const r of distinctFamilies(rankFits(s.fits ?? []).slice(0, RANKED_MAX), items)) ids.add(r.productId);
+    for (const s of a.value.scenes) for (const r of rankFits(s.fits ?? []).slice(0, RANKED_MAX)) ids.add(r.productId);
   }
   return ids;
 }
 
 async function products(): Promise<void> {
   const items = new Map((JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[]).map((i) => [i.id, i]));
-  const ids = referencedIds(items);
+  const ids = referencedIds();
   const imageCsv = join(cat, "raw/images/metadata/images.csv.gz");
   if (!existsSync(imageCsv)) execFileSync("tar", ["xf", join(cat, "abo-images-small.tar"), "-C", join(cat, "raw"), "images/metadata/images.csv.gz"]);
   const imagePath = new Map(
