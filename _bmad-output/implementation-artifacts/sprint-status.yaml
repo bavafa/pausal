@@ -169,3 +169,27 @@ action_items:
     owner: "Claude"
     status: open
     ref: "_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md"
+  - id: "epic-4-retro-item-14-make-the-4-sample-clips"
+    epic: 4
+    action: "Make the 4 AI-generated sample clips and put them in data/samples/"
+    owner: "Sam"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-4-retro-item-15-run-the-multi-image-qwen-test"
+    epic: 4
+    action: "Run the multi-image Qwen test on real frames and pin models in the spine Stack table"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-4-retro-item-16-record-the-workspace-endpoint"
+    epic: 4
+    action: "Record the workspace endpoint and thinking-off setting in the spine"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"
+  - id: "epic-4-retro-item-17-build-jev-requests-from-the-docs"
+    epic: 4
+    action: "Build Jev requests from the documented question format and test one first"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md"

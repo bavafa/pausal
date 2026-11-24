@@ -54,6 +54,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
   - Qwen: the key is a workspace key (`sk-ws-`, 115 chars) and only works at the workspace endpoint in `DASHSCOPE_BASE_URL` (OpenAI-compatible `.../compatible-mode/v1`), not at `dashscope-intl.aliyuncs.com`. Token Plan keys (`sk-sp-`) are for coding tools and do not work. `qwen3.7-flash` and `qwen3.7-plus` both answer; thinking is on by default (130+ hidden tokens for "ok"), so pipeline calls must turn it off.
   - Jev: key accepted at `https://api.typesafe.ai/v1/systemone`. Question format must follow the docs (a Noul needs a `criteria` object, not a string); check the SDK or docs before writing Jev calls.
   - Browser pane note: its Copy buttons do not reach the Mac clipboard. The user copies secrets from their own browser and writes them with `pbpaste` in the terminal. Never copy or write keys for the user.
+- Epic 4 mid-epic retrospective (2026-11-24): `_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md` (humanizer skill), verdict not accepted, in progress. Four open to-do items in `sprint-status.yaml`. Write a final Epic 4 retro when the epic is done.
 - Next: wait for the user's 4 AI-generated clips in `data/samples/` (walkthrough given: tool whose terms allow public use, at most 2 min and about 10 MB each, one dialogue-heavy, safe home scenes plus each sensitive category). Then Story 4.1 multi-image test on real frames and pin models in the spine Stack table, then Stories 4.2 to 4.9, then the Epic 4 retro written with the humanizer skill. The user asked not to be pulled in unless required. Still open: Epic 3 wording item (user decides).
 
 ## Do first in Phase 5 (small, ordered)
@@ -65,7 +66,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning, Epics 1 to 3 and the Epic 4 pre-check commits (2026-11-24 commits not pushed yet); Epics 1 to 3 pushed to github.com/bavafa/pausall (Epic 3 pushed 2026-11-23). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning, Epics 1 to 3 and the Epic 4 pre-check commits all pushed to github.com/bavafa/pausall (Epic 3 pushed 2026-11-23). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
