@@ -1,6 +1,6 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epics 1 and 2 done (Stories 1.1 to 1.8 and 2.1 to 2.3), both retrospectives done.
+Project-wide resume point. Update after every phase. Last updated: 2026-11-23, Phase 5 build in progress, Epics 1 to 3 done (Stories 1.1 to 1.8, 2.1 to 2.3 and 3.1 to 3.3), all three retrospectives done.
 
 ## How to resume
 Say "resume Pausall" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
@@ -40,7 +40,13 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
   3. Done: no browser test before Epic 3; Story 5.5 covers it.
   4. Open: in Epic 4, check the ranking hold during real playback.
 - Plan for open items: Epic 1 item 3 (`decide --check` on missing files) and Epic 2 item 4 go into Epic 4 (Story 4.3 or 4.9). Epic 1 item 5 waits for the user.
-- Next: `bmad-build` on Story 3.1 (product page, simulated click and demo QR).
+- Epic 3 done (2026-11-23), without check-ins and with inline review. Context: `epic-3-context.md`.
+  - Story 3.1: product page at `#/clip/<id>/product/<pid>` (`ProductPage.tsx`); the watch screen stays mounted but hidden under it, so the paused frame and overlay survive Back. Session pause log is `App` state (`session.ts`, one entry per real pause that opens the pause view; a seek while paused adds none). View product sets a `SimulatedClick` (`bundle-schema`) from `policy` `clickFor` on the latest entry. "Simulated click recorded." shows only when opened from the clip. Demo QR text "Demo QR, not a real link".
+  - Story 3.2: ad pause view carries `price` and `split` from the scene (missing fails closed). `earnings.ts` builds the line "Simulated earnings: N ads shown ($X.XX), M held back ($0.00)" (agent wording, US dollars) and per-pause rows; `EarningsTally.tsx` expands in place ("Details" or "Hide"). The log covers every clip in the page load.
+  - Story 3.3: `#/attribution` (`AttributionPage.tsx`), linked from the picker; outside links open in a new tab so the tally survives.
+  - Specs: `spec-3-1-*`, `spec-3-2-*`, `spec-3-3-*`.
+- Epic 3 retrospective done (2026-11-23): `_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md` (rewritten with the humanizer skill), verdict accepted with open items. Three new open to-do items in `sprint-status.yaml`: user approves the Epic 3 wording and then `EXPERIENCE.md` and `epics.md` are updated; Story 5.5 browser tests cover the pause log; decide which pause a click belongs to after a seek while paused.
+- Next: ask the user about the Epic 3 wording item, then Epic 4 (Story 4.1, pre-checks and model pin). Epic 4 needs the user for the Qwen test call, keys and data terms.
 
 ## Do first in Phase 5 (small, ordered)
 1. Done 2026-11-23. PRD and EXPERIENCE note: FR-22 chunking and the "Analyzing the first scenes" and "pause before analysis" states apply to uploads only for sample clips; F8 has no feature flag in the first release. Two one-line edits.
@@ -51,7 +57,7 @@ Say "resume Pausall" (or "start phase 5"). Read this file, then the documents li
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` contains phases 1 to 4, Phase 5 planning, Epic 1 and Epic 2; Epic 1 is pushed to github.com/bavafa/pausall, Epic 2 is pushed. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` contains phases 1 to 4, Phase 5 planning and Epics 1 to 3; pushed to github.com/bavafa/pausall up to `309f1a0` (Epic 2 retro items). Epic 3 commits are local until the next push. The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 

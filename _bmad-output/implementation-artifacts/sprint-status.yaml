@@ -29,7 +29,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 # - Retrospective appends its action items to action_items; the status view surfaces open ones
 generated: 11-23-2026 17:43
-last_updated: 11-23-2026 23:10
+last_updated: 11-23-2026 22:52
 project: Pausall
 project_key: NOKEY
 tracking_system: file-system
@@ -56,7 +56,7 @@ development_status:
   3-1-product-page-simulated-click-and-demo-qr: done
   3-2-session-earnings-tally-and-breakdown: done
   3-3-attribution-page: done
-  epic-3-retrospective: optional
+  epic-3-retrospective: done
 
   epic-4: backlog
   4-1-pre-checks-and-model-pin: backlog
@@ -135,7 +135,8 @@ action_items:
     ref: "_bmad-output/implementation-artifacts/epic-2-retro-2026-11-23.md"
   - id: "epic-2-retro-item-9-decide-whether-to-add-a-small-watch-scre"
     epic: 2
-    action: "Decide whether to add a small watch screen browser test before Epic 3 (decided 2026-11-23: no, Story 5.5 covers it)"
+    action: "Decide whether to add a small watch screen browser test before Epic 3
+      (decided 2026-11-23: no, Story 5.5 covers it)"
     owner: "Sam"
     status: done
     ref: "_bmad-output/implementation-artifacts/epic-2-retro-2026-11-23.md"
@@ -145,3 +146,26 @@ action_items:
     owner: "Claude"
     status: open
     ref: "_bmad-output/implementation-artifacts/epic-2-retro-2026-11-23.md"
+  - id: "epic-3-retro-item-11-approve-or-change-the-epic-3-wording-ear"
+    epic: 3
+    action: "Approve or change the Epic 3 wording (earnings line with dollar amounts,
+      US dollars, Demo QR label, Back to the clip, Details or Hide), then update EXPERIENCE.md
+      and epics.md to match"
+    owner: "Sam decides, Claude edits"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md"
+  - id: "epic-3-retro-item-12-in-story-5-5-browser-tests-cover-the-pau"
+    epic: 3
+    action: "In Story 5.5 browser tests, cover the pause log: one row per real pause,
+      none for a seek while paused or a product page round trip, and the click on
+      the right row"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md"
+  - id: "epic-3-retro-item-13-before-any-screen-shows-or-counts-clicks"
+    epic: 3
+    action: "Before any screen shows or counts clicks, decide which pause a click
+      belongs to after a seek while paused"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-3-retro-2026-11-23.md"
