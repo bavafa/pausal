@@ -29,7 +29,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 # - Retrospective appends its action items to action_items; the status view surfaces open ones
 generated: 11-23-2026 17:43
-last_updated: 2026-11-23
+last_updated: 11-23-2026 21:51
 project: Pausall
 project_key: NOKEY
 tracking_system: file-system
@@ -44,7 +44,7 @@ development_status:
   1-6-clip-picker-in-the-soft-calm-style: done
   1-7-watch-screen-with-the-player: done
   1-8-pause-view-ad-card-or-pause-note: done
-  epic-1-retrospective: optional
+  epic-1-retrospective: done
 
   epic-2: backlog
   2-1-ranked-list-reason-lines-and-the-ranking-window: backlog
@@ -77,3 +77,45 @@ development_status:
   5-4-jev-versus-qwen-comparison: backlog
   5-5-browser-check-for-speed-and-no-network: backlog
   epic-5-retrospective: optional
+action_items:
+  - id: "epic-1-retro-item-1-reconcile-the-resolvepause-signature-in"
+    epic: 1
+    action: "Reconcile the resolvePause signature in the spine and epics to (decisions,
+      tMs)"
+    owner: "Sam approves, Claude edits"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
+  - id: "epic-1-retro-item-2-update-design-typography-the-spine-stack"
+    epic: 1
+    action: "Update DESIGN typography, the spine Stack table and epic-1-context for
+      self-hosted @fontsource fonts"
+    owner: "Sam approves, Claude edits"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
+  - id: "epic-1-retro-item-3-make-decide-check-fail-when-a-manifest-v"
+    epic: 1
+    action: "Make decide --check fail when a manifest videoUrl or product imagePath
+      has no file"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
+  - id: "epic-1-retro-item-4-decide-whether-to-pull-a-minimal-browser"
+    epic: 1
+    action: "Decide whether to pull a minimal browser test of the pause view forward
+      into Epic 2"
+    owner: "Sam"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
+  - id: "epic-1-retro-item-5-run-one-fresh-context-review-of-stories"
+    epic: 1
+    action: "Run one fresh-context review of Stories 1.6 to 1.8 (dd222cd^..5caa4a6)"
+    owner: "Sam starts, Claude triages"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
+  - id: "epic-1-retro-item-6-in-epic-4-land-every-manifest-and-produc"
+    epic: 1
+    action: "In Epic 4, land every manifest and product file with its real asset in
+      the same story"
+    owner: "Claude"
+    status: open
+    ref: "_bmad-output/implementation-artifacts/epic-1-retro-2026-11-23.md"
