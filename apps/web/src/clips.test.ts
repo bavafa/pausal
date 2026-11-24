@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { loadClips, loadDecisions, videoSrc } from "./clips.ts";
+import { loadClips, loadDecisions, assetUrl } from "./clips.ts";
 import { parseRoute } from "./route.ts";
 
 const manifest = (clipId: string, title: string) => ({ aiGenerated: true, attributionKey: "x", clipId, durationMs: 1000, hasDialogue: false, title, videoUrl: "v.mp4" });
@@ -48,10 +48,10 @@ describe("loadDecisions", () => {
   });
 });
 
-describe("videoSrc", () => {
+describe("assetUrl", () => {
   it("serves relative URLs from the base and keeps absolute ones", () => {
-    expect(videoSrc("media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
-    expect(videoSrc("/media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
-    expect(videoSrc("https://host/x.mp4", "/pausall/")).toBe("https://host/x.mp4");
+    expect(assetUrl("media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
+    expect(assetUrl("/media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
+    expect(assetUrl("https://host/x.mp4", "/pausall/")).toBe("https://host/x.mp4");
   });
 });

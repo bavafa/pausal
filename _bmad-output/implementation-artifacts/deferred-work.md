@@ -15,3 +15,7 @@
 - source_spec: `_bmad-output/implementation-artifacts/spec-1-7-watch-screen-with-the-player.md`
   summary: In Firefox a click on the video may toggle playback twice (native click-to-play plus the page handler).
   evidence: Unverified; only Chrome was checked. Settle with a Firefox click test, for example in the Story 5.5 browser check.
+
+- source_spec: `_bmad-output/implementation-artifacts/spec-1-8-pause-view-ad-card-or-pause-note.md`
+  summary: The phone ad card leaves 72 px for the native playback bar, measured in Chrome only; Safari on iPhone may need a different gap.
+  evidence: Unverified; Safari draws its own control bar. Settle with an iPhone Safari pause on the fixture clip.

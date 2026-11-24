@@ -1,4 +1,4 @@
-import { validateDecisions, validateManifest, type Decisions, type Manifest } from "@pausall/bundle-schema";
+import { validateDecisions, validateManifest, validateProduct, type Decisions, type Manifest, type Product } from "@pausall/bundle-schema";
 
 const files = import.meta.glob<unknown>("../../../data/manifest/*.json", { eager: true, import: "default" });
 
@@ -33,5 +33,20 @@ export function loadDecisions(clip: Manifest, entries: Record<string, unknown> =
 
 const warn = (...args: unknown[]) => (console.warn(...args), null);
 
-/** A relative manifest URL is served next to the app; an absolute one is used as is. */
-export const videoSrc = (url: string, base: string = import.meta.env.BASE_URL) => (/^[a-z][a-z0-9+.-]*:/i.test(url) ? url : base + url.replace(/^\//, ""));
+/** A relative URL (video, product image) is served next to the app; an absolute one is used as is. */
+export const assetUrl = (url: string, base: string = import.meta.env.BASE_URL) => (/^[a-z][a-z0-9+.-]*:/i.test(url) ? url : base + url.replace(/^\//, ""));
+
+const productFiles = import.meta.glob<unknown>("../../../data/products/*.json", { eager: true, import: "default" });
+
+/** Valid product files keyed by ID; an invalid one is left out, so an ad for it fails closed. */
+export function loadProducts(entries: Record<string, unknown> = productFiles): Map<string, Product> {
+  const products = new Map<string, Product>();
+  for (const [path, json] of Object.entries(entries)) {
+    const r = validateProduct(json);
+    if (r.ok) products.set(r.value.id, r.value);
+    else console.warn(`Skipping invalid product ${path}`, r.issues);
+  }
+  return products;
+}
+
+export const PRODUCTS = loadProducts();

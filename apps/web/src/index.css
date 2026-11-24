@@ -67,3 +67,12 @@
     @apply bg-background font-sans text-body text-foreground antialiased;
   }
 }
+
+@theme {
+  --animate-fade-in: fade-in 120ms ease-out;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "attribution": "Fixture product, not a real listing",
   "description": "A 28 cm skillet with a steady, flat base for weeknight cooking.",
   "id": "fixture-pan",
-  "imagePath": "products/fixture-pan.png",
+  "imagePath": "products/fixture-pan.svg",
   "keyFeatures": [
     "28 cm",
     "Flat base",

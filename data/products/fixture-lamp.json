@@ -2,7 +2,7 @@
   "attribution": "Fixture product, not a real listing",
   "description": "A small lamp with a warm light for reading corners.",
   "id": "fixture-lamp",
-  "imagePath": "products/fixture-lamp.png",
+  "imagePath": "products/fixture-lamp.svg",
   "keyFeatures": [
     "Warm light",
     "Adjustable arm"

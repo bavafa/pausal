@@ -2,7 +2,7 @@
   "attribution": "Fixture product, not a real listing",
   "description": "A gooseneck kettle for slow, even pouring.",
   "id": "fixture-kettle",
-  "imagePath": "products/fixture-kettle.png",
+  "imagePath": "products/fixture-kettle.svg",
   "keyFeatures": [
     "1 litre",
     "Gooseneck spout"
