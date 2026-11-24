@@ -5,5 +5,5 @@
   "durationMs": 35000,
   "hasDialogue": true,
   "title": "Fixture clip",
-  "videoUrl": "https://example.com/placeholder/000000000001.mp4"
+  "videoUrl": "media/000000000001.mp4"
 }

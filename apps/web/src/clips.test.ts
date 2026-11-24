@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { loadClips } from "./clips.ts";
+import { loadClips, loadDecisions, videoSrc } from "./clips.ts";
 import { parseRoute } from "./route.ts";
 
 const manifest = (clipId: string, title: string) => ({ aiGenerated: true, attributionKey: "x", clipId, durationMs: 1000, hasDialogue: false, title, videoUrl: "v.mp4" });
@@ -26,5 +26,32 @@ describe("parseRoute", () => {
     expect(parseRoute("#/")).toEqual({ page: "picker" });
     expect(parseRoute("#/clip/000000000001")).toEqual({ page: "clip", clipId: "000000000001" });
     expect(parseRoute("#/clip/zzz")).toEqual({ page: "clip", clipId: "zzz" });
+  });
+});
+
+describe("loadDecisions", () => {
+  const clip = loadClips().find((c) => c.clipId === "000000000001")!;
+  const good = loadDecisions(clip);
+  const quiet = () => vi.spyOn(console, "warn").mockImplementation(() => {});
+
+  it("loads the committed fixture decisions", () => {
+    expect(good?.scenes.length).toBeGreaterThan(0);
+  });
+  it("gives null for missing, invalid or mismatched decisions", () => {
+    const warn = quiet();
+    expect(loadDecisions(clip, {})).toBeNull();
+    expect(loadDecisions(clip, { "x/000000000001.json": { clipId: "000000000001" } })).toBeNull();
+    expect(loadDecisions({ ...clip, durationMs: 1 as typeof clip.durationMs }, { "x/000000000001.json": good })).toBeNull();
+    expect(loadDecisions({ ...clip, clipId: "000000000009" }, { "x/000000000009.json": good })).toBeNull();
+    expect(warn).toHaveBeenCalledTimes(4);
+    warn.mockRestore();
+  });
+});
+
+describe("videoSrc", () => {
+  it("serves relative URLs from the base and keeps absolute ones", () => {
+    expect(videoSrc("media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
+    expect(videoSrc("/media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
+    expect(videoSrc("https://host/x.mp4", "/pausall/")).toBe("https://host/x.mp4");
   });
 });
