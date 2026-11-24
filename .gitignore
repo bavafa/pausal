@@ -12,3 +12,6 @@ data/samples/*.mov
 data/samples/*.webm
 data/placeholder/
 dist/
+
+# Local ABO catalog download, slice and embedding index (AD-12)
+data/catalog/
