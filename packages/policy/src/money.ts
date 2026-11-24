@@ -1,4 +1,4 @@
-import type { Int, SimulatedClick, SimulatedPrice, SimulatedSplit, Thresholds } from "@pausall/bundle-schema";
+import type { Int, SimulatedClick, SimulatedPrice, SimulatedSplit, Thresholds } from "@pausal/bundle-schema";
 
 const PUBLISHER_PERCENT = 30;
 

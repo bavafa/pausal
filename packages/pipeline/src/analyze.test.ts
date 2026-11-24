@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { CATEGORIES, validateAnalysis, validateCampaigns, validateSceneTypes, validateThresholds, type Judgment, type Result } from "@pausall/bundle-schema";
-import { evaluateScene } from "@pausall/policy";
+import { CATEGORIES, validateAnalysis, validateCampaigns, validateSceneTypes, validateThresholds, type Judgment, type Result } from "@pausal/bundle-schema";
+import { evaluateScene } from "@pausal/policy";
 import thresholdsJson from "../../../config/thresholds.json" with { type: "json" };
 import sceneTypesJson from "../../../config/scene-types.json" with { type: "json" };
 import { analyzeClip, matchedFeatures, passesTaglineGate, relevanceWithContext, type Models } from "./analyze.ts";

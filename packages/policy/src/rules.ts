@@ -1,4 +1,4 @@
-import { CATEGORIES, RANKED_MAX, REASONS, type AnalysisScene, type Campaign, type Fit, type Outcome, type Ranked, type Reason, type SimulatedPrice, type SimulatedSplit, type Thresholds } from "@pausall/bundle-schema";
+import { CATEGORIES, RANKED_MAX, REASONS, type AnalysisScene, type Campaign, type Fit, type Outcome, type Ranked, type Reason, type SimulatedPrice, type SimulatedSplit, type Thresholds } from "@pausal/bundle-schema";
 import { priceFor, roundHalfUp, splitPrice } from "./money.ts";
 
 /** The only rule ids used anywhere; `failed` lists ids in this order, and `REASONS` order decides the outcome. */

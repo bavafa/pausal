@@ -1,4 +1,4 @@
-import type { SimulatedClick } from "@pausall/bundle-schema";
+import type { SimulatedClick } from "@pausal/bundle-schema";
 import type { PauseView } from "./pause-view.ts";
 
 /** One real pause event that opened the pause view; the session log resets on reload (AD-23). */

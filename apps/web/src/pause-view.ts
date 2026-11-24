@@ -1,5 +1,5 @@
-import type { Decisions, Product, Reason, SimulatedPrice, SimulatedSplit } from "@pausall/bundle-schema";
-import { resolvePause } from "@pausall/policy";
+import type { Decisions, Product, Reason, SimulatedPrice, SimulatedSplit } from "@pausal/bundle-schema";
+import { resolvePause } from "@pausal/policy";
 
 /** Policy wording for each no-ad reason (docs/policy/ad-suppression-policy.md). */
 export const REASON_TEXT: Record<Reason, string> = {

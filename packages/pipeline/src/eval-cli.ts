@@ -4,7 +4,7 @@
 // --compare-judges calls models (keys in .env), writes docs/eval/judges.md only, and is never run in CI.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { validateAnalysis, validateDecisions, validateEvalConfig, validateLabels, validateSceneTypes, type Result } from "@pausall/bundle-schema";
+import { validateAnalysis, validateDecisions, validateEvalConfig, validateLabels, validateSceneTypes, type Result } from "@pausal/bundle-schema";
 import { evaluate, report, type EvalClip } from "./eval.ts";
 
 const rootArg = process.argv.indexOf("--root");

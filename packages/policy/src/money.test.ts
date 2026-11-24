@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Int, Thresholds } from "@pausall/bundle-schema";
+import type { Int, Thresholds } from "@pausal/bundle-schema";
 import { clickFor, priceFor, splitPrice, ZERO_EARNING } from "./index.ts";
 
 const at = (w: number) => ({ pricing: { relevanceWeight: w } }) as Thresholds;

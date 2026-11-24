@@ -17,7 +17,7 @@ const ledger = new Ledger(cfg.costCapUsd);
 const qwen = new Qwen(keys.qwenBaseUrl, keys.qwenKey, { retry: { timeoutMs: cfg.timeoutMs, retries: 1 }, prices: cfg.pricesUsdPerMillionTokens, ledger });
 
 for (const video of process.argv.slice(2)) {
-  const tmp = mkdtempSync(join(tmpdir(), "pausall-vlm-"));
+  const tmp = mkdtempSync(join(tmpdir(), "pausal-vlm-"));
   try {
     // 6 frames, 1 per second, from the middle of the clip.
     const dur = Number(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", video]).toString());

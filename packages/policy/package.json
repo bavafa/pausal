@@ -1,5 +1,5 @@
 {
-  "name": "@pausall/policy",
+  "name": "@pausal/policy",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,6 +11,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pausall/bundle-schema": "workspace:*"
+    "@pausal/bundle-schema": "workspace:*"
   }
 }

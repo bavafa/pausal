@@ -1,4 +1,4 @@
-import type { Manifest } from "@pausall/bundle-schema";
+import type { Manifest } from "@pausal/bundle-schema";
 import { assetUrl } from "./clips.ts";
 import { HeroDemo } from "./HeroDemo.tsx";
 import { clipHref } from "./route.ts";

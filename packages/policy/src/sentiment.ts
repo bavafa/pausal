@@ -1,4 +1,4 @@
-import type { Sentiment, SentimentLevel } from "@pausall/bundle-schema";
+import type { Sentiment, SentimentLevel } from "@pausal/bundle-schema";
 
 /** Sentiment level 1 to 5 to its sentiment value and mood label. */
 export const SENTIMENT_TABLE: Readonly<Record<SentimentLevel, { sentiment: Sentiment; moodLabel: string }>> = {

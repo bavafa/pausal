@@ -215,10 +215,10 @@ importers:
       '@fontsource/raleway':
         specifier: 5.3.0
         version: 5.3.0
-      '@pausall/bundle-schema':
+      '@pausal/bundle-schema':
         specifier: workspace:*
         version: link:../../packages/bundle-schema
-      '@pausall/policy':
+      '@pausal/policy':
         specifier: workspace:*
         version: link:../../packages/policy
       '@tailwindcss/vite':
@@ -251,16 +251,16 @@ importers:
 
   packages/pipeline:
     dependencies:
-      '@pausall/bundle-schema':
+      '@pausal/bundle-schema':
         specifier: workspace:*
         version: link:../bundle-schema
-      '@pausall/policy':
+      '@pausal/policy':
         specifier: workspace:*
         version: link:../policy
 
   packages/policy:
     dependencies:
-      '@pausall/bundle-schema':
+      '@pausal/bundle-schema':
         specifier: workspace:*
         version: link:../bundle-schema
 

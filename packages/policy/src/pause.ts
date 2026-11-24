@@ -1,4 +1,4 @@
-import { REASONS, type DecisionScene, type Decisions, type Reason } from "@pausall/bundle-schema";
+import { REASONS, type DecisionScene, type Decisions, type Reason } from "@pausal/bundle-schema";
 
 /** On `ad` the web reads product, price, split and tagline from `scene`. */
 export type PauseResult = { outcome: "ad"; scene: DecisionScene } | { outcome: Reason; scene: DecisionScene | null };

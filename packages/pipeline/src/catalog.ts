@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import type { Campaign, Int, Product } from "@pausall/bundle-schema";
+import type { Campaign, Int, Product } from "@pausal/bundle-schema";
 
 /** One product in the local ABO slice (AD-12). Never committed; product files are written from it (AD-19). */
 export type CatalogItem = { id: string; name: string; productType: string; description: string; keyFeatures: string[]; imageId: string };

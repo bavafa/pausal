@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { Int } from "@pausall/bundle-schema";
-import { rankAt, sceneAt } from "@pausall/policy";
+import type { Int } from "@pausal/bundle-schema";
+import { rankAt, sceneAt } from "@pausal/policy";
 import { CLIPS, loadDecisions, PRODUCTS } from "./clips.ts";
 import { productList } from "./product-list.ts";
 

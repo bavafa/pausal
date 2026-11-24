@@ -7,7 +7,7 @@ import { describe, expect, it } from "vitest";
 const root = join(import.meta.dirname, "..");
 
 function scan(content: string) {
-  const dir = mkdtempSync(join(tmpdir(), "pausall-secret-"));
+  const dir = mkdtempSync(join(tmpdir(), "pausal-secret-"));
   const file = join(dir, "probe.env");
   writeFileSync(file, content);
   try {
@@ -32,6 +32,6 @@ describe("secret scan", () => {
   });
 
   it("passes on a clean file", () => {
-    expect(scan("PAUSALL_MODE=demo\n").status).toBe(0);
+    expect(scan("PAUSAL_MODE=demo\n").status).toBe(0);
   });
 });

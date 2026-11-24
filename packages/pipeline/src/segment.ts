@@ -1,4 +1,4 @@
-import type { Int } from "@pausall/bundle-schema";
+import type { Int } from "@pausal/bundle-schema";
 
 export type Span = { startMs: Int; endMs: Int };
 

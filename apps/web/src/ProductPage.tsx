@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import type { Product } from "@pausall/bundle-schema";
+import type { Product } from "@pausal/bundle-schema";
 import { assetUrl } from "./clips.ts";
 import { clipHref } from "./route.ts";
 

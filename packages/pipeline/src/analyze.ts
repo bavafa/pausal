@@ -1,5 +1,5 @@
-import { CATEGORIES, sceneId, type Analysis, type Int, type AnalysisScene, type Fit, type Thresholds } from "@pausall/bundle-schema";
-import { checkTagline, evaluateScene } from "@pausall/policy";
+import { CATEGORIES, sceneId, type Analysis, type Int, type AnalysisScene, type Fit, type Thresholds } from "@pausal/bundle-schema";
+import { checkTagline, evaluateScene } from "@pausal/policy";
 import { CostCapError } from "./call.ts";
 import { distinctHits, toProduct, topK, type CatalogItem } from "./catalog.ts";
 import type { SceneJudge, SceneJudgment } from "./judge.ts";

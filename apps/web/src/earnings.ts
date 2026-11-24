@@ -1,5 +1,5 @@
-import type { SimulatedPrice, SimulatedSplit } from "@pausall/bundle-schema";
-import { splitPrice, ZERO_EARNING } from "@pausall/policy";
+import type { SimulatedPrice, SimulatedSplit } from "@pausal/bundle-schema";
+import { splitPrice, ZERO_EARNING } from "@pausal/policy";
 import type { PauseEntry } from "./session.ts";
 
 const USD = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });

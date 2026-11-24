@@ -46,7 +46,7 @@ context:
 - `packages/policy/src/rules.ts` -- `evaluateScene(scene, thresholds, campaigns)` gives outcome, ranked, top, price, split. Reuse; do not change.
 - `packages/policy/src/{sentiment,tagline}.ts` -- `SENTIMENT_TABLE`, `taglineOrName`.
 - `packages/bundle-schema/src/*` -- `validateAnalysis(json, sceneTypes)`, `validateDecisions`, `validateThresholds`, `validateCampaigns`, `validateSceneTypes`, `validateManifest`, `validateProduct`; `Result` has `issues[]` with `path`, `message`.
-- `packages/pipeline/package.json` -- add `@pausall/policy` workspace dependency (lint already allows it).
+- `packages/pipeline/package.json` -- add `@pausal/policy` workspace dependency (lint already allows it).
 - `.oxlintrc.json` -- pipeline may import policy, bundle-schema, node builtins, vitest.
 - `package.json` (root) -- add `"decide"` script; Node 26 runs `.ts` directly; workspace packages resolve through symlinks to `packages/*/src`.
 - `.github/workflows/ci.yml` -- add `pnpm decide --check` after tests.

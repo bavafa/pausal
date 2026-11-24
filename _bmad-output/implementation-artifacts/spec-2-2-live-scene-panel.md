@@ -47,7 +47,7 @@ context: ['{project-root}/_bmad-output/implementation-artifacts/epic-2-context.m
 - `apps/web/src/scene-panel.ts` (new) -- pure `scenePanel(scene: DecisionScene | null)` returning `{ kind: "unavailable" } | { kind: "scene", context, mood, safe }`.
 - `apps/web/src/ScenePanel.tsx` (new) -- renders it; reuse the eyebrow classes from `PauseOverlay.tsx`.
 - `apps/web/src/pause-view.test.ts` -- pattern for loading the fixture decisions in a test.
-- `@pausall/policy` `sceneAt` -- the only scene lookup.
+- `@pausal/policy` `sceneAt` -- the only scene lookup.
 
 ## Tasks & Acceptance
 
@@ -82,4 +82,4 @@ Layers ran inline in this session (no subagents).
 - `npx -y pnpm@12.23.0 test`, `typecheck`, `lint`, `-r build` -- all pass
 
 **Manual checks:**
-- Dev server at `http://localhost:5173/pausall/#/clip/000000000001`: seek across scenes; panel updates; no console errors.
+- Dev server at `http://localhost:5173/pausal/#/clip/000000000001`: seek across scenes; panel updates; no console errors.

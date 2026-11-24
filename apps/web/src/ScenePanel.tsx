@@ -1,4 +1,4 @@
-import type { DecisionScene } from "@pausall/bundle-schema";
+import type { DecisionScene } from "@pausal/bundle-schema";
 import { scenePanel } from "./scene-panel.ts";
 
 const KEY = "mr-1.5 text-eyebrow uppercase tracking-[0.08em] text-muted-foreground";

@@ -52,6 +52,6 @@ test("each pause shows the resolvePause outcome within 500 ms, with no request a
   }
 
   // The video itself may stream in range requests; nothing else (no API, model, font or image) may load after start.
-  const video = new URL(manifest.videoUrl, "http://localhost:4173/pausall/").href;
+  const video = new URL(manifest.videoUrl, "http://localhost:4173/pausal/").href;
   expect(late.filter((u) => u !== video)).toEqual([]);
 });

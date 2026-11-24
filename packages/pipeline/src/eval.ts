@@ -1,5 +1,5 @@
-import { CATEGORIES, type Analysis, type Category, type Decisions, type EvalConfig, type LabelRange, type Labels, type Outcome } from "@pausall/bundle-schema";
-import { rankAt, resolvePause, type Held } from "@pausall/policy";
+import { CATEGORIES, type Analysis, type Category, type Decisions, type EvalConfig, type LabelRange, type Labels, type Outcome } from "@pausal/bundle-schema";
+import { rankAt, resolvePause, type Held } from "@pausal/policy";
 
 /** AD-3: the sweep step, and the offsets checked around every scene boundary. */
 export const STEP_MS = 100;

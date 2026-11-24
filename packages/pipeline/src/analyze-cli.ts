@@ -6,7 +6,7 @@ import { createHash } from "node:crypto";
 import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { validateAnalysis, validateManifest, validateSceneTypes, validateThresholds } from "@pausall/bundle-schema";
+import { validateAnalysis, validateManifest, validateSceneTypes, validateThresholds } from "@pausal/bundle-schema";
 import { analyzeClip, type ClipInput, type Models } from "./analyze.ts";
 import { Ledger } from "./call.ts";
 import type { CatalogItem } from "./catalog.ts";
@@ -44,7 +44,7 @@ if (!args.includes("--skip-hash") && !hash.startsWith(clipId)) throw new Error(`
 const run = (cmd: string, a: string[]): Buffer => execFileSync(cmd, a, { maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] });
 const durationMs = Math.round(Number(run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", video]).toString().trim()) * 1000);
 if (durationMs !== manifest.durationMs) throw new Error(`manifest durationMs ${manifest.durationMs} differs from the video's ${durationMs}`);
-const tmp = mkdtempSync(join(tmpdir(), "pausall-"));
+const tmp = mkdtempSync(join(tmpdir(), "pausal-"));
 try {
   run("ffmpeg", ["-v", "error", "-i", video, "-vf", `fps=1,scale=${cfg.frameWidth}:-2`, "-q:v", "4", join(tmp, "f%05d.jpg")]);
   const jpegs = readdirSync(tmp).filter((f) => f.endsWith(".jpg")).sort();

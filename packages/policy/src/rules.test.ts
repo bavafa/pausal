@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CATEGORIES, type AnalysisScene, type Campaign, type Int, type Judgment, type Thresholds } from "@pausall/bundle-schema";
+import { CATEGORIES, type AnalysisScene, type Campaign, type Int, type Judgment, type Thresholds } from "@pausal/bundle-schema";
 import { evaluateScene, rankFits, roundHalfUp } from "./index.ts";
 
 const thresholds: Thresholds = {

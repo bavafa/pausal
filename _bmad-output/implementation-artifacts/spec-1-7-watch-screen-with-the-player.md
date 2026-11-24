@@ -34,7 +34,7 @@ context:
 | Invalid decisions | fails `validateDecisions` | "Analysis unavailable for this scene.", decisions `null` | console warning naming issues |
 | Missing decisions | no file for the clip | same as invalid | console warning |
 | Mismatch | decisions `clipId` or `durationMs` differ from manifest | same as invalid | console warning |
-| Relative URL | `media/x.mp4`, base `/pausall/` | `/pausall/media/x.mp4` | N/A |
+| Relative URL | `media/x.mp4`, base `/pausal/` | `/pausal/media/x.mp4` | N/A |
 | Absolute URL | `https://host/x.mp4` | unchanged | N/A |
 
 </frozen-after-approval>

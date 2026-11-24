@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validateDecisions, type DecisionScene, type Decisions, type Int, type Outcome, type Verdict } from "@pausall/bundle-schema";
+import { validateDecisions, type DecisionScene, type Decisions, type Int, type Outcome, type Verdict } from "@pausal/bundle-schema";
 import { rankAt, resolvePause, type Held } from "./index.ts";
 
 type Spec = { end: number; ids: string[]; outcome?: Outcome; safeTag?: Verdict };

@@ -1,4 +1,4 @@
-import type { DecisionScene, Product, RankedItem, SimulatedPrice } from "@pausall/bundle-schema";
+import type { DecisionScene, Product, RankedItem, SimulatedPrice } from "@pausal/bundle-schema";
 
 /** `label` is the short name when the pipeline wrote one, else the full name. `bid` is null without an active campaign. */
 export type ListItem = { product: Product; label: string; reason: string; relevance: number; bid: SimulatedPrice | null };

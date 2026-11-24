@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { clickFor } from "@pausall/policy";
+import { clickFor } from "@pausal/policy";
 import { withClick, type PauseEntry } from "./session.ts";
 
 const entry = (tMs: number): PauseEntry => ({ clipId: "c", tMs, view: { kind: "note", reason: "nothingFits", text: "x" }, click: null });

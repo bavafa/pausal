@@ -1,4 +1,4 @@
-import type { Product } from "@pausall/bundle-schema";
+import type { Product } from "@pausal/bundle-schema";
 
 const MAX_LENGTH = 120;
 /** A tagline word starting with one of these stems (safer, cures, bestselling) is a claim. */

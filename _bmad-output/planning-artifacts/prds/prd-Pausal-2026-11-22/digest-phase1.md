@@ -3,7 +3,7 @@
 Sources: product-brief, personas-jtbd, risks-assumptions, jev-fit, data-sources, rights-checklist, domain research (skimmed). Status: draft, 2026-11-22. All persona and revenue content is hypothesis; no interviews run.
 
 ## Product in one paragraph
-Pausall turns a clip (up to 2 minutes) into a live, ranked list of catalog products that match the current scene. Each item has a 0-100 relevance score, a one-line reason and an ad flag. On pause it shows an ad for the top product, or shows no ad and says why. A slider trades relevance against simulated revenue. Analysis runs once after load; playback and pause only read stored results. It is a small public demo under 10 USD/month, with human-labeled evaluation including failures.
+Pausal turns a clip (up to 2 minutes) into a live, ranked list of catalog products that match the current scene. Each item has a 0-100 relevance score, a one-line reason and an ad flag. On pause it shows an ad for the top product, or shows no ad and says why. A slider trades relevance against simulated revenue. Analysis runs once after load; playback and pause only read stored results. It is a small public demo under 10 USD/month, with human-labeled evaluation including failures.
 
 ## Users/personas
 - Streaming platform ad product owner / the platform as a business: monetize idle pause moments without hurting viewing; withholding an ad can be the better decision.
@@ -22,7 +22,7 @@ Pausall turns a clip (up to 2 minutes) into a live, ranked list of catalog produ
 ## Ad suppression/policy hints
 - Categories to test (Jev Noul per category): violence, death or grief, sexual content, medical trauma, child-focused, intense dialogue.
 - Rules: default to no ad when unsure; low relevance threshold means no ad; one probability alone never unlocks an ad (second signal); our code applies thresholds.
-- No current industry standard confirmed (GARM discontinued 2024-08-09), so Pausall writes and tests its own policy. Guardrail: unsafe ads shown = zero on eval set.
+- No current industry standard confirmed (GARM discontinued 2024-08-09), so Pausal writes and tests its own policy. Guardrail: unsafe ads shown = zero on eval set.
 - Risks: unsafe ad in sensitive scene (top risk); prompt injection via dialogue or on-screen text (classify from VLM description, not raw transcript); simulated numbers mistaken for real; list flicker.
 
 ## Constraints

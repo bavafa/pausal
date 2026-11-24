@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Decisions, Manifest } from "@pausall/bundle-schema";
-import { rankAt, type Held, type RankView } from "@pausall/policy";
+import type { Decisions, Manifest } from "@pausal/bundle-schema";
+import { rankAt, type Held, type RankView } from "@pausal/policy";
 import { assetUrl, PRODUCTS } from "./clips.ts";
 import { PauseOverlay } from "./PauseOverlay.tsx";
 import { ScenePanel } from "./ScenePanel.tsx";

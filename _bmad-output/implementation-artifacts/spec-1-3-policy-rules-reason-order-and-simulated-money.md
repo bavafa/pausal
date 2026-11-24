@@ -74,7 +74,7 @@ Ranking: relevance (rounded) descending, ties by lower product ID; top is rank 1
 
 **Acceptance Criteria:**
 - Given `pnpm typecheck && pnpm lint && pnpm test`, when run, then all pass with the new tests.
-- Given `packages/policy/src`, when linted, then it imports only `@pausall/bundle-schema` and relative files.
+- Given `packages/policy/src`, when linted, then it imports only `@pausal/bundle-schema` and relative files.
 
 ## Design Notes
 
@@ -108,7 +108,7 @@ Ranking: relevance (rounded) descending, ties by lower product ID; top is rank 1
 | 9 | blind | Numbers matched without units; "#1" passes if "1" is in the source | low | Real heuristic limit; unlikely with catalog data; fix adds context parsing | reject |
 | 10 | blind | No boundary tests for R1 at 0.8 and R3b at exact cutoffs | medium | Changing `>=` to `>` in R1 or R3b passes every test | patch |
 | 11 | blind | Money tests miss w 0 and w 1 edges and use relevance past 100 | low | Test-only, direct correction; also covers #1 | patch |
-| 12 | blind | Policy test lint override allows `@pausall/bundle-schema/**` | false | Same allowance as the main policy override (AD-23 permits bundle-schema) | reject |
+| 12 | blind | Policy test lint override allows `@pausal/bundle-schema/**` | false | Same allowance as the main policy override (AD-23 permits bundle-schema) | reject |
 | 13 | blind | `RULE_IDS` comment says "evaluation order" | low | Outcome order comes from `REASONS`; `failed` is in id order; comment correction | patch |
 | 14 | blind | `SENTIMENT_TABLE` not frozen at runtime | low | Typed Readonly; no caller mutates it | reject |
 | 15 | blind, gap | Prompt-injection test cannot fail for the reason it names | medium | Both verdicts unsafe decide the outcome regardless of text | patch |

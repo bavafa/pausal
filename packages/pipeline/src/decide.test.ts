@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { validateAnalysis, validateCampaigns, validateDecisions, validateProduct, validateSceneTypes, validateThresholds, type Decisions, type Product, type Result } from "@pausall/bundle-schema";
+import { validateAnalysis, validateCampaigns, validateDecisions, validateProduct, validateSceneTypes, validateThresholds, type Decisions, type Product, type Result } from "@pausal/bundle-schema";
 import analysisJson from "../../../data/analysis/000000000001.json" with { type: "json" };
 import thresholdsJson from "../../../config/thresholds.json" with { type: "json" };
 import campaignsJson from "../../../config/campaigns.json" with { type: "json" };

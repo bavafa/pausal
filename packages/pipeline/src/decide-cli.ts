@@ -13,7 +13,7 @@ import {
   type Decisions,
   type Product,
   type Result,
-} from "@pausall/bundle-schema";
+} from "@pausal/bundle-schema";
 import { canonicalJson, deriveDecisions, productIssues } from "./decide.ts";
 
 const rootArg = process.argv.indexOf("--root");

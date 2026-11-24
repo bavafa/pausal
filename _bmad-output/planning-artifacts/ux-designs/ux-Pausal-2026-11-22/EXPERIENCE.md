@@ -2,8 +2,8 @@
 name: Pausal
 status: final
 sources:
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/addendum.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/prd.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/addendum.md
   - docs/policy/ad-suppression-policy.md
   - docs/discovery/personas-jtbd.md
   - docs/discovery/product-brief.md

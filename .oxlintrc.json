@@ -21,16 +21,16 @@
             "patterns": [
               {
                 "group": [
-                  "@pausall/*",
-                  "@pausall/*/**",
-                  "!@pausall/policy",
-                  "!@pausall/policy/**",
-                  "!@pausall/bundle-schema",
-                  "!@pausall/bundle-schema/**",
+                  "@pausal/*",
+                  "@pausal/*/**",
+                  "!@pausal/policy",
+                  "!@pausal/policy/**",
+                  "!@pausal/bundle-schema",
+                  "!@pausal/bundle-schema/**",
                   "**/packages/**",
                   "**/apps/**"
                 ],
-                "message": "AD-23: only @pausall/policy and @pausall/bundle-schema may be imported here."
+                "message": "AD-23: only @pausal/policy and @pausal/bundle-schema may be imported here."
               }
             ]
           }
@@ -69,14 +69,14 @@
               {
                 "group": [
                   "*",
-                  "!@pausall/bundle-schema",
-                  "!@pausall/bundle-schema/**",
+                  "!@pausal/bundle-schema",
+                  "!@pausal/bundle-schema/**",
                   "!./**",
                   "!../**",
                   "**/packages/**",
                   "**/apps/**"
                 ],
-                "message": "AD-23: policy may import only @pausall/bundle-schema."
+                "message": "AD-23: policy may import only @pausal/bundle-schema."
               }
             ]
           }
@@ -159,14 +159,14 @@
                 "group": [
                   "*",
                   "!vitest",
-                  "!@pausall/bundle-schema",
-                  "!@pausall/bundle-schema/**",
+                  "!@pausal/bundle-schema",
+                  "!@pausal/bundle-schema/**",
                   "!./**",
                   "./../**",
                   "**/packages/**",
                   "**/apps/**"
                 ],
-                "message": "AD-23: policy tests import only vitest, @pausall/bundle-schema and files inside the package."
+                "message": "AD-23: policy tests import only vitest, @pausal/bundle-schema and files inside the package."
               }
             ]
           }

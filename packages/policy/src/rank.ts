@@ -1,4 +1,4 @@
-import { VERDICTS, type DecisionScene, type Decisions, type RankedItem } from "@pausall/bundle-schema";
+import { VERDICTS, type DecisionScene, type Decisions, type RankedItem } from "@pausal/bundle-schema";
 import { sceneAt } from "./pause.ts";
 
 /** The top product the web is showing, the scene it came from and when it started showing. Display only (AD-17). */

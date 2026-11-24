@@ -2,11 +2,11 @@
 status: final
 stepsCompleted: [1, 2, 3, 4]
 inputDocuments:
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/addendum.md
-  - _bmad-output/planning-artifacts/architecture/architecture-Pausall-2026-11-22/ARCHITECTURE-SPINE.md
-  - _bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/DESIGN.md
-  - _bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/EXPERIENCE.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/prd.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/addendum.md
+  - _bmad-output/planning-artifacts/architecture/architecture-Pausal-2026-11-22/ARCHITECTURE-SPINE.md
+  - _bmad-output/planning-artifacts/ux-designs/ux-Pausal-2026-11-22/DESIGN.md
+  - _bmad-output/planning-artifacts/ux-designs/ux-Pausal-2026-11-22/EXPERIENCE.md
   - docs/policy/ad-suppression-policy.md
   - docs/adr/0001-precompute-with-pipeline-seam.md
   - docs/adr/0002-typescript-workspace-vite-spa-no-ui-library.md
@@ -19,7 +19,7 @@ inputDocuments:
   - docs/data-sources.md
 ---
 
-# Pausall - Epic Breakdown
+# Pausal - Epic Breakdown
 
 ## Overview
 

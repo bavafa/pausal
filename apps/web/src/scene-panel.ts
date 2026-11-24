@@ -1,4 +1,4 @@
-import type { DecisionScene, Verdict } from "@pausall/bundle-schema";
+import type { DecisionScene, Verdict } from "@pausal/bundle-schema";
 
 export const SAFE_TEXT: Record<Verdict, string> = { safe: "Brand safe", caution: "Caution", unsafe: "Not brand safe" };
 

@@ -1,4 +1,4 @@
-import { validateDecisions, validateManifest, validateProduct, type Decisions, type Manifest, type Product } from "@pausall/bundle-schema";
+import { validateDecisions, validateManifest, validateProduct, type Decisions, type Manifest, type Product } from "@pausal/bundle-schema";
 
 const files = import.meta.glob<unknown>("../../../data/manifest/*.json", { eager: true, import: "default" });
 

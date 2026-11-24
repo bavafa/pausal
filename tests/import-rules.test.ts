@@ -18,11 +18,11 @@ function lint(dir: string, source: string, name = "__import_rule_probe__.ts") {
 
 describe("AD-23 import boundaries", () => {
   it.each([
-    ["apps/web", 'import "@pausall/pipeline";\n', "@pausall/pipeline"],
-    ["packages/pipeline", 'import "@pausall/web";\n', "@pausall/web"],
+    ["apps/web", 'import "@pausal/pipeline";\n', "@pausal/pipeline"],
+    ["packages/pipeline", 'import "@pausal/web";\n', "@pausal/web"],
     ["packages/policy", 'import "node:fs";\n', "node:fs"],
     ["packages/policy", 'import "fs";\n', "fs"],
-    ["packages/policy", 'import "@pausall/pipeline";\n', "@pausall/pipeline"],
+    ["packages/policy", 'import "@pausal/pipeline";\n', "@pausal/pipeline"],
     ["packages/policy", 'import "child_process";\n', "child_process"],
     ["packages/policy", 'import OpenAI from "openai";\n', "openai"],
     ["packages/policy", 'fetch("https://example.com");\n', "fetch"],
@@ -30,9 +30,9 @@ describe("AD-23 import boundaries", () => {
     ["packages/policy", "export const d = document;\n", "document"],
     ["packages/policy", 'globalThis.fetch("https://example.com");\n', "globalThis"],
     ["packages/policy", 'import "http";\n', "http"],
-    ["apps/web", 'import "@pausall/pipeline/x";\n', "@pausall/pipeline/x"],
+    ["apps/web", 'import "@pausal/pipeline/x";\n', "@pausal/pipeline/x"],
     ["apps/web", 'import "../../../packages/pipeline/src/index.ts";\n', "../../../packages/pipeline/src/index.ts"],
-    ["packages/bundle-schema", 'import "@pausall/pipeline";\n', "@pausall/pipeline"],
+    ["packages/bundle-schema", 'import "@pausal/pipeline";\n', "@pausal/pipeline"],
     ["packages/bundle-schema", 'import "node:fs";\n', "node:fs"],
   ])("%s rejects %s", (dir, source, name) => {
     const { status, output } = lint(dir, source);
@@ -41,11 +41,11 @@ describe("AD-23 import boundaries", () => {
   });
 
   it.each([
-    ["packages/policy", 'import "@pausall/bundle-schema";\n'],
+    ["packages/policy", 'import "@pausal/bundle-schema";\n'],
     ["packages/policy", 'import "./rules/r1.ts";\n'],
     ["packages/policy", 'import "../x.ts";\n'],
-    ["packages/policy", 'import "@pausall/bundle-schema/x";\n'],
-    ["apps/web", 'import "@pausall/policy";\nimport "@pausall/bundle-schema";\n'],
+    ["packages/policy", 'import "@pausal/bundle-schema/x";\n'],
+    ["apps/web", 'import "@pausal/policy";\nimport "@pausal/bundle-schema";\n'],
   ])("%s allows %s", (dir, source) => {
     const { status, output } = lint(dir, source);
     expect(output).not.toContain("no-restricted");
@@ -55,7 +55,7 @@ describe("AD-23 import boundaries", () => {
   const testProbe = "__import_rule_probe__.test.ts";
   it.each([
     ['import "node:fs";\n', "node:fs"],
-    ['import "@pausall/pipeline";\n', "@pausall/pipeline"],
+    ['import "@pausal/pipeline";\n', "@pausal/pipeline"],
     ['import "../../pipeline/src/index.ts";\n', "../../pipeline/src/index.ts"],
   ])("bundle-schema test files reject %s", (source, name) => {
     const { status, output } = lint("packages/bundle-schema", source, testProbe);
@@ -71,7 +71,7 @@ describe("AD-23 import boundaries", () => {
 
   it.each([
     ['import "node:fs";\n', "node:fs"],
-    ['import "@pausall/pipeline";\n', "@pausall/pipeline"],
+    ['import "@pausal/pipeline";\n', "@pausal/pipeline"],
     ['import "../../pipeline/src/index.ts";\n', "../../pipeline/src/index.ts"],
     ['import "./../../pipeline/src/index.ts";\n', "./../../pipeline/src/index.ts"],
   ])("policy test files reject %s", (source, name) => {
@@ -80,7 +80,7 @@ describe("AD-23 import boundaries", () => {
     expect(output).toContain(`'${name}'`);
   });
 
-  it.each(['import "vitest";\n', 'import "@pausall/bundle-schema";\n'])("policy test files allow %s", (source) => {
+  it.each(['import "vitest";\n', 'import "@pausal/bundle-schema";\n'])("policy test files allow %s", (source) => {
     const { status, output } = lint("packages/policy", source, testProbe);
     expect(output).not.toContain("no-restricted");
     expect(status).toBe(0);

@@ -6,11 +6,11 @@ export default defineConfig({
   testDir: "tests/browser",
   testMatch: "*.browser.ts",
   reporter: "list",
-  use: { baseURL: "http://localhost:4173/pausall/", channel: "chrome", headless: true },
+  use: { baseURL: "http://localhost:4173/pausal/", channel: "chrome", headless: true },
   webServer: {
     command: "node node_modules/vite/bin/vite.js preview --port 4173 --strictPort",
     cwd: "apps/web",
-    url: "http://localhost:4173/pausall/",
+    url: "http://localhost:4173/pausal/",
     reuseExistingServer: false,
   },
 });

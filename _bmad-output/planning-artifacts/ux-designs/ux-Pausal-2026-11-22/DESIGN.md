@@ -3,8 +3,8 @@ name: Pausal
 description: Calm, minimal web demo that shows a sponsored product on pause only when the scene fits. Soft Calm direction, dark by default with a light theme toggle, laptop and phone.
 status: final
 sources:
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/addendum.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/prd.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/addendum.md
   - docs/policy/ad-suppression-policy.md
   - docs/discovery/personas-jtbd.md
   - docs/discovery/product-brief.md

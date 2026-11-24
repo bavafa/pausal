@@ -55,8 +55,8 @@ describe("loadDecisions", () => {
 
 describe("assetUrl", () => {
   it("serves relative URLs from the base and keeps absolute ones", () => {
-    expect(assetUrl("media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
-    expect(assetUrl("/media/x.mp4", "/pausall/")).toBe("/pausall/media/x.mp4");
-    expect(assetUrl("https://host/x.mp4", "/pausall/")).toBe("https://host/x.mp4");
+    expect(assetUrl("media/x.mp4", "/pausal/")).toBe("/pausal/media/x.mp4");
+    expect(assetUrl("/media/x.mp4", "/pausal/")).toBe("/pausal/media/x.mp4");
+    expect(assetUrl("https://host/x.mp4", "/pausal/")).toBe("https://host/x.mp4");
   });
 });

@@ -10,13 +10,13 @@ created: '2026-11-22'
 updated: '2026-11-23'
 binds: [F1, F2, F3, F4, F5, F6, F7, F9, F10, NFR]
 sources:
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/prd.md
-  - _bmad-output/planning-artifacts/prds/prd-Pausall-2026-11-22/addendum.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/prd.md
+  - _bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/addendum.md
   - docs/policy/ad-suppression-policy.md
   - docs/discovery/jev-fit.md
   - docs/data-sources.md
-  - _bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/EXPERIENCE.md
-  - _bmad-output/planning-artifacts/ux-designs/ux-Pausall-2026-11-22/DESIGN.md
+  - _bmad-output/planning-artifacts/ux-designs/ux-Pausal-2026-11-22/EXPERIENCE.md
+  - _bmad-output/planning-artifacts/ux-designs/ux-Pausal-2026-11-22/DESIGN.md
 companions:
   - docs/adr/
 ---
@@ -256,7 +256,7 @@ erDiagram
 ```
 
 ```text
-pausall/
+pausal/
   packages/
     bundle-schema/   # types and validators for artifacts and config
     policy/          # pure rules, resolvePause, rankAt, sceneAt

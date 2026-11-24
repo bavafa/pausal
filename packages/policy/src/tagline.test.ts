@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Product } from "@pausall/bundle-schema";
+import type { Product } from "@pausal/bundle-schema";
 import { checkTagline, taglineOrName } from "./index.ts";
 
 const product: Product = {

@@ -1,4 +1,4 @@
-# PRD Quality Review — Pausall PRD
+# PRD Quality Review — Pausal PRD
 
 Calibrated for a hobby demo: light rigor, substance bar still applies.
 

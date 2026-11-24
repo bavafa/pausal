@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { SENTIMENT_LEVELS, SENTIMENTS } from "@pausall/bundle-schema";
+import { SENTIMENT_LEVELS, SENTIMENTS } from "@pausal/bundle-schema";
 import { SENTIMENT_TABLE } from "./index.ts";
 
 it("maps levels 1 to 5 to sentiments and mood labels", () => {

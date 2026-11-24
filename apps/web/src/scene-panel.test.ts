@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { sceneAt } from "@pausall/policy";
+import { sceneAt } from "@pausal/policy";
 import { CLIPS, loadDecisions } from "./clips.ts";
 import { scenePanel } from "./scene-panel.ts";
 

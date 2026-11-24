@@ -61,7 +61,7 @@ Scenes A `[0, 5000)` and B `[5000, 9000)`, clip 9000 ms.
 
 **Acceptance Criteria:**
 - Given `pnpm typecheck && pnpm lint && pnpm test`, when run, then all pass with the new tests.
-- Given `packages/policy/src/pause.ts`, when linted, then it imports only `@pausall/bundle-schema` and relative files.
+- Given `packages/policy/src/pause.ts`, when linted, then it imports only `@pausal/bundle-schema` and relative files.
 
 ## Implementation Notes
 

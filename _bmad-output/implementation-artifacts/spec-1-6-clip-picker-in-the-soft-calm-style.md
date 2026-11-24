@@ -22,7 +22,7 @@ context:
 
 **Always:** Tokens exactly as `DESIGN.md` (colors light and dark, radii 8, 14 and full, 4-based spacing, gutters 12 and 18 px). Fonts self-hosted, no request to a font CDN, Georgia and system-ui fallbacks. Manifests are read from `data/manifest/*.json` and each one passes `validateManifest`; an invalid manifest is left out of the list. Each clip shows its title and "AI-generated". One line explains the experiment. Text meets 4.5:1 in both modes. Docs: no em dashes, no contractions.
 
-**Decisions (agent, user would not notice):** Manifests are bundled at build time with `import.meta.glob` (no fetch, so no request after load). Hash routes (`#/` and `#/clip/<clipId>`) because GitHub Pages serves one `index.html`. Fonts from `@fontsource/lora` and `@fontsource/raleway` 5.3.0 (latin subset, weights in use), the smallest way to self-host. Explaining line: "Pause a clip. An ad appears only when the scene fits. Every ad is simulated." Each clip is a link card with a 44 px minimum target. Page title "Pausall" as `h1`.
+**Decisions (agent, user would not notice):** Manifests are bundled at build time with `import.meta.glob` (no fetch, so no request after load). Hash routes (`#/` and `#/clip/<clipId>`) because GitHub Pages serves one `index.html`. Fonts from `@fontsource/lora` and `@fontsource/raleway` 5.3.0 (latin subset, weights in use), the smallest way to self-host. Explaining line: "Pause a clip. An ad appears only when the scene fits. Every ad is simulated." Each clip is a link card with a 44 px minimum target. Page title "Pausal" as `h1`.
 
 **Never:** No watch screen behavior (Story 1.7), no UI library, no router library, no analytics.
 
@@ -40,9 +40,9 @@ context:
 ## Code Map
 
 - `apps/web/src/main.tsx` -- placeholder render; replace with `App`.
-- `apps/web/vite.config.ts` -- add `@tailwindcss/vite`; `base: "/pausall/"` stays.
+- `apps/web/vite.config.ts` -- add `@tailwindcss/vite`; `base: "/pausal/"` stays.
 - `packages/bundle-schema/src/manifest.ts` -- `validateManifest`, `Manifest` type. Reuse.
-- `.oxlintrc.json` -- web may import `@pausall/policy` and `@pausall/bundle-schema` only; relative imports of `data/` are allowed.
+- `.oxlintrc.json` -- web may import `@pausal/policy` and `@pausal/bundle-schema` only; relative imports of `data/` are allowed.
 - Tests run from the root `vitest run` (no config); keep web tests pure `.ts`.
 
 ## Tasks & Acceptance

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { CATEGORIES, VERDICTS, type Category, type Judgment, type SceneType, type SentimentLevel, type Verdict } from "@pausall/bundle-schema";
+import { CATEGORIES, VERDICTS, type Category, type Judgment, type SceneType, type SentimentLevel, type Verdict } from "@pausal/bundle-schema";
 import type { CatalogItem } from "./catalog.ts";
 import type { Jev, JevAnswer, Qwen } from "./clients.ts";
 

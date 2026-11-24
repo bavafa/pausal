@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { clickFor } from "@pausall/policy";
+import { clickFor } from "@pausal/policy";
 import { CLIPS, loadDecisions, pickerClips, PRODUCTS } from "./clips.ts";
 import { AttributionPage } from "./AttributionPage.tsx";
 import { ClipPicker } from "./ClipPicker.tsx";

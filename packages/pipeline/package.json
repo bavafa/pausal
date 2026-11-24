@@ -1,5 +1,5 @@
 {
-  "name": "@pausall/pipeline",
+  "name": "@pausal/pipeline",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pausall/bundle-schema": "workspace:*",
-    "@pausall/policy": "workspace:*"
+    "@pausal/bundle-schema": "workspace:*",
+    "@pausal/policy": "workspace:*"
   }
 }

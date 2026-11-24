@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validateDecisions, validateEvalConfig, validateLabels, type Decisions, type Labels, type Result } from "@pausall/bundle-schema";
+import { validateDecisions, validateEvalConfig, validateLabels, type Decisions, type Labels, type Result } from "@pausal/bundle-schema";
 import decisionsJson from "../../../data/decisions/000000000001.json" with { type: "json" };
 import labelsJson from "../../../data/labels/000000000001.json" with { type: "json" };
 import { evaluate, report, sweepTimes } from "./eval.ts";

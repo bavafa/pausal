@@ -1,5 +1,5 @@
 {
-  "name": "@pausall/web",
+  "name": "@pausal/web",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,8 +11,8 @@
   "dependencies": {
     "@fontsource/lora": "5.3.0",
     "@fontsource/raleway": "5.3.0",
-    "@pausall/bundle-schema": "workspace:*",
-    "@pausall/policy": "workspace:*",
+    "@pausal/bundle-schema": "workspace:*",
+    "@pausal/policy": "workspace:*",
     "@tailwindcss/vite": "4.3.5",
     "react": "19.3.1",
     "react-dom": "19.3.1",

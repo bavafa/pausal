@@ -1,7 +1,7 @@
 // Story 5.4: offline Jev versus Qwen comparison. Reads analysis and labels, calls Qwen, writes docs/eval/judges.md only.
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { CATEGORIES, validateProduct, validateSceneTypes, validateThresholds, type AnalysisScene, type Category, type Judgment, type Thresholds } from "@pausall/bundle-schema";
+import { CATEGORIES, validateProduct, validateSceneTypes, validateThresholds, type AnalysisScene, type Category, type Judgment, type Thresholds } from "@pausal/bundle-schema";
 import { Ledger } from "./call.ts";
 import { Qwen, readKeys } from "./clients.ts";
 import { loadPipelineConfig } from "./config.ts";
