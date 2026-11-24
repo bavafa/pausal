@@ -1,6 +1,6 @@
 # Video generation prompts for the 4 sample clips
 
-Prompts for a text-to-video tool (Veo 3, Sora 2, Kling, Runway or similar) to make the 4 AI-generated sample clips. The clips are light and optimistic: no violence, no death, no sexual content. Where an ad must be held back, the reason is mild and everyday: a child on screen, a small kitchen cut, a heated but friendly argument, or friends who have had too many drinks.
+Prompts for a text-to-video tool (Veo 3, Sora 2, Kling, Runway or similar) to make the 4 AI-generated sample clips. The clips are light and optimistic: no violence, no death, no sexual content. Where an ad must be held back, the reason is mild and everyday: a child on screen, a small kitchen cut, a heated but friendly argument, or a cartoonish laser gunfight in which no one is hurt.
 
 ## Length
 
@@ -10,7 +10,7 @@ Video tools make fixed-length shots (Veo 3: 8 s, Kling: 5 or 10 s, Sora 2: up to
 |---|---|---|---|
 | 1 Breakfast Rush | 3D animation | Kitchen goods | Child at the table, small cut on a finger |
 | 2 The New Sofa | Live action, dialogue | Living room furniture | A loud argument that ends in a laugh |
-| 3 Night Shift, Neo Lagos | Sci-fi, live action | First half: office, headphones, jacket, bag, bar | Second half: two friends clearly drunk |
+| 3 Night Shift, Neo Lagos | Sci-fi, live action | First half: office, headphones, jacket, bag, bar | Second half: a laser gunfight in which no one is hurt |
 | 4 Garden Party | 2D hand-drawn animation | Garden furniture, tableware, decor | None: every pause should show an ad |
 
 Clip 3 is the split clip: ads show on a pause in its first half and are held back in its second half. Clip 4 is the control: a clip where nothing should be held back.
@@ -65,7 +65,7 @@ Clip 3 is the split clip: ads show on a pause in its first half and are held bac
 
 ## Clip 3: Night Shift, Neo Lagos (sci-fi, split clip, 12 x 8 s)
 
-**Style line:** Cinematic sci-fi comedy, 16:9, bright and hopeful near-future megacity at night, clean neon reflections on wet streets, holographic signs with abstract shapes only, anamorphic lens look, teal and amber color grade, realistic people, playful upbeat synth music.
+**Style line:** Cinematic sci-fi action comedy, 16:9, bright and hopeful near-future megacity at night, clean neon reflections on wet streets, holographic signs with abstract shapes only, anamorphic lens look, teal and amber color grade, realistic people, playful upbeat synth music.
 
 **Cast:** KOFI, a man in his early 30s with short locs and a trimmed beard, wearing a charcoal techwear jacket and white sneakers. ZARA, his friend and colleague, a woman in her late 20s with a shaved head and silver earrings, wearing a long burgundy coat. A friendly service ROBOT bartender with a round screen face.
 
@@ -78,14 +78,14 @@ First half, brand safe (shots 1 to 6, about 48 seconds):
 5. Medium shot. Inside a warm, busy bar with brass lamps and leather stools, the robot bartender slides two glass tumblers to them. Safe.
 6. Two shot. Kofi and Zara clink glasses and start an excited conversation. Kofi: "Okay, hear me out: a jetpack for pigeons." Zara laughs. Safe.
 
-Second half, ad held back (shots 7 to 12, about 48 seconds):
+Second half, ad held back (shots 7 to 12, about 48 seconds). Played as an action comedy: no one is hurt, no blood, no injuries shown.
 
-7. Hard cut, text-free time jump: the same two friends at the same counter much later; the bar is almost empty and a long row of empty glasses stands in front of them. Alcohol.
-8. Close-up. Kofi, clearly drunk, slurs and sways, waving his hands. Kofi: "Pigeons... with... tiny helmets." Zara nearly falls off her stool laughing. Alcohol.
-9. Medium shot. Zara, tipsy, tries to build a tower from the empty glasses; it wobbles. The robot bartender gently takes them away. Alcohol.
-10. Two shot. Both lean on each other, giddy. Zara, slurring: "We... are doing this. Tomorrow. Business plan." Kofi: "Tomorrow!" They shake hands far too seriously. Alcohol.
-11. Medium shot. The robot bartender hands them two glasses of water and calls a hover-taxi on its screen face; they salute it. Alcohol.
-12. Wide shot. Kofi and Zara climb into a glowing hover-taxi outside, still laughing; it lifts off over the bright city. Safe.
+7. Hard cut, text-free time jump: the same two friends at the same counter much later, a row of empty glasses in front of them, both tipsy and giggling. Kofi: "Pigeons... with tiny helmets." Safe so far.
+8. Medium shot. The door slides open; a sullen man in a black armored jacket and a mirrored visor walks up to Kofi and raises a chunky futuristic laser pistol. Music cuts out. Violence.
+9. Fast handheld shot. The man fires bright red laser beams around the bar; every shot misses, bottles and neon signs spark, patrons duck behind tables, Kofi wobbles out of the way by pure luck. Violence.
+10. Medium shot. Zara sneaks up behind the man, swings a bar stool and bonks him on the helmet with a cartoonish clang; he spins, drops the pistol and slumps to the floor, knocked out, stars of light around his visor. No blood. Violence.
+11. Medium shot. The robot bartender rolls over, picks the man up and carries him out of the door; patrons stand up and applaud Zara, who takes a bow. Safe.
+12. Wide shot. Kofi and Zara climb back onto their stools; the robot bartender slides them two fresh drinks on the house, and they clink glasses, laughing. Safe.
 
 ## Clip 4: Garden Party (2D hand-drawn animation, control clip, 12 x 8 s)
 
