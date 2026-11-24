@@ -8,6 +8,7 @@ import { ProductList } from "./ProductList.tsx";
 import { productList } from "./product-list.ts";
 import { announce, pauseView, type PauseView } from "./pause-view.ts";
 import type { PauseEntry } from "./session.ts";
+import { EarningsTally } from "./EarningsTally.tsx";
 
 const toggle = (v: HTMLVideoElement) => void (v.paused ? v.play().catch(() => {}) : v.pause());
 
@@ -20,12 +21,14 @@ const HAS_RVFC = typeof HTMLVideoElement !== "undefined" && "requestVideoFrameCa
 type Props = {
   clip: Manifest;
   decisions: Decisions | null;
+  /** The session pause log, all clips in this page load. */
+  pauses: readonly PauseEntry[];
   /** A real pause opened the pause view; a seek while paused is not a new pause. */
   onPause: (entry: PauseEntry) => void;
   onViewProduct: (productId: string) => void;
 };
 
-export function WatchScreen({ clip, decisions, onPause, onViewProduct }: Props) {
+export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }: Props) {
   const video = useRef<HTMLVideoElement>(null);
   /** Media time (ms) of the last presented frame from requestVideoFrameCallback; null when unknown. */
   const frameMs = useRef<number | null>(null);
@@ -132,6 +135,7 @@ export function WatchScreen({ clip, decisions, onPause, onViewProduct }: Props) 
         {view ? announce(view) : ""}
       </p>
       <p className="mt-2 text-label text-muted-foreground">AI-generated</p>
+      <EarningsTally log={pauses} clipId={clip.clipId} />
       <ScenePanel scene={rank.scene} />
       {list && <ProductList view={list} />}
     </main>

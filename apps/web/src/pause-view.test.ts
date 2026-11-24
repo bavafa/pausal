@@ -10,6 +10,7 @@ describe("pauseView on the fixture", () => {
     const v = at(2500);
     expect(v).toMatchObject({ kind: "ad", tagline: "A steady pan for weeknight cooking.", because: "Shown because this scene matches: kitchen, cooking." });
     expect(v.kind === "ad" && v.product.name).toBe("Everyday Skillet");
+    expect(v).toMatchObject({ price: { cents: 108, simulated: true }, split: { platformCents: 76, publisherCents: 32, simulated: true } });
   });
   it.each([
     [7500, "No ad here: sensitive scene."],
@@ -34,6 +35,10 @@ describe("pauseView on the fixture", () => {
 describe("pauseView fails closed", () => {
   it("without decisions", () => {
     expect(pauseView(null, PRODUCTS, 2500)).toMatchObject({ kind: "note", reason: "analysisUnavailable" });
+  });
+  it("when an ad scene has no price", () => {
+    const scenes = decisions!.scenes.map((s) => (s.outcome === "ad" ? { ...s, price: null } : s));
+    expect(pauseView({ ...decisions!, scenes }, PRODUCTS, 2500)).toMatchObject({ kind: "note", reason: "analysisUnavailable" });
   });
   it("when the ad product has no product file", () => {
     expect(pauseView(decisions, new Map(), 2500)).toMatchObject({ kind: "note", reason: "analysisUnavailable" });

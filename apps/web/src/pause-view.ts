@@ -1,4 +1,4 @@
-import type { Decisions, Product, Reason } from "@pausall/bundle-schema";
+import type { Decisions, Product, Reason, SimulatedPrice, SimulatedSplit } from "@pausall/bundle-schema";
 import { resolvePause } from "@pausall/policy";
 
 /** Policy wording for each no-ad reason (docs/policy/ad-suppression-policy.md). */
@@ -10,7 +10,7 @@ export const REASON_TEXT: Record<Reason, string> = {
 };
 
 export type PauseView =
-  | { kind: "ad"; product: Product; tagline: string; because: string }
+  | { kind: "ad"; product: Product; tagline: string; because: string; price: SimulatedPrice; split: SimulatedSplit }
   | { kind: "note"; reason: Reason; text: string };
 
 const note = (reason: Reason): PauseView => ({ kind: "note", reason, text: REASON_TEXT[reason] });
@@ -21,13 +21,16 @@ export function pauseView(decisions: Decisions | null, products: ReadonlyMap<str
   const r = resolvePause(decisions, tMs);
   if (r.outcome !== "ad") return note(r.outcome);
   const product = r.scene.topProductId ? products.get(r.scene.topProductId) : undefined;
-  if (!product) return note("analysisUnavailable");
+  const { price, split } = r.scene;
+  if (!product || !price || !split) return note("analysisUnavailable");
   const { primary, secondary } = r.scene.panel.contextLabel;
   return {
     kind: "ad",
     product,
     tagline: r.scene.tagline ?? product.name,
     because: `Shown because this scene matches: ${secondary ? `${primary}, ${secondary}` : primary}.`,
+    price,
+    split,
   };
 }
 

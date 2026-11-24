@@ -10,7 +10,7 @@ import { WatchScreen } from "./WatchScreen.tsx";
 export function App() {
   const route = useRoute();
   // The session pause log: page-load state only, never sent or stored (AD-23).
-  const [, setPauses] = useState<PauseEntry[]>([]); // Story 3.2 reads it for the tally
+  const [pauses, setPauses] = useState<PauseEntry[]>([]);
   // True once the product page was opened from the clip in this page load, so its Back can step back in history.
   const fromClip = useRef(false);
   const clipId = route.page === "picker" ? null : route.clipId;
@@ -28,6 +28,7 @@ export function App() {
             key={clip.clipId}
             clip={clip}
             decisions={decisions}
+            pauses={pauses}
             onPause={(entry) => setPauses((log) => [...log, entry])}
             onViewProduct={(productId) => {
               setPauses((log) => withClick(log, clickFor(productId)));
