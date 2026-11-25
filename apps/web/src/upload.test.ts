@@ -11,7 +11,7 @@ describe("checkFile", () => {
     expect(checkFile({ type: "video/x-msvideo", size: 1000 })).toMatch(/MP4, MOV or WebM/);
     expect(checkFile({ type: "video/webm", size: 101 * 1024 * 1024 })).toMatch(/100 MB/);
     expect(checkFile({ type: "video/quicktime", size: 1000 }, 180_001)).toMatch(/3 minutes/);
-    expect(checkFile({ type: "video/mp4", size: 1000 }, Number.NaN)).toMatch(/could not be read/);
+    expect(checkFile({ type: "video/mp4", size: 1000 }, Number.NaN)).toMatch(/could not open/);
   });
 });
 

@@ -44,7 +44,6 @@ async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) 
 }
 
 export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update: (f: (s: UploadState) => UploadState) => void) => Promise<void>) => void }) {
-  const [agreed, setAgreed] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -79,20 +78,15 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
       </a>
       <h1 className="mt-2 font-serif text-title">Use your own video</h1>
       <div className="mt-4 space-y-4 rounded-md border border-border bg-card p-4 md:p-6">
-        <p>Pick a video of up to 3 minutes and 100 MB (MP4, MOV or WebM). It starts playing right away, and Pausal analyzes it in 20 second parts while you watch.</p>
+        <p>Try Pausal on any short video. It starts playing right away, and Pausal works through it 20 seconds at a time while you watch.</p>
         <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
-          <li>Use only a video you own or have the right to use.</li>
-          <li>Your video file stays in your browser and is not kept. One frame per second and the sound are sent for analysis to Alibaba Model Studio (Qwen) and TypeSafe (Jev).</li>
-          <li>DRM-protected files do not work. Up to 3 videos per day.</li>
-          <li>All ads and prices are simulated. Product data: <a className={LINK} href="#/attribution">Amazon Berkeley Objects</a>.</li>
+          <li>Any clip up to 3 minutes and 100 MB works, for example one from your phone (MP4, MOV or WebM).</li>
+          <li>The video file is not uploaded. Pausal sends one frame per second and the sound to Alibaba Model Studio (Qwen) and TypeSafe (Jev) for analysis, and keeps nothing from your video.</li>
+          <li>3 videos per day. All ads and prices are simulated. Product data: <a className={LINK} href="#/attribution">Amazon Berkeley Objects</a>.</li>
         </ul>
-        <label className="flex min-h-11 items-center gap-3">
-          <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="size-5 accent-[var(--color-accent)]" />
-          I own this video or have the right to use it, and I agree to the above.
-        </label>
-        <label className={`inline-flex min-h-11 items-center rounded-md px-5 font-semibold ${agreed && !busy ? "cursor-pointer bg-accent text-accent-foreground" : "cursor-not-allowed bg-muted text-muted-foreground"}`}>
+        <label className={`inline-flex min-h-11 items-center rounded-md px-5 font-semibold ${!busy ? "cursor-pointer bg-accent text-accent-foreground" : "cursor-not-allowed bg-muted text-muted-foreground"}`}>
           {busy ? "Reading the video…" : "Choose a video"}
-          <input type="file" accept="video/mp4,video/quicktime,video/webm" disabled={!agreed || busy} className="sr-only" onChange={(e) => void choose(e.target.files?.[0])} />
+          <input type="file" accept="video/mp4,video/quicktime,video/webm" disabled={busy} className="sr-only" onChange={(e) => void choose(e.target.files?.[0])} />
         </label>
         {error && (
           <p role="alert" className="text-label">

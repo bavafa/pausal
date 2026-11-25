@@ -22,6 +22,7 @@ const deps = {
   thresholds,
   transcribeWav: async (url: string) => (heard.push(url.slice(0, 22)), "hello"),
   imageBase: "https://images.example",
+  shortNames: new Map([["p1", "Flat pan"]]),
 };
 const frame = (tMs: number) => ({ tMs, diff: 0, jpegDataUrl: "data:image/jpeg;base64,AAAA" });
 const req = (over: Partial<ChunkRequest> = {}): ChunkRequest => ({ uploadId: "abcdef012345", startMs: 20_000, endMs: 30_000, frames: Array.from({ length: 10 }, (_, i) => frame(20_000 + i * 1000)), ...over });
@@ -60,5 +61,6 @@ describe("analyzeChunk", () => {
     expect(d.scenes[0]?.outcome).toBe("ad");
     expect(heard[0]).toBe("data:audio/wav;base64,");
     expect(r.products.map((p) => ok(validateProduct(p)).imagePath)).toContain("https://images.example/products/p1.jpg");
+    expect(r.products.find((p) => p.id === "p1")?.shortName).toBe("Flat pan");
   });
 });

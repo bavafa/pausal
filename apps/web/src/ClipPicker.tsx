@@ -8,9 +8,9 @@ const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
 
 /** What happens between the click and the overlay. All of it is worked out before the page loads (AD-1). */
 const STEPS = [
-  ["Read the scene", "Pausal looks at the frame you stopped on and the second before it, so a sudden cut from an unsafe scene cannot slip an ad in."],
-  ["Check it is safe", "Two AI models check for violence, grief, sexual content, medical scenes, children and arguments. If both call the scene unsafe, there is no ad."],
-  ["Find a product", "Every product in the catalog gets a relevance score from 0 to 100 for the scene, and only a score of 60 or more is shown. A higher bar means more relevant ads, shown less often."],
+  ["Find the scene", "Pausal finds the scene you paused on. Scene edges are only known to within a second, so if the second before your pause belongs to an unsafe scene, there is no ad."],
+  ["Check it is safe", "Two AI models rate the scene for violence, grief, sexual content, medical scenes, children and arguments. If both call it unsafe, there is no ad."],
+  ["Find a product", "Each product gets a relevance score from 0 to 100 for the scene, and only a score of 60 or more is shown. A higher bar means more relevant ads, shown less often."],
   ["Show one ad, or say why not", "You see one product that fits, or a short note on why there is no ad."],
 ] as const;
 
@@ -53,14 +53,14 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
 
       <section className="border-t border-border py-12">
         <p className={EYEBROW}>The idea</p>
-        <h2 className={H2}>A pause is a moment you choose.</h2>
+        <h2 className={H2}>Why show ads on pause</h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            Most video ads interrupt when the video decides. A pause is your choice, and the picture holds still, so it is a good moment for one small suggestion.
+            Most video ads cut in at a time the video picks. Pausal waits until you pause. The picture is still and you have stopped following the story, so one small product suggestion gets in the way less.
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            It is also a bad moment for the wrong one. A frying pan fits a cooking scene and does not fit a funeral. So Pausal checks the scene first, and when it
-            looks unsafe, it shows nothing.
+            The suggestion has to suit the scene: a frying pan fits someone cooking, not a funeral. Pausal checks each scene for safety and fit, and shows
+            nothing when the scene is unsafe or no product fits well enough.
           </p>
         </div>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -98,7 +98,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
         </ol>
         <p className="mt-8 rounded-md bg-muted px-4 py-3 text-label text-muted-foreground">
           Pausal analyzes each video scene by scene as it comes in, so when you pause, the answer appears in real time. To test the rules, a script
-          pauses every clip every tenth of a second and fails if any ad lands on a scene a person marked unsafe.
+          pauses every clip every tenth of a second and reports any ad that lands on a scene a person marked unsafe.
         </p>
       </section>
 

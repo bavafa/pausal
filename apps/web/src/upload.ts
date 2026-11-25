@@ -13,7 +13,7 @@ const RATE = 16_000;
 export function checkFile(file: { type: string; size: number }, durationMs?: number): string | null {
   if (!TYPES.includes(file.type)) return "Please choose an MP4, MOV or WebM video.";
   if (file.size > MAX_BYTES) return "Please choose a video under 100 MB.";
-  if (durationMs !== undefined && !(durationMs > 0)) return "This video could not be read. DRM-protected files do not work.";
+  if (durationMs !== undefined && !(durationMs > 0)) return "Your browser could not open this video.";
   if (durationMs !== undefined && durationMs > MAX_MS) return "Please choose a video of 3 minutes or less.";
   return null;
 }

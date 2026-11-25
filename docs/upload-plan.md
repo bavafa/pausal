@@ -5,7 +5,7 @@ Status: built 2026-11-25 (ADR 0010). Relay on Vercel Hobby at https://pausal-rel
 ## What the visitor sees
 
 1. On the landing page, a second button next to "Try a clip": "Use your own video".
-2. A short notice (FR-21): you must own the video; it is not kept; DRM-protected files do not work; a text description of the clip goes to Jev and to Alibaba Model Studio (Qwen). One checkbox, then a file picker.
+2. A short notice (FR-21): the file is not uploaded and nothing is kept; frames and sound go to Jev and to Alibaba Model Studio (Qwen). Then a file picker. The ownership line and checkbox were removed on 2026-11-25 by the author: uploads are for trying the demo and nothing is stored.
 3. The browser checks the file: MP4, MOV or WebM, at most 3 minutes and about 100 MB (FR-20, set 2026-11-24). A clear message if it fails.
 4. The video starts playing at once from the visitor's own file. The scene panel says "Analyzing the first scenes…" until the first 20 seconds are done (FR-22), then fills in. Pauses work as on the sample clips; a pause on a scene that is not analyzed yet says "No ad here: analysis unavailable."
 5. Nothing is saved. Reloading the page drops the results.

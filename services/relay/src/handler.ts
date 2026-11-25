@@ -30,7 +30,7 @@ const env = (k: string, fallback?: string): string => {
 };
 
 /** Catalog slice and vectors from R2, loaded once per warm instance. */
-let catalogPromise: Promise<{ items: CatalogItem[]; vectors: Float32Array; dims: number }> | null = null;
+let catalogPromise: Promise<{ items: CatalogItem[]; vectors: Float32Array; dims: number; shortNames: Map<string, string> }> | null = null;
 function catalog(base: string) {
   catalogPromise ??= (async () => {
     const get = async (p: string) => {
@@ -38,11 +38,13 @@ function catalog(base: string) {
       if (!r.ok) throw new Error(`catalog/${p}: ${r.status}`);
       return r;
     };
-    const [items, meta, buf] = await Promise.all([get("slice.json").then((r) => r.json()), get("index.json").then((r) => r.json()), get("index.f32").then((r) => r.arrayBuffer())]);
+    // Short names are optional: without the file, upload results show the full listing name.
+    const names = fetch(`${base}/catalog/short-names.json`).then((r) => (r.ok ? (r.json() as Promise<Record<string, string>>) : {})).catch(() => ({}));
+    const [items, meta, buf, short] = await Promise.all([get("slice.json").then((r) => r.json()), get("index.json").then((r) => r.json()), get("index.f32").then((r) => r.arrayBuffer()), names]);
     const m = meta as { model: string; dimensions: number; ids: string[] };
     const vectors = new Float32Array(buf);
     if (m.model !== cfg.models.embedding || vectors.length !== (items as unknown[]).length * m.dimensions) throw new Error("catalog index does not match the pipeline config");
-    return { items: items as CatalogItem[], vectors, dims: m.dimensions };
+    return { items: items as CatalogItem[], vectors, dims: m.dimensions, shortNames: new Map(Object.entries(short as Record<string, string>)) };
   })().catch((e) => {
     catalogPromise = null;
     throw e;
@@ -92,9 +94,11 @@ export async function handle(req: Request): Promise<Response> {
   const jev = new Jev(env("TYPESAFE_API_KEY"), cfg.models.jev, clientCfg);
   let result;
   try {
+    const cat = await catalog(r2.publicUrl);
     result = await analyzeChunk(chunk, {
       models: makeModels(qwen, jev, cfg, sceneTypes),
-      catalog: await catalog(r2.publicUrl),
+      catalog: cat,
+      shortNames: cat.shortNames,
       opts: { ...cfg, thresholds, modelNames: cfg.models },
       thresholds,
       transcribeWav: (data) => qwen.chat(cfg.models.speech, [{ role: "user", content: [{ type: "input_audio", input_audio: { data } }] }], "transcribe", false, true),

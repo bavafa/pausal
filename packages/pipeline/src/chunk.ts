@@ -86,7 +86,7 @@ const sha = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).diges
  */
 export async function analyzeChunk(
   req: ChunkRequest,
-  deps: { models: Models; catalog: Catalog; opts: AnalyzeOptions; thresholds: Thresholds; transcribeWav?: (wavDataUrl: string) => Promise<string>; imageBase: string },
+  deps: { models: Models; catalog: Catalog; opts: AnalyzeOptions; thresholds: Thresholds; transcribeWav?: (wavDataUrl: string) => Promise<string>; imageBase: string; shortNames?: ReadonlyMap<string, string> },
 ): Promise<ChunkResult> {
   const lengthMs = req.endMs - req.startMs;
   const frames = req.frames.map((f) => ({ ...f, tMs: f.tMs - req.startMs })).sort((a, b) => a.tMs - b.tMs);
@@ -109,7 +109,8 @@ export async function analyzeChunk(
   const campaigns = fitIds.map(simulatedCampaign);
   const products = new Map(fitIds.flatMap((id) => {
     const item = byId.get(id);
-    return item ? [[id, { ...toProduct(item), imagePath: `${deps.imageBase}/products/${id}.jpg` }] as const] : [];
+    const shortName = deps.shortNames?.get(id);
+    return item ? [[id, { ...toProduct(item), imagePath: `${deps.imageBase}/products/${id}.jpg`, ...(shortName ? { shortName } : {}) }] as const] : [];
   }));
   const decisions = deriveDecisions(analysis, deps.thresholds, campaigns, products, { analysisHash: sha(analysis), thresholdsHash: sha(deps.thresholds), campaignsHash: sha(campaigns) });
   const named = new Set(decisions.scenes.flatMap((s) => s.ranked.map((r) => r.productId)));

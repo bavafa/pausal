@@ -1,13 +1,14 @@
 // Usage: pnpm abo build   builds data/catalog/slice.json and the embedding index (AD-12)
 //        pnpm abo products writes data/products/<id>.json and images for products referenced by analysis (AD-19)
 //        pnpm abo images   uploads every slice image to Cloudflare R2 as products/<id>.jpg (docs/r2-setup.md)
+//        pnpm abo shortnames writes a short name for every slice product to R2 for upload results
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { gunzipSync } from "node:zlib";
 import { RANKED_MAX, validateAnalysis, validateSceneTypes, type Campaign } from "@pausal/bundle-schema";
 import { rankFits } from "@pausal/policy";
-import { Ledger, mapLimit } from "./call.ts";
+import { CostCapError, Ledger, mapLimit } from "./call.ts";
 import { embedText, simulatedCampaign, sliceCatalog, toCatalogItem, toProduct, type CatalogItem } from "./catalog.ts";
 import { Qwen, readKeys } from "./clients.ts";
 import { loadPipelineConfig } from "./config.ts";
@@ -147,6 +148,24 @@ async function images(): Promise<void> {
   console.log(`images: uploaded ${put}, already there ${skipped}. Public URL check passed: ${sample}`);
 }
 
+/** Short names for every slice product, for upload results (the relay attaches them). Kept across runs; written locally and to R2 as catalog/short-names.json. */
+async function shortNamesAll(): Promise<void> {
+  process.loadEnvFile(join(root, ".env"));
+  const k = readR2Keys();
+  const items = JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[];
+  const file = join(cat, "short-names.json");
+  const names: Record<string, string> = existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as Record<string, string>) : {};
+  for (const f of readdirSync(join(root, "data/products")).filter((f) => f.endsWith(".json"))) {
+    const p = JSON.parse(readFileSync(join(root, "data/products", f), "utf8")) as { id: string; shortName?: string };
+    if (p.shortName) names[p.id] ??= p.shortName;
+  }
+  const fresh = await shortNames(items.filter((i) => !names[i.id]).map((i) => ({ id: i.id, name: i.name })));
+  for (const [id, n] of fresh) names[id] = n;
+  writeFileSync(file, JSON.stringify(names));
+  await r2Put(k, "catalog/short-names.json", new Uint8Array(Buffer.from(JSON.stringify(names))), "application/json", "public, max-age=3600");
+  console.log(`short names: ${Object.keys(names).length} of ${items.length} products have one; uploaded to R2.`);
+}
+
 async function products(): Promise<void> {
   const items = new Map((JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[]).map((i) => [i.id, i]));
   const ids = referencedIds();
@@ -207,9 +226,16 @@ async function shortNames(list: { id: string; name: string }[]): Promise<Map<str
     'Answer with JSON only: {"names": {"<id>": "<short name>"}}.',
   ].join("\n");
   const batches = Array.from({ length: Math.ceil(list.length / 40) }, (_, i) => list.slice(i * 40, i * 40 + 40));
-  await mapLimit(batches, 4, async (batch) => {
+  await mapLimit(batches, 8, async (batch) => {
     const user = JSON.stringify(Object.fromEntries(batch.map((b) => [b.id, b.name])));
-    const raw = JSON.parse(await qwen.chat(cfg.models.text, [{ role: "system", content: system }, { role: "user", content: user }], "shortName", true)) as { names?: Record<string, unknown> };
+    let raw: { names?: Record<string, unknown> };
+    try {
+      raw = JSON.parse(await qwen.chat(cfg.models.text, [{ role: "system", content: system }, { role: "user", content: user }], "shortName", true)) as typeof raw;
+    } catch (e) {
+      // A failed batch keeps the full names; a rerun asks again for the missing ones.
+      if (e instanceof CostCapError) throw e;
+      return;
+    }
     for (const { id } of batch) {
       const n = raw.names?.[id];
       if (typeof n === "string" && n.trim() && n.trim().length <= 40) out.set(id, n.trim());
@@ -223,7 +249,8 @@ const cmd = process.argv[2];
 if (import.meta.main && cmd === "build") await build();
 else if (import.meta.main && cmd === "products") await products();
 else if (import.meta.main && cmd === "images") await images();
+else if (import.meta.main && cmd === "shortnames") await shortNamesAll();
 else if (import.meta.main) {
-  console.error("usage: pnpm abo build | products | images");
+  console.error("usage: pnpm abo build | products | images | shortnames");
   process.exit(1);
 }
