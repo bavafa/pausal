@@ -39,8 +39,11 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             >
               Try a clip
             </button>
-            <a href="#/upload" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
-              or try your own video
+            <a
+              href="#/upload"
+              className="inline-flex min-h-11 items-center rounded-md border border-border px-5 font-semibold transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              Try your own video
             </a>
             <span className="basis-full text-label text-muted-foreground">Every ad and price here is made up.</span>
           </div>
