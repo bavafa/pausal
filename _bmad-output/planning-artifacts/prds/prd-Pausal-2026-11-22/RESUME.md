@@ -1,9 +1,20 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Update after every phase. Last updated: 2026-11-24, Phase 5 build in progress, Epics 1 to 4 done with retrospectives (Epic 4 closed on local test clips, never pushed). Stories 4.3 and 4.9 must be redone with AI-generated clips before any push. Theme toggle, logo and landing page added after Epic 4. Next: Epic 5. See "Start here".
+Project-wide resume point. Update after every phase. Last updated: 2026-11-24 night. Phase 5: all 5 epics done; `main` not pushed until real sample clips are in. Next: sample clips (one Tears of Steel cut is ready), then the upload feature (`docs/upload-plan.md`). See "Latest".
 
 
-## Latest (2026-11-24, read first)
+## Latest (2026-11-24 night, read first)
+- `main` is clean and about 47 commits ahead of GitHub, not pushed. Last commit 999da0d. Untracked: `.claude/launch.json` only.
+- Rename finished: Pausal everywhere (package scope `@pausal/*`, Pages path `/pausal/`, `PAUSAL_MODE`, planning folders). GitHub repo is now `bavafa/pausal`; the first push deploys to https://bavafa.github.io/pausal/ (the old `/pausall/` URL does not redirect). The local folder is still `Pausall` (the author renames it outside a session). `local/test-clips` still has the old names; cherry-picks onto it will conflict.
+- Landing page copy rewritten short and plain (`ClipPicker.tsx`, `HeroDemo.tsx`, with the humanizer skill). User rules for site copy: no "nothing leaves your browser", no "analyzed ahead of time" (it reads as staged); the pause answer is described as appearing "in real time"; simulated line is "All ads and prices here are simulated."; no catalog size on the page.
+- Sample clips:
+  - `docs/video-prompts.md`: shot-by-shot prompts (plain "Shot N:" text, no safety labels) for 4 light, optimistic clips of 12 shots x 8 s: 3D animated kitchen (child, small cut), live-action dialogue comedy with Nina and Daniel (no "Sam" in clips), sci-fi "Night Shift, 2200" in a polished cyberpunk look with Kofi and Mei (East Asian, crew cut), brand safe in shots 1 to 6 and a harmless laser gunfight in 7 to 12 (violence holds the ad back), and a 2D animated garden party as the all-safe control. User rules: no sad, violent-in-earnest or sexual scenes; no alcohol safety category.
+  - Tears of Steel (Blender, CC BY 3.0) cut ready: `data/samples/tears-of-steel-2m52-to-5m52.mp4` (film 2:52 to 5:52, exactly 3:00, 23 MB, padded to 1280x720). Mostly ad-friendly (apartment, control room, Amsterdam canals), tense from about 4:50 (giant robot, face-off). Manifest must set `aiGenerated: false`; attribution page must credit "(CC) Blender Foundation, mango.blender.org" (recorded in `docs/data-sources.md`). Not analyzed yet; the user decides when.
+- Catalog: the 20,000 slice stays (user OK). It covers 365 of 530 product types; ABO has 147,702 listings (122,734 English, 64,757 of them phone cases) and 398,212 images.
+- Uploads: plan in `docs/upload-plan.md`. Browser samples 1 frame/s at 512 px plus 16 kHz audio and sends only those, in 20 s chunks; a small Node relay holds the Qwen and Jev keys, runs `analyzeClip`, streams scenes back; the browser runs `decide`. Limits: 3 minutes and 100 MB (FR-20 updated), 3 per visitor per day, Turnstile, daily spend cap (suggested 2 USD). Product images for the whole slice go to Cloudflare R2 (user chose R2; setup steps in `docs/r2-setup.md`, keys go in `.env`). Relay host still open: Fly.io recommended, Hugging Face Spaces as the free option. Seven stories listed in the plan; nothing built.
+- Waiting on the user: R2 setup ("R2 is set up"), relay host choice, the AI clips (or approval to analyze the Tears of Steel cut).
+
+## Earlier (2026-11-24, before the night session)
 - State at the end of the session: all 5 epics done. Working copy on `main`, clean, 35 commits ahead of GitHub, not pushed. `local/test-clips` has `main` merged in plus the test-clip data. No stashes. Nothing is waiting except Sam (AI clips, label corrections).
 - Next session: if the AI clips are in `data/samples/`, follow "When the clips arrive" below (now including labels, `pnpm eval` and the first CI browser run). Otherwise wait; do not push.
 - Open ideas, not started: tighten the variant filter for the remaining near-twins; drop catalog products whose name is only a code (needs `abo build`, which re-embeds the slice and costs money, so ask first).
@@ -36,7 +47,7 @@ Project-wide resume point. Update after every phase. Last updated: 2026-11-24, P
 - Read for Epic 4 details: `_bmad-output/implementation-artifacts/epic-4-retro-2026-11-24.md` and the `spec-4-*` files.
 
 ## How to resume
-Say "resume Pausal" (or "start phase 5"). Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
+Say "resume Pausal". Read this file, then the documents listed under "Read first". Do not re-ask answered questions; decision history is in each workspace's `.memlog.md`. The spine (not the memlog) is the build contract.
 
 ## Read first
 - PRD: `_bmad-output/planning-artifacts/prds/prd-Pausal-2026-11-22/prd.md` and `addendum.md`
