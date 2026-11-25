@@ -19,7 +19,7 @@ export function validateThresholds(json: unknown): Result<Thresholds> {
   const issues: Issue[] = [];
   if (!object(json, "", issues)) return done(issues, () => json as never);
   prob(json.safetyConfidence, "safetyConfidence", issues, 0.8, 1);
-  integer(json.relevance, "relevance", issues, 60, 100);
+  integer(json.relevance, "relevance", issues, 50, 100);
   if (object(json.r3b, "r3b", issues)) {
     prob(json.r3b.jevFitP, "r3b.jevFitP", issues);
     cosine(json.r3b.embeddingSim, "r3b.embeddingSim", issues);

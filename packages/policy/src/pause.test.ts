@@ -76,12 +76,12 @@ describe("resolvePause", () => {
     expect(at(clip([0, 5000, "noActiveCampaign"], [5000, 9000, "nothingFits"]), 5000).outcome).toBe("nothingFits");
     expect(at(clip([0, 5000, "analysisUnavailable"], [5000, 9000, "sensitiveScene"]), 5000).outcome).toBe("analysisUnavailable");
   });
-  it("gives nothingFits when the ads are for different products", () => {
-    expect(at(clip([0, 5000, "ad", "p2"], [5000, 9000, "ad", "p1"]), 5000).outcome).toBe("nothingFits");
+  it("shows the current scene's product when the look-back holds ads for other products (ADR 0009)", () => {
+    expect(at(clip([0, 5000, "ad", "p2"], [5000, 9000, "ad", "p1"]), 5000)).toEqual({ outcome: "ad", sceneId: "s0005000" });
   });
   it("looks back across a chain of short scenes", () => {
-    const d = clip([0, 5000, "ad", "p2"], [5000, 5300, "ad"], [5300, 9000, "ad"]);
-    expect(at(d, 5800)).toEqual({ outcome: "nothingFits", sceneId: "s0005300" });
+    const d = clip([0, 5000, "sensitiveScene"], [5000, 5300, "ad"], [5300, 9000, "ad"]);
+    expect(at(d, 5800)).toEqual({ outcome: "sensitiveScene", sceneId: "s0005300" });
     expect(at(d, 6300).outcome).toBe("ad");
   });
   it("returns analysisUnavailable outside the clip", () => {

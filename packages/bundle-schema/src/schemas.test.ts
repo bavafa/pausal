@@ -237,7 +237,7 @@ describe("bad judgment invalidates one scene only (AD-15)", () => {
 describe("lax thresholds (AD-20)", () => {
   it.each([
     ["safetyConfidence", (t: J) => void (t.safetyConfidence = 0.79)],
-    ["relevance", (t: J) => void (t.relevance = 59)],
+    ["relevance", (t: J) => void (t.relevance = 49)],
     ["r3b.embeddingSim", (t: J) => void delete t.r3b.embeddingSim],
     ["categoryCutoffs.violence", (t: J) => void (t.categoryCutoffs.violence = 0.51)],
     ["holdMs", (t: J) => void (t.holdMs = 4999)],

@@ -1,4 +1,4 @@
-import { CATEGORIES, RANKED_MAX, REASONS, type AnalysisScene, type Campaign, type Fit, type Outcome, type Ranked, type Reason, type SimulatedPrice, type SimulatedSplit, type Thresholds } from "@pausal/bundle-schema";
+import { RANKED_MAX, REASONS, type AnalysisScene, type Campaign, type Fit, type Outcome, type Ranked, type Reason, type SimulatedPrice, type SimulatedSplit, type Thresholds } from "@pausal/bundle-schema";
 import { priceFor, roundHalfUp, splitPrice } from "./money.ts";
 
 /** The only rule ids used anywhere; `failed` lists ids in this order, and `REASONS` order decides the outcome. */
@@ -38,13 +38,13 @@ export function evaluateScene(scene: AnalysisScene, thresholds: Thresholds, camp
   const top = ranking[0];
   const campaign = top && campaigns.find((c) => c.productId === top.productId);
   const pass: Record<RuleId, boolean> = {
-    R1: !!j && j.jev.verdict === "safe" && Math.min(j.jev.confidence, j.qwen.confidence) >= thresholds.safetyConfidence,
-    // the stored `flagged` boolean is ignored (AD-15)
-    R2: !!j && CATEGORIES.every((c) => j.jev.categories[c].p < thresholds.categoryCutoffs[c] && j.qwen.categories[c].p < thresholds.categoryCutoffs[c]),
+    // Author decision 2026-11-25: only a scene both judges call unsafe is held back; caution, low confidence and category scores no longer block.
+    R1: !!j && !(j.jev.verdict === "unsafe" && j.qwen.verdict === "unsafe"),
+    R2: !!j,
     R3: !!top && top.relevance >= thresholds.relevance,
     R3b: !!top && top.fit.jevFitP >= thresholds.r3b.jevFitP && top.fit.embeddingSim >= thresholds.r3b.embeddingSim,
     R4: campaign?.active === true,
-    R5: !!j && j.jev.verdict === "safe" && j.qwen.verdict === "safe",
+    R5: !!j,
     R6:
       scene.status === "ok" &&
       scene.invalid.length === 0 &&

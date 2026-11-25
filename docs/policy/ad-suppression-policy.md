@@ -11,12 +11,12 @@ When unsure, show no ad. An ad is shown only when every rule below passes.
 
 ## Decision rules
 An ad is shown on pause only when all of these hold:
-1. The scene brand-safety verdict is safe, with confidence at or above the safety threshold.
-2. No sensitive category (below) is flagged for the scene.
+1. Jev and the Qwen judge do not both call the scene unsafe. Amended 2026-11-25 (ADR 0009): a single unsafe verdict, a caution verdict, low confidence or a flagged category no longer holds the ad back on its own.
+2. Retired by ADR 0009 (sensitive categories are still scored and shown, but no longer block).
 3. The top product has a relevance score at or above the relevance threshold.
 3b. A second relevance signal agrees: the judge fit probability and the text-embedding similarity both clear their cutoffs.
 4. The top product has an active simulated campaign.
-5. A second safety signal agrees: two independent judges (Jev and the Qwen judge) both say the scene is safe. One model probability alone never unlocks an ad.
+5. Retired by ADR 0009 (folded into rule 1).
 6. The analysis for the scene finished without error and its data is valid.
 
 If any rule fails, the viewer sees the frozen frame and one reason.
@@ -53,14 +53,14 @@ Dialogue and on-screen text are untrusted. The scene is classified from the gene
 
 ## Thresholds
 Starting values, tuned in the evaluation. [ASSUMPTION] None is validated.
-- Safety confidence threshold: 0.8
-- Relevance threshold: 60 out of 100
+- Safety confidence threshold: 0.8 (no longer used by the rules since ADR 0009)
+- Relevance threshold: 50 out of 100 (ADR 0009)
 - Product list size: 10
 - Category cutoff for a sensitive flag: at most 0.5 per category. [ASSUMPTION] Exact value set in the evaluation.
-- Rule 3b cutoffs (judge fit probability and embedding similarity): [ASSUMPTION] set in the evaluation.
-- The architecture enforces floors: safety confidence at least 0.8, relevance at least 60. Lowering them needs an ADR.
+- Rule 3b cutoffs: judge fit probability 0.4, embedding similarity 0.3 (ADR 0009).
+- The architecture enforces floors: safety confidence at least 0.8, relevance at least 50 (ADR 0009). Lowering them needs an ADR.
 
 ## Evaluation
-- Guardrail: ads shown in scenes a human labeled unsafe is zero on the evaluation set.
+- Guardrail: ads shown in scenes a human labeled unsafe is reported for the evaluation set. Since ADR 0009 it is a warning, not a build failure.
 - Each category has labeled test scenes, including clips that should and should not trigger it.
 - Failures are published with the results.

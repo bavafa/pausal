@@ -15,8 +15,8 @@ export function sceneAt(decisions: Decisions, tMs: number): DecisionScene | null
 
 /**
  * Pause outcome at the displayed-frame time `tMs`. The set is the scene at `tMs` plus every earlier scene with
- * `endMs > tMs - LOOK_BACK_MS` (one ending exactly `LOOK_BACK_MS` before is out). An ad only when every scene
- * in the set is an ad for the same product; otherwise the first reason in `REASONS` order. Expects validated `decisions`.
+ * `endMs > tMs - LOOK_BACK_MS` (one ending exactly `LOOK_BACK_MS` before is out). An ad (the current scene's product) only when every scene
+ * in the set is an ad; otherwise the first reason in `REASONS` order. Expects validated `decisions`.
  */
 export function resolvePause(decisions: Decisions, tMs: number): PauseResult {
   const i = indexAt(decisions, tMs);
@@ -30,7 +30,6 @@ export function resolvePause(decisions: Decisions, tMs: number): PauseResult {
   }
   const reason = REASONS.find((r) => set.some((s) => s.outcome === r));
   if (reason) return { outcome: reason, scene };
-  // Every scene is an ad; different products mean no single product fits the moment.
-  if (set.some((s) => s.topProductId !== scene.topProductId)) return { outcome: "nothingFits", scene };
+  // Every scene in the look-back is an ad, so the current scene's product is shown (ADR 0009).
   return { outcome: "ad", scene };
 }

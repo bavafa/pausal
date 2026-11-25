@@ -13,9 +13,9 @@
   },
   "r3b": {
     "embeddingSim": 0.3,
-    "jevFitP": 0.6
+    "jevFitP": 0.4
   },
-  "relevance": 60,
+  "relevance": 50,
   "safetyConfidence": 0.8,
   "taglineGateMargin": 0.05
 }

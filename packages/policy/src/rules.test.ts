@@ -57,12 +57,10 @@ describe("evaluateScene", () => {
   });
 
   it.each([
-    ["R1", "sensitiveScene", (s: AnalysisScene) => void (jg(s).qwen.confidence = 0.79)],
-    ["R2", "sensitiveScene", (s: AnalysisScene) => void (jg(s).qwen.categories.violence = { flagged: false, p: 0.5 })],
+    ["R1", "sensitiveScene", (s: AnalysisScene) => void ((jg(s).jev.verdict = "unsafe"), (jg(s).qwen.verdict = "unsafe"))],
     ["R3", "nothingFits", (s: AnalysisScene) => void (top(s).relevance = 59.4)],
     ["R3b", "nothingFits", (s: AnalysisScene) => void (top(s).embeddingSim = 0.01)],
     ["R4", "noActiveCampaign", (_s: AnalysisScene, c: Campaign[]) => void (c[0]!.active = false)],
-    ["R5", "sensitiveScene", (s: AnalysisScene) => void (jg(s).qwen.verdict = "caution")],
     ["R6", "analysisUnavailable", (s: AnalysisScene) => void (s.status = "pending")],
   ] as const)("%s alone gives %s", (id, reason, mutate) => {
     const r = run(mutate);
@@ -72,12 +70,15 @@ describe("evaluateScene", () => {
     expect(r.split).toBeNull();
   });
 
-  it("R1 fails on jev confidence 0.79 with qwen 0.9", () => {
-    expect(run((s) => void (jg(s).jev.confidence = 0.79)).failed).toEqual(["R1"]);
-  });
-
-  it("R1 passes at exactly 0.8", () => {
-    expect(run((s) => void (jg(s).jev.confidence = jg(s).qwen.confidence = 0.8)).outcome).toBe("ad");
+  it("low confidence, caution verdicts and a high category score no longer block (ADR 0009)", () => {
+    const r = run((s) => {
+      jg(s).jev.confidence = 0.2;
+      jg(s).jev.verdict = "caution";
+      jg(s).qwen.verdict = "caution";
+      jg(s).qwen.categories.violence = { flagged: true, p: 0.9 };
+    });
+    expect(r.outcome).toBe("ad");
+    expect(r.failed).toEqual([]);
   });
 
   it("R3b fails alone on top jevFitP 0.59", () => {
@@ -92,16 +93,17 @@ describe("evaluateScene", () => {
 
   it("reason order: sensitive scene before nothing fits and no active campaign", () => {
     const r = run((s, c) => {
-      jg(s).qwen.verdict = "caution";
+      jg(s).jev.verdict = "unsafe";
+      jg(s).qwen.verdict = "unsafe";
       top(s).relevance = 50;
       c[0]!.active = false;
     });
     expect(r.outcome).toBe("sensitiveScene");
-    expect(r.failed).toEqual(["R3", "R4", "R5"]);
+    expect(r.failed).toEqual(["R1", "R3", "R4"]);
   });
 
-  it("R1 fails on a jev verdict that is not safe", () => {
-    expect(run((s) => void (jg(s).jev.verdict = "caution")).failed).toEqual(["R1", "R5"]);
+  it.each(["jev", "qwen"] as const)("one judge alone saying unsafe (%s) still gives an ad", (judge) => {
+    expect(run((s) => void (jg(s)[judge].verdict = "unsafe")).outcome).toBe("ad");
   });
 
   it("R2 ignores a stored flagged boolean below the cutoff", () => {
@@ -146,7 +148,7 @@ describe("evaluateScene", () => {
       c[0]!.active = false;
     });
     expect(r.outcome).toBe("analysisUnavailable");
-    expect(r.failed).toEqual(["R2", "R4", "R6"]);
+    expect(r.failed).toEqual(["R4", "R6"]);
   });
 
   it("reason order: nothing fits before no active campaign", () => {
@@ -173,7 +175,8 @@ describe("evaluateScene", () => {
     expect(run(inject)).toEqual(run());
     const r = run((s) => {
       inject(s);
-      jg(s).jev.categories.violence.p = 0.6;
+      jg(s).jev.verdict = "unsafe";
+      jg(s).qwen.verdict = "unsafe";
     });
     expect(r.outcome).toBe("sensitiveScene");
     expect(r.price).toBeNull();

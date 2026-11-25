@@ -54,7 +54,7 @@
     {
       "endMs": 10000,
       "id": "s0005000",
-      "outcome": "sensitiveScene",
+      "outcome": "ad",
       "panel": {
         "contextLabel": {
           "primary": "kitchen",
@@ -64,7 +64,10 @@
         "safeTag": "unsafe",
         "sentiment": -1
       },
-      "price": null,
+      "price": {
+        "cents": 103,
+        "simulated": true
+      },
       "ranked": [
         {
           "bid": {
@@ -76,8 +79,13 @@
           "relevance": 72
         }
       ],
-      "split": null,
+      "split": {
+        "platformCents": 73,
+        "publisherCents": 30,
+        "simulated": true
+      },
       "startMs": 5000,
+      "tagline": "Everyday Skillet",
       "topProductId": "fixture-pan"
     },
     {
@@ -227,5 +235,5 @@
       "topProductId": "fixture-pan"
     }
   ],
-  "thresholdsHash": "a6463cb091d6306f7e0791ed9f27db29317bd8a11d8bc0b67826c7ec1593e16d"
+  "thresholdsHash": "097d5a6d0f9df3afac1012c5eb257df04ab740a7c99ad9b5724227761697c0cc"
 }

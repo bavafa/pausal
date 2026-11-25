@@ -5,7 +5,8 @@ Project-wide resume point. Update after every phase. Last updated: 2026-11-24 ni
 
 ## Launch (2026-11-24 late night, read first)
 - The site ships with one clip only, Tears of Steel (`9d34e8c24976`, 3:00, `aiGenerated: false`); the AI clips are dropped. Manifest schema now takes `aiGenerated` as a boolean; "AI-generated" shows only when true; the watch screen links "Film excerpt, credits" to the attribution page, which credits the film (CC BY 3.0). The video is committed in `apps/web/public/media/`.
-- Analysis cost $0.02 (69 scenes): 10 ad scenes, 39 sensitive, 19 nothing fits. Only 2.2 percent of pause times give an ad (0 to 3 s, 157 to 158 s), because most sci-fi scenes are judged "caution" and short scenes with different products cancel out in the 1 s look-back. Open question for the user: loosen thresholds or accept it.
+- Analysis cost $0.02 (69 scenes). Under the old rules only 2.2 percent of pause times gave an ad, so the author chose ADR 0009 (2026-11-25): an ad is held back only when both judges say unsafe, relevance floor 50, rule 3b jevFitP 0.4, and the look-back shows the current product when every scene in it is an ad. Now 16.1 percent (20 of 69 scenes). The eval guardrail is a warning, not a CI failure; the fixture's violent scene now shows an ad. New ad scenes may lack a tagline until the clip is analyzed again.
+- R2 upload done: all 20,000 slice images in `pausal-images`.
 - No labels for this clip yet (eval covers the fixture only).
 - R2: `pnpm abo images` uploads the slice images as `products/<productId>.jpg` (signing in `packages/pipeline/src/r2.ts`, retries per object, skips existing). Relay host still open.
 

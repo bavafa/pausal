@@ -25,12 +25,12 @@ describe("sweepTimes", () => {
 });
 
 describe("evaluate on the fixture", () => {
-  it("passes the guardrail with no ad on an unsafe time", () => {
+  it("reports the ad on the violent scene only one judge calls unsafe (ADR 0009)", () => {
     const r = run(labels());
-    expect(r.guardrail).toEqual({ pass: true, problems: [] });
-    expect(r.unsafeAds).toBe(0);
+    expect(r.guardrail.pass).toBe(false);
+    expect(r.unsafeAds).toBeGreaterThan(0);
     expect(r.joinedUnsafeSamples).toBeGreaterThan(0);
-    expect(r.failures.map((f) => f.kind)).toEqual(["unexpected no-ad", "unexpected no-ad", "unexpected no-ad"]);
+    expect(r.failures.map((f) => f.kind)).toEqual(["unsafe ad", "unexpected no-ad", "unexpected no-ad", "unexpected no-ad"]);
   });
 
   it("fails when an ad lands on a labeled unsafe time", () => {

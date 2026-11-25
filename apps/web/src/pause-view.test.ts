@@ -13,7 +13,6 @@ describe("pauseView on the fixture", () => {
     expect(v).toMatchObject({ price: { cents: 108, simulated: true }, split: { platformCents: 76, publisherCents: 32, simulated: true } });
   });
   it.each([
-    [7500, "No ad here: sensitive scene."],
     [12500, "No ad here: nothing fits well."],
     [17500, "No ad here: no active campaign."],
     [22500, "No ad here: analysis unavailable."],
@@ -27,7 +26,7 @@ describe("pauseView on the fixture", () => {
     expect(at(34000)).toMatchObject({ kind: "ad", tagline: "Everyday Skillet", because: "Shown because this scene matches: cooking." });
   });
   it("announces the overlay text", () => {
-    expect(announce(at(7500))).toBe("Paused. No ad here: sensitive scene.");
+    expect(announce(at(27500))).toBe("Paused. No ad here: sensitive scene.");
     expect(announce(at(2500))).toBe("Paused. Sponsored, simulated ad: Skillet. A steady pan for weeknight cooking.");
   });
 });

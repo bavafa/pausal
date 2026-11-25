@@ -167,7 +167,7 @@ Rule ids are `R1` to `R6` and `R3b` (see AD-6) and are the only rule ids used in
 
 - **Binds:** AD-3, AD-11
 - **Prevents:** a lax config silently disabling a rule
-- **Rule:** `bundle-schema` validates `config/thresholds.json` with hard bounds: safety confidence at least 0.8, relevance at least 60, both R3b cutoffs present, every category cutoff at most 0.5, `holdMs` at least 5000. Lowering a bound requires a schema edit and an ADR. A missing or out-of-range value fails the build.
+- **Rule:** `bundle-schema` validates `config/thresholds.json` with hard bounds: safety confidence at least 0.8, relevance at least 50 (ADR 0009), both R3b cutoffs present, every category cutoff at most 0.5, `holdMs` at least 5000. Lowering a bound requires a schema edit and an ADR. A missing or out-of-range value fails the build.
 
 ### AD-21: Scene length cap and worst-case merge
 

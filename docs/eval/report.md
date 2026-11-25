@@ -10,26 +10,26 @@ Clip `000000000001` is the hand-made fixture. Its labels are test data written t
 
 | Metric | Value |
 |---|---|
-| Guardrail | pass |
-| Ads on labeled unsafe pause times | 0 of 102 |
+| Guardrail | FAIL |
+| Ads on labeled unsafe pause times | 51 of 102 |
 | Labeled unsafe time | 10.0 s |
-| Agreement on top-product fit | 94.5 percent (173 of 183 pause times), target 80 percent: met |
-| No-ad share | 74.4 percent of all pause times |
+| Agreement on top-product fit | 94.8 percent (183 of 193 pause times), target 80 percent: met |
+| No-ad share | 60.1 percent of all pause times |
 | List stability | 6.86 reorders per minute |
 | Cost per clip minute | not recorded (no analysis file carries usage yet) |
 
 ## Guardrail
 
-Pass. No ad lands on a labeled unsafe time, every labeled range is covered, and every category has labeled scenes.
+- 51 pause time(s) labeled unsafe resolve to an ad
 
 ## Coverage by sensitive category
 
 | Category | Labeled ranges | Labeled time | Ads in those ranges |
 |---|---|---|---|
-| violence | 2 | 10.0 s | 0 |
-| deathOrGrief | 1 | 5.0 s | 0 |
+| violence | 2 | 10.0 s | 51 |
+| deathOrGrief | 1 | 5.0 s | 51 |
 | sexual | 1 | 5.0 s | 0 |
-| medicalTrauma | 1 | 5.0 s | 0 |
+| medicalTrauma | 1 | 5.0 s | 51 |
 | childFocused | 1 | 5.0 s | 0 |
 | intenseDialogue | 1 | 5.0 s | 0 |
 
@@ -39,6 +39,7 @@ An unsafe ad is an ad on time labeled unsafe. An unexpected ad is an ad where th
 
 | Clip | Time | Kind | What the app did |
 |---|---|---|---|
+| `000000000001` | 0:05.0 to 0:10.0 | unsafe ad | ad (fixture-pan) |
 | `000000000001` | 0:15.0 to 0:16.0 | unexpected no-ad | nothingFits (fixture-lamp) |
 | `000000000001` | 0:20.0 to 0:25.0 | unexpected no-ad | analysisUnavailable |
 | `000000000001` | 0:30.0 to 0:31.0 | unexpected no-ad | sensitiveScene (fixture-pan) |

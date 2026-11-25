@@ -150,10 +150,11 @@ describe("analyzeClip", () => {
     await expect(analyzeClip({ clipId: "abcdef012345", durationMs: 6000, frames: frames.slice(0, 6), dialogueCutsMs: [] }, models, catalog, opts)).rejects.toBeInstanceOf(CostCapError);
   });
 
-  it("relaxes the tagline gate by the margin only", () => {
+  it("tagline gate follows the safety rule: closed only when both judges say unsafe (ADR 0009)", () => {
     const scene = { id: "s0000000", startMs: 0, endMs: 1000, chunk: 1, status: "ok" as const, description: "d", sceneType: { primary: "kitchen" }, sentimentLevel: 3 as const, fits: [], invalid: [] };
-    const at = (confidence: number) => passesTaglineGate({ ...scene, judgments: { jev: judgment("safe", confidence), qwen: judgment("safe") } } as never, thresholds);
-    expect(at(thresholds.safetyConfidence - thresholds.taglineGateMargin)).toBe(true);
-    expect(at(thresholds.safetyConfidence - thresholds.taglineGateMargin - 0.01)).toBe(false);
+    const at = (jev: Judgment["verdict"], qwen: Judgment["verdict"], confidence = 0.9) => passesTaglineGate({ ...scene, judgments: { jev: judgment(jev, confidence), qwen: judgment(qwen) } } as never, thresholds);
+    expect(at("safe", "safe", 0.1)).toBe(true);
+    expect(at("unsafe", "caution")).toBe(true);
+    expect(at("unsafe", "unsafe")).toBe(false);
   });
 });

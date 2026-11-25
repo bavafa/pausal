@@ -30,7 +30,7 @@ describe("deriveDecisions on the fixture", () => {
 
   it.each([
     ["s0000000", "ad"],
-    ["s0005000", "sensitiveScene"],
+    ["s0005000", "ad"], // only one judge says unsafe (ADR 0009)
     ["s0010000", "nothingFits"],
     ["s0015000", "noActiveCampaign"],
     ["s0020000", "analysisUnavailable"],
@@ -80,8 +80,9 @@ describe("deriveDecisions on the fixture", () => {
   });
 
   it("a tagline on a no-ad scene is dropped", () => {
-    const sensitive = derive((a) => void (a.scenes[1].tagline = "A pan.", a.scenes[1].taglineCheck = "pass"));
-    expect(scene(sensitive, "s0005000").tagline).toBeUndefined();
+    const sensitive = derive((a) => void (a.scenes[5].tagline = "A pan.", a.scenes[5].taglineCheck = "pass"));
+    expect(scene(sensitive, "s0025000").outcome).toBe("sensitiveScene");
+    expect(scene(sensitive, "s0025000").tagline).toBeUndefined();
   });
 
   it("is deterministic", () => expect(canonicalJson(derive())).toBe(canonicalJson(d)));

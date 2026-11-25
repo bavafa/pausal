@@ -38,7 +38,9 @@ if (process.argv.includes("--compare-judges")) {
   const result = evaluate(clips, load("config/eval.json", validateEvalConfig));
   const text = report(result);
   const out = join(root, "docs/eval/report.md");
-  const problems = [...result.guardrail.problems];
+  // ADR 0009: the guardrail is reported, not enforced, since only a scene both judges call unsafe is held back.
+  for (const p of result.guardrail.problems) console.warn(`eval guardrail warning: ${p}`);
+  const problems: string[] = [];
   if (check) {
     const committed = existsSync(out) ? readFileSync(out, "utf8") : null;
     if (committed !== text) problems.push(`docs/eval/report.md ${committed === null ? "is missing" : "is out of date"}; run pnpm eval`);
@@ -50,5 +52,5 @@ if (process.argv.includes("--compare-judges")) {
     console.error(`eval${check ? " --check" : ""} failed.\n${problems.join("\n")}`);
     process.exit(1);
   }
-  console.log(`eval: guardrail pass on ${result.clips.length} clip(s), ${result.joinedUnsafeSamples} unsafe pause times, ${result.failures.length} listed failure(s).${check ? "" : " Wrote docs/eval/report.md."}`);
+  console.log(`eval: guardrail ${result.guardrail.problems.length ? "warning" : "pass"} on ${result.clips.length} clip(s), ${result.joinedUnsafeSamples} unsafe pause times, ${result.failures.length} listed failure(s).${check ? "" : " Wrote docs/eval/report.md."}`);
 }

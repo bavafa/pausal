@@ -9,7 +9,7 @@ const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
 /** What happens between the click and the overlay. All of it is worked out before the page loads (AD-1). */
 const STEPS = [
   ["Read the scene", "Pausal looks at the frame you stopped on and the second before it, so a sudden cut cannot slip an ad in."],
-  ["Check it is safe", "Two AI models check for violence, grief, sexual content, medical scenes, children and arguments. If either one objects, there is no ad."],
+  ["Check it is safe", "Two AI models check for violence, grief, sexual content, medical scenes, children and arguments. If both call the scene unsafe, there is no ad."],
   ["Find a product", "Every product in the catalog is scored against the scene. Weak matches are dropped."],
   ["Show one ad, or say why not", "You see one product that fits, or a short note on why there is no ad."],
 ] as const;
@@ -29,7 +29,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           <p className={EYEBROW}>An experiment in video ads</p>
           <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">Ads that wait until you pause.</h1>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-            When you pause, Pausal looks at the scene on screen. An everyday moment gets one product that fits it. A violent, sad or heated scene gets no ad.
+            When you pause, Pausal looks at the scene on screen. An everyday moment gets one product that fits it. A scene two AI models both call unsafe gets no ad.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <button
@@ -54,7 +54,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
             It is also a bad moment for the wrong one. A frying pan fits a cooking scene and does not fit a funeral. So Pausal checks the scene first, and when it
-            is unsure, it shows nothing.
+            looks unsafe, it shows nothing.
           </p>
         </div>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -66,7 +66,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             </p>
           </div>
           <div className="rounded-md border border-border bg-card p-4">
-            <p className="text-label text-muted-foreground">You pause on two people in a shouting match</p>
+            <p className="text-label text-muted-foreground">You pause in the middle of a gunfight</p>
             <p className="mt-2 flex items-center gap-2 font-semibold">
               <span aria-hidden="true" className="size-2 rounded-full bg-muted-foreground" />
               No ad here: sensitive scene.
