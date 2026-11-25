@@ -39,7 +39,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             >
               Try a clip
             </button>
-            <span className="text-label text-muted-foreground">The ads and prices are made up for the demo.</span>
+            <span className="text-label text-muted-foreground">All ads and prices here are simulated.</span>
           </div>
         </div>
         <HeroDemo />
@@ -91,7 +91,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           ))}
         </ol>
         <p className="mt-8 rounded-md bg-muted px-4 py-3 text-label text-muted-foreground">
-          Pausal analyzes each video once, scene by scene, when the video is added, so the answer is ready the moment you pause. To test the rules, a script
+          Pausal analyzes each video scene by scene as it comes in, so when you pause, the answer appears in real time. To test the rules, a script
           pauses every clip every tenth of a second and fails if any ad lands on a scene a person marked unsafe.
         </p>
       </section>
