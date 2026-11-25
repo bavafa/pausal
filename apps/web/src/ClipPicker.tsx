@@ -12,7 +12,7 @@ const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
 const STEPS = [
   ["Find the scene", "It works out which scene you stopped on. Scene cuts are only known to within a second, so if the second before your pause was unsafe, you get no ad."],
   ["Check it is safe", "Two AI models look for violence, grief, sex, medical scenes, children and arguments. If both flag the scene, no ad."],
-  ["Score the products", "Every product gets a fit score out of 100 for this scene. Under 60, it stays hidden. A higher bar means fewer ads that fit better."],
+  ["Score the products", "Each of 20,000 catalog products gets a fit score out of 100 for this scene. Under 60, it stays hidden. A higher bar means fewer ads that fit better."],
   ["One ad, or none", "You get one product, or a line saying why there isn't one."],
 ] as const;
 
@@ -33,7 +33,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           <p className={EYEBROW}>An experiment in video ads</p>
           <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">The ad waits for you to pause.</h1>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-            Pause on someone cooking and a frying pan appears. Pause in the middle of a gunfight and nothing does. Every scene is checked before it can carry an ad.
+            Pause on a hiker at the summit and a backpack appears. Pause on a runner and it might be trail shoes. Pause in the middle of a gunfight and nothing does. Every scene is checked before it can carry an ad.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <button
@@ -64,16 +64,23 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             frame, and folds to the edge with one tap when you want the whole picture back.
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            It only works if the product suits the moment. A frying pan belongs in a kitchen, not at a funeral. When nothing fits, or the scene is one no
+            It only works if the product suits the moment. Hiking boots belong on a mountain trail, not in a boardroom. When nothing fits, or the scene is one no
             brand should sit next to, you get no ad at all.
           </p>
         </div>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <div className="rounded-md border border-border bg-card p-4">
             <p className="text-label text-muted-foreground">Paused on: someone cooking in a sunny kitchen</p>
             <p className="mt-2 flex items-center gap-2 font-semibold">
               <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
               Ad: Everyday Skillet
+            </p>
+          </div>
+          <div className="rounded-md border border-border bg-card p-4">
+            <p className="text-label text-muted-foreground">Paused on: a hiker resting on a mountain trail</p>
+            <p className="mt-2 flex items-center gap-2 font-semibold">
+              <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
+              Ad: a daypack
             </p>
           </div>
           <div className="rounded-md border border-border bg-card p-4">
@@ -130,6 +137,21 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           Scenes are analyzed before you reach them, so the answer is ready the instant you pause. To keep it honest, a test script pauses every
           clip every tenth of a second and flags any ad that lands on a scene a person marked unsafe.
         </p>
+      </section>
+
+      <section className="border-t border-border py-12">
+        <p className={EYEBROW}>The catalog</p>
+        <h2 className={H2}>20,000 real products to choose from</h2>
+        <div className="mt-4 grid gap-6 md:grid-cols-2">
+          <p className="text-[16px] leading-relaxed text-muted-foreground">
+            The ads draw on 20,000 products from Amazon Berkeley Objects, an open dataset of real listings: cookware, furniture, shoes, luggage, garden
+            tools and more. For each scene the model searches all of them for the one that fits best.
+          </p>
+          <p className="text-[16px] leading-relaxed text-muted-foreground">
+            More products means more scenes find a good match. A bigger catalog would turn more of the &ldquo;nothing fit well&rdquo; pauses into ads that
+            belong there, without lowering the bar. The full dataset has about 147,000 listings; this is a slice of it.
+          </p>
+        </div>
       </section>
 
       <section id="clips" className="scroll-mt-16 border-t border-border py-12">
