@@ -16,6 +16,22 @@ const STEPS = [
   ["One ad, or none", "You get one product, or a line saying why there isn't one."],
 ] as const;
 
+/** Where the demo takes a shortcut that a real deployment would not. */
+const NOTES = [
+  [
+    "A higher bar",
+    "The sample clips are short, so the relevance threshold is set low, at 60 out of 100, to show some ads at all. A real service can and should raise it, so only highly relevant ads appear.",
+  ],
+  [
+    "A fallback ad",
+    "When no product clears the bar, the pause screen doesn't have to stay empty. It can fall back to a fixed or rotating pause ad from advertisers willing to pay for a spot that isn't matched to the scene.",
+  ],
+  [
+    "Scan, not click",
+    "Here the viewer's action is a click on a button, to keep things simple. On a TV it would be scanning a QR code with a phone to add the product to a cart.",
+  ],
+] as const;
+
 const minutes = (ms: number) => {
   const s = Math.round(ms / 1000);
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
@@ -152,6 +168,19 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             belong there, without lowering the bar. The full dataset has about 147,000 listings; this is a slice of it.
           </p>
         </div>
+      </section>
+
+      <section className="border-t border-border py-12">
+        <p className={EYEBROW}>Demo versus the real thing</p>
+        <h2 className={H2}>What would change outside this demo</h2>
+        <ul className="mt-6 grid gap-3 md:grid-cols-3">
+          {NOTES.map(([title, text]) => (
+            <li key={title} className="rounded-md border border-border bg-card p-4">
+              <p className="font-semibold">{title}</p>
+              <p className="mt-1 text-label leading-relaxed text-muted-foreground">{text}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section id="clips" className="scroll-mt-16 border-t border-border py-12">
