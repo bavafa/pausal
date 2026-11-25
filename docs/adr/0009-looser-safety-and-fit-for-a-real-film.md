@@ -11,6 +11,8 @@ The live sample is a 3 minute excerpt of Tears of Steel. Under the original rule
 - Look-back: when every scene in the 1 second look-back is an ad, the pause shows the current scene's product, even if earlier scenes had another product. A non-ad scene in the look-back still blocks.
 - The evaluation guardrail (no ad on a time a person labeled unsafe) is reported as a warning and written to `docs/eval/report.md`, but no longer fails `pnpm eval` or CI.
 
+Update 2026-11-25: the author set the relevance threshold to 65 (the floor stays 50). After the re-analysis, Tears of Steel shows an ad at 5.3 percent of pause times (8 of 69 scenes); at 50 it was 18.6 percent.
+
 ## Consequences
 - Tears of Steel: 16.1 percent of pause times show an ad (was 2.2), 20 of 69 scenes.
 - The fixture's violent scene (Jev caution, Qwen unsafe) now shows an ad; the eval report lists it as an unsafe ad.

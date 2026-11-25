@@ -4,13 +4,13 @@ import type { ListItem, ProductListView } from "./product-list.ts";
 
 const THUMB = "shrink-0 rounded-md border border-border bg-white object-contain p-1";
 
-/** Relevance always; the simulated bid, or "No bid" when the product has no active campaign. */
+/** Relevance always; the simulated bid, or "Bid: none" when the product has no active campaign. */
 function Figures({ item, className = "" }: { item: ListItem; className?: string }) {
   return (
     <span className={`flex flex-wrap gap-1.5 text-label ${className}`}>
-      <span className="rounded-sm bg-muted px-1.5 py-0.5 text-foreground">Relevance {item.relevance}</span>
+      <span className="rounded-sm bg-muted px-1.5 py-0.5 text-foreground">Relevance: {item.relevance}</span>
       <span className={`rounded-sm px-1.5 py-0.5 ${item.bid ? "bg-accent/15 text-accent" : "border border-dashed border-border text-muted-foreground"}`}>
-        {item.bid ? `Bid ${dollars(item.bid)}` : "No bid"}
+        {item.bid ? `Bid: ${dollars(item.bid)}` : "Bid: none"}
       </span>
     </span>
   );
@@ -41,8 +41,9 @@ export function ProductList({ view }: { view: ProductListView }) {
             <li key={i.product.id} className="flex min-h-11 w-[96px] shrink-0 flex-col gap-1 lg:w-auto">
               <img src={assetUrl(i.product.imagePath)} alt={i.product.name} className={`${THUMB} aspect-square w-full`} />
               <span className="text-label font-semibold leading-snug" title={i.product.name}>{i.label}</span>
-              <span className="text-[11px] text-muted-foreground">
-                {i.relevance} · {i.bid ? `${dollars(i.bid)} bid` : "no bid"}
+              <span className="flex flex-col text-[11px] leading-snug text-muted-foreground">
+                <span>Relevance: {i.relevance}</span>
+                <span>{i.bid ? `Bid: ${dollars(i.bid)}` : "Bid: none"}</span>
               </span>
             </li>
           ))}

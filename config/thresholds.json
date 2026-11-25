@@ -15,7 +15,7 @@
     "embeddingSim": 0.3,
     "jevFitP": 0.4
   },
-  "relevance": 50,
+  "relevance": 65,
   "safetyConfidence": 0.8,
   "taglineGateMargin": 0.05
 }

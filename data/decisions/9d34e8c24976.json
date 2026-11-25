@@ -342,7 +342,7 @@
     {
       "endMs": 11000,
       "id": "s0005000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "library"
@@ -351,10 +351,7 @@
         "safeTag": "safe",
         "sentiment": -0.5
       },
-      "price": {
-        "cents": 106,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -447,19 +444,14 @@
           "relevance": 30
         }
       ],
-      "split": {
-        "platformCents": 75,
-        "publisherCents": 31,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 5000,
-      "tagline": "Bold modern design with a black metal pole and clear glass column.",
       "topProductId": "B07374C6R9"
     },
     {
       "endMs": 17000,
       "id": "s0011000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "living room"
@@ -468,10 +460,7 @@
         "safeTag": "safe",
         "sentiment": -0.5
       },
-      "price": {
-        "cents": 41,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -564,13 +553,8 @@
           "relevance": 33
         }
       ],
-      "split": {
-        "platformCents": 29,
-        "publisherCents": 12,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 11000,
-      "tagline": "Modern sleek design with bronzed glass and black metal stand.",
       "topProductId": "B07374QFJ3"
     },
     {
@@ -1418,7 +1402,7 @@
     {
       "endMs": 39000,
       "id": "s0038000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "science fiction"
@@ -1427,10 +1411,7 @@
         "safeTag": "caution",
         "sentiment": -0.5
       },
-      "price": {
-        "cents": 96,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -1517,13 +1498,8 @@
           "relevance": 22
         }
       ],
-      "split": {
-        "platformCents": 68,
-        "publisherCents": 28,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 38000,
-      "tagline": "Modern abstract print with silver and blue lines.",
       "topProductId": "B073P16R5Q"
     },
     {
@@ -1636,7 +1612,7 @@
     {
       "endMs": 42000,
       "id": "s0040000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "workshop"
@@ -1645,10 +1621,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 95,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -1735,13 +1708,8 @@
           "relevance": 33
         }
       ],
-      "split": {
-        "platformCents": 67,
-        "publisherCents": 28,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 40000,
-      "tagline": "Modern tribal art print on cotton fiber paper with an oak hanger.",
       "topProductId": "B073P6HGTV"
     },
     {
@@ -2917,7 +2885,7 @@
     {
       "endMs": 87000,
       "id": "s0086000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street"
@@ -2926,10 +2894,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 82,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -3022,13 +2987,8 @@
           "relevance": 26
         }
       ],
-      "split": {
-        "platformCents": 58,
-        "publisherCents": 24,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 86000,
-      "tagline": "Add a vivid contemporary touch with this ready to hang canvas.",
       "topProductId": "B073NZPNNL"
     },
     {
@@ -3469,7 +3429,7 @@
     {
       "endMs": 99000,
       "id": "s0098000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street"
@@ -3478,10 +3438,7 @@
         "safeTag": "safe",
         "sentiment": 0
       },
-      "price": {
-        "cents": 79,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -3571,19 +3528,14 @@
           "relevance": 36
         }
       ],
-      "split": {
-        "platformCents": 56,
-        "publisherCents": 23,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 98000,
-      "tagline": "Men's suede leather casual derby shoes in black.",
       "topProductId": "B01MZ8FI89"
     },
     {
       "endMs": 100000,
       "id": "s0099000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street"
@@ -3592,10 +3544,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 55,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -3685,13 +3634,8 @@
           "relevance": 32
         }
       ],
-      "split": {
-        "platformCents": 39,
-        "publisherCents": 16,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 99000,
-      "tagline": "Smooth glossy leather low-top trainers with contrasting brushed detail.",
       "topProductId": "B01MZ8FKBW"
     },
     {
@@ -3805,7 +3749,7 @@
     {
       "endMs": 102000,
       "id": "s0101000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street",
@@ -3815,10 +3759,7 @@
         "safeTag": "safe",
         "sentiment": 0
       },
-      "price": {
-        "cents": 53,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -3905,13 +3846,8 @@
           "relevance": 41
         }
       ],
-      "split": {
-        "platformCents": 38,
-        "publisherCents": 15,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 101000,
-      "tagline": "Smooth glossy leather with contrasting brushed detail and lace-up fastening.",
       "topProductId": "B01MZ8FKBW"
     },
     {
@@ -4246,7 +4182,7 @@
     {
       "endMs": 106000,
       "id": "s0105000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street",
@@ -4256,10 +4192,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 103,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -4349,19 +4282,14 @@
           "relevance": 27
         }
       ],
-      "split": {
-        "platformCents": 73,
-        "publisherCents": 30,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 105000,
-      "tagline": "Classic photo with modern printing technique on cotton paper.",
       "topProductId": "B073P5QJ3V"
     },
     {
       "endMs": 107000,
       "id": "s0106000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "travel",
@@ -4371,10 +4299,7 @@
         "safeTag": "safe",
         "sentiment": 0
       },
-      "price": {
-        "cents": 115,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -4464,19 +4389,14 @@
           "relevance": 26
         }
       ],
-      "split": {
-        "platformCents": 81,
-        "publisherCents": 34,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 106000,
-      "tagline": "Add sophistication with this contemporary print of classic European architecture.",
       "topProductId": "B073P1JNSY"
     },
     {
       "endMs": 108000,
       "id": "s0107000",
-      "outcome": "noActiveCampaign",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street"
@@ -5972,7 +5892,7 @@
     {
       "endMs": 143000,
       "id": "s0140000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street",
@@ -5982,10 +5902,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 48,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -6072,13 +5989,8 @@
           "relevance": 29
         }
       ],
-      "split": {
-        "platformCents": 34,
-        "publisherCents": 14,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 140000,
-      "tagline": "Classic silk necktie with a pink windowpane pattern.",
       "topProductId": "B07991TP53"
     },
     {
@@ -6294,7 +6206,7 @@
     {
       "endMs": 152000,
       "id": "s0150000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street"
@@ -6303,10 +6215,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 118,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -6396,13 +6305,8 @@
           "relevance": 24
         }
       ],
-      "split": {
-        "platformCents": 83,
-        "publisherCents": 35,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 150000,
-      "tagline": "Add a touch of sophistication and color to your wall with this contemporary European architecture print.",
       "topProductId": "B073P1JNSY"
     },
     {
@@ -6518,7 +6422,7 @@
     {
       "endMs": 158000,
       "id": "s0156000",
-      "outcome": "ad",
+      "outcome": "nothingFits",
       "panel": {
         "contextLabel": {
           "primary": "city street",
@@ -6528,10 +6432,7 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": {
-        "cents": 83,
-        "simulated": true
-      },
+      "price": null,
       "ranked": [
         {
           "bid": {
@@ -6624,13 +6525,8 @@
           "relevance": 30
         }
       ],
-      "split": {
-        "platformCents": 59,
-        "publisherCents": 24,
-        "simulated": true
-      },
+      "split": null,
       "startMs": 156000,
-      "tagline": "Add a vivid contemporary touch with this ready to hang abstract canvas.",
       "topProductId": "B073NZPNNL"
     },
     {
@@ -7483,5 +7379,5 @@
       "topProductId": "B018FCZBMG"
     }
   ],
-  "thresholdsHash": "097d5a6d0f9df3afac1012c5eb257df04ab740a7c99ad9b5724227761697c0cc"
+  "thresholdsHash": "56ab722654b7efc4960bfb161229c7e6580f36cd7bdd8bfed33684aa8fa9875b"
 }

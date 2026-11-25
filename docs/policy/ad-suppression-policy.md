@@ -54,7 +54,7 @@ Dialogue and on-screen text are untrusted. The scene is classified from the gene
 ## Thresholds
 Starting values, tuned in the evaluation. [ASSUMPTION] None is validated.
 - Safety confidence threshold: 0.8 (no longer used by the rules since ADR 0009)
-- Relevance threshold: 50 out of 100 (ADR 0009)
+- Relevance threshold: 65 out of 100 (author decision 2026-11-25; the schema floor stays 50, ADR 0009)
 - Product list size: 10
 - Category cutoff for a sensitive flag: at most 0.5 per category. [ASSUMPTION] Exact value set in the evaluation.
 - Rule 3b cutoffs: judge fit probability 0.4, embedding similarity 0.3 (ADR 0009).
