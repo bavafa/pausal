@@ -46,10 +46,10 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
     <main className="mx-auto max-w-5xl px-gutter-phone md:px-gutter-laptop">
       <section className="grid items-center gap-8 py-10 md:grid-cols-[1fr_1.15fr] md:py-16">
         <div>
-          <p className={EYEBROW}>An experiment in video ads</p>
-          <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">The ad waits for you to pause.</h1>
+          <p className={EYEBROW}>A live demo of a video ad format</p>
+          <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">Advertise the right product at the exact right moment.</h1>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-            Pause on a hiker at the summit and a backpack appears. Pause on a runner and it might be trail shoes. Pause in the middle of a gunfight and nothing does. Every scene is checked before it can carry an ad.
+            Pausal lets advertisers show a sponsored product on CTV and streaming apps the moment a viewer hits pause. It reads the whole scene around the pause, not just the frame on screen. Pause on a hiker at the summit and Pausal shows a hiking backpack. Pause on a runner and you might get running shoes. Pause in the middle of a violent scene and there's no ad at all, even if the frame you stopped on looks harmless.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <button
@@ -65,7 +65,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             >
               Try your own video
             </a>
-            <span className="basis-full text-label text-muted-foreground">Every ad and price here is made up.</span>
+            <span className="basis-full text-label text-muted-foreground">All bids here are simulated, for illustration only.</span>
           </div>
         </div>
         <HeroDemo />
