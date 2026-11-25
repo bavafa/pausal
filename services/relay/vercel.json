@@ -1,0 +1,3 @@
+{
+  "functions": { "api/chunk.mjs": { "maxDuration": 300 } }
+}

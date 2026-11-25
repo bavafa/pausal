@@ -1,6 +1,7 @@
 packages:
   - apps/*
   - packages/*
+  - services/*
 # shortcut: oxlint 1.95.0 and its native bindings are newer than pnpm's minimum release age, drop these once 1.95.0 is older than that window or oxlint is bumped.
 minimumReleaseAgeExclude:
   - '@oxlint/binding-android-arm-eabi@1.95.0'

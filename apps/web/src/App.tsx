@@ -3,6 +3,8 @@ import { clickFor } from "@pausal/policy";
 import { CLIPS, loadDecisions, pickerClips, PRODUCTS } from "./clips.ts";
 import { AttributionPage } from "./AttributionPage.tsx";
 import { ClipPicker } from "./ClipPicker.tsx";
+import { mergeChunks } from "./upload.ts";
+import { UploadPage, type UploadState } from "./UploadPage.tsx";
 import { ProductPage } from "./ProductPage.tsx";
 import { productHref, useRoute } from "./route.ts";
 import { withClick, type PauseEntry } from "./session.ts";
@@ -19,10 +21,24 @@ export function App() {
   // True once the product page was opened from the clip in this page load, so its Back can step back in history.
   const fromClip = useRef(false);
   const clipId = route.page === "clip" || route.page === "product" ? route.clipId : null;
-  const clip = CLIPS.find((c) => c.clipId === clipId);
+  // The uploaded video of this page load, if any; its decisions grow as the relay answers (docs/upload-plan.md).
+  const [upload, setUpload] = useState<UploadState | null>(null);
+  const uploaded = upload?.clip.clipId === clipId ? upload : null;
+  const clip = uploaded?.clip ?? CLIPS.find((c) => c.clipId === clipId);
   // Validated once per clip, so a re-render on each pause does not hand the watch screen a new object.
-  const decisions = useMemo(() => (clip ? loadDecisions(clip) : null), [clip]);
+  const sampleDecisions = useMemo(() => (clip && !uploaded ? loadDecisions(clip) : null), [clip, uploaded]);
+  const uploadDecisions = useMemo(() => (uploaded ? mergeChunks(uploaded.clip, uploaded.chunks) : null), [uploaded]);
+  const decisions = uploaded ? uploadDecisions : sampleDecisions;
   if (route.page === "picker") return <ClipPicker clips={pickerClips(CLIPS)} />;
+  if (route.page === "upload")
+    return (
+      <UploadPage
+        onStart={(c, run) => {
+          setUpload({ clip: c, chunks: [], doneMs: 0, error: null });
+          void run((f) => setUpload((s) => (s && s.clip.clipId === c.clipId ? f(s) : s)));
+        }}
+      />
+    );
   if (route.page === "attribution") return <AttributionPage />;
   if (clip) {
     const onProduct = route.page === "product";
@@ -34,6 +50,7 @@ export function App() {
             key={clip.clipId}
             clip={clip}
             decisions={decisions}
+            {...(uploaded ? { note: uploaded.error ?? (uploaded.doneMs >= uploaded.clip.durationMs ? "Your video: fully analyzed." : uploaded.doneMs === 0 ? "Your video: analyzing the first scenes…" : `Your video: analyzed ${Math.round(uploaded.doneMs / 1000)} of ${Math.round(uploaded.clip.durationMs / 1000)} seconds…`) } : {})}
             pauses={pauses}
             onPause={(entry) => setPauses((log) => [...log, entry])}
             onViewProduct={(productId) => {

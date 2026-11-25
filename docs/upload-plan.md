@@ -1,6 +1,6 @@
 # Plan: video uploads
 
-Status: draft for the author's approval, 2026-11-24. Turns on PRD F8 (FR-18 to FR-22), which the first release left as a library seam (AD-13).
+Status: built 2026-11-25 (ADR 0010). Relay on Vercel Hobby at https://pausal-relay.vercel.app/api/chunk; daily cap 2 USD, 3 uploads per visitor per day; Turnstile not added yet. Originally drafted 2026-11-24. Turns on PRD F8 (FR-18 to FR-22), which the first release left as a library seam (AD-13).
 
 ## What the visitor sees
 

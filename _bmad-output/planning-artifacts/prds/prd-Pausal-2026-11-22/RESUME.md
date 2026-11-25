@@ -3,6 +3,11 @@
 Project-wide resume point. Update after every phase. Last updated: 2026-11-24 night. Phase 5: all 5 epics done; `main` not pushed until real sample clips are in. Next: sample clips (one Tears of Steel cut is ready), then the upload feature (`docs/upload-plan.md`). See "Latest".
 
 
+## Uploads (2026-11-25, read first)
+- Built and deployed (ADR 0010): "Use your own video" on the landing page, `#/upload`, browser extraction in `apps/web/src/upload.ts`, relay in `services/relay` (Vercel project `pausal-relay`, https://pausal-relay.vercel.app/api/chunk). Secrets are set by the author with `bash services/relay/set-secrets.sh`. Redeploy the relay: `pnpm --filter @pausal/relay build`, then `npx vercel deploy --prod --yes` in `services/relay/dist`.
+- Local: `node services/relay/src/dev.ts` (port 8787) with the web dev server.
+- Open: Turnstile bot check; Alibaba retention for plain API calls still unconfirmed (docs/data-sources.md); relay products lack short names.
+
 ## Launch (2026-11-24 late night, read first)
 - The site ships with one clip only, Tears of Steel (`9d34e8c24976`, 3:00, `aiGenerated: false`); the AI clips are dropped. Manifest schema now takes `aiGenerated` as a boolean; "AI-generated" shows only when true; the watch screen links "Film excerpt, credits" to the attribution page, which credits the film (CC BY 3.0). The video is committed in `apps/web/public/media/`.
 - Analysis cost $0.02 (69 scenes). Under the old rules only 2.2 percent of pause times gave an ad, so the author chose ADR 0009 (2026-11-25): an ad is held back only when both judges say unsafe, relevance floor 50, rule 3b jevFitP 0.4, and the look-back shows the current product when every scene in it is an ad. Re-analysed under the new gate (2026-11-25, $0.02): 18.6 percent of pause times, 21 of 69 scenes, every ad with a tagline. Then the author set relevance to 65: 5.3 percent of pause times, 8 of 69 scenes. Product list rows read "Relevance: N" and "Bid: $x". The eval guardrail is a warning, not a CI failure; the fixture's violent scene now shows an ad.

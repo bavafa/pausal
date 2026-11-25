@@ -92,7 +92,7 @@ function imagePaths(): Map<string, string> {
   );
 }
 
-/** Uploads every slice image to R2 as products/<productId>.jpg, skipping objects already there, then checks one through the public URL. */
+/** Uploads every slice image to R2 as products/<productId>.jpg (skipping objects already there) and the catalog files for the relay, then checks one image through the public URL. */
 async function images(): Promise<void> {
   process.loadEnvFile(join(root, ".env"));
   const k = readR2Keys();
@@ -128,6 +128,18 @@ async function images(): Promise<void> {
     }
     if ((i + 1) % 1000 === 0) console.log(`images: ${i + 1}/${items.length}`);
   });
+  // The upload relay loads the slice and its vectors from here at start (docs/upload-plan.md).
+  for (const [f, type] of [["slice.json", "application/json"], ["index.json", "application/json"], ["index.f32", "application/octet-stream"]] as const) {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        await r2Put(k, `catalog/${f}`, new Uint8Array(readFileSync(join(cat, f))), type, "public, max-age=3600");
+        break;
+      } catch (e) {
+        if (attempt >= 4) throw e;
+        await new Promise((r) => setTimeout(r, 2000 * attempt));
+      }
+    }
+  }
   const sample = `${k.publicUrl}/products/${items[0]?.id}.jpg`;
   const res = await fetch(sample);
   const type = res.headers.get("content-type");

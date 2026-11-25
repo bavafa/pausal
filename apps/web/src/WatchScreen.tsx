@@ -29,9 +29,11 @@ type Props = {
   /** A real pause opened the pause view; a seek while paused is not a new pause. */
   onPause: (entry: PauseEntry) => void;
   onViewProduct: (productId: string) => void;
+  /** Replaces the credit line, for an uploaded video: analysis progress or an error. */
+  note?: string;
 };
 
-export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }: Props) {
+export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct, note }: Props) {
   const video = useRef<HTMLVideoElement>(null);
   /** Media time (ms) of the last presented frame from requestVideoFrameCallback; null when unknown. */
   const frameMs = useRef<number | null>(null);
@@ -152,8 +154,8 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }:
       <p aria-live="polite" className="sr-only">
         {view ? announce(view) : ""}
       </p>
-      <p className="mt-2 text-label text-muted-foreground">
-        {clip.aiGenerated ? "AI-generated" : <a href="#/attribution" className="underline-offset-4 hover:underline">Film excerpt, credits</a>}
+      <p className="mt-2 text-label text-muted-foreground" {...(note ? { role: "status" } : {})}>
+        {note ?? (clip.aiGenerated ? "AI-generated" : <a href="#/attribution" className="underline-offset-4 hover:underline">Film excerpt, credits</a>)}
       </p>
       <EarningsTally log={pauses} clipId={clip.clipId} />
       <ScenePanel scene={rank.scene} />

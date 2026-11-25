@@ -45,8 +45,17 @@ export async function r2Has(k: R2Keys, key: string): Promise<boolean> {
   return true;
 }
 
-export async function r2Put(k: R2Keys, key: string, body: Uint8Array<ArrayBuffer>, contentType: string): Promise<void> {
+/** The object's bytes, or null when it does not exist. */
+export async function r2Get(k: R2Keys, key: string): Promise<Buffer | null> {
+  const { url, headers } = signedHeaders(k, "GET", key);
+  const res = await fetch(url, { headers });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`R2 GET ${key}: ${res.status}`);
+  return Buffer.from(await res.arrayBuffer());
+}
+
+export async function r2Put(k: R2Keys, key: string, body: Uint8Array<ArrayBuffer>, contentType: string, cacheControl = "public, max-age=31536000, immutable"): Promise<void> {
   const { url, headers } = signedHeaders(k, "PUT", key);
-  const res = await fetch(url, { method: "PUT", headers: { ...headers, "content-type": contentType, "cache-control": "public, max-age=31536000, immutable" }, body });
+  const res = await fetch(url, { method: "PUT", headers: { ...headers, "content-type": contentType, "cache-control": cacheControl }, body });
   if (!res.ok) throw new Error(`R2 PUT ${key}: ${res.status} ${await res.text()}`);
 }

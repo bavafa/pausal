@@ -1,0 +1,19 @@
+{
+  "name": "@pausal/relay",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build && node -e \"require('fs').writeFileSync('dist/package.json', '{\\\"type\\\":\\\"module\\\"}');require('fs').copyFileSync('vercel.json','dist/vercel.json')\"",
+    "typecheck": "tsc --noEmit",
+    "dev": "node src/dev.ts"
+  },
+  "dependencies": {
+    "@pausal/bundle-schema": "workspace:*",
+    "@pausal/pipeline": "workspace:*",
+    "@pausal/policy": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "8.3.8"
+  }
+}

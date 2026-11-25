@@ -24,6 +24,7 @@ export function AttributionPage() {
         </p>
         <p>Changes: Pausal uses a slice of the catalog, resizes the product images and adds generated text (taglines and reason lines).</p>
         <p>Amazon does not endorse this project.</p>
+        <p>Uploaded videos: one frame per second and the sound are analyzed by Alibaba Model Studio (Qwen) and TypeSafe (Jev) through a relay on Vercel. The file itself and the results are not kept.</p>
         <p>
           Sample clip: an excerpt (2:52 to 5:52, padded to 16:9) of <a className={LINK} target="_blank" rel="noreferrer" href={TOS}>Tears of Steel</a>, (CC) Blender Foundation,{" "}
           <a className={LINK} target="_blank" rel="noreferrer" href="https://mango.blender.org">mango.blender.org</a>, licensed under{" "}
