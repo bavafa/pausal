@@ -63,7 +63,7 @@ All ads, campaigns, bids and conversions are simulated and labeled as such in th
 ### F8. Uploads (off in the first release, samples only; no feature flag is built, only a library seam, see AD-13 in the architecture spine)
 - FR-18 The browser samples about 1 frame per second at about 512 px wide and extracts the audio, then sends only those to the server.
 - FR-19 The server analyzes, returns results and deletes its inputs. Nothing from uploads is stored or logged; only numeric results are cached by content hash with a short expiry.
-- FR-20 Limits: 5 minutes (raised from 2 on 2026-11-24), about 100 MB, MP4, MOV or WebM, 3 analyses per visitor per day.
+- FR-20 Limits: 3 minutes (set 2026-11-24), about 100 MB, MP4, MOV or WebM, 3 analyses per visitor per day.
 - FR-21 Before upload, a notice states that the viewer must own the video, that it is not kept, that DRM-protected files are unsupported, and that a text description of the clip is processed by third-party services, naming Jev and the Qwen provider.
 
 ### F9. Chunked analysis

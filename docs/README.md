@@ -21,3 +21,4 @@ Phase 2 to 4 outputs:
 - ADRs: `docs/adr/` (0001 to 0008)
 - Prompts for the 4 AI-generated sample clips: `docs/video-prompts.md`
 - Upload feature plan (draft): `docs/upload-plan.md`
+- Cloudflare R2 setup for product images: `docs/r2-setup.md`

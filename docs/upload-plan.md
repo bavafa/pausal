@@ -6,7 +6,7 @@ Status: draft for the author's approval, 2026-11-24. Turns on PRD F8 (FR-18 to F
 
 1. On the landing page, a second button next to "Try a clip": "Use your own video".
 2. A short notice (FR-21): you must own the video; it is not kept; DRM-protected files do not work; a text description of the clip goes to Jev and to Alibaba Model Studio (Qwen). One checkbox, then a file picker.
-3. The browser checks the file: MP4, MOV or WebM, at most 5 minutes and about 100 MB (FR-20, raised from 2 minutes on 2026-11-24 to match FR-1). A clear message if it fails.
+3. The browser checks the file: MP4, MOV or WebM, at most 3 minutes and about 100 MB (FR-20, set 2026-11-24). A clear message if it fails.
 4. The video starts playing at once from the visitor's own file. The scene panel says "Analyzing the first scenes…" until the first 20 seconds are done (FR-22), then fills in. Pauses work as on the sample clips; a pause on a scene that is not analyzed yet says "No ad here: analysis unavailable."
 5. Nothing is saved. Reloading the page drops the results.
 
@@ -53,7 +53,7 @@ Needs a host that runs a Node container with about 512 MB of memory and keeps a 
 | Hugging Face Spaces (Docker, CPU basic) | free | Secrets supported; sleeps when idle and wakes slowly; the Space page is public |
 | The author's Mac | free | Good for building and testing; not reachable by visitors |
 
-Model cost per 5-minute upload: roughly 5 to 15 cents, not yet measured (describe, two judges per scene, speech, embeddings, taglines). The daily cap bounds the total.
+Model cost per 3-minute upload: roughly 3 to 10 cents, not yet measured (describe, two judges per scene, speech, embeddings, taglines). The daily cap bounds the total.
 
 ## Build order (stories)
 
@@ -69,5 +69,5 @@ Stories 1 and 2 can be built in parallel. Rough size: 2 to 4 sessions in total.
 
 ## Decisions for the author
 - Host: Fly.io (recommended), Render, or local only for now.
-- Limits: 5 minutes and 100 MB (decided 2026-11-24); keep 3 per day?
+- Limits: 3 minutes and 100 MB (decided 2026-11-24); keep 3 per day?
 - Daily spend cap: suggested 2 USD.
