@@ -19,3 +19,6 @@ data/catalog/
 # Playwright output (Story 5.5)
 test-results/
 playwright-report/
+
+# TypeScript incremental build info
+*.tsbuildinfo
