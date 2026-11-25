@@ -6,7 +6,7 @@ Status: draft for the author's approval, 2026-11-24. Turns on PRD F8 (FR-18 to F
 
 1. On the landing page, a second button next to "Try a clip": "Use your own video".
 2. A short notice (FR-21): you must own the video; it is not kept; DRM-protected files do not work; a text description of the clip goes to Jev and to Alibaba Model Studio (Qwen). One checkbox, then a file picker.
-3. The browser checks the file: MP4, MOV or WebM, at most 2 minutes and about 100 MB (FR-20). A clear message if it fails.
+3. The browser checks the file: MP4, MOV or WebM, at most 5 minutes and about 100 MB (FR-20, raised from 2 minutes on 2026-11-24 to match FR-1). A clear message if it fails.
 4. The video starts playing at once from the visitor's own file. The scene panel says "Analyzing the first scenes…" until the first 20 seconds are done (FR-22), then fills in. Pauses work as on the sample clips; a pause on a scene that is not analyzed yet says "No ad here: analysis unavailable."
 5. Nothing is saved. Reloading the page drops the results.
 
@@ -38,7 +38,7 @@ The browser cannot call Qwen and Jev directly: the API keys would sit in the pag
 
 - Accept one chunk of frames and audio, run `analyzeClip` on it, and stream the scenes back (server-sent events).
 - Keep the catalog in memory: the 20,000 item slice (8 MB) and its vectors (39 MB). Return the product data for every product a scene picks.
-- Serve product images. The site on GitHub Pages only holds images for products in the sample clips, so the relay serves the 256 px images for the whole slice.
+- Product images: the site on GitHub Pages only holds images for products in the sample clips. The 256 px images for the whole slice (an estimated 300 MB) go to Cloudflare R2 (free up to 10 GB, no download fees), and the relay returns their URLs.
 - Limits: 3 analyses per visitor per day (keyed by a salted hash of the IP, kept in memory for 24 hours), a bot check (Cloudflare Turnstile, free) before the first chunk, and a daily spend cap through the existing `Ledger`. When the cap is reached, uploads close for the day with a plain message.
 - Privacy (FR-19): frames, audio and transcripts are held in memory for one request and dropped. No request bodies in logs. Only the numeric results are cached by content hash for one hour, so the same file twice costs nothing.
 - CORS allows only the Pages site and localhost.
@@ -50,9 +50,10 @@ Needs a host that runs a Node container with about 512 MB of memory and keeps a 
 |---|---|---|
 | Fly.io | about 2 to 5 USD a month for one small machine, can sleep when idle | Docker image, secrets, scales to zero; first request after sleep takes a few seconds |
 | Render | free tier sleeps after 15 minutes; 7 USD a month always on | Simple from GitHub, slower cold start |
+| Hugging Face Spaces (Docker, CPU basic) | free | Secrets supported; sleeps when idle and wakes slowly; the Space page is public |
 | The author's Mac | free | Good for building and testing; not reachable by visitors |
 
-Model cost per 2-minute upload, from the test clip runs: roughly a few cents (describe, two judges per scene, speech, embeddings, taglines). The daily cap bounds the total.
+Model cost per 5-minute upload: roughly 5 to 15 cents, not yet measured (describe, two judges per scene, speech, embeddings, taglines). The daily cap bounds the total.
 
 ## Build order (stories)
 
@@ -68,5 +69,5 @@ Stories 1 and 2 can be built in parallel. Rough size: 2 to 4 sessions in total.
 
 ## Decisions for the author
 - Host: Fly.io (recommended), Render, or local only for now.
-- Limits: keep 2 minutes, 100 MB, 3 per day?
+- Limits: 5 minutes and 100 MB (decided 2026-11-24); keep 3 per day?
 - Daily spend cap: suggested 2 USD.
