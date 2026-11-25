@@ -8,7 +8,7 @@ export type UploadState = { clip: Manifest; chunks: Decisions[]; doneMs: number;
 
 const LINK = "text-accent underline underline-offset-4";
 
-/** Reads frames and sound chunk by chunk and sends up to 3 chunks to the relay at once; each answer is added as it arrives. */
+/** Reads frames and sound chunk by chunk and sends up to 5 chunks to the relay at once; each answer is added as it arrives. */
 async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) => UploadState) => void) {
   const fail = (error: string) => update((s) => ({ ...s, error: s.error ?? error }));
   const url = URL.createObjectURL(file);
@@ -37,7 +37,7 @@ async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) 
       .catch((e: unknown) => fail(e instanceof Error && e.message !== "Failed to fetch" ? e.message : "The analysis service could not be reached."));
     inFlight.add(job);
     void job.finally(() => inFlight.delete(job));
-    if (inFlight.size >= 3) await Promise.race(inFlight);
+    if (inFlight.size >= 5) await Promise.race(inFlight);
   }
   await Promise.all(inFlight);
   URL.revokeObjectURL(url);
@@ -78,7 +78,7 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
       </a>
       <h1 className="mt-2 font-serif text-title">Try it on your own video</h1>
       <div className="mt-4 space-y-4 rounded-md border border-border bg-card p-4 md:p-6">
-        <p>Pick a clip from your phone. It starts playing straight away while the scenes are analyzed. A long video takes a few minutes to catch up, and a pause on a part that isn't done yet shows no ad.</p>
+        <p>Pick a clip from your phone. Pausal goes through it scene by scene first and shows you the progress. When it's done, press play and pause anywhere.</p>
         <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
           <li>Up to 3 minutes and 100 MB. MP4, MOV or WebM.</li>
           <li>The file itself is not uploaded. Only one frame per second and the sound go to Alibaba Model Studio (Qwen) and TypeSafe (Jev), and nothing is kept.</li>

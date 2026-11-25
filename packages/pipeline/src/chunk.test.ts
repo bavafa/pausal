@@ -14,7 +14,7 @@ const items: CatalogItem[] = [
   { id: "p2", name: "Lamp", productType: "LAMP", description: "A lamp.", keyFeatures: ["Warm light"], imageId: "i2" },
 ];
 const heard: string[] = [];
-const models: Models = { describe: async (_f, d) => `A cook at a counter with a flat pan.${d ? ` Speech: ${d}` : ""}`, embed: async () => [1, 0], tagline: async () => "A steady pan for everyday cooking.", jev: judge, qwen: judge };
+const models: Models = { describe: async (_f, d) => `A cook at a counter with a flat pan.${d ? ` Speech: ${d}` : ""}`, embed: async () => [1, 0], tagline: async () => "A steady pan for everyday cooking.", photoFits: async () => true, jev: judge, qwen: judge };
 const deps = {
   models,
   catalog: { items, vectors: new Float32Array([1, 0, 0, 1]), dims: 2 },

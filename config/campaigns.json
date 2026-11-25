@@ -1,9 +1,21 @@
 [
   {
     "active": true,
+    "bidCents": 145,
+    "budgetCents": 29000,
+    "productId": "B00005041T"
+  },
+  {
+    "active": true,
     "bidCents": 125,
     "budgetCents": 25000,
     "productId": "B00005041Y"
+  },
+  {
+    "active": true,
+    "bidCents": 148,
+    "budgetCents": 29600,
+    "productId": "B00005B2AE"
   },
   {
     "active": true,
@@ -12,22 +24,16 @@
     "productId": "B00006RVJH"
   },
   {
-    "active": false,
-    "bidCents": 66,
-    "budgetCents": 13200,
-    "productId": "B000E4BE0C"
-  },
-  {
-    "active": true,
-    "bidCents": 98,
-    "budgetCents": 19600,
-    "productId": "B000MFFCDI"
-  },
-  {
     "active": true,
     "bidCents": 100,
     "budgetCents": 20000,
     "productId": "B000MFGRBY"
+  },
+  {
+    "active": true,
+    "bidCents": 102,
+    "budgetCents": 20400,
+    "productId": "B000U60OMS"
   },
   {
     "active": false,
@@ -37,21 +43,21 @@
   },
   {
     "active": true,
-    "bidCents": 116,
-    "budgetCents": 23200,
-    "productId": "B000W99MOO"
-  },
-  {
-    "active": false,
-    "bidCents": 72,
-    "budgetCents": 14400,
-    "productId": "B000W9Z1V2"
+    "bidCents": 53,
+    "budgetCents": 10600,
+    "productId": "B000WA254M"
   },
   {
     "active": true,
     "bidCents": 89,
     "budgetCents": 17800,
     "productId": "B0014C2BGO"
+  },
+  {
+    "active": true,
+    "bidCents": 150,
+    "budgetCents": 30000,
+    "productId": "B0017U25A0"
   },
   {
     "active": true,
@@ -67,6 +73,12 @@
   },
   {
     "active": true,
+    "bidCents": 83,
+    "budgetCents": 16600,
+    "productId": "B001LF4HXY"
+  },
+  {
+    "active": true,
     "bidCents": 104,
     "budgetCents": 20800,
     "productId": "B002TLTE6Y"
@@ -79,27 +91,9 @@
   },
   {
     "active": true,
-    "bidCents": 57,
-    "budgetCents": 11400,
-    "productId": "B003ES61EE"
-  },
-  {
-    "active": true,
     "bidCents": 61,
     "budgetCents": 12200,
     "productId": "B003JBHQP4"
-  },
-  {
-    "active": false,
-    "bidCents": 125,
-    "budgetCents": 25000,
-    "productId": "B0041FJ1LY"
-  },
-  {
-    "active": true,
-    "bidCents": 150,
-    "budgetCents": 30000,
-    "productId": "B004GUT1R8"
   },
   {
     "active": true,
@@ -115,39 +109,39 @@
   },
   {
     "active": true,
-    "bidCents": 112,
-    "budgetCents": 22400,
-    "productId": "B005ZA76YI"
+    "bidCents": 59,
+    "budgetCents": 11800,
+    "productId": "B00FXNABPI"
   },
   {
-    "active": true,
+    "active": false,
     "bidCents": 70,
     "budgetCents": 14000,
-    "productId": "B008JA0EOA"
+    "productId": "B00I0VTOO4"
   },
   {
     "active": true,
-    "bidCents": 120,
-    "budgetCents": 24000,
-    "productId": "B00CF5OHZ2"
+    "bidCents": 146,
+    "budgetCents": 29200,
+    "productId": "B00IJSN2RI"
   },
   {
     "active": true,
-    "bidCents": 116,
-    "budgetCents": 23200,
-    "productId": "B00H3WGUAM"
+    "bidCents": 107,
+    "budgetCents": 21400,
+    "productId": "B00IJSQAP4"
+  },
+  {
+    "active": true,
+    "bidCents": 139,
+    "budgetCents": 27800,
+    "productId": "B00IJSQYRI"
   },
   {
     "active": true,
     "bidCents": 137,
     "budgetCents": 27400,
     "productId": "B00IXJMYEU"
-  },
-  {
-    "active": true,
-    "bidCents": 132,
-    "budgetCents": 26400,
-    "productId": "B00JJRLYNC"
   },
   {
     "active": true,
@@ -169,15 +163,21 @@
   },
   {
     "active": true,
+    "bidCents": 71,
+    "budgetCents": 14200,
+    "productId": "B00KPQN560"
+  },
+  {
+    "active": true,
     "bidCents": 86,
     "budgetCents": 17200,
     "productId": "B00LLJ58ME"
   },
   {
     "active": true,
-    "bidCents": 101,
-    "budgetCents": 20200,
-    "productId": "B00MFQ566K"
+    "bidCents": 56,
+    "budgetCents": 11200,
+    "productId": "B00MFQ4U9E"
   },
   {
     "active": true,
@@ -193,15 +193,21 @@
   },
   {
     "active": true,
+    "bidCents": 89,
+    "budgetCents": 17800,
+    "productId": "B00MY456QS"
+  },
+  {
+    "active": true,
     "bidCents": 110,
     "budgetCents": 22000,
     "productId": "B00NQ01A78"
   },
   {
-    "active": true,
-    "bidCents": 144,
-    "budgetCents": 28800,
-    "productId": "B00QGTMN7W"
+    "active": false,
+    "bidCents": 106,
+    "budgetCents": 21200,
+    "productId": "B00PL4PTEM"
   },
   {
     "active": true,
@@ -217,9 +223,27 @@
   },
   {
     "active": true,
+    "bidCents": 148,
+    "budgetCents": 29600,
+    "productId": "B00R3IGC68"
+  },
+  {
+    "active": true,
+    "bidCents": 144,
+    "budgetCents": 28800,
+    "productId": "B00R4YCKIK"
+  },
+  {
+    "active": true,
     "bidCents": 121,
     "budgetCents": 24200,
     "productId": "B00UG9HB1Q"
+  },
+  {
+    "active": true,
+    "bidCents": 86,
+    "budgetCents": 17200,
+    "productId": "B00XNKW45I"
   },
   {
     "active": true,
@@ -234,22 +258,10 @@
     "productId": "B010ULR5FG"
   },
   {
-    "active": true,
-    "bidCents": 74,
-    "budgetCents": 14800,
-    "productId": "B010ULR6J6"
-  },
-  {
     "active": false,
     "bidCents": 119,
     "budgetCents": 23800,
     "productId": "B011J4C9S6"
-  },
-  {
-    "active": true,
-    "bidCents": 83,
-    "budgetCents": 16600,
-    "productId": "B013HTPFKU"
   },
   {
     "active": true,
@@ -264,16 +276,10 @@
     "productId": "B0153TOMRY"
   },
   {
-    "active": true,
-    "bidCents": 124,
-    "budgetCents": 24800,
-    "productId": "B018FCZBMG"
-  },
-  {
     "active": false,
-    "bidCents": 136,
-    "budgetCents": 27200,
-    "productId": "B018FCZKR2"
+    "bidCents": 126,
+    "budgetCents": 25200,
+    "productId": "B015X2NI3K"
   },
   {
     "active": true,
@@ -289,39 +295,9 @@
   },
   {
     "active": true,
-    "bidCents": 69,
-    "budgetCents": 13800,
-    "productId": "B01B25NN64"
-  },
-  {
-    "active": true,
-    "bidCents": 121,
-    "budgetCents": 24200,
-    "productId": "B01DFA2IFG"
-  },
-  {
-    "active": true,
     "bidCents": 135,
     "budgetCents": 27000,
     "productId": "B01F78Y71M"
-  },
-  {
-    "active": true,
-    "bidCents": 98,
-    "budgetCents": 19600,
-    "productId": "B01F78Y7BW"
-  },
-  {
-    "active": true,
-    "bidCents": 121,
-    "budgetCents": 24200,
-    "productId": "B01G7QDWB4"
-  },
-  {
-    "active": true,
-    "bidCents": 76,
-    "budgetCents": 15200,
-    "productId": "B01HIXQMEO"
   },
   {
     "active": true,
@@ -331,15 +307,21 @@
   },
   {
     "active": true,
-    "bidCents": 123,
-    "budgetCents": 24600,
-    "productId": "B01LQX0P8Q"
+    "bidCents": 51,
+    "budgetCents": 10200,
+    "productId": "B01IWO1U72"
   },
   {
     "active": true,
     "bidCents": 96,
     "budgetCents": 19200,
     "productId": "B01LYTOTAP"
+  },
+  {
+    "active": true,
+    "bidCents": 116,
+    "budgetCents": 23200,
+    "productId": "B01MY6WPXG"
   },
   {
     "active": true,
@@ -355,27 +337,15 @@
   },
   {
     "active": true,
-    "bidCents": 94,
-    "budgetCents": 18800,
-    "productId": "B01N221WQ5"
-  },
-  {
-    "active": true,
     "bidCents": 106,
     "budgetCents": 21200,
     "productId": "B01N232Q8B"
   },
   {
     "active": true,
-    "bidCents": 108,
-    "budgetCents": 21600,
-    "productId": "B01N7QUOG0"
-  },
-  {
-    "active": true,
-    "bidCents": 76,
-    "budgetCents": 15200,
-    "productId": "B01NARU14M"
+    "bidCents": 125,
+    "budgetCents": 25000,
+    "productId": "B01N9C2PD3"
   },
   {
     "active": true,
@@ -385,21 +355,9 @@
   },
   {
     "active": true,
-    "bidCents": 81,
-    "budgetCents": 16200,
-    "productId": "B06XBXJBB6"
-  },
-  {
-    "active": true,
     "bidCents": 72,
     "budgetCents": 14400,
     "productId": "B06XGB5YMS"
-  },
-  {
-    "active": true,
-    "bidCents": 116,
-    "budgetCents": 23200,
-    "productId": "B06XZV3F8F"
   },
   {
     "active": true,
@@ -409,33 +367,15 @@
   },
   {
     "active": true,
-    "bidCents": 76,
-    "budgetCents": 15200,
-    "productId": "B0716YRXBF"
-  },
-  {
-    "active": true,
     "bidCents": 137,
     "budgetCents": 27400,
     "productId": "B0719H3LG2"
   },
   {
     "active": true,
-    "bidCents": 100,
-    "budgetCents": 20000,
-    "productId": "B071F9FBTD"
-  },
-  {
-    "active": true,
-    "bidCents": 56,
-    "budgetCents": 11200,
-    "productId": "B071FWJTTJ"
-  },
-  {
-    "active": true,
-    "bidCents": 100,
-    "budgetCents": 20000,
-    "productId": "B071HBC338"
+    "bidCents": 67,
+    "budgetCents": 13400,
+    "productId": "B071F6WK9H"
   },
   {
     "active": true,
@@ -445,27 +385,27 @@
   },
   {
     "active": true,
+    "bidCents": 97,
+    "budgetCents": 19400,
+    "productId": "B071LDM8NL"
+  },
+  {
+    "active": true,
     "bidCents": 99,
     "budgetCents": 19800,
     "productId": "B071PB9CRL"
   },
   {
     "active": true,
+    "bidCents": 136,
+    "budgetCents": 27200,
+    "productId": "B071W6RGSN"
+  },
+  {
+    "active": true,
     "bidCents": 103,
     "budgetCents": 20600,
     "productId": "B071W6RHDJ"
-  },
-  {
-    "active": true,
-    "bidCents": 82,
-    "budgetCents": 16400,
-    "productId": "B071WFKDY6"
-  },
-  {
-    "active": true,
-    "bidCents": 148,
-    "budgetCents": 29600,
-    "productId": "B071ZFFWFP"
   },
   {
     "active": true,
@@ -486,12 +426,6 @@
     "productId": "B072VBQB8G"
   },
   {
-    "active": false,
-    "bidCents": 86,
-    "budgetCents": 17200,
-    "productId": "B0735BN46S"
-  },
-  {
     "active": true,
     "bidCents": 134,
     "budgetCents": 26800,
@@ -505,15 +439,9 @@
   },
   {
     "active": true,
-    "bidCents": 81,
-    "budgetCents": 16200,
-    "productId": "B07374M8Q8"
-  },
-  {
-    "active": true,
-    "bidCents": 135,
-    "budgetCents": 27000,
-    "productId": "B07374P5NP"
+    "bidCents": 61,
+    "budgetCents": 12200,
+    "productId": "B07374K53C"
   },
   {
     "active": true,
@@ -541,33 +469,15 @@
   },
   {
     "active": true,
-    "bidCents": 124,
-    "budgetCents": 24800,
-    "productId": "B073771JBV"
-  },
-  {
-    "active": true,
     "bidCents": 87,
     "budgetCents": 17400,
     "productId": "B073776MS9"
   },
   {
     "active": true,
-    "bidCents": 144,
-    "budgetCents": 28800,
-    "productId": "B073G6NTJK"
-  },
-  {
-    "active": true,
-    "bidCents": 108,
-    "budgetCents": 21600,
-    "productId": "B073G947V8"
-  },
-  {
-    "active": true,
-    "bidCents": 136,
-    "budgetCents": 27200,
-    "productId": "B073G947WP"
+    "bidCents": 98,
+    "budgetCents": 19600,
+    "productId": "B073NZFTGF"
   },
   {
     "active": true,
@@ -577,9 +487,9 @@
   },
   {
     "active": true,
-    "bidCents": 51,
-    "budgetCents": 10200,
-    "productId": "B073NZGLJX"
+    "bidCents": 75,
+    "budgetCents": 15000,
+    "productId": "B073NZGLGM"
   },
   {
     "active": true,
@@ -601,57 +511,27 @@
   },
   {
     "active": true,
-    "bidCents": 53,
-    "budgetCents": 10600,
-    "productId": "B073NZPPRM"
-  },
-  {
-    "active": true,
     "bidCents": 147,
     "budgetCents": 29400,
     "productId": "B073NZQR8D"
   },
   {
     "active": true,
-    "bidCents": 96,
-    "budgetCents": 19200,
-    "productId": "B073NZS57Q"
+    "bidCents": 84,
+    "budgetCents": 16800,
+    "productId": "B073NZS56X"
   },
   {
     "active": true,
-    "bidCents": 64,
-    "budgetCents": 12800,
-    "productId": "B073NZSG24"
+    "bidCents": 80,
+    "budgetCents": 16000,
+    "productId": "B073NZSFV9"
   },
   {
     "active": true,
     "bidCents": 104,
     "budgetCents": 20800,
     "productId": "B073NZT572"
-  },
-  {
-    "active": false,
-    "bidCents": 58,
-    "budgetCents": 11600,
-    "productId": "B073NZT573"
-  },
-  {
-    "active": true,
-    "bidCents": 130,
-    "budgetCents": 26000,
-    "productId": "B073NZTB6X"
-  },
-  {
-    "active": true,
-    "bidCents": 80,
-    "budgetCents": 16000,
-    "productId": "B073NZTB87"
-  },
-  {
-    "active": true,
-    "bidCents": 50,
-    "budgetCents": 10000,
-    "productId": "B073NZTB8J"
   },
   {
     "active": true,
@@ -691,15 +571,9 @@
   },
   {
     "active": true,
-    "bidCents": 118,
-    "budgetCents": 23600,
-    "productId": "B073P117SF"
-  },
-  {
-    "active": true,
-    "bidCents": 62,
-    "budgetCents": 12400,
-    "productId": "B073P12PK4"
+    "bidCents": 126,
+    "budgetCents": 25200,
+    "productId": "B073NZXTRY"
   },
   {
     "active": true,
@@ -715,12 +589,6 @@
   },
   {
     "active": true,
-    "bidCents": 139,
-    "budgetCents": 27800,
-    "productId": "B073P13J4L"
-  },
-  {
-    "active": true,
     "bidCents": 83,
     "budgetCents": 16600,
     "productId": "B073P13J9K"
@@ -730,6 +598,12 @@
     "bidCents": 64,
     "budgetCents": 12800,
     "productId": "B073P13P7Q"
+  },
+  {
+    "active": true,
+    "bidCents": 142,
+    "budgetCents": 28400,
+    "productId": "B073P13Q5Z"
   },
   {
     "active": true,
@@ -751,9 +625,9 @@
   },
   {
     "active": true,
-    "bidCents": 90,
-    "budgetCents": 18000,
-    "productId": "B073P16J7Y"
+    "bidCents": 106,
+    "budgetCents": 21200,
+    "productId": "B073P16J7L"
   },
   {
     "active": true,
@@ -793,12 +667,6 @@
   },
   {
     "active": true,
-    "bidCents": 97,
-    "budgetCents": 19400,
-    "productId": "B073P17T9X"
-  },
-  {
-    "active": true,
     "bidCents": 79,
     "budgetCents": 15800,
     "productId": "B073P19B2D"
@@ -823,9 +691,27 @@
   },
   {
     "active": true,
+    "bidCents": 64,
+    "budgetCents": 12800,
+    "productId": "B073P19S7P"
+  },
+  {
+    "active": true,
     "bidCents": 93,
     "budgetCents": 18600,
     "productId": "B073P19TDR"
+  },
+  {
+    "active": true,
+    "bidCents": 138,
+    "budgetCents": 27600,
+    "productId": "B073P19TL4"
+  },
+  {
+    "active": true,
+    "bidCents": 95,
+    "budgetCents": 19000,
+    "productId": "B073P19TLD"
   },
   {
     "active": true,
@@ -852,22 +738,22 @@
     "productId": "B073P1BVDZ"
   },
   {
+    "active": true,
+    "bidCents": 103,
+    "budgetCents": 20600,
+    "productId": "B073P1CJS1"
+  },
+  {
+    "active": true,
+    "bidCents": 61,
+    "budgetCents": 12200,
+    "productId": "B073P1CJYS"
+  },
+  {
     "active": false,
     "bidCents": 139,
     "budgetCents": 27800,
     "productId": "B073P1CKJH"
-  },
-  {
-    "active": true,
-    "bidCents": 116,
-    "budgetCents": 23200,
-    "productId": "B073P1D981"
-  },
-  {
-    "active": true,
-    "bidCents": 86,
-    "budgetCents": 17200,
-    "productId": "B073P1F26D"
   },
   {
     "active": true,
@@ -894,16 +780,10 @@
     "productId": "B073P1GB9D"
   },
   {
-    "active": true,
-    "bidCents": 110,
-    "budgetCents": 22000,
-    "productId": "B073P1GGSL"
-  },
-  {
-    "active": true,
-    "bidCents": 127,
-    "budgetCents": 25400,
-    "productId": "B073P1H5W3"
+    "active": false,
+    "bidCents": 83,
+    "budgetCents": 16600,
+    "productId": "B073P1GFXV"
   },
   {
     "active": true,
@@ -925,27 +805,15 @@
   },
   {
     "active": true,
-    "bidCents": 121,
-    "budgetCents": 24200,
-    "productId": "B073P1H7MS"
-  },
-  {
-    "active": true,
-    "bidCents": 86,
-    "budgetCents": 17200,
-    "productId": "B073P1HRN3"
-  },
-  {
-    "active": true,
     "bidCents": 70,
     "budgetCents": 14000,
     "productId": "B073P1HXN8"
   },
   {
     "active": true,
-    "bidCents": 101,
-    "budgetCents": 20200,
-    "productId": "B073P1HY6W"
+    "bidCents": 149,
+    "budgetCents": 29800,
+    "productId": "B073P1HYBL"
   },
   {
     "active": true,
@@ -973,15 +841,21 @@
   },
   {
     "active": true,
+    "bidCents": 136,
+    "budgetCents": 27200,
+    "productId": "B073P1HZQM"
+  },
+  {
+    "active": true,
     "bidCents": 78,
     "budgetCents": 15600,
     "productId": "B073P1HZY6"
   },
   {
     "active": true,
-    "bidCents": 133,
-    "budgetCents": 26600,
-    "productId": "B073P1J8FB"
+    "bidCents": 105,
+    "budgetCents": 21000,
+    "productId": "B073P1JGM2"
   },
   {
     "active": false,
@@ -1015,12 +889,6 @@
   },
   {
     "active": true,
-    "bidCents": 115,
-    "budgetCents": 23000,
-    "productId": "B073P1JNVW"
-  },
-  {
-    "active": true,
     "bidCents": 97,
     "budgetCents": 19400,
     "productId": "B073P1JNZZ"
@@ -1045,6 +913,12 @@
   },
   {
     "active": true,
+    "bidCents": 116,
+    "budgetCents": 23200,
+    "productId": "B073P1LPHH"
+  },
+  {
+    "active": true,
     "bidCents": 84,
     "budgetCents": 16800,
     "productId": "B073P1N3GJ"
@@ -1063,21 +937,9 @@
   },
   {
     "active": true,
-    "bidCents": 84,
-    "budgetCents": 16800,
-    "productId": "B073P1S8VQ"
-  },
-  {
-    "active": true,
-    "bidCents": 133,
-    "budgetCents": 26600,
-    "productId": "B073P1VYM2"
-  },
-  {
-    "active": true,
-    "bidCents": 93,
-    "budgetCents": 18600,
-    "productId": "B073P1WWTS"
+    "bidCents": 101,
+    "budgetCents": 20200,
+    "productId": "B073P2N985"
   },
   {
     "active": true,
@@ -1087,9 +949,27 @@
   },
   {
     "active": true,
-    "bidCents": 61,
-    "budgetCents": 12200,
-    "productId": "B073P3S1NZ"
+    "bidCents": 102,
+    "budgetCents": 20400,
+    "productId": "B073P3NK7T"
+  },
+  {
+    "active": false,
+    "bidCents": 86,
+    "budgetCents": 17200,
+    "productId": "B073P3S1NX"
+  },
+  {
+    "active": true,
+    "bidCents": 124,
+    "budgetCents": 24800,
+    "productId": "B073P51211"
+  },
+  {
+    "active": true,
+    "bidCents": 115,
+    "budgetCents": 23000,
+    "productId": "B073P51233"
   },
   {
     "active": true,
@@ -1116,12 +996,6 @@
     "productId": "B073P5FLXP"
   },
   {
-    "active": false,
-    "bidCents": 77,
-    "budgetCents": 15400,
-    "productId": "B073P5FM7Y"
-  },
-  {
     "active": true,
     "bidCents": 85,
     "budgetCents": 17000,
@@ -1129,27 +1003,21 @@
   },
   {
     "active": true,
-    "bidCents": 116,
-    "budgetCents": 23200,
-    "productId": "B073P5KYG3"
+    "bidCents": 123,
+    "budgetCents": 24600,
+    "productId": "B073P5KN79"
+  },
+  {
+    "active": false,
+    "bidCents": 82,
+    "budgetCents": 16400,
+    "productId": "B073P5L2NC"
   },
   {
     "active": true,
     "bidCents": 150,
     "budgetCents": 30000,
     "productId": "B073P5MPWC"
-  },
-  {
-    "active": true,
-    "bidCents": 57,
-    "budgetCents": 11400,
-    "productId": "B073P5PZ1Z"
-  },
-  {
-    "active": false,
-    "bidCents": 89,
-    "budgetCents": 17800,
-    "productId": "B073P5PZ5G"
   },
   {
     "active": true,
@@ -1171,12 +1039,6 @@
   },
   {
     "active": true,
-    "bidCents": 150,
-    "budgetCents": 30000,
-    "productId": "B073P5SYY9"
-  },
-  {
-    "active": true,
     "bidCents": 124,
     "budgetCents": 24800,
     "productId": "B073P5SYYB"
@@ -1188,28 +1050,16 @@
     "productId": "B073P5SYYG"
   },
   {
-    "active": true,
-    "bidCents": 67,
-    "budgetCents": 13400,
-    "productId": "B073P5V2DC"
-  },
-  {
-    "active": true,
-    "bidCents": 66,
-    "budgetCents": 13200,
-    "productId": "B073P5V2G1"
-  },
-  {
-    "active": true,
-    "bidCents": 98,
-    "budgetCents": 19600,
-    "productId": "B073P5V2GJ"
-  },
-  {
     "active": false,
     "bidCents": 82,
     "budgetCents": 16400,
     "productId": "B073P5V2LX"
+  },
+  {
+    "active": true,
+    "bidCents": 61,
+    "budgetCents": 12200,
+    "productId": "B073P5V2MK"
   },
   {
     "active": true,
@@ -1225,6 +1075,30 @@
   },
   {
     "active": true,
+    "bidCents": 125,
+    "budgetCents": 25000,
+    "productId": "B073P5Y9J8"
+  },
+  {
+    "active": true,
+    "bidCents": 57,
+    "budgetCents": 11400,
+    "productId": "B073P5Y9SH"
+  },
+  {
+    "active": true,
+    "bidCents": 87,
+    "budgetCents": 17400,
+    "productId": "B073P5Y9ST"
+  },
+  {
+    "active": true,
+    "bidCents": 136,
+    "budgetCents": 27200,
+    "productId": "B073P63RQ5"
+  },
+  {
+    "active": true,
     "bidCents": 88,
     "budgetCents": 17600,
     "productId": "B073P63RQG"
@@ -1237,9 +1111,9 @@
   },
   {
     "active": true,
-    "bidCents": 104,
-    "budgetCents": 20800,
-    "productId": "B073P66TVD"
+    "bidCents": 63,
+    "budgetCents": 12600,
+    "productId": "B073P66DWD"
   },
   {
     "active": true,
@@ -1261,9 +1135,9 @@
   },
   {
     "active": true,
-    "bidCents": 143,
-    "budgetCents": 28600,
-    "productId": "B073P6HGK1"
+    "bidCents": 68,
+    "budgetCents": 13600,
+    "productId": "B073P6HGKB"
   },
   {
     "active": true,
@@ -1285,9 +1159,9 @@
   },
   {
     "active": true,
-    "bidCents": 149,
-    "budgetCents": 29800,
-    "productId": "B073P6HGVH"
+    "bidCents": 55,
+    "budgetCents": 11000,
+    "productId": "B073P6HGVM"
   },
   {
     "active": true,
@@ -1309,15 +1183,21 @@
   },
   {
     "active": true,
+    "bidCents": 139,
+    "budgetCents": 27800,
+    "productId": "B073P6TCQ9"
+  },
+  {
+    "active": true,
     "bidCents": 52,
     "budgetCents": 10400,
     "productId": "B073P6TCQL"
   },
   {
     "active": true,
-    "bidCents": 67,
-    "budgetCents": 13400,
-    "productId": "B073WGP8XN"
+    "bidCents": 77,
+    "budgetCents": 15400,
+    "productId": "B073WF6JMB"
   },
   {
     "active": true,
@@ -1339,21 +1219,21 @@
   },
   {
     "active": true,
+    "bidCents": 102,
+    "budgetCents": 20400,
+    "productId": "B0742DR7C2"
+  },
+  {
+    "active": true,
     "bidCents": 83,
     "budgetCents": 16600,
     "productId": "B07452H7DV"
   },
   {
-    "active": false,
-    "bidCents": 66,
-    "budgetCents": 13200,
-    "productId": "B074DX58B4"
-  },
-  {
     "active": true,
-    "bidCents": 141,
-    "budgetCents": 28200,
-    "productId": "B074DXZ9XB"
+    "bidCents": 62,
+    "budgetCents": 12400,
+    "productId": "B07454M93T"
   },
   {
     "active": true,
@@ -1387,21 +1267,21 @@
   },
   {
     "active": true,
-    "bidCents": 150,
-    "budgetCents": 30000,
-    "productId": "B074MXC3PN"
-  },
-  {
-    "active": false,
-    "bidCents": 149,
-    "budgetCents": 29800,
-    "productId": "B074VM8DGX"
+    "bidCents": 97,
+    "budgetCents": 19400,
+    "productId": "B074T2HCPH"
   },
   {
     "active": true,
-    "bidCents": 103,
-    "budgetCents": 20600,
-    "productId": "B074WG72S7"
+    "bidCents": 100,
+    "budgetCents": 20000,
+    "productId": "B074VMTP68"
+  },
+  {
+    "active": false,
+    "bidCents": 89,
+    "budgetCents": 17800,
+    "productId": "B074YSN64G"
   },
   {
     "active": false,
@@ -1411,15 +1291,9 @@
   },
   {
     "active": true,
-    "bidCents": 55,
-    "budgetCents": 11000,
-    "productId": "B074YW66FB"
-  },
-  {
-    "active": true,
-    "bidCents": 106,
-    "budgetCents": 21200,
-    "productId": "B074YWK77M"
+    "bidCents": 93,
+    "budgetCents": 18600,
+    "productId": "B074YWXJZ6"
   },
   {
     "active": true,
@@ -1429,9 +1303,9 @@
   },
   {
     "active": true,
-    "bidCents": 88,
-    "budgetCents": 17600,
-    "productId": "B075HRC94H"
+    "bidCents": 103,
+    "budgetCents": 20600,
+    "productId": "B07535PTMZ"
   },
   {
     "active": true,
@@ -1458,28 +1332,28 @@
     "productId": "B075HX5QDL"
   },
   {
+    "active": false,
+    "bidCents": 66,
+    "budgetCents": 13200,
+    "productId": "B075HXBCL5"
+  },
+  {
     "active": true,
     "bidCents": 54,
     "budgetCents": 10800,
     "productId": "B075HXJ6Q9"
   },
   {
-    "active": true,
-    "bidCents": 97,
-    "budgetCents": 19400,
-    "productId": "B075NP5K3L"
+    "active": false,
+    "bidCents": 70,
+    "budgetCents": 14000,
+    "productId": "B075HXSXNV"
   },
   {
     "active": true,
-    "bidCents": 92,
-    "budgetCents": 18400,
-    "productId": "B075QJDMR5"
-  },
-  {
-    "active": true,
-    "bidCents": 113,
-    "budgetCents": 22600,
-    "productId": "B075QMLS5J"
+    "bidCents": 76,
+    "budgetCents": 15200,
+    "productId": "B075R8PJFY"
   },
   {
     "active": true,
@@ -1495,9 +1369,21 @@
   },
   {
     "active": true,
+    "bidCents": 113,
+    "budgetCents": 22600,
+    "productId": "B075SYCPX5"
+  },
+  {
+    "active": true,
     "bidCents": 57,
     "budgetCents": 11400,
     "productId": "B075T4R6QB"
+  },
+  {
+    "active": true,
+    "bidCents": 111,
+    "budgetCents": 22200,
+    "productId": "B075T4SM1Y"
   },
   {
     "active": true,
@@ -1519,9 +1405,9 @@
   },
   {
     "active": true,
-    "bidCents": 51,
-    "budgetCents": 10200,
-    "productId": "B075X2LKMN"
+    "bidCents": 60,
+    "budgetCents": 12000,
+    "productId": "B075X2BH3Z"
   },
   {
     "active": true,
@@ -1549,6 +1435,12 @@
   },
   {
     "active": true,
+    "bidCents": 137,
+    "budgetCents": 27400,
+    "productId": "B075YLKB4B"
+  },
+  {
+    "active": true,
     "bidCents": 53,
     "budgetCents": 10600,
     "productId": "B075YLKB9G"
@@ -1567,9 +1459,21 @@
   },
   {
     "active": true,
-    "bidCents": 96,
-    "budgetCents": 19200,
-    "productId": "B075YLRJLP"
+    "bidCents": 58,
+    "budgetCents": 11600,
+    "productId": "B075YLPZ37"
+  },
+  {
+    "active": true,
+    "bidCents": 75,
+    "budgetCents": 15000,
+    "productId": "B075YLQTJ3"
+  },
+  {
+    "active": true,
+    "bidCents": 143,
+    "budgetCents": 28600,
+    "productId": "B075YLTF49"
   },
   {
     "active": true,
@@ -1582,6 +1486,12 @@
     "bidCents": 139,
     "budgetCents": 27800,
     "productId": "B075YLVQ7M"
+  },
+  {
+    "active": true,
+    "bidCents": 126,
+    "budgetCents": 25200,
+    "productId": "B075YLWP9X"
   },
   {
     "active": true,
@@ -1603,27 +1513,15 @@
   },
   {
     "active": true,
-    "bidCents": 57,
-    "budgetCents": 11400,
-    "productId": "B075YMJCH9"
+    "bidCents": 54,
+    "budgetCents": 10800,
+    "productId": "B075YMJCLS"
   },
   {
     "active": true,
-    "bidCents": 94,
-    "budgetCents": 18800,
-    "productId": "B075YMQC29"
-  },
-  {
-    "active": false,
-    "bidCents": 83,
-    "budgetCents": 16600,
-    "productId": "B075YSPG2K"
-  },
-  {
-    "active": false,
-    "bidCents": 92,
-    "budgetCents": 18400,
-    "productId": "B075YY1ZQP"
+    "bidCents": 70,
+    "budgetCents": 14000,
+    "productId": "B075YZ18WS"
   },
   {
     "active": true,
@@ -1633,45 +1531,9 @@
   },
   {
     "active": true,
-    "bidCents": 80,
-    "budgetCents": 16000,
-    "productId": "B075Z12712"
-  },
-  {
-    "active": true,
-    "bidCents": 150,
-    "budgetCents": 30000,
-    "productId": "B075ZR4TF7"
-  },
-  {
-    "active": true,
-    "bidCents": 93,
-    "budgetCents": 18600,
-    "productId": "B075ZR89V8"
-  },
-  {
-    "active": true,
-    "bidCents": 123,
-    "budgetCents": 24600,
-    "productId": "B075ZT4V5Y"
-  },
-  {
-    "active": true,
     "bidCents": 79,
     "budgetCents": 15800,
     "productId": "B075ZV5SLC"
-  },
-  {
-    "active": true,
-    "bidCents": 94,
-    "budgetCents": 18800,
-    "productId": "B07649QCS7"
-  },
-  {
-    "active": true,
-    "bidCents": 76,
-    "budgetCents": 15200,
-    "productId": "B07649QCVJ"
   },
   {
     "active": true,
@@ -1687,9 +1549,9 @@
   },
   {
     "active": true,
-    "bidCents": 136,
-    "budgetCents": 27200,
-    "productId": "B07649QTL9"
+    "bidCents": 139,
+    "budgetCents": 27800,
+    "productId": "B07649R7HF"
   },
   {
     "active": true,
@@ -1699,9 +1561,21 @@
   },
   {
     "active": true,
-    "bidCents": 102,
-    "budgetCents": 20400,
-    "productId": "B0764F4T7L"
+    "bidCents": 128,
+    "budgetCents": 25600,
+    "productId": "B0764B2W9C"
+  },
+  {
+    "active": true,
+    "bidCents": 50,
+    "budgetCents": 10000,
+    "productId": "B0764B2WB3"
+  },
+  {
+    "active": true,
+    "bidCents": 108,
+    "budgetCents": 21600,
+    "productId": "B0764DF6ZM"
   },
   {
     "active": true,
@@ -1713,7 +1587,19 @@
     "active": true,
     "bidCents": 61,
     "budgetCents": 12200,
+    "productId": "B076VF41DW"
+  },
+  {
+    "active": true,
+    "bidCents": 61,
+    "budgetCents": 12200,
     "productId": "B076VF43GG"
+  },
+  {
+    "active": true,
+    "bidCents": 104,
+    "budgetCents": 20800,
+    "productId": "B076VF4KRN"
   },
   {
     "active": true,
@@ -1723,15 +1609,15 @@
   },
   {
     "active": true,
+    "bidCents": 85,
+    "budgetCents": 17000,
+    "productId": "B076VXJBF7"
+  },
+  {
+    "active": true,
     "bidCents": 55,
     "budgetCents": 11000,
     "productId": "B076VYSRZQ"
-  },
-  {
-    "active": false,
-    "bidCents": 146,
-    "budgetCents": 29200,
-    "productId": "B076W134MV"
   },
   {
     "active": true,
@@ -1741,45 +1627,21 @@
   },
   {
     "active": true,
-    "bidCents": 97,
-    "budgetCents": 19400,
-    "productId": "B077115S2G"
-  },
-  {
-    "active": true,
-    "bidCents": 88,
-    "budgetCents": 17600,
-    "productId": "B077K1YH8Z"
-  },
-  {
-    "active": true,
     "bidCents": 85,
     "budgetCents": 17000,
     "productId": "B0787KRF9W"
+  },
+  {
+    "active": true,
+    "bidCents": 130,
+    "budgetCents": 26000,
+    "productId": "B07895WFQ2"
   },
   {
     "active": false,
     "bidCents": 78,
     "budgetCents": 15600,
     "productId": "B078GPHPRZ"
-  },
-  {
-    "active": true,
-    "bidCents": 136,
-    "budgetCents": 27200,
-    "productId": "B078H6565T"
-  },
-  {
-    "active": true,
-    "bidCents": 143,
-    "budgetCents": 28600,
-    "productId": "B078HD9TB7"
-  },
-  {
-    "active": true,
-    "bidCents": 110,
-    "budgetCents": 22000,
-    "productId": "B078HDCWXM"
   },
   {
     "active": false,
@@ -1795,15 +1657,9 @@
   },
   {
     "active": true,
-    "bidCents": 145,
-    "budgetCents": 29000,
-    "productId": "B078JF8588"
-  },
-  {
-    "active": true,
-    "bidCents": 139,
-    "budgetCents": 27800,
-    "productId": "B07913YXKW"
+    "bidCents": 150,
+    "budgetCents": 30000,
+    "productId": "B07913W2NR"
   },
   {
     "active": true,
@@ -1818,28 +1674,10 @@
     "productId": "B0791481RD"
   },
   {
-    "active": false,
-    "bidCents": 119,
-    "budgetCents": 23800,
-    "productId": "B079148G4R"
-  },
-  {
-    "active": false,
-    "bidCents": 83,
-    "budgetCents": 16600,
-    "productId": "B07914H942"
-  },
-  {
-    "active": false,
-    "bidCents": 75,
-    "budgetCents": 15000,
-    "productId": "B0797D6BV2"
-  },
-  {
-    "active": false,
-    "bidCents": 60,
-    "budgetCents": 12000,
-    "productId": "B0797JP1N8"
+    "active": true,
+    "bidCents": 82,
+    "budgetCents": 16400,
+    "productId": "B07914DF1V"
   },
   {
     "active": true,
@@ -1855,21 +1693,9 @@
   },
   {
     "active": true,
-    "bidCents": 137,
-    "budgetCents": 27400,
-    "productId": "B079DC5P8T"
-  },
-  {
-    "active": false,
-    "bidCents": 138,
-    "budgetCents": 27600,
-    "productId": "B079J7QWC7"
-  },
-  {
-    "active": true,
-    "bidCents": 57,
-    "budgetCents": 11400,
-    "productId": "B079J7RC7S"
+    "bidCents": 139,
+    "budgetCents": 27800,
+    "productId": "B079J7R9GD"
   },
   {
     "active": true,
@@ -1903,12 +1729,6 @@
   },
   {
     "active": true,
-    "bidCents": 118,
-    "budgetCents": 23600,
-    "productId": "B079LNFJQX"
-  },
-  {
-    "active": true,
     "bidCents": 131,
     "budgetCents": 26200,
     "productId": "B079LNL81L"
@@ -1932,10 +1752,28 @@
     "productId": "B079TS52ZG"
   },
   {
+    "active": false,
+    "bidCents": 90,
+    "budgetCents": 18000,
+    "productId": "B079TT4HP6"
+  },
+  {
     "active": true,
     "bidCents": 106,
     "budgetCents": 21200,
     "productId": "B079TYGFQW"
+  },
+  {
+    "active": true,
+    "bidCents": 67,
+    "budgetCents": 13400,
+    "productId": "B079V2H2Q2"
+  },
+  {
+    "active": true,
+    "bidCents": 66,
+    "budgetCents": 13200,
+    "productId": "B079V42BCD"
   },
   {
     "active": true,
@@ -1951,24 +1789,6 @@
   },
   {
     "active": true,
-    "bidCents": 100,
-    "budgetCents": 20000,
-    "productId": "B07B4VGZ7W"
-  },
-  {
-    "active": false,
-    "bidCents": 130,
-    "budgetCents": 26000,
-    "productId": "B07B4YS1QP"
-  },
-  {
-    "active": true,
-    "bidCents": 113,
-    "budgetCents": 22600,
-    "productId": "B07B4YVX7P"
-  },
-  {
-    "active": true,
     "bidCents": 95,
     "budgetCents": 19000,
     "productId": "B07B4YXXPZ"
@@ -1978,6 +1798,12 @@
     "bidCents": 108,
     "budgetCents": 21600,
     "productId": "B07B4ZP64M"
+  },
+  {
+    "active": true,
+    "bidCents": 78,
+    "budgetCents": 15600,
+    "productId": "B07B4ZXKFQ"
   },
   {
     "active": false,
@@ -1993,39 +1819,33 @@
   },
   {
     "active": true,
+    "bidCents": 116,
+    "budgetCents": 23200,
+    "productId": "B07B7J2VCD"
+  },
+  {
+    "active": true,
     "bidCents": 86,
     "budgetCents": 17200,
     "productId": "B07B8PXJJW"
   },
   {
-    "active": true,
-    "bidCents": 86,
-    "budgetCents": 17200,
-    "productId": "B07BDY9DHG"
-  },
-  {
-    "active": true,
-    "bidCents": 94,
-    "budgetCents": 18800,
-    "productId": "B07BF1HCFP"
-  },
-  {
-    "active": true,
-    "bidCents": 78,
-    "budgetCents": 15600,
-    "productId": "B07BHXZ1BR"
-  },
-  {
-    "active": true,
-    "bidCents": 98,
-    "budgetCents": 19600,
-    "productId": "B07CH7BYCZ"
+    "active": false,
+    "bidCents": 105,
+    "budgetCents": 21000,
+    "productId": "B07B8PXTR2"
   },
   {
     "active": true,
     "bidCents": 79,
     "budgetCents": 15800,
     "productId": "B07CJHLBH8"
+  },
+  {
+    "active": true,
+    "bidCents": 60,
+    "budgetCents": 12000,
+    "productId": "B07CWGN36P"
   },
   {
     "active": true,

@@ -1,6 +1,6 @@
 import { CATEGORIES, sceneId, type Analysis, type Int, type AnalysisScene, type Fit, type Thresholds } from "@pausal/bundle-schema";
-import { checkTagline, evaluateScene } from "@pausal/policy";
-import { CostCapError } from "./call.ts";
+import { checkTagline, evaluateScene, rankFits } from "@pausal/policy";
+import { CostCapError, mapLimit } from "./call.ts";
 import { distinctHits, toProduct, topK, type CatalogItem } from "./catalog.ts";
 import type { SceneJudge, SceneJudgment } from "./judge.ts";
 import { chunkOf, segment, type Span } from "./segment.ts";
@@ -21,6 +21,8 @@ export type Models = {
   describe(frames: string[], dialogue: string | undefined): Promise<string>;
   embed(text: string): Promise<number[]>;
   tagline(product: CatalogItem, description: string): Promise<string>;
+  /** Whether the product photo suits the scene (style and purpose), for the product about to be shown. */
+  photoFits(product: CatalogItem, description: string): Promise<boolean>;
   jev: SceneJudge;
   qwen: SceneJudge;
 };
@@ -73,15 +75,19 @@ export function passesTaglineGate(scene: AnalysisScene, t: Thresholds): boolean 
   return !failed.some((r) => r === "R1" || r === "R2" || r === "R5" || r === "R6");
 }
 
+/** Scenes analyzed at once. Model calls per scene stay in order; only the relevance blend needs earlier scenes, and it runs after. */
+const SCENE_LIMIT = 6;
+
+/** Most products whose photo is checked in one scene; each rejection moves the next product up. */
+const PHOTO_CHECKS = 3;
+
 /** Runs segment, describe, judge, retrieve, fit and tagline for one clip. Stage failures become typed scene errors (AD-22); a cost cap aborts the run. */
 export async function analyzeClip(input: ClipInput, models: Models, catalog: Catalog, opts: AnalyzeOptions, log: (s: string) => void = () => {}): Promise<Analysis> {
   const spans = segment(input.frames, input.dialogueCutsMs, input.durationMs, opts.sceneCapMs, opts.frameChangeThreshold);
-  const scenes: AnalysisScene[] = [];
-  const fitHistory: (Map<string, number> | undefined)[] = [];
 
-  for (const span of spans) {
+  // Pass 1, scenes in parallel: describe, judge, retrieve and the raw fit of each candidate.
+  const done = await mapLimit(spans, SCENE_LIMIT, async (span) => {
     const scene: AnalysisScene = { id: sceneId(span.startMs), startMs: span.startMs, endMs: span.endMs, chunk: chunkOf(span.startMs, opts.chunkMs), status: "ok", judgments: null, invalid: [] };
-    scenes.push(scene);
     const fail = (stage: string, e: unknown) => {
       if (e instanceof CostCapError) throw e;
       scene.status = "error";
@@ -103,8 +109,7 @@ export async function analyzeClip(input: ClipInput, models: Models, catalog: Cat
       scene.description = description;
     } catch (e) {
       fail("describe", e);
-      fitHistory.unshift(undefined);
-      continue;
+      return { scene, fit: undefined };
     }
 
     let jev: SceneJudgment | undefined;
@@ -128,29 +133,56 @@ export async function analyzeClip(input: ClipInput, models: Models, catalog: Cat
       const hits = distinctHits(topK(query, catalog.vectors, catalog.dims, opts.candidates * 5), catalog.items, catalog.vectors, catalog.dims, opts.candidates);
       const candidates = hits.map((h) => catalog.items[h.index] as CatalogItem);
       const fitP = await models.jev.judgeFit(description, candidates);
-      const current = new Map(candidates.map((c, i) => [c.id, fitP[i] as number]));
-      scene.fits = candidates.map(
-        (c, i): Fit => ({
-          productId: c.id,
-          jevFitP: fitP[i] as number,
-          embeddingSim: Math.max(-1, Math.min(1, (hits[i] as { sim: number }).sim)),
-          relevance: relevanceWithContext(fitP[i] as number, fitHistory.slice(0, 3), c.id),
-          matched: matchedFeatures(c.keyFeatures, description),
-        }),
-      );
-      fitHistory.unshift(current);
+      return { scene, fit: { candidates, hits, fitP, description } };
     } catch (e) {
-      fitHistory.unshift(undefined);
       fail("fit", e);
+      return { scene, fit: undefined };
+    }
+  });
+
+  // Pass 2, in scene order: relevance blends each fit with the same product in up to 3 earlier scenes.
+  const fitHistory: (Map<string, number> | undefined)[] = [];
+  for (const { scene, fit } of done) {
+    if (!fit) {
+      fitHistory.unshift(undefined);
       continue;
     }
+    const { candidates, hits, fitP, description } = fit;
+    scene.fits = candidates.map(
+      (c, i): Fit => ({
+        productId: c.id,
+        jevFitP: fitP[i] as number,
+        embeddingSim: Math.max(-1, Math.min(1, (hits[i] as { sim: number }).sim)),
+        relevance: relevanceWithContext(fitP[i] as number, fitHistory.slice(0, 3), c.id),
+        matched: matchedFeatures(c.keyFeatures, description),
+      }),
+    );
+    fitHistory.unshift(new Map(candidates.map((c, i) => [c.id, fitP[i] as number])));
+  }
 
-    if (scene.status === "ok" && passesTaglineGate(scene, opts.thresholds)) {
-      const top = [...scene.fits].sort((a, b) => b.relevance - a.relevance || (a.productId < b.productId ? -1 : 1))[0];
+  // Pass 3, scenes in parallel: a photo check on the product about to be shown, then a tagline for the top product.
+  await mapLimit(done, SCENE_LIMIT, async ({ scene, fit }) => {
+    if (fit && scene.status === "ok" && scene.fits && passesTaglineGate(scene, opts.thresholds)) {
+      // A rejected product drops out of the ranking (rankFits), so the next one up is checked, up to PHOTO_CHECKS per scene.
+      for (let n = 0; n < PHOTO_CHECKS; n++) {
+        const next = rankFits(scene.fits).find((r) => r.fit.photoCheck === undefined);
+        const item = next && next.relevance >= opts.thresholds.relevance ? catalog.items.find((i) => i.id === next.productId) : undefined;
+        if (!next || !item) break;
+        try {
+          next.fit.photoCheck = (await models.photoFits(item, fit.description)) ? "pass" : "fail";
+        } catch (e) {
+          // Fails open: the check is about fit, not safety, so an error leaves the product unchecked and shown.
+          if (e instanceof CostCapError) throw e;
+          log(`${scene.id}: photo check failed: ${message(e)}`);
+          break;
+        }
+        if (next.fit.photoCheck === "pass") break;
+      }
+      const top = rankFits(scene.fits)[0];
       const item = top && catalog.items.find((i) => i.id === top.productId);
       if (item) {
         try {
-          const tagline = (await models.tagline(item, description)).trim();
+          const tagline = (await models.tagline(item, fit.description)).trim();
           scene.tagline = tagline;
           scene.taglineCheck = checkTagline(tagline, toProduct(item)) ? "pass" : "fail";
         } catch (e) {
@@ -161,6 +193,7 @@ export async function analyzeClip(input: ClipInput, models: Models, catalog: Cat
       }
     }
     log(`${scene.id} ${scene.status} ${scene.sceneType?.primary ?? "-"} jev=${scene.judgments?.jev.verdict ?? "-"} qwen=${scene.judgments?.qwen.verdict ?? "-"}`);
-  }
+  });
+  const scenes = done.map((d) => d.scene);
   return { clipId: input.clipId, durationMs: input.durationMs as Int, models: opts.modelNames, scenes };
 }

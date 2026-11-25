@@ -41,7 +41,7 @@ test("each pause shows the resolvePause outcome within 500 ms, with no request a
       v.pause();
       const frameMs = Math.round(v.currentTime * 1000);
       for (;;) {
-        const text = document.querySelector(".bg-frozen-scrim")?.textContent ?? "";
+        const text = document.querySelector("[data-pause-overlay]")?.textContent ?? "";
         if (text) return { ms: performance.now() - t0, frameMs, text };
         if (performance.now() - t0 > 2000) return { ms: Infinity, frameMs, text };
         await new Promise((r) => requestAnimationFrame(r));

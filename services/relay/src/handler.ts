@@ -2,7 +2,7 @@
 // Privacy (FR-19): frames, audio, transcripts and descriptions stay in memory for the request; nothing from the body is logged.
 import { createHash } from "node:crypto";
 import { validateSceneTypes, validateThresholds } from "@pausal/bundle-schema";
-import type { CatalogItem } from "@pausal/pipeline/catalog.ts";
+import { withoutPlaceholders, type CatalogItem } from "@pausal/pipeline/catalog.ts";
 import { analyzeChunk, checkChunk, type ChunkRequest } from "@pausal/pipeline/chunk.ts";
 import { CostCapError, Ledger } from "@pausal/pipeline/call.ts";
 import { Jev, Qwen } from "@pausal/pipeline/clients.ts";
@@ -44,7 +44,7 @@ function catalog(base: string) {
     const m = meta as { model: string; dimensions: number; ids: string[] };
     const vectors = new Float32Array(buf);
     if (m.model !== cfg.models.embedding || vectors.length !== (items as unknown[]).length * m.dimensions) throw new Error("catalog index does not match the pipeline config");
-    return { items: items as CatalogItem[], vectors, dims: m.dimensions, shortNames: new Map(Object.entries(short as Record<string, string>)) };
+    return { ...withoutPlaceholders({ items: items as CatalogItem[], vectors, dims: m.dimensions }), shortNames: new Map(Object.entries(short as Record<string, string>)) };
   })().catch((e) => {
     catalogPromise = null;
     throw e;
@@ -96,7 +96,7 @@ export async function handle(req: Request): Promise<Response> {
   try {
     const cat = await catalog(r2.publicUrl);
     result = await analyzeChunk(chunk, {
-      models: makeModels(qwen, jev, cfg, sceneTypes),
+      models: makeModels(qwen, jev, cfg, sceneTypes, r2.publicUrl),
       catalog: cat,
       shortNames: cat.shortNames,
       opts: { ...cfg, thresholds, modelNames: cfg.models },

@@ -28,7 +28,12 @@ export function EarningsTally({ log, clipId }: { log: readonly PauseEntry[]; cli
         )}
       </button>
       {open && rows.length > 0 && (
-        <ol id={listId} className="mb-2 divide-y divide-border text-label">
+        <div id={listId}>
+        <p className="mb-1 text-label text-muted-foreground">
+          Advertisers pay per click: when you press View product (on a TV, when you scan the QR code). Showing an ad is free. The price is the bid,
+          scaled by how well the product fits the scene, and a second click on the same product is not charged.
+        </p>
+        <ol className="mb-2 divide-y divide-border text-label">
           {rows.map((r, i) => (
             <li key={i} className="grid gap-x-3 py-1.5 sm:grid-cols-[3.5rem_1fr_auto]">
               <span className="text-muted-foreground">
@@ -40,6 +45,7 @@ export function EarningsTally({ log, clipId }: { log: readonly PauseEntry[]; cli
             </li>
           ))}
         </ol>
+        </div>
       )}
     </section>
   );

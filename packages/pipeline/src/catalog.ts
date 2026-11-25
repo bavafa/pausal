@@ -11,12 +11,23 @@ const en = (v: Lang): string[] =>
 const MAX_FEATURE = 48;
 const MAX_FEATURES = 6;
 
-/** Maps one ABO listing line to a catalog item, or null when it has no English name, bullet or main image. */
+/** ABO main images that are an "Image Coming Soon" placeholder, not a photo; their products are never shown. */
+export const PLACEHOLDER_IMAGES: ReadonlySet<string> = new Set(["61kVdTXTJ4L"]);
+
+/** Drops placeholder-image items from a built slice and its vectors, so an index built before the filter needs no rebuild. */
+export function withoutPlaceholders<T extends { items: CatalogItem[]; vectors: Float32Array; dims: number }>(cat: T): T {
+  const keep = cat.items.flatMap((it, i) => (PLACEHOLDER_IMAGES.has(it.imageId) ? [] : [i]));
+  const vectors = new Float32Array(keep.length * cat.dims);
+  keep.forEach((i, j) => vectors.set(cat.vectors.subarray(i * cat.dims, (i + 1) * cat.dims), j * cat.dims));
+  return { ...cat, items: keep.map((i) => cat.items[i] as CatalogItem), vectors };
+}
+
+/** Maps one ABO listing line to a catalog item, or null when it has no English name, bullet or main image, or only a placeholder image. */
 export function toCatalogItem(r: Record<string, unknown>): CatalogItem | null {
   const name = en(r.item_name as Lang)[0];
   const bullets = en(r.bullet_point as Lang);
   const imageId = r.main_image_id;
-  if (!name || bullets.length === 0 || typeof imageId !== "string") return null;
+  if (!name || bullets.length === 0 || typeof imageId !== "string" || PLACEHOLDER_IMAGES.has(imageId)) return null;
   const short = [...en(r.color as Lang), ...en(r.material as Lang), ...en(r.style as Lang), ...bullets].filter((f) => f.length <= MAX_FEATURE);
   return {
     id: String(r.item_id),

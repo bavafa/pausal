@@ -24,9 +24,10 @@ export type SceneEvaluation = {
   split: SimulatedSplit | null;
 };
 
-/** Relevance (rounded) descending, ties by lower product ID; rank 1 is the top product (AD-18). */
+/** Relevance (rounded) descending, ties by lower product ID; rank 1 is the top product (AD-18). A product whose photo failed the scene check is never ranked. */
 export function rankFits(fits: readonly Fit[]): (Ranked & { fit: Fit })[] {
   return fits
+    .filter((fit) => fit.photoCheck !== "fail")
     .map((fit) => ({ productId: fit.productId, relevance: roundHalfUp(fit.relevance), fit }))
     .sort((a, b) => b.relevance - a.relevance || (a.productId < b.productId ? -1 : a.productId > b.productId ? 1 : 0));
 }

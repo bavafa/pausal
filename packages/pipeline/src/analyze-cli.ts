@@ -9,6 +9,7 @@ import { join, resolve } from "node:path";
 import { validateAnalysis, validateManifest, validateSceneTypes, validateThresholds } from "@pausal/bundle-schema";
 import { analyzeClip, type ClipInput } from "./analyze.ts";
 import { Ledger } from "./call.ts";
+import { withoutPlaceholders } from "./catalog.ts";
 import { loadCatalog } from "./catalog-cli.ts";
 import { Jev, Qwen, readKeys } from "./clients.ts";
 import { loadPipelineConfig } from "./config.ts";
@@ -89,7 +90,9 @@ try {
     };
   }
 
-  const models = makeModels(qwen, jev, cfg, sceneTypes);
+  const imageBase = process.env.R2_PUBLIC_URL;
+  if (!imageBase) throw new Error("R2_PUBLIC_URL is missing from .env; the photo check needs product images");
+  const models = makeModels(qwen, jev, cfg, sceneTypes, imageBase);
 
   const catalog = loadCatalog();
   if (catalog.meta.model !== cfg.models.embedding) throw new Error(`index was built with ${catalog.meta.model}, config pins ${cfg.models.embedding}; run pnpm abo build`);
@@ -97,7 +100,7 @@ try {
   const analysis = await analyzeClip(
     { clipId, durationMs, frames, dialogueCutsMs, ...(transcribe ? { transcribe } : {}) },
     models,
-    { items: catalog.items, vectors: catalog.vectors, dims: catalog.meta.dimensions },
+    withoutPlaceholders({ items: catalog.items, vectors: catalog.vectors, dims: catalog.meta.dimensions }),
     { ...cfg, thresholds, modelNames: Object.fromEntries(Object.entries(cfg.models).filter(([role]) => role !== "speech" || transcribe)) },
     (s) => console.log(s),
   );

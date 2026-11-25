@@ -1,7 +1,9 @@
+import { useMemo } from "react";
 import type { Manifest } from "@pausal/bundle-schema";
-import { assetUrl } from "./clips.ts";
+import { assetUrl, loadDecisions } from "./clips.ts";
 import { HeroDemo } from "./HeroDemo.tsx";
 import { clipHref } from "./route.ts";
+import { pauseShares, percent } from "./tradeoff.ts";
 
 const EYEBROW = "text-eyebrow uppercase tracking-[0.08em] text-accent font-semibold";
 const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
@@ -22,6 +24,8 @@ const minutes = (ms: number) => {
 const toClips = () => document.getElementById("clips")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
 export function ClipPicker({ clips }: { clips: Manifest[] }) {
+  // Computed from the shipped decisions, so the numbers always match what the clips do.
+  const shares = useMemo(() => pauseShares(clips.flatMap((c) => loadDecisions(c) ?? [])), [clips]);
   return (
     <main className="mx-auto max-w-5xl px-gutter-phone md:px-gutter-laptop">
       <section className="grid items-center gap-8 py-10 md:grid-cols-[1fr_1.15fr] md:py-16">
@@ -56,7 +60,8 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
         <h2 className={H2}>The one moment an ad doesn't interrupt anything</h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            Mid-roll ads cut in when the video decides. A pause is your decision. The picture is frozen, the story is on hold, and one product on screen costs you nothing.
+            Mid-roll ads cut in when the video decides. A pause is your decision, so the ad stays out of the way: it waits a beat, takes one corner of the
+            frame, and folds to the edge with one tap when you want the whole picture back.
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
             It only works if the product suits the moment. A frying pan belongs in a kitchen, not at a funeral. When nothing fits, or the scene is one no
@@ -79,6 +84,31 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             </p>
           </div>
         </div>
+        {shares.pauses > 0 && (
+          <div className="mt-6 rounded-md border border-border bg-card p-4">
+            <p className="text-label text-muted-foreground">The trade-off, with every sample clip paused every tenth of a second</p>
+            <dl className="mt-3 grid gap-4 sm:grid-cols-3">
+              <div>
+                <dt className="text-label text-muted-foreground">A generic pause ad</dt>
+                <dd className="font-serif text-[28px] leading-tight">100%</dd>
+                <dd className="text-label text-muted-foreground">of pauses show an ad, whatever is on screen</dd>
+              </div>
+              <div>
+                <dt className="text-label text-muted-foreground">Pausal</dt>
+                <dd className="font-serif text-[28px] leading-tight text-accent">{percent(shares.ad)}</dd>
+                <dd className="text-label text-muted-foreground">of pauses show an ad that fits the scene</dd>
+              </div>
+              <div>
+                <dt className="text-label text-muted-foreground">Held back</dt>
+                <dd className="font-serif text-[28px] leading-tight">{percent(100 - shares.ad)}</dd>
+                <dd className="text-label text-muted-foreground">
+                  {percent(shares.nothingFits)} nothing fit well, {percent(shares.sensitiveScene)} sensitive scene, {percent(shares.noActiveCampaign)} no active campaign
+                  {shares.analysisUnavailable > 0 && `, ${percent(shares.analysisUnavailable)} not analyzed`}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        )}
       </section>
 
       <section className="border-t border-border py-12">

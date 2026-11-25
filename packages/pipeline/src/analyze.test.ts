@@ -5,7 +5,7 @@ import thresholdsJson from "../../../config/thresholds.json" with { type: "json"
 import sceneTypesJson from "../../../config/scene-types.json" with { type: "json" };
 import { analyzeClip, matchedFeatures, passesTaglineGate, relevanceWithContext, type Models } from "./analyze.ts";
 import { CostCapError, Ledger } from "./call.ts";
-import { sliceCatalog, toCatalogItem, topK, type CatalogItem } from "./catalog.ts";
+import { sliceCatalog, toCatalogItem, topK, withoutPlaceholders, type CatalogItem } from "./catalog.ts";
 import { shuffled, type SceneJudge, type SceneJudgment } from "./judge.ts";
 import { chunkOf, segment } from "./segment.ts";
 
@@ -56,6 +56,7 @@ describe("catalog", () => {
   });
   it("keeps English listings with a bullet and an image, deduped by name in item ID order", () => {
     expect(toCatalogItem({ ...listing("a", "Kettle"), main_image_id: undefined })).toBeNull();
+    expect(toCatalogItem({ ...listing("a", "Kettle"), main_image_id: "61kVdTXTJ4L" })).toBeNull();
     expect(toCatalogItem(listing("a", "Ketel", { item_name: [{ language_tag: "nl_NL", value: "Ketel" }] }))).toBeNull();
     const items = ["c", "b", "a"].map((id) => toCatalogItem(listing(id, id === "a" ? "Pan" : "Kettle")) as CatalogItem);
     expect(sliceCatalog(items, 10).map((i) => i.id)).toEqual(["a", "b"]);
@@ -85,6 +86,7 @@ const baseModels = (over: Partial<Models> = {}): Models => ({
   describe: async (f) => `A cook at a kitchen counter with a flat pan (${f.length} frames).`,
   embed: async () => [1, 0],
   tagline: async () => "A steady pan for everyday cooking.",
+  photoFits: async () => true,
   jev: judge(async () => sj("safe")),
   qwen: judge(async () => sj("safe", "dining room")),
   ...over,
@@ -100,6 +102,37 @@ describe("analyzeClip", () => {
     expect(s.fits?.[0]).toMatchObject({ productId: "p1", jevFitP: 0.9, embeddingSim: 1, matched: ["Flat base"] });
     expect(s.tagline).toBe("A steady pan for everyday cooking.");
     expect(evaluateScene(s, thresholds, ok(validateCampaigns([{ productId: "p1", bidCents: 100, budgetCents: 100, active: true }]))).outcome).toBe("ad");
+  });
+
+  it("blends relevance in scene order even when a later scene finishes first", async () => {
+    // Scene 1 (frames 0-5) answers slowly with fit 0.2; scene 2 answers at once with fit 0.8.
+    const models = baseModels({
+      describe: async (f) => (f[0] === "frame0" ? new Promise((r) => setTimeout(() => r("slow scene"), 20)) : "fast scene"),
+      jev: judge(async () => sj("safe"), async (d, c) => c.map(() => (d === "slow scene" ? 0.2 : 0.8))),
+    });
+    const a = await analyzeClip({ clipId: "abcdef012345", durationMs: 12_000, frames, dialogueCutsMs: [] }, models, catalog, opts);
+    expect(a.scenes.map((s) => s.id)).toEqual(["s0000000", "s0006000"]);
+    expect(a.scenes[0]?.fits?.[0]?.relevance).toBeCloseTo(20);
+    expect(a.scenes[1]?.fits?.[0]?.relevance).toBeCloseTo(relevanceWithContext(0.8, [new Map([["p1", 0.2], ["p2", 0.2]])], "p1"));
+  });
+
+  it("drops a product whose photo does not suit the scene and checks the next one", async () => {
+    const checked: string[] = [];
+    const models = baseModels({ photoFits: async (item) => (checked.push(item.id), item.id !== "p1") });
+    const a = await analyzeClip({ clipId: "abcdef012345", durationMs: 6000, frames: frames.slice(0, 6), dialogueCutsMs: [] }, models, catalog, opts);
+    const s = a.scenes[0]!;
+    expect(checked).toEqual(["p1", "p2"]);
+    expect(s.fits?.find((f) => f.productId === "p1")?.photoCheck).toBe("fail");
+    expect(s.fits?.find((f) => f.productId === "p2")?.photoCheck).toBe("pass");
+    const v = ok(validateAnalysis(JSON.parse(JSON.stringify(a)), sceneTypes));
+    expect(evaluateScene(v.scenes[0]!, thresholds, ok(validateCampaigns([{ productId: "p2", bidCents: 100, budgetCents: 100, active: true }]))).ranked.map((r) => r.productId)).toEqual(["p2"]);
+  });
+
+  it("shows the product unchecked when the photo check errors", async () => {
+    const models = baseModels({ photoFits: async () => Promise.reject(new Error("HTTP 500")) });
+    const a = await analyzeClip({ clipId: "abcdef012345", durationMs: 6000, frames: frames.slice(0, 6), dialogueCutsMs: [] }, models, catalog, opts);
+    expect(a.scenes[0]?.fits?.every((f) => f.photoCheck === undefined)).toBe(true);
+    expect(a.scenes[0]?.tagline).toBeDefined();
   });
 
   it("fails a scene closed when a frame cannot be described, and never judges it", async () => {
@@ -156,5 +189,14 @@ describe("analyzeClip", () => {
     expect(at("safe", "safe", 0.1)).toBe(true);
     expect(at("unsafe", "caution")).toBe(true);
     expect(at("unsafe", "unsafe")).toBe(false);
+  });
+});
+
+describe("withoutPlaceholders", () => {
+  it("drops placeholder items and their vectors together", () => {
+    const item = (id: string, imageId: string): CatalogItem => ({ id, name: id, productType: "X", description: "", keyFeatures: [], imageId });
+    const out = withoutPlaceholders({ items: [item("a", "img1"), item("b", "61kVdTXTJ4L"), item("c", "img3")], vectors: new Float32Array([1, 1, 2, 2, 3, 3]), dims: 2 });
+    expect(out.items.map((i) => i.id)).toEqual(["a", "c"]);
+    expect([...out.vectors]).toEqual([1, 1, 3, 3]);
   });
 });
