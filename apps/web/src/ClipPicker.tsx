@@ -220,7 +220,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
       </section>
 
       <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border py-6 text-label text-muted-foreground">
-        <span>Ads, bids and earnings here are simulated.</span>
+        <span>All ads, bids and earnings here are simulated, for illustration only.</span>
         <a href="#/attribution" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
           Attribution
         </a>
