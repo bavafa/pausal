@@ -8,9 +8,9 @@ const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
 
 /** What happens between the click and the overlay. All of it is worked out before the page loads (AD-1). */
 const STEPS = [
-  ["Read the scene", "Pausal looks at the frame you stopped on and the second before it, so a sudden cut cannot slip an ad in."],
+  ["Read the scene", "Pausal looks at the frame you stopped on and the second before it, so a sudden cut from an unsafe scene cannot slip an ad in."],
   ["Check it is safe", "Two AI models check for violence, grief, sexual content, medical scenes, children and arguments. If both call the scene unsafe, there is no ad."],
-  ["Find a product", "Every product in the catalog is scored against the scene. Weak matches are dropped."],
+  ["Find a product", "Every product in the catalog gets a relevance score from 0 to 100 for the scene, and only a score of 60 or more is shown. A higher bar means more relevant ads, shown less often."],
   ["Show one ad, or say why not", "You see one product that fits, or a short note on why there is no ad."],
 ] as const;
 

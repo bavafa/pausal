@@ -15,8 +15,9 @@ export function sceneAt(decisions: Decisions, tMs: number): DecisionScene | null
 
 /**
  * Pause outcome at the displayed-frame time `tMs`. The set is the scene at `tMs` plus every earlier scene with
- * `endMs > tMs - LOOK_BACK_MS` (one ending exactly `LOOK_BACK_MS` before is out). An ad (the current scene's product) only when every scene
- * in the set is an ad; otherwise the first reason in `REASONS` order. Expects validated `decisions`.
+ * `endMs > tMs - LOOK_BACK_MS` (one ending exactly `LOOK_BACK_MS` before is out). Earlier scenes count only with a safety outcome
+ * (sensitive scene or analysis unavailable); a weak fit or missing campaign next door is no risk. An ad (the current scene's product)
+ * when nothing in the set blocks; otherwise the first reason in `REASONS` order. Expects validated `decisions`.
  */
 export function resolvePause(decisions: Decisions, tMs: number): PauseResult {
   const i = indexAt(decisions, tMs);
@@ -26,10 +27,10 @@ export function resolvePause(decisions: Decisions, tMs: number): PauseResult {
   for (let k = i - 1; k >= 0; k--) {
     const prev = decisions.scenes[k]!;
     if (prev.endMs <= tMs - LOOK_BACK_MS) break;
-    set.push(prev);
+    if (prev.outcome === "sensitiveScene" || prev.outcome === "analysisUnavailable") set.push(prev);
   }
   const reason = REASONS.find((r) => set.some((s) => s.outcome === r));
   if (reason) return { outcome: reason, scene };
-  // Every scene in the look-back is an ad, so the current scene's product is shown (ADR 0009).
+  // Nothing blocks, so the current scene's product is shown (ADR 0009, ADR 0011).
   return { outcome: "ad", scene };
 }

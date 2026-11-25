@@ -1612,7 +1612,7 @@
     {
       "endMs": 42000,
       "id": "s0040000",
-      "outcome": "nothingFits",
+      "outcome": "ad",
       "panel": {
         "contextLabel": {
           "primary": "workshop"
@@ -1621,7 +1621,10 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": null,
+      "price": {
+        "cents": 95,
+        "simulated": true
+      },
       "ranked": [
         {
           "bid": {
@@ -1708,8 +1711,13 @@
           "relevance": 33
         }
       ],
-      "split": null,
+      "split": {
+        "platformCents": 67,
+        "publisherCents": 28,
+        "simulated": true
+      },
       "startMs": 40000,
+      "tagline": "Modern tribal art print on cotton fiber paper with an oak hanger.",
       "topProductId": "B073P6HGTV"
     },
     {
@@ -3535,7 +3543,7 @@
     {
       "endMs": 100000,
       "id": "s0099000",
-      "outcome": "nothingFits",
+      "outcome": "ad",
       "panel": {
         "contextLabel": {
           "primary": "city street"
@@ -3544,7 +3552,10 @@
         "safeTag": "safe",
         "sentiment": 0.5
       },
-      "price": null,
+      "price": {
+        "cents": 55,
+        "simulated": true
+      },
       "ranked": [
         {
           "bid": {
@@ -3634,8 +3645,13 @@
           "relevance": 32
         }
       ],
-      "split": null,
+      "split": {
+        "platformCents": 39,
+        "publisherCents": 16,
+        "simulated": true
+      },
       "startMs": 99000,
+      "tagline": "Smooth glossy leather low-top trainers with contrasting brushed detail.",
       "topProductId": "B01MZ8FKBW"
     },
     {
@@ -7379,5 +7395,5 @@
       "topProductId": "B018FCZBMG"
     }
   ],
-  "thresholdsHash": "56ab722654b7efc4960bfb161229c7e6580f36cd7bdd8bfed33684aa8fa9875b"
+  "thresholdsHash": "d1983429ccf8ea54210f228f887f3005947874fa1cc72a1f4fc21bdbcb725712"
 }

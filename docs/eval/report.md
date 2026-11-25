@@ -13,7 +13,7 @@ Clip `000000000001` is the hand-made fixture. Its labels are test data written t
 | Guardrail | FAIL |
 | Ads on labeled unsafe pause times | 51 of 102 |
 | Labeled unsafe time | 10.0 s |
-| Agreement on top-product fit | 94.8 percent (183 of 193 pause times), target 80 percent: met |
+| Agreement on top-product fit | 100.0 percent (193 of 193 pause times), target 80 percent: met |
 | No-ad share | 60.1 percent of all pause times |
 | List stability | 6.86 reorders per minute |
 | Cost per clip minute | not recorded (no analysis file carries usage yet) |
@@ -40,7 +40,6 @@ An unsafe ad is an ad on time labeled unsafe. An unexpected ad is an ad where th
 | Clip | Time | Kind | What the app did |
 |---|---|---|---|
 | `000000000001` | 0:05.0 to 0:10.0 | unsafe ad | ad (fixture-pan) |
-| `000000000001` | 0:15.0 to 0:16.0 | unexpected no-ad | nothingFits (fixture-lamp) |
 | `000000000001` | 0:20.0 to 0:25.0 | unexpected no-ad | analysisUnavailable |
 | `000000000001` | 0:30.0 to 0:31.0 | unexpected no-ad | sensitiveScene (fixture-pan) |
 

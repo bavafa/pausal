@@ -30,7 +30,7 @@ describe("evaluate on the fixture", () => {
     expect(r.guardrail.pass).toBe(false);
     expect(r.unsafeAds).toBeGreaterThan(0);
     expect(r.joinedUnsafeSamples).toBeGreaterThan(0);
-    expect(r.failures.map((f) => f.kind)).toEqual(["unsafe ad", "unexpected no-ad", "unexpected no-ad", "unexpected no-ad"]);
+    expect(r.failures.map((f) => f.kind)).toEqual(["unsafe ad", "unexpected no-ad", "unexpected no-ad"]);
   });
 
   it("fails when an ad lands on a labeled unsafe time", () => {

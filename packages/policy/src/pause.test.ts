@@ -68,9 +68,14 @@ describe("resolvePause", () => {
     expect(r.outcome).toBe("ad");
     expect(r.scene?.topProductId).toBe("p1");
   });
-  it("lets the lowest reason beat an ad on either side of the boundary", () => {
+  it("lets the current scene's own reason beat an ad just before it", () => {
     expect(at(clip([0, 5000, "ad"], [5000, 9000, "noActiveCampaign"]), 5000).outcome).toBe("noActiveCampaign");
-    expect(at(clip([0, 5000, "noActiveCampaign"], [5000, 9000, "ad"]), 5000).outcome).toBe("noActiveCampaign");
+  });
+  it("ignores a weak fit or missing campaign in the look-back, but not a safety outcome (ADR 0011)", () => {
+    expect(at(clip([0, 5000, "noActiveCampaign"], [5000, 9000, "ad"]), 5000).outcome).toBe("ad");
+    expect(at(clip([0, 5000, "nothingFits"], [5000, 9000, "ad"]), 5000).outcome).toBe("ad");
+    expect(at(clip([0, 5000, "sensitiveScene"], [5000, 9000, "ad"]), 5000).outcome).toBe("sensitiveScene");
+    expect(at(clip([0, 5000, "analysisUnavailable"], [5000, 9000, "ad"]), 5000).outcome).toBe("analysisUnavailable");
   });
   it("returns the first reason in policy order", () => {
     expect(at(clip([0, 5000, "noActiveCampaign"], [5000, 9000, "nothingFits"]), 5000).outcome).toBe("nothingFits");
