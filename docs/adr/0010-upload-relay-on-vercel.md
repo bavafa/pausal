@@ -14,7 +14,7 @@ Visitors can now analyze their own video (up to 3 minutes and 100 MB). The brows
 - Nothing from a request body is logged or stored.
 
 ## Consequences
-- A 3-minute upload costs about 1 cent and is analyzed in roughly a minute and a half.
+- A 3-minute upload costs about 2 cents and is analyzed in about 3 to 4 minutes on Vercel (each 20 s chunk takes 30 to 90 s; 3 run at once). Measured on the live site, 2026-11-25.
 - Relevance history resets at each 20 s chunk boundary; products found for uploads have no short name.
 - Two chunks finishing together can undercount the daily spend by one chunk.
 - No bot check yet (Turnstile planned); the daily cap bounds the cost of abuse.
