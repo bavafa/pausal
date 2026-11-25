@@ -78,7 +78,7 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
       </a>
       <h1 className="mt-2 font-serif text-title">Use your own video</h1>
       <div className="mt-4 space-y-4 rounded-md border border-border bg-card p-4 md:p-6">
-        <p>Try Pausal on any short video. It starts playing right away, and Pausal works through it 20 seconds at a time while you watch.</p>
+        <p>Try Pausal on any short video. It plays right away while Pausal analyzes it in real time. Longer videos take a few minutes to finish, so a pause on a part that is not ready yet shows no ad.</p>
         <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
           <li>Any clip up to 3 minutes and 100 MB works, for example one from your phone (MP4, MOV or WebM).</li>
           <li>The video file is not uploaded. Pausal sends one frame per second and the sound to Alibaba Model Studio (Qwen) and TypeSafe (Jev) for analysis, and keeps nothing from your video.</li>
