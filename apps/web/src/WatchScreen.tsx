@@ -152,7 +152,9 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct }:
       <p aria-live="polite" className="sr-only">
         {view ? announce(view) : ""}
       </p>
-      <p className="mt-2 text-label text-muted-foreground">AI-generated</p>
+      <p className="mt-2 text-label text-muted-foreground">
+        {clip.aiGenerated ? "AI-generated" : <a href="#/attribution" className="underline-offset-4 hover:underline">Film excerpt, credits</a>}
+      </p>
       <EarningsTally log={pauses} clipId={clip.clipId} />
       <ScenePanel scene={rank.scene} />
       {list && <ProductList view={list} />}

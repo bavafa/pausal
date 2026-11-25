@@ -3,6 +3,12 @@
 Project-wide resume point. Update after every phase. Last updated: 2026-11-24 night. Phase 5: all 5 epics done; `main` not pushed until real sample clips are in. Next: sample clips (one Tears of Steel cut is ready), then the upload feature (`docs/upload-plan.md`). See "Latest".
 
 
+## Launch (2026-11-24 late night, read first)
+- The site ships with one clip only, Tears of Steel (`9d34e8c24976`, 3:00, `aiGenerated: false`); the AI clips are dropped. Manifest schema now takes `aiGenerated` as a boolean; "AI-generated" shows only when true; the watch screen links "Film excerpt, credits" to the attribution page, which credits the film (CC BY 3.0). The video is committed in `apps/web/public/media/`.
+- Analysis cost $0.02 (69 scenes): 10 ad scenes, 39 sensitive, 19 nothing fits. Only 2.2 percent of pause times give an ad (0 to 3 s, 157 to 158 s), because most sci-fi scenes are judged "caution" and short scenes with different products cancel out in the 1 s look-back. Open question for the user: loosen thresholds or accept it.
+- No labels for this clip yet (eval covers the fixture only).
+- R2: `pnpm abo images` uploads the slice images as `products/<productId>.jpg` (signing in `packages/pipeline/src/r2.ts`, retries per object, skips existing). Relay host still open.
+
 ## Latest (2026-11-24 night, read first)
 - `main` is clean and about 47 commits ahead of GitHub, not pushed. Last commit 999da0d. Untracked: `.claude/launch.json` only.
 - Rename finished: Pausal everywhere (package scope `@pausal/*`, Pages path `/pausal/`, `PAUSAL_MODE`, planning folders). GitHub repo is now `bavafa/pausal`; the first push deploys to https://bavafa.github.io/pausal/ (the old `/pausall/` URL does not redirect). The local folder is still `Pausall` (the author renames it outside a session). `local/test-clips` still has the old names; cherry-picks onto it will conflict.

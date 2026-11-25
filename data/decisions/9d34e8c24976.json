@@ -1,0 +1,7420 @@
+{
+  "analysisHash": "e562a86b1c30d4fad3ce1a25ce9f85c5e0cf0a271b186027ca757a19392cd9c1",
+  "campaignsHash": "d242b076d2fb3813158859c151c1efef4b6529fef18b58b616d017c429141dea",
+  "clipId": "9d34e8c24976",
+  "durationMs": 180000,
+  "holdMs": 5000,
+  "scenes": [
+    {
+      "endMs": 3000,
+      "id": "s0000000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "home office",
+          "secondary": "library"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 101,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B07374K53B",
+          "reason": "Fits a home office scene.",
+          "relevance": 62
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P1F2HM",
+          "reason": "Fits a home office scene.",
+          "relevance": 60
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a home office scene.",
+          "relevance": 56
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B0744WPXRY",
+          "reason": "Fits a home office scene.",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5SYYF",
+          "reason": "Fits a home office scene: Weathered White.",
+          "relevance": 52
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits a home office scene.",
+          "relevance": 50
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B07B4YXXPZ",
+          "reason": "Fits a home office scene: Distressed White.",
+          "relevance": 50
+        },
+        {
+          "bid": {
+            "cents": 126,
+            "simulated": true
+          },
+          "productId": "B075YLWP9X",
+          "reason": "Fits a home office scene.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B075YLVQ7M",
+          "reason": "Fits a home office scene.",
+          "relevance": 42
+        },
+        {
+          "bid": null,
+          "productId": "B078HGD5SN",
+          "reason": "Fits a home office scene.",
+          "relevance": 42
+        }
+      ],
+      "split": {
+        "platformCents": 71,
+        "publisherCents": 30,
+        "simulated": true
+      },
+      "startMs": 0,
+      "tagline": "Modern metal and glass sconce with a clean design for indoor use.",
+      "topProductId": "B07374K53B"
+    },
+    {
+      "endMs": 4000,
+      "id": "s0003000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": {
+        "cents": 89,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B0742DR7C2",
+          "reason": "Fits a conversation scene.",
+          "relevance": 75
+        },
+        {
+          "bid": null,
+          "productId": "B075X2LLWF",
+          "reason": "Fits a conversation scene: Metal base with glass shade.",
+          "relevance": 74
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B07374QFJ3",
+          "reason": "Fits a conversation scene: Table Lamp.",
+          "relevance": 73
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B0742D9X4R",
+          "reason": "Fits a conversation scene: Adds warm ambiance and style to your room.",
+          "relevance": 72
+        },
+        {
+          "bid": {
+            "cents": 134,
+            "simulated": true
+          },
+          "productId": "B07374C6R9",
+          "reason": "Fits a conversation scene.",
+          "relevance": 71
+        },
+        {
+          "bid": {
+            "cents": 70,
+            "simulated": true
+          },
+          "productId": "B073751DMJ",
+          "reason": "Fits a conversation scene.",
+          "relevance": 71
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B075X2LKPV",
+          "reason": "Fits a conversation scene.",
+          "relevance": 71
+        },
+        {
+          "bid": {
+            "cents": 113,
+            "simulated": true
+          },
+          "productId": "B07B4YVX7P",
+          "reason": "Fits a conversation scene.",
+          "relevance": 67
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B07B4YXXPZ",
+          "reason": "Fits a conversation scene.",
+          "relevance": 66
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B073751DMK",
+          "reason": "Fits a conversation scene: Metal base with linen shade.",
+          "relevance": 65
+        }
+      ],
+      "split": {
+        "platformCents": 63,
+        "publisherCents": 26,
+        "simulated": true
+      },
+      "startMs": 3000,
+      "tagline": "Bold modern design with a glass globe and linen shade.",
+      "topProductId": "B0742DR7C2"
+    },
+    {
+      "endMs": 5000,
+      "id": "s0004000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 134,
+            "simulated": true
+          },
+          "productId": "B07374C6R9",
+          "reason": "Fits a conversation scene.",
+          "relevance": 56
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B07374QFJ3",
+          "reason": "Fits a conversation scene.",
+          "relevance": 56
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B001JMUCP6",
+          "reason": "Fits a conversation scene: Living Room Furniture.",
+          "relevance": 55
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B0742D9X4R",
+          "reason": "Fits a conversation scene: Adds warm ambiance and style to your room.",
+          "relevance": 55
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P2N985",
+          "reason": "Fits a conversation scene.",
+          "relevance": 51
+        },
+        {
+          "bid": null,
+          "productId": "B078HGD5SN",
+          "reason": "Fits a conversation scene.",
+          "relevance": 39
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B06Y3564YR",
+          "reason": "Fits a conversation scene.",
+          "relevance": 37
+        },
+        {
+          "bid": null,
+          "productId": "B078HDDS9Y",
+          "reason": "Fits a conversation scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B078HDCWXM",
+          "reason": "Fits a conversation scene.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B0153TOMRY",
+          "reason": "Fits a conversation scene.",
+          "relevance": 34
+        }
+      ],
+      "split": null,
+      "startMs": 4000,
+      "topProductId": "B07374C6R9"
+    },
+    {
+      "endMs": 11000,
+      "id": "s0005000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation",
+          "secondary": "library"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "safe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 113,
+            "simulated": true
+          },
+          "productId": "B07B4YVX7P",
+          "reason": "Fits a conversation scene.",
+          "relevance": 59
+        },
+        {
+          "bid": {
+            "cents": 134,
+            "simulated": true
+          },
+          "productId": "B07374C6R9",
+          "reason": "Fits a conversation scene.",
+          "relevance": 58
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P2N985",
+          "reason": "Fits a conversation scene: Table Lamp.",
+          "relevance": 58
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B073P3S1NZ",
+          "reason": "Fits a conversation scene.",
+          "relevance": 58
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B075X2LKPV",
+          "reason": "Fits a conversation scene: White/Gray.",
+          "relevance": 58
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B07374QFJ3",
+          "reason": "Fits a conversation scene: Table Lamp.",
+          "relevance": 57
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits a conversation scene: Black finish frame, paper and glass.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 126,
+            "simulated": true
+          },
+          "productId": "B075YLWP9X",
+          "reason": "Fits a conversation scene: Rustic wood colored frame, paper and glass.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B06Y32W45T",
+          "reason": "Fits a conversation scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P19RVS",
+          "reason": "Fits a conversation scene.",
+          "relevance": 32
+        }
+      ],
+      "split": null,
+      "startMs": 5000,
+      "topProductId": "B07B4YVX7P"
+    },
+    {
+      "endMs": 17000,
+      "id": "s0011000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "horror",
+          "secondary": "living room"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 59,
+            "simulated": true
+          },
+          "productId": "B073P6KMTG",
+          "reason": "Fits a horror scene: A calming nature print at home in any style room.",
+          "relevance": 58
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B073P16R6Z",
+          "reason": "Fits a horror scene.",
+          "relevance": 55
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B07374QFJ3",
+          "reason": "Fits a horror scene: Table Lamp, For indoor use only.",
+          "relevance": 54
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073P1JNZZ",
+          "reason": "Fits a horror scene.",
+          "relevance": 52
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B07B4YXXPZ",
+          "reason": "Fits a horror scene: Intended for indoor use only.",
+          "relevance": 52
+        },
+        {
+          "bid": {
+            "cents": 134,
+            "simulated": true
+          },
+          "productId": "B07374C6R9",
+          "reason": "Fits a horror scene: Floor Lamp.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P5XJFM",
+          "reason": "Fits a horror scene.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a horror scene: A modern take on a nature theme, Ready to hang with hardware included..",
+          "relevance": 44
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B075YLPYY1",
+          "reason": "Fits a horror scene.",
+          "relevance": 40
+        },
+        {
+          "bid": null,
+          "productId": "B073P5L2S4",
+          "reason": "Fits a horror scene: A modern colorful print with a vintage twist.",
+          "relevance": 39
+        }
+      ],
+      "split": null,
+      "startMs": 11000,
+      "topProductId": "B073P6KMTG"
+    },
+    {
+      "endMs": 21000,
+      "id": "s0017000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street",
+          "secondary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B00006RVJH",
+          "reason": "Fits a city street scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B073P1H5Z3",
+          "reason": "Fits a city street scene: Vintage White, Urban, modern art treatment of vintage blueprint.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 146,
+            "simulated": true
+          },
+          "productId": "B073P1H6KJ",
+          "reason": "Fits a city street scene: Modern word art print of London street names.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Gold Metallic/White Frame, Modern print of vintage bicycle blueprint.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 73,
+            "simulated": true
+          },
+          "productId": "B075HX2J97",
+          "reason": "Fits a city street scene: Modern art canvas with hand painted details.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B073P1HRN3",
+          "reason": "Fits a city street scene: Gold Metallic/White Frame, Urban, modern art treatment of vintage blueprint.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073P5V2PN",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P19RVS",
+          "reason": "Fits a city street scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B073P6DSC4",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        }
+      ],
+      "split": null,
+      "startMs": 17000,
+      "topProductId": "B00006RVJH"
+    },
+    {
+      "endMs": 26000,
+      "id": "s0021000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation",
+          "secondary": "living room"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073WH7PZ7",
+          "reason": "Fits a conversation scene: Antique-look finish with modern 3D design, Glass, iron frame with black finish.",
+          "relevance": 48
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B071HBBDZ1",
+          "reason": "Fits a conversation scene: Modern design with rustic finishes.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 100,
+            "simulated": true
+          },
+          "productId": "B071HBC338",
+          "reason": "Fits a conversation scene: Modern design with rustic finishes.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 63,
+            "simulated": true
+          },
+          "productId": "B07B8NBQWM",
+          "reason": "Fits a conversation scene.",
+          "relevance": 44
+        },
+        {
+          "bid": {
+            "cents": 141,
+            "simulated": true
+          },
+          "productId": "B076HF77HC",
+          "reason": "Fits a conversation scene.",
+          "relevance": 43
+        },
+        {
+          "bid": {
+            "cents": 87,
+            "simulated": true
+          },
+          "productId": "B073WHB42L",
+          "reason": "Fits a conversation scene: Modern design with touch of glam, Glass, iron with gold finish.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B073WHB43V",
+          "reason": "Fits a conversation scene: Modern shapes with classic gold accents.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 120,
+            "simulated": true
+          },
+          "productId": "B073WHYS32",
+          "reason": "Fits a conversation scene: Modern design with touch of glam, Glass, iron with gold finish.",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B07374K538",
+          "reason": "Fits a conversation scene.",
+          "relevance": 40
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B07BL5VTQX",
+          "reason": "Fits a conversation scene.",
+          "relevance": 37
+        }
+      ],
+      "split": null,
+      "startMs": 21000,
+      "topProductId": "B073WH7PZ7"
+    },
+    {
+      "endMs": 29000,
+      "id": "s0026000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "action"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "unsafe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B00R3FK2BM",
+          "reason": "Fits an action scene: Insulated Letterman Jacket with Detachable Hood.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B00IXJMYEU",
+          "reason": "Fits an action scene: Full-time hood with one-hand adjustments.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B06XC27M9M",
+          "reason": "Fits an action scene: Combat Boots.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits an action scene: Ready to hang with hardware included..",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B073P1CJYS",
+          "reason": "Fits an action scene: Stone.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B073P1LM2L",
+          "reason": "Fits an action scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073P5V2PN",
+          "reason": "Fits an action scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits an action scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits an action scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B073P6DSC4",
+          "reason": "Fits an action scene.",
+          "relevance": 15
+        }
+      ],
+      "split": null,
+      "startMs": 26000,
+      "topProductId": "B00R3FK2BM"
+    },
+    {
+      "endMs": 33000,
+      "id": "s0029000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "fight or conflict",
+          "secondary": "crime"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "unsafe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B00UG9HB1Q",
+          "reason": "Fits a fight or conflict scene: Standalone Safe.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B076VYSRZQ",
+          "reason": "Fits a fight or conflict scene: Three-barrel hinge ensures a snug fit.",
+          "relevance": 16
+        },
+        {
+          "bid": null,
+          "productId": "B078HGD5SN",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B01DFA2IFG",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 100,
+            "simulated": true
+          },
+          "productId": "B000MFGRBY",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 13
+        },
+        {
+          "bid": null,
+          "productId": "B078HDDS9Y",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 127,
+            "simulated": true
+          },
+          "productId": "B073P1H5W3",
+          "reason": "Fits a fight or conflict scene: Ready to hang with hardware included..",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 114,
+            "simulated": true
+          },
+          "productId": "B079LFHRRW",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 12
+        },
+        {
+          "bid": null,
+          "productId": "B000UMFQU2",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 10
+        }
+      ],
+      "split": null,
+      "startMs": 29000,
+      "topProductId": "B00UG9HB1Q"
+    },
+    {
+      "endMs": 34000,
+      "id": "s0033000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B078HDCWXM",
+          "reason": "Fits a conversation scene.",
+          "relevance": 44
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B0742D9X4R",
+          "reason": "Fits a conversation scene: Adds warm ambiance and style to your room.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 132,
+            "simulated": true
+          },
+          "productId": "B073P1N48F",
+          "reason": "Fits a conversation scene: Ready to hang with hardware included..",
+          "relevance": 35
+        },
+        {
+          "bid": null,
+          "productId": "B00R3FK2BM",
+          "reason": "Fits a conversation scene: Insulated Letterman Jacket with Detachable Hood.",
+          "relevance": 33
+        },
+        {
+          "bid": null,
+          "productId": "B078HDDS9Y",
+          "reason": "Fits a conversation scene.",
+          "relevance": 32
+        },
+        {
+          "bid": null,
+          "productId": "B078HGD5SN",
+          "reason": "Fits a conversation scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 79,
+            "simulated": true
+          },
+          "productId": "B07CJHLBH8",
+          "reason": "Fits a conversation scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B00NQ01A78",
+          "reason": "Fits a conversation scene: Three button, knit collar polo with open sleeves.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B0153TOMRY",
+          "reason": "Fits a conversation scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B06Y3564YR",
+          "reason": "Fits a conversation scene.",
+          "relevance": 22
+        }
+      ],
+      "split": null,
+      "startMs": 33000,
+      "topProductId": "B078HDCWXM"
+    },
+    {
+      "endMs": 36000,
+      "id": "s0034000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P1GB9D",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B002TLTE6Y",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B075X41RLD",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 62,
+            "simulated": true
+          },
+          "productId": "B00LLJ55XG",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 79,
+            "simulated": true
+          },
+          "productId": "B010RLCH2U",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B071JM378P",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B00JZVPJD8",
+          "reason": "Fits a science fiction scene: Speaker.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a science fiction scene: Speaker, Contains one internal 3W speaker.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 93,
+            "simulated": true
+          },
+          "productId": "B071Y46N7J",
+          "reason": "Fits a science fiction scene: One-touch listening with NFC, Multicolored line light and flashing strobe.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 138,
+            "simulated": true
+          },
+          "productId": "B00JZVPC08",
+          "reason": "Fits a science fiction scene: Speaker.",
+          "relevance": 20
+        }
+      ],
+      "split": null,
+      "startMs": 34000,
+      "topProductId": "B073P1GB9D"
+    },
+    {
+      "endMs": 37000,
+      "id": "s0036000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "factory"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B07374QGD8",
+          "reason": "Fits a science fiction scene: Modern industrial.",
+          "relevance": 38
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B0716YRXBF",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B0719H3LG2",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B00006RVJH",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B06Y32W45T",
+          "reason": "Fits a science fiction scene: Dark Grey.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 109,
+            "simulated": true
+          },
+          "productId": "B072V9LHPS",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075R8Z654",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B075X12HYP",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B075X2LLX3",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        }
+      ],
+      "split": null,
+      "startMs": 36000,
+      "topProductId": "B07374QGD8"
+    },
+    {
+      "endMs": 38000,
+      "id": "s0037000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 87,
+            "simulated": true
+          },
+          "productId": "B071HSMDRP",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B07374QGD8",
+          "reason": "Fits a science fiction scene: Modern industrial.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B0719H3LG2",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 100,
+            "simulated": true
+          },
+          "productId": "B071F9FBTD",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B00006RVJH",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B075X12HYP",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 144,
+            "simulated": true
+          },
+          "productId": "B079VPP9V4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073NZFTH9",
+          "reason": "Fits a science fiction scene: Modern black and white photo of iconic subject.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 77,
+            "simulated": true
+          },
+          "productId": "B073WF6JMB",
+          "reason": "Fits a science fiction scene: White.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 129,
+            "simulated": true
+          },
+          "productId": "B07374K539",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        }
+      ],
+      "split": null,
+      "startMs": 37000,
+      "topProductId": "B071HSMDRP"
+    },
+    {
+      "endMs": 39000,
+      "id": "s0038000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "safe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B075HWJ4K7",
+          "reason": "Fits a science fiction scene: Abstract I, Printed canvas with hand painted details.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B073P1HYG3",
+          "reason": "Fits a science fiction scene: Abstract, Modern abstract art.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B075HX5QDL",
+          "reason": "Fits a science fiction scene: Abstract, Printed canvas with hand painted details.",
+          "relevance": 31
+        },
+        {
+          "bid": null,
+          "productId": "B073P1BVDZ",
+          "reason": "Fits a science fiction scene: Abstract, Abstract, modern print.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a science fiction scene: Modern art style with hand painted details.",
+          "relevance": 27
+        },
+        {
+          "bid": null,
+          "productId": "B073P1CKJH",
+          "reason": "Fits a science fiction scene: Abstract, Ready to hang with hardware included..",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a science fiction scene: Abstract, Ready to hang with hardware included..",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B075HX5QDJ",
+          "reason": "Fits a science fiction scene: Abstract, Printed canvas with hand painted details.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B073P1H7MS",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        }
+      ],
+      "split": null,
+      "startMs": 38000,
+      "topProductId": "B075HWJ4K7"
+    },
+    {
+      "endMs": 40000,
+      "id": "s0039000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 88,
+            "simulated": true
+          },
+          "productId": "B073P63RQG",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a science fiction scene: Modern art style with hand painted details.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B073P1H6CN",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 150,
+            "simulated": true
+          },
+          "productId": "B073P5MPWC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B073NZT572",
+          "reason": "Fits a science fiction scene: Brooklyn Bridge.",
+          "relevance": 15
+        },
+        {
+          "bid": null,
+          "productId": "B073P1LM2L",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 14
+        }
+      ],
+      "split": null,
+      "startMs": 39000,
+      "topProductId": "B073P63RQG"
+    },
+    {
+      "endMs": 42000,
+      "id": "s0040000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "crafting",
+          "secondary": "workshop"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B075HXSXNV",
+          "reason": "Fits a crafting scene.",
+          "relevance": 45
+        },
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B073P14C3L",
+          "reason": "Fits a crafting scene.",
+          "relevance": 40
+        },
+        {
+          "bid": {
+            "cents": 63,
+            "simulated": true
+          },
+          "productId": "B07B8NBQWM",
+          "reason": "Fits a crafting scene: glass.",
+          "relevance": 39
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a crafting scene: Ready to hang with hardware included..",
+          "relevance": 38
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P13J4K",
+          "reason": "Fits a crafting scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073NZS56X",
+          "reason": "Fits a crafting scene: Contemporary print of classic nature scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 50,
+            "simulated": true
+          },
+          "productId": "B073NZWZBT",
+          "reason": "Fits a crafting scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P19S7P",
+          "reason": "Fits a crafting scene: White, Ready to hang with hardware included..",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073G965X1",
+          "reason": "Fits a crafting scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 115,
+            "simulated": true
+          },
+          "productId": "B073P51233",
+          "reason": "Fits a crafting scene.",
+          "relevance": 30
+        }
+      ],
+      "split": null,
+      "startMs": 40000,
+      "topProductId": "B075HXSXNV"
+    },
+    {
+      "endMs": 43000,
+      "id": "s0042000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "living room"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B0153TOMRY",
+          "reason": "Fits a living room scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 79,
+            "simulated": true
+          },
+          "productId": "B07CJHLBH8",
+          "reason": "Fits a living room scene.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B06Y32W45T",
+          "reason": "Fits a living room scene: Dark Grey.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B07BHXZ1BR",
+          "reason": "Fits a living room scene: Light Grey.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075R8YZ9L",
+          "reason": "Fits a living room scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a living room scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 114,
+            "simulated": true
+          },
+          "productId": "B079LFHRRW",
+          "reason": "Fits a living room scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 131,
+            "simulated": true
+          },
+          "productId": "B079LNL81L",
+          "reason": "Fits a living room scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B074MX8VN5",
+          "reason": "Fits a living room scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 141,
+            "simulated": true
+          },
+          "productId": "B00JZVPKE6",
+          "reason": "Fits a living room scene.",
+          "relevance": 13
+        }
+      ],
+      "split": null,
+      "startMs": 42000,
+      "topProductId": "B0153TOMRY"
+    },
+    {
+      "endMs": 44000,
+      "id": "s0043000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B002TLTE6Y",
+          "reason": "Fits a science fiction scene: Extension Arms.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B075HX5QDL",
+          "reason": "Fits a science fiction scene: Printed canvas with hand painted details.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B01MS5X1T4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a science fiction scene: Photo print on paper with silver frame.",
+          "relevance": 21
+        },
+        {
+          "bid": null,
+          "productId": "B073P1CKJH",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1N4C4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1S8VQ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P19RVS",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        }
+      ],
+      "split": null,
+      "startMs": 43000,
+      "topProductId": "B002TLTE6Y"
+    },
+    {
+      "endMs": 50000,
+      "id": "s0044000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B075HX5QDL",
+          "reason": "Fits a science fiction scene: Printed canvas with hand painted details.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 142,
+            "simulated": true
+          },
+          "productId": "B073P17T1P",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075YM2V3Y",
+          "reason": "Fits a science fiction scene: Print on paper in frame with black finish.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B073P16R7Q",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 119,
+            "simulated": true
+          },
+          "productId": "B073P1LP93",
+          "reason": "Fits a science fiction scene: Modern photo print of a classic scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a science fiction scene: Photo print on paper with silver frame.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 16
+        }
+      ],
+      "split": null,
+      "startMs": 44000,
+      "topProductId": "B073NZWZLS"
+    },
+    {
+      "endMs": 51000,
+      "id": "s0050000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "park",
+          "secondary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B000W9Z1V2",
+          "reason": "Fits a park scene.",
+          "relevance": 49
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a park scene.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 116,
+            "simulated": true
+          },
+          "productId": "B000W99MOO",
+          "reason": "Fits a park scene.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073NZPNNL",
+          "reason": "Fits a park scene: Abstract art print of timeless scene.",
+          "relevance": 29
+        },
+        {
+          "bid": null,
+          "productId": "B078H1JC3C",
+          "reason": "Fits a park scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 75,
+            "simulated": true
+          },
+          "productId": "B075YLQTJ3",
+          "reason": "Fits a park scene: Black finish frame, paper and glass, Modern print of tropical scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a park scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a park scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B073P1H7MS",
+          "reason": "Fits a park scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073P5FM81",
+          "reason": "Fits a park scene.",
+          "relevance": 23
+        }
+      ],
+      "split": null,
+      "startMs": 50000,
+      "topProductId": "B000W9Z1V2"
+    },
+    {
+      "endMs": 53000,
+      "id": "s0051000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073NZPNNL",
+          "reason": "Fits a science fiction scene: Abstract art print of timeless scene.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a science fiction scene: Urban, modern art treatment of photo and words.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B073P16R6Z",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B073P6DSC4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073NZFTH9",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 72,
+            "simulated": true
+          },
+          "productId": "B073P1CJTZ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073P5V2PN",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 21
+        }
+      ],
+      "split": null,
+      "startMs": 51000,
+      "topProductId": "B073P1KFXW"
+    },
+    {
+      "endMs": 57500,
+      "id": "s0053000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "fight or conflict"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 52,
+            "simulated": true
+          },
+          "productId": "B073P6TCQL",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B073P5RRF9",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 24
+        },
+        {
+          "bid": null,
+          "productId": "B073P1BVDZ",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B00NQ01A78",
+          "reason": "Fits a fight or conflict scene: Three button, knit collar polo with open sleeves.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a fight or conflict scene: Ready to hang with hardware included..",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 136,
+            "simulated": true
+          },
+          "productId": "B073G947WP",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 92,
+            "simulated": true
+          },
+          "productId": "B073P1BJJD",
+          "reason": "Fits a fight or conflict scene: Ready to hang with hardware included..",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B073P1GG6D",
+          "reason": "Fits a fight or conflict scene: A modern, sophisticated addition to your room.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 119,
+            "simulated": true
+          },
+          "productId": "B073P1HYM7",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075R8YZ9L",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 20
+        }
+      ],
+      "split": null,
+      "startMs": 53000,
+      "topProductId": "B073P6TCQL"
+    },
+    {
+      "endMs": 62000,
+      "id": "s0057500",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "living room"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 52,
+            "simulated": true
+          },
+          "productId": "B073P6TCQL",
+          "reason": "Fits a living room scene: Print on paper, grey frame.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B076VGMFRY",
+          "reason": "Fits a living room scene: Ideal for living room, bedroom & offices.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B075YLPYY1",
+          "reason": "Fits a living room scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B07452H7DV",
+          "reason": "Fits a living room scene: Ideal for living room, bedroom & offices.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B075YLPZ37",
+          "reason": "Fits a living room scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B074MX8VN5",
+          "reason": "Fits a living room scene: Includes tip-over protection for extra safety.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B076VCHY3K",
+          "reason": "Fits a living room scene: Ideal for living room, bedroom & offices.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B076VF43GG",
+          "reason": "Fits a living room scene: Ideal for living room, bedroom & offices.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P1F2HM",
+          "reason": "Fits a living room scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 131,
+            "simulated": true
+          },
+          "productId": "B079LNL81L",
+          "reason": "Fits a living room scene: Easel back for shelf, tabletop or wall hanging..",
+          "relevance": 26
+        }
+      ],
+      "split": null,
+      "startMs": 57500,
+      "topProductId": "B073P6TCQL"
+    },
+    {
+      "endMs": 66000,
+      "id": "s0062000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 142,
+            "simulated": true
+          },
+          "productId": "B073P17T1P",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075YM2V3Y",
+          "reason": "Fits a science fiction scene: Print on paper in frame with black finish.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B073P1GB49",
+          "reason": "Fits a science fiction scene: Silver Metallic/Black Frame.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B073NZS57Q",
+          "reason": "Fits a science fiction scene: Modern photo print of a classic scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B073P1BVDP",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B073P6DSC4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B075HXJ6Q9",
+          "reason": "Fits a science fiction scene: Printed canvas with hand painted details.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B079HJWCH6",
+          "reason": "Fits a science fiction scene: Pack of three pairs.",
+          "relevance": 12
+        }
+      ],
+      "split": null,
+      "startMs": 62000,
+      "topProductId": "B073P17T1P"
+    },
+    {
+      "endMs": 73500,
+      "id": "s0066000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation",
+          "secondary": "living room"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "caution",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B0797D6BV2",
+          "reason": "Fits a conversation scene: Classic Silk Hand Rolled Pocket Square.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 136,
+            "simulated": true
+          },
+          "productId": "B071W6RGSN",
+          "reason": "Fits a conversation scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B013HTPFKU",
+          "reason": "Fits a conversation scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P1F2HM",
+          "reason": "Fits a conversation scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a conversation scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B073P15S5Z",
+          "reason": "Fits a conversation scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B00NQ01A78",
+          "reason": "Fits a conversation scene: Three button, knit collar polo with open sleeves.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B00JZVPJD8",
+          "reason": "Fits a conversation scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a conversation scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 51,
+            "simulated": true
+          },
+          "productId": "B00MPLLOSE",
+          "reason": "Fits a conversation scene.",
+          "relevance": 16
+        }
+      ],
+      "split": null,
+      "startMs": 66000,
+      "topProductId": "B0797D6BV2"
+    },
+    {
+      "endMs": 81000,
+      "id": "s0073500",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "fight or conflict"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "unsafe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 136,
+            "simulated": true
+          },
+          "productId": "B071W6RGSN",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B071W6RHDJ",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 146,
+            "simulated": true
+          },
+          "productId": "B00IJSL7WU",
+          "reason": "Fits a fight or conflict scene: Soon to be your favorite shirt, Golf fit - room for your swing.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 51,
+            "simulated": true
+          },
+          "productId": "B00MPLLOSE",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 148,
+            "simulated": true
+          },
+          "productId": "B00R3IGC68",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B00NQ01A78",
+          "reason": "Fits a fight or conflict scene: Three button, knit collar polo with open sleeves.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 99,
+            "simulated": true
+          },
+          "productId": "B071PB9CRL",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 119,
+            "simulated": true
+          },
+          "productId": "B073P1HYM7",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1N4C4",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 114,
+            "simulated": true
+          },
+          "productId": "B079LFHRRW",
+          "reason": "Fits a fight or conflict scene.",
+          "relevance": 12
+        }
+      ],
+      "split": null,
+      "startMs": 73500,
+      "topProductId": "B071W6RGSN"
+    },
+    {
+      "endMs": 86000,
+      "id": "s0081000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B074YSPPJN",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 26
+        },
+        {
+          "bid": null,
+          "productId": "B078GPHPRZ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B071W6RHDJ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073NZFTH9",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B073P6DSC4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B073NZS57Q",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 93,
+            "simulated": true
+          },
+          "productId": "B073P19TDR",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075YM2V3Y",
+          "reason": "Fits a science fiction scene: Print on paper in frame with black finish.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 12
+        }
+      ],
+      "split": null,
+      "startMs": 81000,
+      "topProductId": "B074YSPPJN"
+    },
+    {
+      "endMs": 87000,
+      "id": "s0086000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 71,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 87,
+            "simulated": true
+          },
+          "productId": "B073P5Y9ST",
+          "reason": "Fits a city street scene: Classic photo with modern printing technique.",
+          "relevance": 64
+        },
+        {
+          "bid": {
+            "cents": 149,
+            "simulated": true
+          },
+          "productId": "B073P1JNSY",
+          "reason": "Fits a city street scene: Green.",
+          "relevance": 63
+        },
+        {
+          "bid": {
+            "cents": 146,
+            "simulated": true
+          },
+          "productId": "B073P1H6KJ",
+          "reason": "Fits a city street scene: Modern word art print of London street names.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B073P6L986",
+          "reason": "Fits a city street scene: Modern photo mural of classic French scene.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B073P66W61",
+          "reason": "Fits a city street scene.",
+          "relevance": 40
+        },
+        {
+          "bid": {
+            "cents": 122,
+            "simulated": true
+          },
+          "productId": "B073P17T3P",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQ8JNK",
+          "reason": "Fits a city street scene.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 119,
+            "simulated": true
+          },
+          "productId": "B073P1LP93",
+          "reason": "Fits a city street scene: Modern photo print of a classic scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B073P5KN5N",
+          "reason": "Fits a city street scene: Contemporary print of classic European scene.",
+          "relevance": 25
+        }
+      ],
+      "split": {
+        "platformCents": 50,
+        "publisherCents": 21,
+        "simulated": true
+      },
+      "startMs": 86000,
+      "tagline": "Classic photo with modern printing technique on cotton paper.",
+      "topProductId": "B073P5Y9ST"
+    },
+    {
+      "endMs": 88000,
+      "id": "s0087000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 149,
+            "simulated": true
+          },
+          "productId": "B073P1JNSY",
+          "reason": "Fits a city street scene.",
+          "relevance": 50
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B073P6L986",
+          "reason": "Fits a city street scene: Modern photo mural of classic French scene.",
+          "relevance": 45
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B075HRFFRL",
+          "reason": "Fits a city street scene: Printed canvas with hand painted details.",
+          "relevance": 40
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B073P1HZY6",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073NZPNNL",
+          "reason": "Fits a city street scene: Abstract art print of timeless scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B073NZGLR7",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B075HXJ6Q9",
+          "reason": "Fits a city street scene: Printed canvas with hand painted details.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 79,
+            "simulated": true
+          },
+          "productId": "B073P19B2D",
+          "reason": "Fits a city street scene: Modern photo treatment of iconic structure.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B073P1F26D",
+          "reason": "Fits a city street scene.",
+          "relevance": 26
+        }
+      ],
+      "split": null,
+      "startMs": 87000,
+      "topProductId": "B073P1JNSY"
+    },
+    {
+      "endMs": 89000,
+      "id": "s0088000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street",
+          "secondary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "safe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene: Urban, modern art treatment of photo and words.",
+          "relevance": 43
+        },
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a city street scene: Photo print on paper with silver frame.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a city street scene: Modern art style with hand painted details.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a city street scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQ8JNK",
+          "reason": "Fits a city street scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B079LCR24S",
+          "reason": "Fits a city street scene: Frame photos and art prints with ease.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1N4C4",
+          "reason": "Fits a city street scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 50,
+            "simulated": true
+          },
+          "productId": "B073NZTB8J",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 71,
+            "simulated": true
+          },
+          "productId": "B073P5V2P4",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        }
+      ],
+      "split": null,
+      "startMs": 88000,
+      "topProductId": "B073NZQR8D"
+    },
+    {
+      "endMs": 93500,
+      "id": "s0089000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B075HRFFRL",
+          "reason": "Fits a city street scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a city street scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073P6HGVC",
+          "reason": "Fits a city street scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B075YMQC29",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P19RVS",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073P19S6V",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        },
+        {
+          "bid": null,
+          "productId": "B073P1BVDZ",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B073P1JNCB",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        }
+      ],
+      "split": null,
+      "startMs": 89000,
+      "topProductId": "B073P13P7Q"
+    },
+    {
+      "endMs": 98000,
+      "id": "s0093500",
+      "outcome": "noActiveCampaign",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B074F11NN3",
+          "reason": "Fits a city street scene: Green, Material Type: Canvas.",
+          "relevance": 61
+        },
+        {
+          "bid": null,
+          "productId": "B0791481RD",
+          "reason": "Fits a city street scene: Outer Material: Polyester, Lifestyle: Men's Casual Shoes.",
+          "relevance": 57
+        },
+        {
+          "bid": {
+            "cents": 117,
+            "simulated": true
+          },
+          "productId": "B073NZXTR9",
+          "reason": "Fits a city street scene.",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P5V2DC",
+          "reason": "Fits a city street scene.",
+          "relevance": 45
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073P66TV3",
+          "reason": "Fits a city street scene.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P58C1K",
+          "reason": "Fits a city street scene: Natural landscape with a modern twist.",
+          "relevance": 33
+        },
+        {
+          "bid": null,
+          "productId": "B075Z439L9",
+          "reason": "Fits a city street scene: Lt.Green, Outer Material: Leather.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B075YLKB4B",
+          "reason": "Fits a city street scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 89,
+            "simulated": true
+          },
+          "productId": "B073P6DSC4",
+          "reason": "Fits a city street scene.",
+          "relevance": 30
+        }
+      ],
+      "split": null,
+      "startMs": 93500,
+      "topProductId": "B074F11NN3"
+    },
+    {
+      "endMs": 99000,
+      "id": "s0098000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 109,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Gold Metallic/White Frame, Ready to hang with hardware included..",
+          "relevance": 61
+        },
+        {
+          "bid": {
+            "cents": 99,
+            "simulated": true
+          },
+          "productId": "B01MZ8FI89",
+          "reason": "Fits a city street scene: Smooth leather.",
+          "relevance": 60
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B073NZT572",
+          "reason": "Fits a city street scene: Brooklyn Bridge.",
+          "relevance": 57
+        },
+        {
+          "bid": null,
+          "productId": "B074F11NN3",
+          "reason": "Fits a city street scene: Green.",
+          "relevance": 54
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a city street scene.",
+          "relevance": 52
+        },
+        {
+          "bid": {
+            "cents": 66,
+            "simulated": true
+          },
+          "productId": "B073P5KN65",
+          "reason": "Fits a city street scene.",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 40
+        },
+        {
+          "bid": null,
+          "productId": "B07B6JZRPB",
+          "reason": "Fits a city street scene: Dark Tan.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 77,
+            "simulated": true
+          },
+          "productId": "B073NZTBB9",
+          "reason": "Fits a city street scene.",
+          "relevance": 34
+        },
+        {
+          "bid": null,
+          "productId": "B075Z439L9",
+          "reason": "Fits a city street scene: Lt.Green, Outer Material: Leather.",
+          "relevance": 33
+        }
+      ],
+      "split": {
+        "platformCents": 77,
+        "publisherCents": 32,
+        "simulated": true
+      },
+      "startMs": 98000,
+      "tagline": "Modern print of vintage bicycle blueprint in white frame.",
+      "topProductId": "B073P1H7CF"
+    },
+    {
+      "endMs": 100000,
+      "id": "s0099000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Modern print of vintage bicycle blueprint, Ready to hang with hardware included..",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a city street scene.",
+          "relevance": 45
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Light Blue.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073P5V2PN",
+          "reason": "Fits a city street scene.",
+          "relevance": 27
+        },
+        {
+          "bid": null,
+          "productId": "B07B8PXTR2",
+          "reason": "Fits a city street scene.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 70,
+            "simulated": true
+          },
+          "productId": "B073P1HXN8",
+          "reason": "Fits a city street scene: Modern print of classic beach scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a city street scene: Contemporary print of classic European scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B01N7SUPYY",
+          "reason": "Fits a city street scene: Blue, Velcro fastening with metallic detail.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B075YLKB4B",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        }
+      ],
+      "split": null,
+      "startMs": 99000,
+      "topProductId": "B073P1H7CF"
+    },
+    {
+      "endMs": 101000,
+      "id": "s0100000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 88,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B079TPGT94",
+          "reason": "Fits a city street scene.",
+          "relevance": 60
+        },
+        {
+          "bid": {
+            "cents": 112,
+            "simulated": true
+          },
+          "productId": "B075Z1MXFM",
+          "reason": "Fits a city street scene.",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 149,
+            "simulated": true
+          },
+          "productId": "B0791W6Q8B",
+          "reason": "Fits a city street scene.",
+          "relevance": 50
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B079TYGFQW",
+          "reason": "Fits a city street scene.",
+          "relevance": 50
+        },
+        {
+          "bid": null,
+          "productId": "B0791481RD",
+          "reason": "Fits a city street scene.",
+          "relevance": 49
+        },
+        {
+          "bid": {
+            "cents": 99,
+            "simulated": true
+          },
+          "productId": "B01MZ8FI89",
+          "reason": "Fits a city street scene.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B073NZT572",
+          "reason": "Fits a city street scene: Brooklyn Bridge.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 123,
+            "simulated": true
+          },
+          "productId": "B079V6B4NN",
+          "reason": "Fits a city street scene.",
+          "relevance": 44
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a city street scene.",
+          "relevance": 42
+        },
+        {
+          "bid": null,
+          "productId": "B07B6KHN13",
+          "reason": "Fits a city street scene.",
+          "relevance": 42
+        }
+      ],
+      "split": {
+        "platformCents": 62,
+        "publisherCents": 26,
+        "simulated": true
+      },
+      "startMs": 100000,
+      "tagline": "Canvas lace-up men's formal shoes with closed toe design",
+      "topProductId": "B079TPGT94"
+    },
+    {
+      "endMs": 102000,
+      "id": "s0101000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": {
+        "cents": 87,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B01N7QUOG0",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 61
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B074DYMB7X",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 59
+        },
+        {
+          "bid": {
+            "cents": 93,
+            "simulated": true
+          },
+          "productId": "B079TS52ZG",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 55
+        },
+        {
+          "bid": {
+            "cents": 99,
+            "simulated": true
+          },
+          "productId": "B01MZ8FI89",
+          "reason": "Fits a city street scene.",
+          "relevance": 51
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Light Blue.",
+          "relevance": 50
+        },
+        {
+          "bid": null,
+          "productId": "B0791481RD",
+          "reason": "Fits a city street scene.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B079TYGFQW",
+          "reason": "Fits a city street scene.",
+          "relevance": 43
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B01MT9QQ6Q",
+          "reason": "Fits a city street scene: Blue Kobalt.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 66,
+            "simulated": true
+          },
+          "productId": "B079V42BCD",
+          "reason": "Fits a city street scene.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 57,
+            "simulated": true
+          },
+          "productId": "B0791433FD",
+          "reason": "Fits a city street scene.",
+          "relevance": 40
+        }
+      ],
+      "split": {
+        "platformCents": 61,
+        "publisherCents": 26,
+        "simulated": true
+      },
+      "startMs": 101000,
+      "tagline": "Smooth glossy leather with contrasting brushed detail.",
+      "topProductId": "B01N7QUOG0"
+    },
+    {
+      "endMs": 103000,
+      "id": "s0102000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 50,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B079L8JS1G",
+          "reason": "Fits a city street scene.",
+          "relevance": 83
+        },
+        {
+          "bid": {
+            "cents": 112,
+            "simulated": true
+          },
+          "productId": "B01AW5UA02",
+          "reason": "Fits a city street scene.",
+          "relevance": 80
+        },
+        {
+          "bid": {
+            "cents": 109,
+            "simulated": true
+          },
+          "productId": "B074DZFCFT",
+          "reason": "Fits a city street scene: Light Blue.",
+          "relevance": 66
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B079TPGT94",
+          "reason": "Fits a city street scene.",
+          "relevance": 66
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B01N232Q8B",
+          "reason": "Fits a city street scene: Blue Kobalt.",
+          "relevance": 55
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B01HIXQMEO",
+          "reason": "Fits a city street scene.",
+          "relevance": 54
+        },
+        {
+          "bid": null,
+          "productId": "B0791481RD",
+          "reason": "Fits a city street scene.",
+          "relevance": 52
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B079TYGFQW",
+          "reason": "Fits a city street scene.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 138,
+            "simulated": true
+          },
+          "productId": "B06Y57GNY1",
+          "reason": "Fits a city street scene.",
+          "relevance": 45
+        },
+        {
+          "bid": {
+            "cents": 123,
+            "simulated": true
+          },
+          "productId": "B079V6B4NN",
+          "reason": "Fits a city street scene.",
+          "relevance": 44
+        }
+      ],
+      "split": {
+        "platformCents": 35,
+        "publisherCents": 15,
+        "simulated": true
+      },
+      "startMs": 102000,
+      "tagline": "Slim blue travel backpack with laptop sleeve for overnight trips",
+      "topProductId": "B079L8JS1G"
+    },
+    {
+      "endMs": 104000,
+      "id": "s0103000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street",
+          "secondary": "travel"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 83,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits a city street scene: Black finish frame, paper and glass.",
+          "relevance": 63
+        },
+        {
+          "bid": {
+            "cents": 110,
+            "simulated": true
+          },
+          "productId": "B079TPGT94",
+          "reason": "Fits a city street scene: Outer Material: Canvas.",
+          "relevance": 51
+        },
+        {
+          "bid": {
+            "cents": 138,
+            "simulated": true
+          },
+          "productId": "B073NZWZ5F",
+          "reason": "Fits a city street scene.",
+          "relevance": 49
+        },
+        {
+          "bid": {
+            "cents": 70,
+            "simulated": true
+          },
+          "productId": "B008JA0EOA",
+          "reason": "Fits a city street scene: Box chain with spring-ring clasp.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 134,
+            "simulated": true
+          },
+          "productId": "B07BHFTJGM",
+          "reason": "Fits a city street scene.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 70,
+            "simulated": true
+          },
+          "productId": "B073P1HXN8",
+          "reason": "Fits a city street scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073P6HGVC",
+          "reason": "Fits a city street scene.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a city street scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Outer Material: Leather.",
+          "relevance": 33
+        }
+      ],
+      "split": {
+        "platformCents": 59,
+        "publisherCents": 24,
+        "simulated": true
+      },
+      "startMs": 103000,
+      "tagline": "Bring calm to your home with this ready-to-hang black and white framed print.",
+      "topProductId": "B075YLKFB6"
+    },
+    {
+      "endMs": 105000,
+      "id": "s0104000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B01N7QUOG0",
+          "reason": "Fits a city street scene: Blue, Smooth, glossy leather finish.",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 39
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B073P66W61",
+          "reason": "Fits a city street scene.",
+          "relevance": 39
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B074DZFDCW",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 39
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B073P1HZY6",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073P6HGVC",
+          "reason": "Fits a city street scene: Modern photo mural of classic French scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Light Blue, Leather.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene: Urban, modern art treatment of photo and words.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQ8JNK",
+          "reason": "Fits a city street scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 98,
+            "simulated": true
+          },
+          "productId": "B075YZ1Z33",
+          "reason": "Fits a city street scene.",
+          "relevance": 28
+        }
+      ],
+      "split": null,
+      "startMs": 104000,
+      "topProductId": "B01N7QUOG0"
+    },
+    {
+      "endMs": 106000,
+      "id": "s0105000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 52
+        },
+        {
+          "bid": {
+            "cents": 130,
+            "simulated": true
+          },
+          "productId": "B073P5QJ3V",
+          "reason": "Fits a city street scene: Classic photo with modern printing technique.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 117,
+            "simulated": true
+          },
+          "productId": "B073NZXTR9",
+          "reason": "Fits a city street scene.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B073NZT572",
+          "reason": "Fits a city street scene: Brooklyn Bridge.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B073P66W61",
+          "reason": "Fits a city street scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073P6HGVC",
+          "reason": "Fits a city street scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a city street scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073P54PVV",
+          "reason": "Fits a city street scene.",
+          "relevance": 27
+        }
+      ],
+      "split": null,
+      "startMs": 105000,
+      "topProductId": "B073P1H7CF"
+    },
+    {
+      "endMs": 107000,
+      "id": "s0106000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 53
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B01N7QUOG0",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 51
+        },
+        {
+          "bid": {
+            "cents": 149,
+            "simulated": true
+          },
+          "productId": "B073P1JNSY",
+          "reason": "Fits a city street scene.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B074DZFDCW",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 130,
+            "simulated": true
+          },
+          "productId": "B073P5QJ3V",
+          "reason": "Fits a city street scene: Classic photo with modern printing technique.",
+          "relevance": 45
+        },
+        {
+          "bid": {
+            "cents": 122,
+            "simulated": true
+          },
+          "productId": "B073P17T3P",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B073P66W61",
+          "reason": "Fits a city street scene.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073P6HGVC",
+          "reason": "Fits a city street scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Light Blue.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 70,
+            "simulated": true
+          },
+          "productId": "B073P1HXN8",
+          "reason": "Fits a city street scene.",
+          "relevance": 26
+        }
+      ],
+      "split": null,
+      "startMs": 106000,
+      "topProductId": "B073P1H7CF"
+    },
+    {
+      "endMs": 108000,
+      "id": "s0107000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B01N7QUOG0",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 54
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 48
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B074DZFDCW",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 47
+        },
+        {
+          "bid": {
+            "cents": 149,
+            "simulated": true
+          },
+          "productId": "B073P1JNSY",
+          "reason": "Fits a city street scene.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B01MT9QQ6Q",
+          "reason": "Fits a city street scene: Blue Kobalt.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 122,
+            "simulated": true
+          },
+          "productId": "B073P17T3P",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Light Blue.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 142,
+            "simulated": true
+          },
+          "productId": "B073P5YXC9",
+          "reason": "Fits a city street scene.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B07914DF1V",
+          "reason": "Fits a city street scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073P6HGVC",
+          "reason": "Fits a city street scene: Modern photo mural of classic French scene.",
+          "relevance": 30
+        }
+      ],
+      "split": null,
+      "startMs": 107000,
+      "topProductId": "B01N7QUOG0"
+    },
+    {
+      "endMs": 112500,
+      "id": "s0108000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B01N7QUOG0",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 46
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B074DZFDCW",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 44
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B073P1H7CF",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 43
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B01MT9QQ6Q",
+          "reason": "Fits a city street scene: Blue Kobalt.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B075YLTFH9",
+          "reason": "Fits a city street scene: Modern photo print of tranquil water scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079T87YTZ",
+          "reason": "Fits a city street scene: Light Blue.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 93,
+            "simulated": true
+          },
+          "productId": "B079TS52ZG",
+          "reason": "Fits a city street scene: Blue.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a city street scene.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B07914DF1V",
+          "reason": "Fits a city street scene.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene.",
+          "relevance": 25
+        }
+      ],
+      "split": null,
+      "startMs": 108000,
+      "topProductId": "B01N7QUOG0"
+    },
+    {
+      "endMs": 117000,
+      "id": "s0112500",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 130,
+            "simulated": true
+          },
+          "productId": "B073P5QJ3V",
+          "reason": "Fits a city street scene: Classic photo with modern printing technique.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 150,
+            "simulated": true
+          },
+          "productId": "B07913TSSC",
+          "reason": "Fits a city street scene: Yellow.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 73,
+            "simulated": true
+          },
+          "productId": "B073P13J3C",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 104,
+            "simulated": true
+          },
+          "productId": "B073NZT572",
+          "reason": "Fits a city street scene: Brooklyn Bridge.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 101,
+            "simulated": true
+          },
+          "productId": "B073P1KFXW",
+          "reason": "Fits a city street scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene: Urban, modern art treatment of photo and words.",
+          "relevance": 22
+        },
+        {
+          "bid": null,
+          "productId": "B073P5V2DQ",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073NZFTH9",
+          "reason": "Fits a city street scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 98,
+            "simulated": true
+          },
+          "productId": "B073P1F34X",
+          "reason": "Fits a city street scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B073P6L986",
+          "reason": "Fits a city street scene.",
+          "relevance": 20
+        }
+      ],
+      "split": null,
+      "startMs": 112500,
+      "topProductId": "B073P5QJ3V"
+    },
+    {
+      "endMs": 123000,
+      "id": "s0117000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "crime"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "unsafe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B0153TOMRY",
+          "reason": "Fits a crime scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B06Y32W45T",
+          "reason": "Fits a crime scene.",
+          "relevance": 18
+        },
+        {
+          "bid": null,
+          "productId": "B073GCWSRW",
+          "reason": "Fits a crime scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B07BHXZ1BR",
+          "reason": "Fits a crime scene.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B00WRDRRWW",
+          "reason": "Fits a crime scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 116,
+            "simulated": true
+          },
+          "productId": "B06XZV3F8F",
+          "reason": "Fits a crime scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 57,
+            "simulated": true
+          },
+          "productId": "B075X25BYC",
+          "reason": "Fits a crime scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P19RVS",
+          "reason": "Fits a crime scene: Made to order.",
+          "relevance": 11
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B072VBQB8G",
+          "reason": "Fits a crime scene.",
+          "relevance": 10
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B074MX8VN5",
+          "reason": "Fits a crime scene.",
+          "relevance": 10
+        }
+      ],
+      "split": null,
+      "startMs": 117000,
+      "topProductId": "B0153TOMRY"
+    },
+    {
+      "endMs": 124000,
+      "id": "s0123000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B07535PTMZ",
+          "reason": "Fits a science fiction scene: Purple.",
+          "relevance": 38
+        },
+        {
+          "bid": null,
+          "productId": "B074YSPPJN",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B00JKQKAYG",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 148,
+            "simulated": true
+          },
+          "productId": "B00005B2AE",
+          "reason": "Fits a science fiction scene: Solid brass with green verdigris finish.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 135,
+            "simulated": true
+          },
+          "productId": "B07CWRYQZ6",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 112,
+            "simulated": true
+          },
+          "productId": "B005ZA76YI",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B07CWGN36P",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 127,
+            "simulated": true
+          },
+          "productId": "B0758LSDQH",
+          "reason": "Fits a science fiction scene: Green.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B07B8PXJJW",
+          "reason": "Fits a science fiction scene: Green.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 150,
+            "simulated": true
+          },
+          "productId": "B004GUT1R8",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        }
+      ],
+      "split": null,
+      "startMs": 123000,
+      "topProductId": "B07535PTMZ"
+    },
+    {
+      "endMs": 125000,
+      "id": "s0124000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": {
+        "cents": 51,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B075X2BH3Z",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 69
+        },
+        {
+          "bid": {
+            "cents": 57,
+            "simulated": true
+          },
+          "productId": "B075X25BYC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 57
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B07374K53C",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 48
+        },
+        {
+          "bid": {
+            "cents": 87,
+            "simulated": true
+          },
+          "productId": "B073776MS9",
+          "reason": "Fits a science fiction scene: Mini Table Lamp, Modern with classic touches.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B073P3NK7T",
+          "reason": "Fits a science fiction scene: Contemporary style with classic materials.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B001BQ8III",
+          "reason": "Fits a science fiction scene: White.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B073G947V8",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 131,
+            "simulated": true
+          },
+          "productId": "B001BQAK0C",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 27
+        },
+        {
+          "bid": null,
+          "productId": "B075X2LLWF",
+          "reason": "Fits a science fiction scene: Metal base with glass shade.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 112,
+            "simulated": true
+          },
+          "productId": "B073755HVV",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 25
+        }
+      ],
+      "split": {
+        "platformCents": 36,
+        "publisherCents": 15,
+        "simulated": true
+      },
+      "startMs": 124000,
+      "tagline": "Illuminate your workspace with a white table lamp featuring milk glass.",
+      "topProductId": "B075X2BH3Z"
+    },
+    {
+      "endMs": 127000,
+      "id": "s0125000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "safe",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B0058GH5TU",
+          "reason": "Fits a science fiction scene: Gray Blue.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 99,
+            "simulated": true
+          },
+          "productId": "B0058GH5BI",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B003JBHQP4",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 136,
+            "simulated": true
+          },
+          "productId": "B073G947WP",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B073P1BVDP",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 144,
+            "simulated": true
+          },
+          "productId": "B073G6NTJK",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B07649R7HF",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B00PL4PTEM",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B073P1JNL5",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 14
+        }
+      ],
+      "split": null,
+      "startMs": 125000,
+      "topProductId": "B0058GH5TU"
+    },
+    {
+      "endMs": 129000,
+      "id": "s0127000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a city street scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene: Urban, modern art treatment of photo and words.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 136,
+            "simulated": true
+          },
+          "productId": "B078H6565T",
+          "reason": "Fits a city street scene.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B00006RVJH",
+          "reason": "Fits a city street scene: Solar-powered outdoor lights, set of 4.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P13J4K",
+          "reason": "Fits a city street scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a city street scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073P5V2PN",
+          "reason": "Fits a city street scene: Weathered Grey.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 80,
+            "simulated": true
+          },
+          "productId": "B073NZSFV9",
+          "reason": "Fits a city street scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 72,
+            "simulated": true
+          },
+          "productId": "B073P1CJTZ",
+          "reason": "Fits a city street scene.",
+          "relevance": 18
+        }
+      ],
+      "split": null,
+      "startMs": 127000,
+      "topProductId": "B073P13P7Q"
+    },
+    {
+      "endMs": 130000,
+      "id": "s0129000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "park",
+          "secondary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a park scene: Modern art style with hand painted details.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a park scene: Ready to hang with hardware included..",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073P19S6V",
+          "reason": "Fits a park scene: Made to order.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQ8JNK",
+          "reason": "Fits a park scene: Made to order.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 121,
+            "simulated": true
+          },
+          "productId": "B073P1H7MS",
+          "reason": "Fits a park scene: Green, Made to order.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B073P1JNCB",
+          "reason": "Fits a park scene: Made to order.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 71,
+            "simulated": true
+          },
+          "productId": "B073P5V2P4",
+          "reason": "Fits a park scene: Made to order.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075YM2V3Y",
+          "reason": "Fits a park scene: Print on paper in frame with black finish.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073P1JNZZ",
+          "reason": "Fits a park scene: Green, Made to order.",
+          "relevance": 24
+        },
+        {
+          "bid": null,
+          "productId": "B073P1GB6N",
+          "reason": "Fits a park scene: Made to order.",
+          "relevance": 23
+        }
+      ],
+      "split": null,
+      "startMs": 129000,
+      "topProductId": "B075HWHWWK"
+    },
+    {
+      "endMs": 135000,
+      "id": "s0130000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 57,
+            "simulated": true
+          },
+          "productId": "B075X25BYC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 112,
+            "simulated": true
+          },
+          "productId": "B07649QSNR",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 38
+        },
+        {
+          "bid": {
+            "cents": 132,
+            "simulated": true
+          },
+          "productId": "B0764B2VDX",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 60,
+            "simulated": true
+          },
+          "productId": "B073G965X1",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 28
+        },
+        {
+          "bid": null,
+          "productId": "B011J4C9S6",
+          "reason": "Fits a science fiction scene: purple berry.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 98,
+            "simulated": true
+          },
+          "productId": "B000MFFCDI",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B06WWFZ9ZM",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B073P5RRF9",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B07649R7HF",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B07649QSR6",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 20
+        }
+      ],
+      "split": null,
+      "startMs": 130000,
+      "topProductId": "B075X25BYC"
+    },
+    {
+      "endMs": 136000,
+      "id": "s0135000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P1GB9D",
+          "reason": "Fits a science fiction scene: Gold Metallic/White Frame.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B073P1JNCB",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073P1JNZZ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 93,
+            "simulated": true
+          },
+          "productId": "B073P19TDR",
+          "reason": "Fits a science fiction scene: A modern take on a nature theme, Ready to hang with hardware included..",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B073P1GBGZ",
+          "reason": "Fits a science fiction scene: Contemporary, sophisticated treatment of nature.",
+          "relevance": 15
+        },
+        {
+          "bid": null,
+          "productId": "B073P5QKLW",
+          "reason": "Fits a science fiction scene: Weathered Grey.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a science fiction scene: Modern black and white photo of iconic subject.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B079LCR24S",
+          "reason": "Fits a science fiction scene: Frame photos and art prints with ease, Protective glass face.",
+          "relevance": 15
+        },
+        {
+          "bid": null,
+          "productId": "B073P1LM2L",
+          "reason": "Fits a science fiction scene: Contemporary treatment of timeless subject.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 145,
+            "simulated": true
+          },
+          "productId": "B078JF8588",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 14
+        }
+      ],
+      "split": null,
+      "startMs": 135000,
+      "topProductId": "B073P1GB9D"
+    },
+    {
+      "endMs": 137000,
+      "id": "s0136000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B073P1HYG3",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 128,
+            "simulated": true
+          },
+          "productId": "B073P16R5Q",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 28
+        },
+        {
+          "bid": null,
+          "productId": "B073P1CKJH",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B073P1BVDP",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P1GB9D",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B075HRFFRL",
+          "reason": "Fits a science fiction scene: Printed canvas with hand painted details.",
+          "relevance": 24
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 23
+        },
+        {
+          "bid": null,
+          "productId": "B073P58BYP",
+          "reason": "Fits a science fiction scene: Modern abstract with a touch of glam.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 81,
+            "simulated": true
+          },
+          "productId": "B073P1H6C6",
+          "reason": "Fits a science fiction scene: Blue.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 19
+        }
+      ],
+      "split": null,
+      "startMs": 136000,
+      "topProductId": "B073P1HYG3"
+    },
+    {
+      "endMs": 138000,
+      "id": "s0137000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a city street scene: Photo print on paper with silver frame.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a city street scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a city street scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits a city street scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 51,
+            "simulated": true
+          },
+          "productId": "B073NZWZ9W",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 124,
+            "simulated": true
+          },
+          "productId": "B073P51211",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 69,
+            "simulated": true
+          },
+          "productId": "B073P5FLXP",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 124,
+            "simulated": true
+          },
+          "productId": "B073P5SYYB",
+          "reason": "Fits a city street scene.",
+          "relevance": 16
+        }
+      ],
+      "split": null,
+      "startMs": 137000,
+      "topProductId": "B075YM2VXJ"
+    },
+    {
+      "endMs": 140000,
+      "id": "s0138000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits a city street scene.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 23
+        },
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a city street scene: Photo print on paper with silver frame.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075YM2V3Y",
+          "reason": "Fits a city street scene: Print on paper in frame with black finish.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B073P5Y9J8",
+          "reason": "Fits a city street scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P5SYYG",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073P5FM81",
+          "reason": "Fits a city street scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 75,
+            "simulated": true
+          },
+          "productId": "B075YLQTJ3",
+          "reason": "Fits a city street scene.",
+          "relevance": 16
+        },
+        {
+          "bid": null,
+          "productId": "B073P5FM7Y",
+          "reason": "Fits a city street scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B073P5KN5N",
+          "reason": "Fits a city street scene.",
+          "relevance": 15
+        }
+      ],
+      "split": null,
+      "startMs": 138000,
+      "topProductId": "B075YLKFB6"
+    },
+    {
+      "endMs": 143000,
+      "id": "s0140000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 73,
+            "simulated": true
+          },
+          "productId": "B073P14BDC",
+          "reason": "Fits a city street scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a city street scene: Contemporary print of classic European scene.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P1F2HM",
+          "reason": "Fits a city street scene.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a city street scene.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene.",
+          "relevance": 32
+        },
+        {
+          "bid": null,
+          "productId": "B073P1CKJH",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B073NZWZLS",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B073P1H6D8",
+          "reason": "Fits a city street scene.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P13J4K",
+          "reason": "Fits a city street scene.",
+          "relevance": 25
+        }
+      ],
+      "split": null,
+      "startMs": 140000,
+      "topProductId": "B073P14BDC"
+    },
+    {
+      "endMs": 148000,
+      "id": "s0143000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a conversation scene: Ready to hang with hardware included..",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 73,
+            "simulated": true
+          },
+          "productId": "B073P14BDC",
+          "reason": "Fits a conversation scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B079DC5P8S",
+          "reason": "Fits a conversation scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P1F2HM",
+          "reason": "Fits a conversation scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B079DC5P8T",
+          "reason": "Fits a conversation scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a conversation scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a conversation scene: Contemporary print of classic European scene.",
+          "relevance": 25
+        },
+        {
+          "bid": null,
+          "productId": "B073P58BZG",
+          "reason": "Fits a conversation scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B073P14CBH",
+          "reason": "Fits a conversation scene: Ready to hang with hardware included..",
+          "relevance": 21
+        },
+        {
+          "bid": null,
+          "productId": "B073NZPN2W",
+          "reason": "Fits a conversation scene.",
+          "relevance": 20
+        }
+      ],
+      "split": null,
+      "startMs": 143000,
+      "topProductId": "B073P13P7Q"
+    },
+    {
+      "endMs": 150000,
+      "id": "s0148000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "park",
+          "secondary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B010ULR5FG",
+          "reason": "Fits a park scene.",
+          "relevance": 36
+        },
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a park scene: Photo print on paper with silver frame.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a park scene: Ready to hang with hardware included..",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P5SYYG",
+          "reason": "Fits a park scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B075YLKFB6",
+          "reason": "Fits a park scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 114,
+            "simulated": true
+          },
+          "productId": "B079LFHRRW",
+          "reason": "Fits a park scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a park scene: Contemporary print of classic European scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 124,
+            "simulated": true
+          },
+          "productId": "B073P5SYYB",
+          "reason": "Fits a park scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073P16J7L",
+          "reason": "Fits a park scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a park scene.",
+          "relevance": 17
+        }
+      ],
+      "split": null,
+      "startMs": 148000,
+      "topProductId": "B010ULR5FG"
+    },
+    {
+      "endMs": 152000,
+      "id": "s0150000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "caution",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B073P1HZY6",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 43
+        },
+        {
+          "bid": {
+            "cents": 146,
+            "simulated": true
+          },
+          "productId": "B073P1H6KJ",
+          "reason": "Fits a city street scene: Modern word art print of London street names.",
+          "relevance": 42
+        },
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B073P5Y9J8",
+          "reason": "Fits a city street scene.",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 51,
+            "simulated": true
+          },
+          "productId": "B073NZWZ9W",
+          "reason": "Fits a city street scene.",
+          "relevance": 34
+        },
+        {
+          "bid": null,
+          "productId": "B073NZPN2W",
+          "reason": "Fits a city street scene.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene: Urban, modern art treatment of photo and words.",
+          "relevance": 33
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 85,
+            "simulated": true
+          },
+          "productId": "B073P5KN5N",
+          "reason": "Fits a city street scene: Contemporary print of classic European scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P1F2HM",
+          "reason": "Fits a city street scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a city street scene.",
+          "relevance": 28
+        }
+      ],
+      "split": null,
+      "startMs": 150000,
+      "topProductId": "B073P1HZY6"
+    },
+    {
+      "endMs": 156000,
+      "id": "s0152000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "conversation"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a conversation scene: Ready to hang with hardware included..",
+          "relevance": 41
+        },
+        {
+          "bid": {
+            "cents": 84,
+            "simulated": true
+          },
+          "productId": "B073P1N3GJ",
+          "reason": "Fits a conversation scene.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P5SYYG",
+          "reason": "Fits a conversation scene.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B075YMQC29",
+          "reason": "Fits a conversation scene: Modern print of tropical scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 116,
+            "simulated": true
+          },
+          "productId": "B073P5KYG3",
+          "reason": "Fits a conversation scene.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a conversation scene: Contemporary print of classic European scene.",
+          "relevance": 27
+        },
+        {
+          "bid": {
+            "cents": 67,
+            "simulated": true
+          },
+          "productId": "B073P13J4K",
+          "reason": "Fits a conversation scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 73,
+            "simulated": true
+          },
+          "productId": "B073P14BDC",
+          "reason": "Fits a conversation scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 144,
+            "simulated": true
+          },
+          "productId": "B073P19B53",
+          "reason": "Fits a conversation scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 91,
+            "simulated": true
+          },
+          "productId": "B079L7YGH3",
+          "reason": "Fits a conversation scene.",
+          "relevance": 25
+        }
+      ],
+      "split": null,
+      "startMs": 152000,
+      "topProductId": "B073P13P7Q"
+    },
+    {
+      "endMs": 158000,
+      "id": "s0156000",
+      "outcome": "ad",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Relaxed",
+        "safeTag": "safe",
+        "sentiment": 0.5
+      },
+      "price": {
+        "cents": 43,
+        "simulated": true
+      },
+      "ranked": [
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073NZSG22",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 61
+        },
+        {
+          "bid": {
+            "cents": 96,
+            "simulated": true
+          },
+          "productId": "B073NZGLR7",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 58
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P13J9K",
+          "reason": "Fits a city street scene: Horizontal cityscape print.",
+          "relevance": 56
+        },
+        {
+          "bid": {
+            "cents": 76,
+            "simulated": true
+          },
+          "productId": "B075HRFFRL",
+          "reason": "Fits a city street scene: Printed canvas with hand painted details.",
+          "relevance": 48
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073NZPNNL",
+          "reason": "Fits a city street scene: Abstract art print of timeless scene.",
+          "relevance": 44
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a city street scene.",
+          "relevance": 38
+        },
+        {
+          "bid": {
+            "cents": 59,
+            "simulated": true
+          },
+          "productId": "B073P17T67",
+          "reason": "Fits a city street scene.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 78,
+            "simulated": true
+          },
+          "productId": "B075HWHWWK",
+          "reason": "Fits a city street scene: Modern art style with hand painted details.",
+          "relevance": 35
+        },
+        {
+          "bid": {
+            "cents": 51,
+            "simulated": true
+          },
+          "productId": "B073NZWZ9W",
+          "reason": "Fits a city street scene.",
+          "relevance": 32
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 32
+        }
+      ],
+      "split": {
+        "platformCents": 31,
+        "publisherCents": 12,
+        "simulated": true
+      },
+      "startMs": 156000,
+      "tagline": "Add a contemporary look with this hand-stretched canvas print of Seattle.",
+      "topProductId": "B073NZSG22"
+    },
+    {
+      "endMs": 162500,
+      "id": "s0158000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "war"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B073NZPNNL",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 59,
+            "simulated": true
+          },
+          "productId": "B073P17T67",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 124,
+            "simulated": true
+          },
+          "productId": "B073NZWZBP",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a science fiction scene: Contemporary print of classic European scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 150,
+            "simulated": true
+          },
+          "productId": "B073P5MPWC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 146,
+            "simulated": true
+          },
+          "productId": "B075YLXSJC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073NZFTH9",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B073P1GB49",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073P1JNZZ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        }
+      ],
+      "split": null,
+      "startMs": 158000,
+      "topProductId": "B073NZPNNL"
+    },
+    {
+      "endMs": 167000,
+      "id": "s0162500",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Neutral",
+        "safeTag": "safe",
+        "sentiment": 0
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 123,
+            "simulated": true
+          },
+          "productId": "B073P5KN79",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B073P6L986",
+          "reason": "Fits a science fiction scene: Modern photo mural of classic French scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 79,
+            "simulated": true
+          },
+          "productId": "B073P19B2D",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 26
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a science fiction scene: Urban, modern art treatment of photo and words.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a science fiction scene: Speaker, Contains one internal 3W speaker.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 23
+        },
+        {
+          "bid": {
+            "cents": 150,
+            "simulated": true
+          },
+          "productId": "B073P5SYY9",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B073P1GB49",
+          "reason": "Fits a science fiction scene: Silver Metallic/Black Frame.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 59,
+            "simulated": true
+          },
+          "productId": "B073P6HGJS",
+          "reason": "Fits a science fiction scene: Contemporary print of classic European scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 126,
+            "simulated": true
+          },
+          "productId": "B079LMZPMG",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        }
+      ],
+      "split": null,
+      "startMs": 162500,
+      "topProductId": "B073P5KN79"
+    },
+    {
+      "endMs": 169000,
+      "id": "s0167000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "action",
+          "secondary": "war"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": null,
+          "productId": "B00MPLLVKU",
+          "reason": "Fits an action scene.",
+          "relevance": 22
+        },
+        {
+          "bid": {
+            "cents": 129,
+            "simulated": true
+          },
+          "productId": "B07649QRMC",
+          "reason": "Fits an action scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 137,
+            "simulated": true
+          },
+          "productId": "B00IXJMYEU",
+          "reason": "Fits an action scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 106,
+            "simulated": true
+          },
+          "productId": "B00R3FDDO0",
+          "reason": "Fits an action scene.",
+          "relevance": 19
+        },
+        {
+          "bid": null,
+          "productId": "B00R3FK2BM",
+          "reason": "Fits an action scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B072VBQB8G",
+          "reason": "Fits an action scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 107,
+            "simulated": true
+          },
+          "productId": "B00IJSQAP4",
+          "reason": "Fits an action scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 51,
+            "simulated": true
+          },
+          "productId": "B00R3IJ3BE",
+          "reason": "Fits an action scene.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits an action scene.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 146,
+            "simulated": true
+          },
+          "productId": "B00IJSN2RI",
+          "reason": "Fits an action scene.",
+          "relevance": 13
+        }
+      ],
+      "split": null,
+      "startMs": 167000,
+      "topProductId": "B00MPLLVKU"
+    },
+    {
+      "endMs": 171000,
+      "id": "s0169000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "workshop"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B076ZXYG17",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 128,
+            "simulated": true
+          },
+          "productId": "B0764B2W9C",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 12
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 11
+        },
+        {
+          "bid": null,
+          "productId": "B0764F256L",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 10
+        },
+        {
+          "bid": {
+            "cents": 58,
+            "simulated": true
+          },
+          "productId": "B073NZWZ8V",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 9
+        },
+        {
+          "bid": {
+            "cents": 68,
+            "simulated": true
+          },
+          "productId": "B073PVWNDD",
+          "reason": "Fits a science fiction scene: Works with devices that include a 3.5mm jack.",
+          "relevance": 9
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B00JZVPJD8",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 8
+        },
+        {
+          "bid": {
+            "cents": 94,
+            "simulated": true
+          },
+          "productId": "B01N221WQ5",
+          "reason": "Fits a science fiction scene: Headlight bulb with metal frame for longer life..",
+          "relevance": 8
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B0748M7834",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 8
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B079J7R9GD",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 8
+        }
+      ],
+      "split": null,
+      "startMs": 169000,
+      "topProductId": "B076ZXYG17"
+    },
+    {
+      "endMs": 174000,
+      "id": "s0171000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B076ZXYG17",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 31
+        },
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B076VXL26G",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B076VSCNLB",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 86,
+            "simulated": true
+          },
+          "productId": "B00LLJ58ME",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 92,
+            "simulated": true
+          },
+          "productId": "B075QJDMR5",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 18
+        },
+        {
+          "bid": {
+            "cents": 73,
+            "simulated": true
+          },
+          "productId": "B076VSC1JJ",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 55,
+            "simulated": true
+          },
+          "productId": "B00JZVPJD8",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 15
+        },
+        {
+          "bid": null,
+          "productId": "B0764F256L",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 13
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B07452H7DV",
+          "reason": "Fits a science fiction scene: Material of the transparent face: Glass.",
+          "relevance": 10
+        },
+        {
+          "bid": {
+            "cents": 139,
+            "simulated": true
+          },
+          "productId": "B079J7R9GD",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 10
+        }
+      ],
+      "split": null,
+      "startMs": 171000,
+      "topProductId": "B076ZXYG17"
+    },
+    {
+      "endMs": 176000,
+      "id": "s0174000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "city street"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 102,
+            "simulated": true
+          },
+          "productId": "B0764F4T7L",
+          "reason": "Fits a city street scene.",
+          "relevance": 30
+        },
+        {
+          "bid": {
+            "cents": 112,
+            "simulated": true
+          },
+          "productId": "B07649QSNR",
+          "reason": "Fits a city street scene.",
+          "relevance": 29
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a city street scene: Ready to hang with hardware included..",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073WQVWFC",
+          "reason": "Fits a city street scene.",
+          "relevance": 19
+        },
+        {
+          "bid": {
+            "cents": 124,
+            "simulated": true
+          },
+          "productId": "B073P5SYYB",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B073P5SYYG",
+          "reason": "Fits a city street scene.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 53,
+            "simulated": true
+          },
+          "productId": "B073V3VLR3",
+          "reason": "Fits a city street scene: Flat edge: Contours around the eyes and nose.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B075YM2VXJ",
+          "reason": "Fits a city street scene: Photo print on paper with silver frame.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 147,
+            "simulated": true
+          },
+          "productId": "B073NZQR8D",
+          "reason": "Fits a city street scene: Urban, modern art treatment of photo and words.",
+          "relevance": 15
+        },
+        {
+          "bid": {
+            "cents": 54,
+            "simulated": true
+          },
+          "productId": "B073P5FLX9",
+          "reason": "Fits a city street scene.",
+          "relevance": 14
+        }
+      ],
+      "split": null,
+      "startMs": 174000,
+      "topProductId": "B0764F4T7L"
+    },
+    {
+      "endMs": 178000,
+      "id": "s0176000",
+      "outcome": "sensitiveScene",
+      "panel": {
+        "contextLabel": {
+          "primary": "science fiction",
+          "secondary": "romance"
+        },
+        "moodLabel": "Somber",
+        "safeTag": "caution",
+        "sentiment": -0.5
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 70,
+            "simulated": true
+          },
+          "productId": "B008JA0EOA",
+          "reason": "Fits a science fiction scene: Box chain with spring-ring clasp.",
+          "relevance": 39
+        },
+        {
+          "bid": {
+            "cents": 64,
+            "simulated": true
+          },
+          "productId": "B073P13P7Q",
+          "reason": "Fits a science fiction scene: Ready to hang with hardware included..",
+          "relevance": 21
+        },
+        {
+          "bid": {
+            "cents": 97,
+            "simulated": true
+          },
+          "productId": "B073P17T9X",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B073P1N3B7",
+          "reason": "Fits a science fiction scene: Modern abstract art with a bit of glam.",
+          "relevance": 17
+        },
+        {
+          "bid": {
+            "cents": 82,
+            "simulated": true
+          },
+          "productId": "B075YM2V3Y",
+          "reason": "Fits a science fiction scene: Print on paper in frame with black finish.",
+          "relevance": 17
+        },
+        {
+          "bid": null,
+          "productId": "B073P16R7Q",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 59,
+            "simulated": true
+          },
+          "productId": "B073P6HGJS",
+          "reason": "Fits a science fiction scene: Contemporary print of classic European scene.",
+          "relevance": 16
+        },
+        {
+          "bid": {
+            "cents": 103,
+            "simulated": true
+          },
+          "productId": "B073P1CJS1",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 14
+        },
+        {
+          "bid": null,
+          "productId": "B075YSPG2K",
+          "reason": "Fits a science fiction scene: Photo print on paper with silver frame.",
+          "relevance": 14
+        },
+        {
+          "bid": {
+            "cents": 74,
+            "simulated": true
+          },
+          "productId": "B073P19RVS",
+          "reason": "Fits a science fiction scene.",
+          "relevance": 13
+        }
+      ],
+      "split": null,
+      "startMs": 176000,
+      "topProductId": "B008JA0EOA"
+    },
+    {
+      "endMs": 180000,
+      "id": "s0178000",
+      "outcome": "nothingFits",
+      "panel": {
+        "contextLabel": {
+          "primary": "concert"
+        },
+        "moodLabel": "Joyful",
+        "safeTag": "safe",
+        "sentiment": 1
+      },
+      "price": null,
+      "ranked": [
+        {
+          "bid": {
+            "cents": 61,
+            "simulated": true
+          },
+          "productId": "B018FCZRUW",
+          "reason": "Fits a concert scene: Traditional guitar stand with padded metal tubes.",
+          "relevance": 37
+        },
+        {
+          "bid": {
+            "cents": 83,
+            "simulated": true
+          },
+          "productId": "B00005041N",
+          "reason": "Fits a concert scene: UL listed for indoor & outdoor use.",
+          "relevance": 36
+        },
+        {
+          "bid": {
+            "cents": 72,
+            "simulated": true
+          },
+          "productId": "B073P5QKLB",
+          "reason": "Fits a concert scene.",
+          "relevance": 34
+        },
+        {
+          "bid": {
+            "cents": 108,
+            "simulated": true
+          },
+          "productId": "B00006RVJH",
+          "reason": "Fits a concert scene: Solar-powered outdoor lights, set of 4, All-brass roof, clear plastic lens, amber light.",
+          "relevance": 28
+        },
+        {
+          "bid": {
+            "cents": 125,
+            "simulated": true
+          },
+          "productId": "B00005041Y",
+          "reason": "Fits a concert scene: UL listed for indoor & outdoor use.",
+          "relevance": 25
+        },
+        {
+          "bid": {
+            "cents": 145,
+            "simulated": true
+          },
+          "productId": "B00005041T",
+          "reason": "Fits a concert scene: UL listed for indoor & outdoor use.",
+          "relevance": 20
+        },
+        {
+          "bid": null,
+          "productId": "B000UMFQU2",
+          "reason": "Fits a concert scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 95,
+            "simulated": true
+          },
+          "productId": "B073P1H6D8",
+          "reason": "Fits a concert scene.",
+          "relevance": 20
+        },
+        {
+          "bid": {
+            "cents": 87,
+            "simulated": true
+          },
+          "productId": "B075HWHWYS",
+          "reason": "Fits a concert scene.",
+          "relevance": 20
+        },
+        {
+          "bid": null,
+          "productId": "B073P16R7Q",
+          "reason": "Fits a concert scene.",
+          "relevance": 19
+        }
+      ],
+      "split": null,
+      "startMs": 178000,
+      "topProductId": "B018FCZRUW"
+    }
+  ],
+  "thresholdsHash": "a6463cb091d6306f7e0791ed9f27db29317bd8a11d8bc0b67826c7ec1593e16d"
+}

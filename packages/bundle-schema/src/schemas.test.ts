@@ -124,8 +124,8 @@ describe("valid files pass", () => {
 });
 
 describe("failing files", () => {
-  it("manifest without aiGenerated true", () => {
-    expect(paths(validateManifest({ ...manifest(), aiGenerated: false, durationMs: null }))).toEqual(["durationMs", "aiGenerated"]);
+  it("manifest with a non-boolean aiGenerated", () => {
+    expect(paths(validateManifest({ ...manifest(), aiGenerated: "yes", durationMs: null }))).toEqual(["durationMs", "aiGenerated"]);
   });
   it("product with empty name and non-string feature", () => {
     expect(paths(validateProduct({ ...product(), name: "", keyFeatures: [3] }))).toEqual(["name", "keyFeatures[0]"]);

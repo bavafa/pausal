@@ -123,7 +123,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
                   </span>
                   <span className="flex items-baseline justify-between gap-3 p-4">
                     <span className="font-serif text-title-sm">{c.title}</span>
-                    <span className="shrink-0 text-label text-muted-foreground">AI-generated · {minutes(c.durationMs)}</span>
+                    <span className="shrink-0 text-label text-muted-foreground">{c.aiGenerated ? "AI-generated · " : ""}{minutes(c.durationMs)}</span>
                   </span>
                 </a>
               </li>

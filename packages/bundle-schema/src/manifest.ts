@@ -1,4 +1,4 @@
-import { bool, clipId, done, integer, literal, nonEmptyString, object, type Int, type Issue, type Result } from "./check.ts";
+import { bool, clipId, done, integer, nonEmptyString, object, type Int, type Issue, type Result } from "./check.ts";
 
 /** `data/manifest/<clip-id>.json`, hand-authored (AD-19). */
 export type Manifest = {
@@ -6,7 +6,7 @@ export type Manifest = {
   title: string;
   videoUrl: string;
   durationMs: Int;
-  aiGenerated: true;
+  aiGenerated: boolean;
   hasDialogue: boolean;
   attributionKey: string;
 };
@@ -18,7 +18,7 @@ export function validateManifest(json: unknown): Result<Manifest> {
   nonEmptyString(json.title, "title", issues);
   nonEmptyString(json.videoUrl, "videoUrl", issues);
   integer(json.durationMs, "durationMs", issues, 1);
-  literal(json.aiGenerated, true, "aiGenerated", issues);
+  bool(json.aiGenerated, "aiGenerated", issues);
   bool(json.hasDialogue, "hasDialogue", issues);
   nonEmptyString(json.attributionKey, "attributionKey", issues);
   return done(issues, () => json as Manifest);
