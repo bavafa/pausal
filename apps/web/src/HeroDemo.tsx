@@ -63,7 +63,7 @@ export function HeroDemo() {
           </span>
         </div>
       </div>
-      <figcaption className="mt-2 text-label text-muted-foreground">A sketch of a pause: the scene is a kitchen, so one pan that fits is shown.</figcaption>
+      <figcaption className="mt-2 text-label text-muted-foreground">You pause on a kitchen scene, and a frying pan shows up.</figcaption>
     </figure>
   );
 }

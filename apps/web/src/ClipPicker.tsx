@@ -8,10 +8,10 @@ const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
 
 /** What happens between the click and the overlay. All of it is worked out before the page loads (AD-1). */
 const STEPS = [
-  ["Find the moment", "The frame you stopped on, plus anything from the second before it, so a cut cannot sneak an ad in."],
-  ["Check it is safe", "Two separate AI judges look for violence, grief, sexual content, medical scenes, children and heated arguments. Both have to agree it is fine."],
-  ["Find something that fits", "Products from a 20,000 item catalog are scored against the scene. A weak match counts as no match."],
-  ["One ad, or the reason why not", "You see a single product that fits, or a short note saying why nothing is shown."],
+  ["Read the scene", "Pausal looks at the frame you stopped on and the second before it, so a sudden cut cannot slip an ad in."],
+  ["Check it is safe", "Two AI models check for violence, grief, sexual content, medical scenes, children and arguments. If either one objects, there is no ad."],
+  ["Find a product", "Every product in the catalog is scored against the scene. Weak matches are dropped."],
+  ["Show one ad, or say why not", "You see one product that fits, or a short note on why there is no ad."],
 ] as const;
 
 const minutes = (ms: number) => {
@@ -26,11 +26,10 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
     <main className="mx-auto max-w-5xl px-gutter-phone md:px-gutter-laptop">
       <section className="grid items-center gap-8 py-10 md:grid-cols-[1fr_1.15fr] md:py-16">
         <div>
-          <p className={EYEBROW}>An experiment in calmer video ads</p>
+          <p className={EYEBROW}>An experiment in video ads</p>
           <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">Ads that wait until you pause.</h1>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-            Hit pause and Pausal looks at the scene you stopped on. An everyday moment gets one product that fits. Anything sad, violent or tense gets nothing at
-            all.
+            When you pause, Pausal looks at the scene on screen. An everyday moment gets one product that fits it. A violent, sad or heated scene gets no ad.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <button
@@ -40,7 +39,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             >
               Try a clip
             </button>
-            <span className="text-label text-muted-foreground">Nothing is real money, and nothing leaves your browser.</span>
+            <span className="text-label text-muted-foreground">The ads and prices are made up for the demo.</span>
           </div>
         </div>
         <HeroDemo />
@@ -51,12 +50,11 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
         <h2 className={H2}>A pause is a moment you choose.</h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            Most video ads cut in when the video decides. A pause is different. You stopped on purpose, the frame is still, and you have a second to look around.
-            That makes it a fair moment for one quiet suggestion.
+            Most video ads interrupt when the video decides. A pause is your choice, and the picture holds still, so it is a good moment for one small suggestion.
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            It also makes a bad suggestion feel worse. A frying pan next to a cooking scene is fine. The same pan next to a funeral is not. So the scene always
-            comes first, and when in doubt, Pausal shows nothing.
+            It is also a bad moment for the wrong one. A frying pan fits a cooking scene and does not fit a funeral. So Pausal checks the scene first, and when it
+            is unsure, it shows nothing.
           </p>
         </div>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -79,7 +77,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
 
       <section className="border-t border-border py-12">
         <p className={EYEBROW}>Under the hood</p>
-        <h2 className={H2}>What happens in the half second after you pause</h2>
+        <h2 className={H2}>What happens when you pause</h2>
         <ol className="mt-8 grid gap-6 md:grid-cols-4 md:gap-4">
           {STEPS.map(([title, text], i) => (
             <li key={title} className="relative">
@@ -93,17 +91,17 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           ))}
         </ol>
         <p className="mt-8 rounded-md bg-muted px-4 py-3 text-label text-muted-foreground">
-          Every clip is analyzed ahead of time, so pausing sends nothing anywhere and the answer is already waiting. A test pauses each clip every tenth of a
-          second and fails the build if a single ad lands on a scene a person marked unsafe.
+          Pausal analyzes each video once, scene by scene, when the video is added, so the answer is ready the moment you pause. To test the rules, a script
+          pauses every clip every tenth of a second and fails if any ad lands on a scene a person marked unsafe.
         </p>
       </section>
 
       <section id="clips" className="scroll-mt-16 border-t border-border py-12">
         <p className={EYEBROW}>Try it</p>
         <h2 className={H2}>Pick a clip, press play, pause anywhere.</h2>
-        <p className="mt-2 text-muted-foreground">Click the video or press Space. Try a calm moment, then a tense one.</p>
+        <p className="mt-2 text-muted-foreground">Click the video or press Space to pause. Try a calm scene, then a tense one.</p>
         {clips.length === 0 ? (
-          <p className="mt-6 rounded-md border border-dashed border-border p-6 text-center text-muted-foreground">The sample clips are on their way.</p>
+          <p className="mt-6 rounded-md border border-dashed border-border p-6 text-center text-muted-foreground">The sample clips are coming soon.</p>
         ) : (
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
             {clips.map((c) => (
@@ -135,7 +133,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
       </section>
 
       <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border py-6 text-label text-muted-foreground">
-        <span>Everything here is simulated: no real ads, no real money, nothing you do is sent anywhere.</span>
+        <span>Ads, bids and earnings on this site are simulated.</span>
         <a href="#/attribution" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
           Attribution
         </a>
