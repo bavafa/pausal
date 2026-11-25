@@ -147,7 +147,7 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct, n
               <rect x="6" y="5" width="4" height="14" rx="1.5" />
               <rect x="14" y="5" width="4" height="14" rx="1.5" />
             </svg>
-            Pause anywhere to see what it decides
+            Pause anywhere and see what shows up
           </span>
         )}
       </div>

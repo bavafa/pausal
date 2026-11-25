@@ -8,10 +8,10 @@ const H2 = "mt-2 font-serif text-[26px] leading-tight md:text-[30px]";
 
 /** What happens between the click and the overlay. All of it is worked out before the page loads (AD-1). */
 const STEPS = [
-  ["Find the scene", "Pausal finds the scene you paused on. Scene edges are only known to within a second, so if the second before your pause belongs to an unsafe scene, there is no ad."],
-  ["Check it is safe", "Two AI models rate the scene for violence, grief, sexual content, medical scenes, children and arguments. If both call it unsafe, there is no ad."],
-  ["Find a product", "Each product gets a relevance score from 0 to 100 for the scene, and only a score of 60 or more is shown. A higher bar means more relevant ads, shown less often."],
-  ["Show one ad, or say why not", "You see one product that fits, or a short note on why there is no ad."],
+  ["Find the scene", "It works out which scene you stopped on. Scene cuts are only known to within a second, so if the second before your pause was unsafe, you get no ad."],
+  ["Check it is safe", "Two AI models look for violence, grief, sex, medical scenes, children and arguments. If both flag the scene, no ad."],
+  ["Score the products", "Every product gets a fit score out of 100 for this scene. Under 60, it stays hidden. A higher bar means fewer ads that fit better."],
+  ["One ad, or none", "You get one product, or a line saying why there isn't one."],
 ] as const;
 
 const minutes = (ms: number) => {
@@ -27,9 +27,9 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
       <section className="grid items-center gap-8 py-10 md:grid-cols-[1fr_1.15fr] md:py-16">
         <div>
           <p className={EYEBROW}>An experiment in video ads</p>
-          <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">Ads that wait until you pause.</h1>
+          <h1 className="mt-3 font-serif text-[36px] leading-[1.1] md:text-[46px]">The ad waits for you to pause.</h1>
           <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-            When you pause, Pausal looks at the scene on screen. An everyday moment gets one product that fits it. A scene two AI models both call unsafe gets no ad.
+            Pause on someone cooking and a frying pan appears. Pause in the middle of a gunfight and nothing does. Every scene is checked before it can carry an ad.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <button
@@ -39,40 +39,37 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
             >
               Try a clip
             </button>
-            <a
-              href="#/upload"
-              className="inline-flex min-h-11 items-center rounded-md border border-border px-5 font-semibold transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            >
-              Use your own video
+            <a href="#/upload" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
+              or try your own video
             </a>
-            <span className="text-label text-muted-foreground">All ads and prices here are simulated.</span>
+            <span className="basis-full text-label text-muted-foreground">Every ad and price here is made up.</span>
           </div>
         </div>
         <HeroDemo />
       </section>
 
       <section className="border-t border-border py-12">
-        <p className={EYEBROW}>The idea</p>
-        <h2 className={H2}>Why show ads on pause</h2>
+        <p className={EYEBROW}>Why pause</p>
+        <h2 className={H2}>The one moment an ad doesn't interrupt anything</h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            Most video ads cut in at a time the video picks. Pausal waits until you pause. The picture is still and you have stopped following the story, so one small product suggestion gets in the way less.
+            Mid-roll ads cut in when the video decides. A pause is your decision. The picture is frozen, the story is on hold, and one product on screen costs you nothing.
           </p>
           <p className="text-[16px] leading-relaxed text-muted-foreground">
-            The suggestion has to suit the scene: a frying pan fits someone cooking, not a funeral. Pausal checks each scene for safety and fit, and shows
-            nothing when the scene is unsafe or no product fits well enough.
+            It only works if the product suits the moment. A frying pan belongs in a kitchen, not at a funeral. When nothing fits, or the scene is one no
+            brand should sit next to, you get no ad at all.
           </p>
         </div>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <div className="rounded-md border border-border bg-card p-4">
-            <p className="text-label text-muted-foreground">You pause on someone cooking in a sunny kitchen</p>
+            <p className="text-label text-muted-foreground">Paused on: someone cooking in a sunny kitchen</p>
             <p className="mt-2 flex items-center gap-2 font-semibold">
               <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
-              Everyday Skillet, because it fits a kitchen scene
+              Ad: Everyday Skillet
             </p>
           </div>
           <div className="rounded-md border border-border bg-card p-4">
-            <p className="text-label text-muted-foreground">You pause in the middle of a gunfight</p>
+            <p className="text-label text-muted-foreground">Paused on: a gunfight</p>
             <p className="mt-2 flex items-center gap-2 font-semibold">
               <span aria-hidden="true" className="size-2 rounded-full bg-muted-foreground" />
               No ad here: sensitive scene.
@@ -97,17 +94,17 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
           ))}
         </ol>
         <p className="mt-8 rounded-md bg-muted px-4 py-3 text-label text-muted-foreground">
-          Pausal analyzes each video scene by scene as it comes in, so when you pause, the answer appears in real time. To test the rules, a script
-          pauses every clip every tenth of a second and reports any ad that lands on a scene a person marked unsafe.
+          Scenes are analyzed before you reach them, so the answer is ready the instant you pause. To keep it honest, a test script pauses every
+          clip every tenth of a second and flags any ad that lands on a scene a person marked unsafe.
         </p>
       </section>
 
       <section id="clips" className="scroll-mt-16 border-t border-border py-12">
         <p className={EYEBROW}>Try it</p>
         <h2 className={H2}>Pick a clip, press play, pause anywhere.</h2>
-        <p className="mt-2 text-muted-foreground">Click the video or press Space to pause. Try a calm scene, then a tense one.</p>
+        <p className="mt-2 text-muted-foreground">Click the video or press Space. Pause on something calm, then on something tense, and compare.</p>
         {clips.length === 0 ? (
-          <p className="mt-6 rounded-md border border-dashed border-border p-6 text-center text-muted-foreground">The sample clips are coming soon.</p>
+          <p className="mt-6 rounded-md border border-dashed border-border p-6 text-center text-muted-foreground">Sample clips are on their way.</p>
         ) : (
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
             {clips.map((c) => (
@@ -139,7 +136,7 @@ export function ClipPicker({ clips }: { clips: Manifest[] }) {
       </section>
 
       <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-border py-6 text-label text-muted-foreground">
-        <span>Ads, bids and earnings on this site are simulated.</span>
+        <span>Ads, bids and earnings here are simulated.</span>
         <a href="#/attribution" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
           Attribution
         </a>

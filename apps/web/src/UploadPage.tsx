@@ -76,16 +76,16 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
       <a href="#/" className="inline-flex min-h-11 items-center text-accent underline-offset-4 hover:underline">
         Back to clips
       </a>
-      <h1 className="mt-2 font-serif text-title">Use your own video</h1>
+      <h1 className="mt-2 font-serif text-title">Try it on your own video</h1>
       <div className="mt-4 space-y-4 rounded-md border border-border bg-card p-4 md:p-6">
-        <p>Try Pausal on any short video. It plays right away while Pausal analyzes it in real time. Longer videos take a few minutes to finish, so a pause on a part that is not ready yet shows no ad.</p>
+        <p>Pick a clip from your phone. It starts playing straight away while the scenes are analyzed. A long video takes a few minutes to catch up, and a pause on a part that isn't done yet shows no ad.</p>
         <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
-          <li>Any clip up to 3 minutes and 100 MB works, for example one from your phone (MP4, MOV or WebM).</li>
-          <li>The video file is not uploaded. Pausal sends one frame per second and the sound to Alibaba Model Studio (Qwen) and TypeSafe (Jev) for analysis, and keeps nothing from your video.</li>
-          <li>3 videos per day. All ads and prices are simulated. Product data: <a className={LINK} href="#/attribution">Amazon Berkeley Objects</a>.</li>
+          <li>Up to 3 minutes and 100 MB. MP4, MOV or WebM.</li>
+          <li>The file itself is not uploaded. Only one frame per second and the sound go to Alibaba Model Studio (Qwen) and TypeSafe (Jev), and nothing is kept.</li>
+          <li>Three videos a day. Ads and prices are simulated. Product data: <a className={LINK} href="#/attribution">Amazon Berkeley Objects</a>.</li>
         </ul>
         <label className={`inline-flex min-h-11 items-center rounded-md px-5 font-semibold ${!busy ? "cursor-pointer bg-accent text-accent-foreground" : "cursor-not-allowed bg-muted text-muted-foreground"}`}>
-          {busy ? "Reading the video…" : "Choose a video"}
+          {busy ? "Reading your video…" : "Choose a video"}
           <input type="file" accept="video/mp4,video/quicktime,video/webm" disabled={busy} className="sr-only" onChange={(e) => void choose(e.target.files?.[0])} />
         </label>
         {error && (
