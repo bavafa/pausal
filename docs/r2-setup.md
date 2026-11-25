@@ -4,7 +4,7 @@ R2 holds the 256 px product images for the whole 20,000 item slice, so upload re
 
 ## 1. Create the account and turn on R2
 1. Sign up at dash.cloudflare.com (free plan).
-2. In the left sidebar open **R2 Object Storage**.
+2. In the left sidebar open **Storage & databases > R2 Object Storage** (or type "R2" in Quick search).
 3. Cloudflare asks for a payment card before R2 works, even on the free tier. Nothing is charged while usage stays inside the free limits. Add the card and accept the R2 terms.
 
 ## 2. Create the bucket
@@ -42,5 +42,5 @@ R2_BUCKET=pausal-images
 R2_PUBLIC_URL=https://pub-<random>.r2.dev
 ```
 
-## 5. Then
-Say "R2 is set up". Claude then adds an upload step to `pnpm abo` that copies each slice image to `products/<imageId>.jpg` in the bucket, checks one image through the public URL, and points the relay at `R2_PUBLIC_URL`. The secret key stays on the author's machine; the site and the relay only need the public URL.
+## 5. Upload the images
+`npx -y pnpm@12.23.0 abo images` extracts every slice image from `abo-images-small.tar`, uploads it as `products/<productId>.jpg` (the same path the site uses), skips objects already in the bucket, and finally fetches one image through `R2_PUBLIC_URL`. Rerun it after `pnpm abo build` changes the slice. Signing is done in `packages/pipeline/src/r2.ts` with Node's crypto, no SDK. The secret key stays on the author's machine; the site and the relay only need the public URL.

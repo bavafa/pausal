@@ -1,5 +1,6 @@
 // Usage: pnpm abo build   builds data/catalog/slice.json and the embedding index (AD-12)
 //        pnpm abo products writes data/products/<id>.json and images for products referenced by analysis (AD-19)
+//        pnpm abo images   uploads every slice image to Cloudflare R2 as products/<id>.jpg (docs/r2-setup.md)
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -11,6 +12,7 @@ import { embedText, simulatedCampaign, sliceCatalog, toCatalogItem, toProduct, t
 import { Qwen, readKeys } from "./clients.ts";
 import { loadPipelineConfig } from "./config.ts";
 import { canonicalJson } from "./decide.ts";
+import { r2Has, r2Put, readR2Keys } from "./r2.ts";
 
 const root = resolve(import.meta.dirname, "../../..");
 const cat = join(root, "data/catalog");
@@ -76,12 +78,11 @@ function referencedIds(): Set<string> {
   return ids;
 }
 
-async function products(): Promise<void> {
-  const items = new Map((JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[]).map((i) => [i.id, i]));
-  const ids = referencedIds();
+/** ABO image id to its path under images/small/ in the tar. */
+function imagePaths(): Map<string, string> {
   const imageCsv = join(cat, "raw/images/metadata/images.csv.gz");
   if (!existsSync(imageCsv)) execFileSync("tar", ["xf", join(cat, "abo-images-small.tar"), "-C", join(cat, "raw"), "images/metadata/images.csv.gz"]);
-  const imagePath = new Map(
+  return new Map(
     gunzipSync(readFileSync(imageCsv))
       .toString("utf8")
       .split(/\r?\n/) // images.csv has CRLF line endings
@@ -89,6 +90,55 @@ async function products(): Promise<void> {
       .map((l) => l.split(","))
       .map((c) => [c[0] ?? "", c[3] ?? ""] as const),
   );
+}
+
+/** Uploads every slice image to R2 as products/<productId>.jpg, skipping objects already there, then checks one through the public URL. */
+async function images(): Promise<void> {
+  process.loadEnvFile(join(root, ".env"));
+  const k = readR2Keys();
+  const items = JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[];
+  const imagePath = imagePaths();
+  const member = (it: CatalogItem) => `images/small/${imagePath.get(it.imageId) ?? ""}`;
+  const missing = items.filter((it) => !imagePath.get(it.imageId));
+  if (missing.length) throw new Error(`${missing.length} slice items have no image in images.csv, e.g. ${missing[0]?.id}`);
+  const tmp = join(cat, "raw/extract");
+  mkdirSync(tmp, { recursive: true });
+  const todo = [...new Set(items.map(member))].filter((m) => !existsSync(join(tmp, m)));
+  if (todo.length) {
+    writeFileSync(join(tmp, "members.txt"), `${todo.join("\n")}\n`);
+    execFileSync("tar", ["xf", join(cat, "abo-images-small.tar"), "-C", tmp, "-T", join(tmp, "members.txt")]);
+  }
+  let put = 0;
+  let skipped = 0;
+  await mapLimit(items, 16, async (it, i) => {
+    const key = `products/${it.id}.jpg`;
+    // R2 sometimes drops a connection; retry the object a few times before giving up (a rerun skips finished ones).
+    for (let attempt = 1; ; attempt++) {
+      try {
+        if (await r2Has(k, key)) skipped++;
+        else {
+          await r2Put(k, key, new Uint8Array(readFileSync(join(tmp, member(it)))), "image/jpeg");
+          put++;
+        }
+        break;
+      } catch (e) {
+        if (attempt >= 4) throw e;
+        await new Promise((r) => setTimeout(r, 1000 * attempt));
+      }
+    }
+    if ((i + 1) % 1000 === 0) console.log(`images: ${i + 1}/${items.length}`);
+  });
+  const sample = `${k.publicUrl}/products/${items[0]?.id}.jpg`;
+  const res = await fetch(sample);
+  const type = res.headers.get("content-type");
+  if (!res.ok || type !== "image/jpeg") throw new Error(`public URL check failed: ${res.status} ${type} for ${sample}`);
+  console.log(`images: uploaded ${put}, already there ${skipped}. Public URL check passed: ${sample}`);
+}
+
+async function products(): Promise<void> {
+  const items = new Map((JSON.parse(readFileSync(join(cat, "slice.json"), "utf8")) as CatalogItem[]).map((i) => [i.id, i]));
+  const ids = referencedIds();
+  const imagePath = imagePaths();
   const pubDir = join(root, "apps/web/public/products");
   const tmp = join(cat, "raw/extract");
   const wanted = [...ids].filter((id) => items.has(id));
@@ -160,7 +210,8 @@ async function shortNames(list: { id: string; name: string }[]): Promise<Map<str
 const cmd = process.argv[2];
 if (import.meta.main && cmd === "build") await build();
 else if (import.meta.main && cmd === "products") await products();
+else if (import.meta.main && cmd === "images") await images();
 else if (import.meta.main) {
-  console.error("usage: pnpm abo build | products");
+  console.error("usage: pnpm abo build | products | images");
   process.exit(1);
 }
