@@ -4,13 +4,16 @@ import { PRODUCTS } from "./clips.ts";
 import { clipHref } from "./route.ts";
 import { audioPcm, checkFile, CHUNK_MS, chunkBody, fileId, FrameReader, placeChunk, RELAY_URL } from "./upload.ts";
 
-export type UploadState = { clip: Manifest; chunks: Decisions[]; doneMs: number; error: string | null };
+/** `step` says what the browser is doing right now, so a slow phone never looks stuck at 0%. */
+export type UploadState = { clip: Manifest; chunks: Decisions[]; doneMs: number; error: string | null; step?: string };
 
 const LINK = "text-accent underline underline-offset-4";
 
 /** Reads frames and sound chunk by chunk and sends up to 5 chunks to the relay at once; each answer is added as it arrives. */
 async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) => UploadState) => void) {
   const fail = (error: string) => update((s) => ({ ...s, error: s.error ?? error }));
+  const step = (text: string) => update((s) => ({ ...s, step: text }));
+  step("Opening your video…");
   const url = URL.createObjectURL(file);
   const video = Object.assign(document.createElement("video"), { src: url, muted: true, playsInline: true, preload: "auto" });
   // iPhone Safari loads no frame data for a video that never plays, so wait for metadata only; each seek loads its frame.
@@ -19,12 +22,18 @@ async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) 
     video.onerror = () => reject(new Error("Your browser could not read this video."));
   });
   const reader = new FrameReader(video);
+  step("Reading the sound…");
   const pcm = await audioPcm(file);
+  const seconds = Math.ceil(clip.durationMs / 1000);
   const inFlight = new Set<Promise<void>>();
   for (let start = 0; start < clip.durationMs; start += CHUNK_MS) {
     const end = Math.min(start + CHUNK_MS, clip.durationMs);
     const frames = [];
-    for (let t = start; t < end; t += 1000) frames.push(await reader.frame(t));
+    for (let t = start; t < end; t += 1000) {
+      step(`Reading frame ${t / 1000 + 1} of ${seconds}…`);
+      frames.push(await reader.frame(t));
+    }
+    step("Waiting for the analysis…");
     const body = chunkBody(clip.clipId, start, end, frames, pcm);
     const send = () => fetch(RELAY_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
     // One retry on a server error (a cold start can fail once); 503 means the daily cap, which a retry cannot help.

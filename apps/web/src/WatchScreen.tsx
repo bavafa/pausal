@@ -38,7 +38,7 @@ type Props = {
   /** Replaces the credit line, for an uploaded video: analysis progress or an error. */
   note?: string;
   /** For an uploaded video: the player waits behind a progress view until every part is analyzed. */
-  analysis?: { doneMs: number; totalMs: number; error: string | null };
+  analysis?: { doneMs: number; totalMs: number; error: string | null; step?: string | undefined };
 };
 
 export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct, note, analysis }: Props) {
@@ -204,7 +204,7 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct, n
 }
 
 /** Covers the player while an upload is analyzed. Progress is time analyzed, since parts finish out of order. */
-function AnalysisWait({ doneMs, totalMs, error, onWatch }: { doneMs: number; totalMs: number; error: string | null; onWatch: () => void }) {
+function AnalysisWait({ doneMs, totalMs, error, step, onWatch }: { doneMs: number; totalMs: number; error: string | null; step?: string | undefined; onWatch: () => void }) {
   const pct = Math.round((100 * doneMs) / Math.max(totalMs, 1));
   return (
     <div className="absolute inset-0 grid place-items-center bg-black/75 p-4 text-center text-white backdrop-blur-sm">
@@ -224,7 +224,9 @@ function AnalysisWait({ doneMs, totalMs, error, onWatch }: { doneMs: number; tot
             <div role="progressbar" aria-label="Analysis progress" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/20">
               <div className="h-full bg-accent transition-[width] duration-500 ease-out" style={{ width: `${Math.max(pct, 4)}%` }} />
             </div>
-            <p className="mt-2 text-label text-white/75">{pct}%</p>
+            <p className="mt-2 text-label text-white/75">
+              {pct}%{step ? ` · ${step}` : ""}
+            </p>
           </>
         )}
       </div>

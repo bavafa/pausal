@@ -52,7 +52,7 @@ export function App() {
             key={clip.clipId}
             clip={clip}
             decisions={decisions}
-            {...(uploaded ? { note: uploaded.error ?? (uploaded.doneMs >= uploaded.clip.durationMs ? "Your video: fully analyzed." : "Your video: analyzing…"), analysis: { doneMs: uploaded.doneMs, totalMs: uploaded.clip.durationMs, error: uploaded.error } } : {})}
+            {...(uploaded ? { note: uploaded.error ?? (uploaded.doneMs >= uploaded.clip.durationMs ? "Your video: fully analyzed." : "Your video: analyzing…"), analysis: { doneMs: uploaded.doneMs, totalMs: uploaded.clip.durationMs, error: uploaded.error, step: uploaded.step } } : {})}
             pauses={pauses}
             onPause={(entry) => setPauses((log) => [...log, entry])}
             onViewProduct={(productId) => {
