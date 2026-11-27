@@ -16,6 +16,9 @@ const PRELOADED = new Map<string, HTMLImageElement>();
 /** Element full screen is missing on iPhone Safari; there the video's own full screen stays (without the ad card). */
 const CAN_FULLSCREEN = typeof document !== "undefined" && document.fullscreenEnabled;
 
+/** On touch screens a tap belongs to the native controls; toggling here too would undo every tap on play. */
+const TOUCH = typeof matchMedia !== "undefined" && matchMedia("(hover: none)").matches;
+
 const toggle = (v: HTMLVideoElement) => void (v.paused ? v.play().catch(() => {}) : v.pause());
 
 /** Elements that handle Space themselves; the page shortcut stays out of their way. */
@@ -145,6 +148,7 @@ export function WatchScreen({ clip, decisions, pauses, onPause, onViewProduct, n
           preload="auto"
           className="absolute inset-0 h-full w-full object-contain"
           onClick={(e) => {
+            if (TOUCH) return;
             e.preventDefault();
             if (!waiting) toggle(e.currentTarget);
           }}

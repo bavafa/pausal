@@ -71,9 +71,15 @@ export function HeroDemo() {
     const onSeeked = () => v.currentTime < PAUSE_AT_S && (paused = false);
     v.addEventListener("timeupdate", onTime);
     v.addEventListener("seeked", onSeeked);
-    void v.play().catch(() => {});
+    // Autoplay can be refused (iPhone Low Power Mode): show the ad on the still frame, and play on the first touch.
+    const retry = () => void v.play().then(() => setPhase("playing"), () => {});
+    v.play().catch(() => {
+      setPhase("card");
+      document.addEventListener("pointerdown", retry, { once: true });
+    });
     return () => {
       window.clearTimeout(timer);
+      document.removeEventListener("pointerdown", retry);
       v.removeEventListener("timeupdate", onTime);
       v.removeEventListener("seeked", onSeeked);
     };
