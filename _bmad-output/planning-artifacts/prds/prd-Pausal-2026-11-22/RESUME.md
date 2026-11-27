@@ -1,9 +1,15 @@
 # RESUME NOTES (for Claude: read this first in a fresh session)
 
-Project-wide resume point. Last updated: 2026-11-25. All 5 epics done, the site is live with one sample clip and video uploads. Nothing is waiting on Claude.
+Project-wide resume point. Last updated: 2026-11-27. All 5 epics done, the site is live with one sample clip and video uploads. Nothing is waiting on Claude.
 
 ## Where we are (2026-11-25)
-- Live site: https://bavafa.github.io/pausal/ (GitHub Pages, deployed by CI on every push to `main`). Last commits: ec7cf13 (per-click billing, foldable corner ad, photo check, faster uploads, ADR 0012) and 8a5ef3b (hero video). Untracked `.claude/launch.json` only (local preview config with `web` and `relay`, kept out of git).
+- Live site: https://bavafa.github.io/pausal/ (GitHub Pages, deployed by CI on every push to `main`). Last commits: 50d8f60 to 772293d (phone video fixes, see the next point). `.claude/launch.json` is committed (4d7761b).
+- Phone fixes (2026-11-26 and 2026-11-27, commits 50d8f60, b82cd9d, 4abdd9a, 9dbd09d, 772293d; the author confirmed all of them on an iPhone in Safari and Chrome):
+  - Watch screen: on touch screens (`hover: none`) the click toggle is off and taps go to the native controls. Before, a tap on play started the clip and the toggle paused it again.
+  - Hero demo: when the phone refuses autoplay (Low Power Mode), it shows the ad on the still frame and plays on the first touch.
+  - Uploads: iPhone loads no frame data for a video that has never played, so the frame seeks hung on frame 2. The frames video is now created and `play()` is called on the "Choose a video" tap (which unlocks it for good), then it gets the file, plays and pauses once. If the phone still refuses, the progress asks for one tap. Each seek fails after 15 s with a message, and an error before the first chunk shows instead of a frozen 0%.
+  - Upload progress names its current step ("Reading the sound", "Reading frame N of M", "Waiting for the analysis"), since the percentage only moves when a 20 s chunk comes back (about 15 to 30 s).
+  - Not checked: Android phones. There is no iOS Simulator on the author's Mac (no full Xcode), so phone checks are done by the author.
 - Sample clip: only Tears of Steel (`9d34e8c24976`, film 2:52 to 5:52, CC BY 3.0, `aiGenerated: false`, credited on the attribution page). No labels for this clip, so `pnpm eval` covers the fixture only.
 - Policy (ADR 0009, ADR 0011, ADR 0012): an ad is held back for safety only when Jev and Qwen both say unsafe; relevance threshold 60 (schema floor 50), rule 3b jevFitP 0.4; the 1 s look-back blocks only on a sensitive or unanalyzed scene. Photo check (ADR 0012): the vision model looks at the photo of the top product against the scene description, a rejected product gets `photoCheck: "fail"` and drops out of `rankFits`, at most 3 checks per scene, fails open. Tears of Steel: 6.4 percent of pause times show an ad (6 of 69 scenes).
 - Landing copy (2026-11-25): a "The catalog" section says the ads draw on 20,000 ABO products and that a bigger catalog would turn more "nothing fit well" pauses into fitting ads (full ABO: 147,702 listings). Examples now vary (kitchen/skillet, hiker/daypack, runner/trail shoes); no funeral wording.
@@ -102,8 +108,9 @@ Say "resume Pausal". Read this file, then the documents listed under "Read first
 6. Done 2026-11-23: versions confirmed with `npm view` and written to the spine Stack table. Node moved to 26 LTS (26.13.1, user decision) and pnpm to 12.23.0; tooling rows added (oxlint, Vitest, secretlint).
 
 ## Git
-- `main` holds everything and is pushed to github.com/bavafa/pausal (last push 2026-11-25). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
+- `main` holds everything and is pushed to github.com/bavafa/pausal (last push 2026-11-27). The repo is public since 2026-11-23 (required for GitHub Pages on the current plan); the README keeps "All rights reserved". Pages source is GitHub Actions. Every push to `main` runs CI and deploys.
 - Work happens on a story branch (`story/<key>`) and is fast-forwarded into `main` after review. Merged story branches are deleted.
+- The phone fixes of 2026-11-26 and 2026-11-27 went straight to `main` at the author's request, one commit each.
 - Untracked: UX `.working/` scratch copies of the mockups (intentionally not committed).
 
 ## Build environment
