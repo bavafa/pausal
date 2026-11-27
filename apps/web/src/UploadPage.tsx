@@ -12,8 +12,12 @@ const LINK = "text-accent underline underline-offset-4";
 async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) => UploadState) => void) {
   const fail = (error: string) => update((s) => ({ ...s, error: s.error ?? error }));
   const url = URL.createObjectURL(file);
-  const video = Object.assign(document.createElement("video"), { src: url, muted: true, preload: "auto" });
-  await new Promise((r) => (video.onloadeddata = r));
+  const video = Object.assign(document.createElement("video"), { src: url, muted: true, playsInline: true, preload: "auto" });
+  // iPhone Safari loads no frame data for a video that never plays, so wait for metadata only; each seek loads its frame.
+  await new Promise((resolve, reject) => {
+    video.onloadedmetadata = resolve;
+    video.onerror = () => reject(new Error("Your browser could not read this video."));
+  });
   const reader = new FrameReader(video);
   const pcm = await audioPcm(file);
   const inFlight = new Set<Promise<void>>();

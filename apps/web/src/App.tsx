@@ -35,7 +35,9 @@ export function App() {
       <UploadPage
         onStart={(c, run) => {
           setUpload({ clip: c, chunks: [], doneMs: 0, error: null });
-          void run((f) => setUpload((s) => (s && s.clip.clipId === c.clipId ? f(s) : s)));
+          const update = (f: (s: UploadState) => UploadState) => setUpload((s) => (s && s.clip.clipId === c.clipId ? f(s) : s));
+          // A failure before the first part is sent would otherwise leave the progress at 0% for good.
+          void run(update).catch((e: unknown) => update((s) => ({ ...s, error: s.error ?? (e instanceof Error ? e.message : "Your video could not be read.") })));
         }}
       />
     );
