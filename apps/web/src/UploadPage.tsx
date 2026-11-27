@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Decisions, Manifest } from "@pausal/bundle-schema";
 import { PRODUCTS } from "./clips.ts";
 import { clipHref } from "./route.ts";
@@ -59,6 +59,14 @@ async function analyze(file: File, clip: Manifest, video: HTMLVideoElement, unlo
 export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update: (f: (s: UploadState) => UploadState) => void) => Promise<void>) => void }) {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // iPhone unlocks a video for good once play() is called inside a real tap, even before it has a file; the moment the
+  // picker hands the file back does not count as a tap, so the frames video is made and unlocked on the Choose tap.
+  const reader = useRef<HTMLVideoElement | null>(null);
+  const unlock = () => {
+    const v = Object.assign(document.createElement("video"), { muted: true, playsInline: true });
+    void v.play().catch(() => {});
+    reader.current = v;
+  };
 
   const choose = async (file: File | undefined) => {
     if (!file) return;
@@ -68,8 +76,8 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
     setBusy(true);
     const url = URL.createObjectURL(file);
     // The probe is also the video the frames are read from. iPhone loads no frame data for a video until it has
-    // played once, so it starts playing here, still inside the tap that chose the file, and pauses straight away.
-    const probe = Object.assign(document.createElement("video"), { src: url, muted: true, playsInline: true, preload: "auto" });
+    // played once, so it plays here and pauses straight away (allowed when the Choose tap unlocked it).
+    const probe = Object.assign(reader.current ?? document.createElement("video"), { src: url, muted: true, playsInline: true, preload: "auto" });
     const unlocked = probe.play().then(() => (probe.pause(), true), () => false);
     const durationMs = await new Promise<number>((r) => {
       probe.onloadedmetadata = () => r(Math.round(probe.duration * 1000));
@@ -102,7 +110,7 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
         </ul>
         <label className={`inline-flex min-h-11 items-center rounded-md px-5 font-semibold ${!busy ? "cursor-pointer bg-accent text-accent-foreground" : "cursor-not-allowed bg-muted text-muted-foreground"}`}>
           {busy ? "Reading your video…" : "Choose a video"}
-          <input type="file" accept="video/mp4,video/quicktime,video/webm" disabled={busy} className="sr-only" onChange={(e) => void choose(e.target.files?.[0])} />
+          <input type="file" accept="video/mp4,video/quicktime,video/webm" disabled={busy} className="sr-only" onClick={unlock} onChange={(e) => void choose(e.target.files?.[0])} />
         </label>
         {error && (
           <p role="alert" className="text-label">
