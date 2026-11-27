@@ -10,17 +10,18 @@ export type UploadState = { clip: Manifest; chunks: Decisions[]; doneMs: number;
 const LINK = "text-accent underline underline-offset-4";
 
 /** Reads frames and sound chunk by chunk and sends up to 5 chunks to the relay at once; each answer is added as it arrives. */
-async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) => UploadState) => void) {
+async function analyze(file: File, clip: Manifest, video: HTMLVideoElement, unlocked: Promise<boolean>, update: (f: (s: UploadState) => UploadState) => void) {
   const fail = (error: string) => update((s) => ({ ...s, error: s.error ?? error }));
   const step = (text: string) => update((s) => ({ ...s, step: text }));
   step("Opening your video…");
-  const url = URL.createObjectURL(file);
-  const video = Object.assign(document.createElement("video"), { src: url, muted: true, playsInline: true, preload: "auto" });
-  // iPhone Safari loads no frame data for a video that never plays, so wait for metadata only; each seek loads its frame.
-  await new Promise((resolve, reject) => {
-    video.onloadedmetadata = resolve;
-    video.onerror = () => reject(new Error("Your browser could not read this video."));
-  });
+  if (!(await unlocked)) {
+    // The phone refused to play without a fresh tap; one tap anywhere starts it.
+    step("Tap anywhere to start reading your video");
+    await new Promise<void>((resolve) => {
+      const onTap = () => void video.play().then(() => (video.pause(), document.removeEventListener("click", onTap), resolve()), () => {});
+      document.addEventListener("click", onTap);
+    });
+  }
   const reader = new FrameReader(video);
   step("Reading the sound…");
   const pcm = await audioPcm(file);
@@ -53,7 +54,6 @@ async function analyze(file: File, clip: Manifest, update: (f: (s: UploadState) 
     if (inFlight.size >= 5) await Promise.race(inFlight);
   }
   await Promise.all(inFlight);
-  URL.revokeObjectURL(url);
 }
 
 export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update: (f: (s: UploadState) => UploadState) => void) => Promise<void>) => void }) {
@@ -67,7 +67,10 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
     if (early) return setError(early);
     setBusy(true);
     const url = URL.createObjectURL(file);
-    const probe = Object.assign(document.createElement("video"), { src: url, preload: "metadata" });
+    // The probe is also the video the frames are read from. iPhone loads no frame data for a video until it has
+    // played once, so it starts playing here, still inside the tap that chose the file, and pauses straight away.
+    const probe = Object.assign(document.createElement("video"), { src: url, muted: true, playsInline: true, preload: "auto" });
+    const unlocked = probe.play().then(() => (probe.pause(), true), () => false);
     const durationMs = await new Promise<number>((r) => {
       probe.onloadedmetadata = () => r(Math.round(probe.duration * 1000));
       probe.onerror = () => r(0);
@@ -80,7 +83,7 @@ export function UploadPage({ onStart }: { onStart: (clip: Manifest, run: (update
     }
     const clipId = await fileId(file);
     const clip: Manifest = { clipId, title: file.name.replace(/\.[^.]+$/, ""), videoUrl: url, durationMs: durationMs as Manifest["durationMs"], aiGenerated: false, hasDialogue: true, attributionKey: "upload" };
-    onStart(clip, (update) => analyze(file, clip, update));
+    onStart(clip, (update) => analyze(file, clip, probe, unlocked, update));
     location.hash = clipHref(clipId);
   };
 

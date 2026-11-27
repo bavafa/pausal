@@ -60,8 +60,10 @@ export class FrameReader {
   async frame(tMs: number): Promise<{ tMs: number; diff: number; jpegDataUrl: string }> {
     const v = this.video;
     await new Promise<void>((resolve, reject) => {
-      v.onseeked = () => resolve();
-      v.onerror = () => reject(new Error("The video could not be read."));
+      // A seek that never lands would leave the progress frozen; fail with a message instead.
+      const timer = setTimeout(() => reject(new Error("Your browser stopped reading the video. Try a shorter clip.")), 15_000);
+      v.onseeked = () => (clearTimeout(timer), resolve());
+      v.onerror = () => (clearTimeout(timer), reject(new Error("The video could not be read.")));
       v.currentTime = tMs / 1000;
     });
     this.big.width = FRAME_WIDTH;
